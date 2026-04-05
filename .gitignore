@@ -1,76 +1,37 @@
 # Python
-.venv/
 __pycache__/
-*.pyc
-*.pyo
+*.py[cod]
+*$py.class
 *.egg-info/
+dist/
+build/
+*.egg
 
-# Data and checkpoints
-data/
-tuesday/data/
-*.pt
-
-# Training artifacts
-*.log
-*.aux
-*.out
-nohup.out
-
-# Archive
-archive/
-tuesday/archive/
-
-# ARC-AGI-3 SDK game environments (local only, large)
-environment_files/
-
-# Temp scripts
-_*.py
-_*.bat
-run_tests_quick.py
-
-# Research papers (compiled PDFs)
-*.pdf
-
-# Claude Code (local config, memory, commands, conversations — NEVER publish)
-.claude/
-CLAUDE.md
-Claude_setup_package.zip
-*Co-Authored-By*
-
-# Environment / secrets
-.env
-.env.*
-
-# IDE / OS
-.vscode/
-*.locks/
-.pytest_cache/
-
-# Legacy
-riemann.zip
-stage 4/
-logs/
-model/
-tuesday_full_package/
-
-# Paper build artifacts
+# LaTeX build artifacts
 paper/*.aux
-paper/*.out
 paper/*.log
-paper/*.synctex*
+paper/*.out
+paper/*.toc
+paper/*.bbl
+paper/*.blg
+paper/*.fls
+paper/*.fdb_latexmk
+paper/*.synctex.gz
+paper/_build_temp.*
 
-# Notes (local reference docs not worth tracking)
-notes/*.pdf
-notes/claude_review_setup.md
-notes/Deepthinkscontribution.txt
-notes/koide_joint_correction_briefing.md
-notes/koide_joint_correction_briefing_v2.md
-notes/QUERY_load_bearing_mathematics.md
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
 
-# Files with AI attribution (never publish)
-paper/computational_supplement.md
-MATHGRIND/QUERY_load_bearing_mathematics.md
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store
 
-# Computation outputs (large/ephemeral — never publish)
-computations/*_output.txt
-computations/lambda_status_report.md
+# Session / AI outputs
+.claude/
+notes/
+miscellanious/

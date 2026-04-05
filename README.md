@@ -36,9 +36,13 @@ Everything derives from H = 3:
 
 ## Structure
 
-Each `.py` file is a standalone verification of a specific claim. Key scripts:
+```
+paper/          LaTeX source + PDF
+computations/   219 standalone verification scripts (flat, no interdependencies)
+```
 
-- `verify_paper.py` — structural integrity check (environments, refs, citations, numerical claims)
+Each `.py` file in `computations/` is a standalone verification of a specific claim. Key scripts:
+
 - `spectral_gap_computation.py` — Δ = 1.263 from transfer operator eigenvalue
 - `conservation_law_derivation.py` — K* = 7/30 from Sym²(C⁴) decomposition
 - `ds_gravity_k7_30.py` — exact K*=7/30 equilibrium, ∂̄Φ computation, SO(4) decomposition
@@ -48,8 +52,9 @@ Each `.py` file is a standalone verification of a specific claim. Key scripts:
 - `nontriviality_4point.py` — connected 4-point function at K*=7/30 equilibrium
 - `phi4_ds_extraction.py` — φ⁴ scalar field test (Prediction 2)
 - `koide_from_crystal.py` — Koide formula from S₃ representation theory
+- `verify_paper.py` — structural integrity check (environments, refs, citations, numerical claims)
 
-Some scripts import from a `solver` module not included here. The constants they use are defined in `constants.py`. The scripts document what was computed; the results are in the paper.
+Some scripts import from a `solver` module not included here. The scripts document what was computed; the results are in the paper.
 
 ## Paper
 
@@ -59,7 +64,7 @@ From Zenodo:
 
 The Mass Gap from Enforced Uncertainty: Evidence Combination, Twistor Geometry, and Yang-Mills Theory. Also happily sparring with whatever other question seems to be naturally constructing itself upon the path as we navigate it. On a personal note I'm starting to think quite a lot of the unsolved or unresolved mathematical and physics/computational geometric/theoretical framework forks in the modern scientific fields as they present them are actually very nearly just one, singular disagreement. I'll be continuing at the leisure of a laborer until it seems finished.
 
-Disclaimer, you are very, very welcome to use the computational techniques and discoveries unfolded and demonstrated/described here in this/these paper(s) for any of the borderline infinite useful utilities it could be sicced on. I very humbly ask that if you do, then you might also give me a reference, it'd make mum happy I'm sure. And my sister embarrassed. And give the old man transient cognitive accolaydes to hear at dinner. And teach - Cameron/Kranzy/Jodah/McCrae less dissapointed.
+Disclaimer, you are very, very welcome to use the computational techniques and discoveries unfolded and demonstrated/described here in this/these paper(s) for any of the borderline infinite useful utilities it could be sicced on. I very humbly ask that if you do, then you might also give me a reference, it'd make mum happy I'm sure. And my sister embarrassed. And give the old man transient cognitive accolaydes to speak of at dinner. And teach - Cameron/Kranzy/Jodah/McCrae less dissapointed.
 
 Also, yes I am aware I'm toying with almost every degree of indescriminitely cutting edge theory and hyperspecified ultra endpoint en-masse iterated contributory evolution of mathematical excess with the cadence of such tantamount to an unwashed troglodyte - from an institutional perspective that is.
 

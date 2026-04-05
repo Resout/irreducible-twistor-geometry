@@ -1,249 +1,259 @@
 """
-Cosmological Constant from the Born Floor Geometry
+The cosmological constant from the crystal framework.
 
-Physical idea (from J.R. Manuel): Reality (B = {Born ≥ 1/27}) sits inside the
-total information space CP³. The cosmological constant is the curvature of the
-boundary between coherent (reality) and incoherent (meaningless information).
+The paper (line 1206): "Lambda is determined by K*=7/30 and the
+Fubini-Study curvature of CP³ (R=24). It is a derived quantity,
+not a free parameter. Its explicit value requires the Penrose
+transform integral, which has not been evaluated."
 
-Geometric chain:
-  1. B = {|w|² ≤ 26} is a geodesic ball in CP³ (affine coordinates)
-  2. ∂B is a hypersurface at geodesic radius arccos(1/√27)
-  3. Extrinsic curvature of ∂B in (CP³, g_FS) is computable
-  4. Penrose transform maps CP³ geometry to S⁴ geometry
-  5. The graviton sector curvature gives Λ
+The crystal provides:
+- K* = 7/30 (exactly)
+- R_FS = 24 (half-standard normalization of CP³)
+- The Penrose transform IS composition
 
-All inputs exact: H=3, Born floor 1/27, CP³ scalar curvature R=24.
+The Maldacena reduction gives Lambda from the conformal gravity
+action. In the conformal gravity framework:
+  S_conformal = integral of |Weyl|² over S⁴
+  Lambda appears when restricting to the Einstein sector (OS2)
+
+The relationship (standard conformal gravity):
+  Lambda ∝ (gap)² / R
+
+Can we compute Lambda from crystal quantities?
+
+What we have:
+  Δ_filter = -ln(1-K*) = -ln(23/30) = 0.2657 per DS step
+  Δ_gap = 1.263 per DS step (paper's Jacobian eigenvalue)
+  R_FS(CP³) = 24
+  BORN_FLOOR = 1/27
+  K* = 7/30
+
+Candidates for Lambda:
+  Lambda ∝ Δ² / R
+  Lambda ∝ K*² × R
+  Lambda ∝ BORN_FLOOR × R
+  Lambda ∝ (Δ_gap)² / R_FS
 """
 
-import numpy as np
-from numpy import sqrt, pi, arccos, cos, sin
+import sys, os
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-H = 3
-FLOOR = 1.0 / H**3
+import math
+from solver.algebra import H, MASS_DIM, DELTA, K_STAR, BORN_FLOOR
 
-print("=" * 70)
-print("COSMOLOGICAL CONSTANT FROM BORN FLOOR GEOMETRY")
-print("=" * 70)
+# ═══════════════════════════════════════════════════════════════
+#  Constants from the framework
+# ═══════════════════════════════════════════════════════════════
 
-# ============================================================
-# Step 1: The ball B in CP³
-# ============================================================
-print("\nStep 1: Born floor ball")
+R_FS = 2 * H * (H + 1)  # = 24, half-standard normalization
+Delta_filter = DELTA  # = -ln(1 - K*) = 0.2657
+Delta_gap = 1.2626  # paper's Jacobian eigenvalue at fixed point
 
-R_sq = H**3 - 1  # = 26, affine radius squared
-R_aff = sqrt(R_sq)
-vol_frac = ((H**3 - 1) / H**3)**3
+print("=" * 80)
+print("COSMOLOGICAL CONSTANT FROM CRYSTAL FRAMEWORK")
+print("=" * 80)
 
-print(f"  B = {{|w|² ≤ {R_sq}}} in affine CP³ coords")
-print(f"  Affine radius: √{R_sq} = {R_aff:.6f}")
-print(f"  Volume fraction: ({H**3-1}/{H**3})³ = {vol_frac:.4f} ({vol_frac*100:.1f}%)")
+print(f"\n  Framework constants:")
+print(f"    H = {H}")
+print(f"    K* = {K_STAR} = 7/30 = {7/30:.10f}")
+print(f"    BORN_FLOOR = 1/H³ = 1/{H**3} = {BORN_FLOOR:.10f}")
+print(f"    Δ_filter = -ln(1-K*) = {Delta_filter:.10f}")
+print(f"    Δ_gap = {Delta_gap:.10f} (paper's Jacobian eigenvalue)")
+print(f"    R_FS(CP³) = 2H(H+1) = {R_FS}")
 
-# ============================================================
-# Step 2: Geodesic radius
-# ============================================================
-print("\nStep 2: Geodesic radius in Fubini-Study metric")
 
-# CP³ with FS metric (holomorphic sectional curvature = 4):
-# Geodesic distance from origin to boundary:
-#   d = arccos(1/√(1+|w|²)) = arccos(1/√27)
-d = arccos(1.0 / sqrt(1.0 + R_sq))
-cos_d = 1.0 / sqrt(27)
-sin_d = sqrt(26.0 / 27.0)
+# ═══════════════════════════════════════════════════════════════
+#  Candidate expressions for Lambda
+# ═══════════════════════════════════════════════════════════════
 
-print(f"  d = arccos(1/√{1+R_sq}) = {d:.6f} rad = {np.degrees(d):.2f}°")
-print(f"  CP³ diameter: π/2 = {pi/2:.6f} rad = 90°")
-print(f"  d/(π/2) = {d/(pi/2):.4f}")
-print(f"  cos(d) = 1/√27,  sin(d) = √(26/27)")
+print(f"\n\n{'='*80}")
+print("CANDIDATE EXPRESSIONS FOR Λ")
+print("="*80)
 
-# ============================================================
-# Step 3: Extrinsic curvature of ∂B
-# ============================================================
-print("\nStep 3: Extrinsic curvature of ∂B in CP³")
+# In conformal gravity, the Einstein sector has:
+# Lambda = 3/l² where l is the de Sitter radius
+# The gap provides a mass scale: m = Δ/a (where a is lattice spacing)
+# Lambda ∝ m² in natural units → Lambda ∝ Δ²
 
-# In CPⁿ (real dim 2n), a geodesic sphere at radius d has principal curvatures:
-#   κ_real = cot(d)     (multiplicity 2n-2, real tangent directions)
-#   κ_Hopf = 2cot(2d)   (multiplicity 1, complex-normal/Hopf direction)
-#
-# For CP³ (n=3): ∂B is a real 5-manifold.
-#   κ_real = cot(d) = cos(d)/sin(d) = (1/√27)/(√(26/27)) = 1/√26
-#   κ_Hopf = 2cot(2d) = 2cos(2d)/sin(2d)
-#     cos(2d) = 2cos²(d)-1 = 2/27-1 = -25/27
-#     sin(2d) = 2sin(d)cos(d) = 2·√(26/27)·(1/√27) = 2√26/27
-#     κ_Hopf = 2·(-25/27)/(2√26/27) = -25/√26
+# But Lambda has units of 1/length², so we need:
+# Lambda = C × Δ² × (curvature factor)
 
-kappa_real = 1.0 / sqrt(26)
-kappa_Hopf = -25.0 / sqrt(26)
+candidates = {
+    # From filter rate
+    "Δ²_filter / R": Delta_filter**2 / R_FS,
+    "Δ²_filter × R": Delta_filter**2 * R_FS,
+    "3 Δ²_filter": 3 * Delta_filter**2,
 
-print(f"  κ_real = 1/√26 = {kappa_real:.8f}  (multiplicity 4)")
-print(f"  κ_Hopf = -25/√26 = {kappa_Hopf:.8f}  (multiplicity 1)")
+    # From gap
+    "Δ²_gap / R": Delta_gap**2 / R_FS,
+    "Δ²_gap × K*": Delta_gap**2 * K_STAR,
+    "3 Δ²_gap": 3 * Delta_gap**2,
 
-# Verify numerically
-kappa_real_num = cos_d / sin_d
-cos_2d = 2*cos_d**2 - 1
-sin_2d = 2*sin_d*cos_d
-kappa_Hopf_num = 2 * cos_2d / sin_2d
-print(f"  Verify: κ_real = {kappa_real_num:.8f}, κ_Hopf = {kappa_Hopf_num:.8f}")
+    # From K*
+    "K* × R": K_STAR * R_FS,
+    "K*² × R": K_STAR**2 * R_FS,
+    "K* × R / H³": K_STAR * R_FS / H**3,
+    "K*² × R × H": K_STAR**2 * R_FS * H,
 
-# Mean curvature (average of all 5 principal curvatures)
-H_mean = (4*kappa_real + kappa_Hopf) / 5
-print(f"\n  Mean curvature: H = (4·1/√26 + (-25/√26))/5 = -21/(5√26) = {H_mean:.8f}")
-print(f"  Exact: -21/(5√26) = {-21/(5*sqrt(26)):.8f}")
+    # From Born floor
+    "BORN × R": BORN_FLOOR * R_FS,
+    "BORN² × R": BORN_FLOOR**2 * R_FS,
 
-# ============================================================
-# Step 4: Scalar curvature of ∂B (Gauss equation)
-# ============================================================
-print("\nStep 4: Intrinsic scalar curvature of ∂B")
+    # Dimensionless combinations
+    "K*/H": K_STAR / H,
+    "K*²": K_STAR**2,
+    "BORN × K*": BORN_FLOOR * K_STAR,
+    "Δ_filter × K*": Delta_filter * K_STAR,
+    "Δ_gap × K*": Delta_gap * K_STAR,
 
-# Gauss equation for codim-1 in CP³:
-# R_∂B = R_CP³|_tangent + (tr A)² - |A|²
-#
-# For CP³: R = n(n+1)·4 = 3·4·4 = 48... wait.
-# Standard: CP^n with FS metric, holo sec curv = 4:
-#   Ric = 2(n+1)g, so R = 2n(n+1)·2 = ...
-# Actually for CP³: Ric = (n+1)·g_FS where g_FS has holo sec curv 4.
-# That gives Ric = 4·g_FS, so R = 4·dim_real = 4·6 = 24. OK R=24.
-#
-# The Gauss equation for a hypersurface M⁵ ⊂ CP³(R⁶):
-# K_M(X,Y) = K_CP³(X,Y) + <AX,Y><AY,X> - <AX,AY>...
-# this is getting complicated. Let me use the scalar version.
-#
-# R_M = R_N - 2Ric_N(ν,ν) + (tr A)² - |A|²
-# where ν is the unit normal.
+    # From the paper's structure
+    "7/(30 × 24)": 7 / (30 * 24),   # K*/R
+    "7²/(30² × 24)": 49 / (900 * 24),  # K*²/R
+    "(H²-H+1)/(H(H²+1)·2H(H+1))": (H**2-H+1) / (H*(H**2+1)*2*H*(H+1)),
+}
 
-# Ric_CP³ = 4g for our normalization (Ric = (n+1)c·g where c=holo sec curv/...
-# actually Ric = 2(n+1)g_FS for CP^n with g_FS having holo sec curv = 4)
-# For CP³(n=3): Ric = 2·4·g = 8g. Then R = 8·6 = 48? But paper says R=24.
-#
-# Let me be careful. The FS metric on CP^n with the convention that
-# the sectional curvature of holomorphic planes = 4:
-#   Ric = 2(n+1)g,  R = 2n·2(n+1) = 4n(n+1)
-# For n=3: R = 4·3·4 = 48.
-#
-# But the paper says R=24. This might be a different normalization.
-# The paper says "Fubini-Study curvature of CP³ (scalar curvature R=24)".
-# This corresponds to holo sec curv = 1 (not 4).
-# With holo sec curv = 1: Ric = (n+1)/2 · g, R = n(n+1) = 12.
-# Hmm, that gives 12 not 24.
-# With holo sec curv = 2: R = 2n(n+1) = 24. Yes.
-# So the paper uses holo sec curv = 2.
+print(f"\n  {'Expression':>35s} {'Value':>14s}")
+print("  " + "-" * 55)
 
-# Let me just work with R_CP³ = 24 as stated.
-# Ric = (R/dim)·g = (24/6)·g = 4g
-# Ric(ν,ν) = 4
+for name, val in sorted(candidates.items(), key=lambda x: x[1]):
+    print(f"  {name:>35s} {val:>14.8f}")
 
-R_CP3 = 24
-Ric_nu = R_CP3 / 6  # = 4, isotropic Ricci
 
-trA = 4*kappa_real + kappa_Hopf  # = (4-25)/√26 = -21/√26
-trA_sq = trA**2  # = 441/26
-A_sq = 4*kappa_real**2 + kappa_Hopf**2  # = (4+625)/26 = 629/26
+# ═══════════════════════════════════════════════════════════════
+#  The paper's specific formula
+# ═══════════════════════════════════════════════════════════════
 
-R_boundary = R_CP3 - 2*Ric_nu + trA_sq - A_sq
+print(f"\n\n{'='*80}")
+print("THE PAPER'S FORMULA STRUCTURE")
+print("="*80)
 
-print(f"  R_CP³ = {R_CP3}")
-print(f"  Ric(ν,ν) = {Ric_nu:.4f}")
-print(f"  (tr A)² = 441/26 = {trA_sq:.6f}")
-print(f"  |A|² = 629/26 = {A_sq:.6f}")
-print(f"  R_∂B = {R_CP3} - 2·{Ric_nu} + {trA_sq:.3f} - {A_sq:.3f}")
-print(f"       = {R_boundary:.6f}")
-print(f"  Exact: 24 - 8 + 441/26 - 629/26 = 16 - 188/26 = 16 - 94/13")
-print(f"       = (208-94)/13 = 114/13 = {114/13:.6f}")
-
-# ============================================================
-# Step 5: Penrose transform to S⁴
-# ============================================================
-print("\nStep 5: Map to base space S⁴")
-
-# The Penrose transform: the twistor fibration π: CP³ → S⁴ maps
-# CP³ curvature to S⁴ curvature. The fibre is CP¹.
-#
-# The key curvature for the cosmological constant is the SCALAR part
-# of the graviton sector. In the Maldacena reduction, Λ appears in
-# the Einstein equation as the scalar curvature of the vacuum:
-#   R_Einstein = 4Λ (in 4D: R = 2d/(d-2) · Λ = 4Λ for d=4)
-#
-# The Born floor picks a conformal factor. In the Penrose picture,
-# the "radius" of the base S⁴ is set by the geodesic properties of B.
-# The effective S⁴ radius ℓ satisfies:
-#   R_S⁴ = 12/ℓ² (S⁴ of radius ℓ has scalar curvature 12/ℓ²)
-#   Λ = 3/ℓ² (Einstein equation with cosmological constant)
-#
-# The extrinsic curvature κ_real = 1/√26 sets the scale:
-# ℓ ~ 1/κ_real (the curvature radius of the Born floor boundary
-# maps to the de Sitter radius)
-
-ell = 1.0 / kappa_real  # = √26
-Lambda = 3.0 / ell**2    # = 3/26
-
-print(f"  de Sitter radius: ℓ = 1/κ_real = √26 = {ell:.6f}")
-print(f"  Λ = 3/ℓ² = 3/26 = {Lambda:.8f}")
-print(f"  Exact: Λ = 3/(H³-1) = 3/26")
-
-# Alternative: use only the graviton-sector curvature
-# The graviton fraction at equilibrium is 51%
-print(f"\n  With graviton fraction (51%):")
-Lambda_grav = Lambda * 0.51
-print(f"  Λ_grav = 3/26 × 0.51 = {Lambda_grav:.8f}")
-
-# ============================================================
-# Step 6: Comparison with hierarchy tower
-# ============================================================
-print("\nStep 6: Comparison with hierarchy tower")
-
-S = 810.0 / 7  # instanton action
-g = (7.0/30) * (23.0/30)  # coupling
-
-print(f"  Λ_raw = 3/26 = {3/26:.6f}")
-print(f"  In natural units, this is the Λ of the DS vacuum (a geometric constant).")
-print(f"")
-print(f"  Hierarchy tower: Λ_CC/M_Pl⁴ ≈ g·exp(-S) = {g*np.exp(-S):.4e}")
-print(f"  This is the PHYSICAL Λ (ratio to Planck scale), not the geometric Λ.")
-print(f"  The geometric Λ = 3/26 is the natural-unit value.")
-print(f"  The physical Λ is suppressed by the instanton factor exp(-S).")
-print(f"")
-print(f"  If Λ_phys = Λ_geom × exp(-S):")
-print(f"    Λ_phys = (3/26)·exp(-810/7) = {(3/26)*np.exp(-S):.4e}")
-print(f"    log₁₀(Λ_phys) = {np.log10((3/26)*np.exp(-S)):.2f}")
-print(f"")
-print(f"  Observed: Λ_CC/M_Pl⁴ ≈ 10⁻¹²² → log₁₀ = -122")
-print(f"  Hierarchy tower at d=1: log₁₀(g·exp(-S)) = {np.log10(g*np.exp(-S)):.2f}")
-
-# ============================================================
-# Summary
-# ============================================================
-print("\n" + "=" * 70)
-print("SUMMARY")
-print("=" * 70)
 print(f"""
-  The Born floor boundary ∂B is a geodesic sphere in CP³ at radius
-  d = arccos(1/√27) ≈ {np.degrees(d):.1f}° (out of 90° max).
+  The paper says Lambda comes from the Maldacena reduction of
+  conformal gravity to Einstein gravity on S⁴.
 
-  Extrinsic curvature:
-    κ_real = 1/√26 ≈ {1/sqrt(26):.4f}  (4 real directions)
-    κ_Hopf = -25/√26 ≈ {-25/sqrt(26):.4f}  (Hopf fibre)
+  In conformal gravity on S⁴:
+    S = integral |W|² d⁴x (W = Weyl tensor)
+    The Einstein sector (selected by OS2, no ghosts) gives:
+    S_Einstein = (1/16πG) integral (R - 2Λ) √g d⁴x
 
-  Cosmological constant:
-    Λ = 3/(H³-1) = 3/26 ≈ {3/26:.6f}  (in natural DS units)
-    Sign: POSITIVE (de Sitter, Λ > 0)
+  The Maldacena argument: conformal gravity on S⁴ with the
+  round metric gives R = 12/l² (Ricci scalar of S⁴ radius l).
+  The ghost-free sector requires Λ > 0 (de Sitter).
 
-  This depends only on H = 3. Zero free parameters.
+  In the DS framework:
+    - The equilibrium mass m* determines a connection on CP³
+    - The Weyl tensor W is computed from the (3,3) component of ∂̄Φ
+    - The Einstein reduction uses the trace part (1,1) for conformal factor
+    - Lambda is determined by the RATIO of (1,1) to (3,3) components
 
-  The value 3/26 is the curvature of the boundary between
-  coherent information (reality) and incoherent information.
-  It is the shape of where meaning ends.
+  From our SO(4) sector analysis (Principle 35):
+    Identity crystal: (1,1) = 46.8%, (3,3) = 53.2%
+    Ratio: (1,1)/(3,3) = {46.8/53.2:.4f}
 
-  Physical Λ (with instanton suppression): (3/26)·exp(-810/7) ≈ 10⁻⁵¹
-  Observed: Λ_CC/M_Pl⁴ ≈ 10⁻¹²²
-  Gap: 71 orders of magnitude — the hierarchy tower at d=1 gives
-  a better estimate (10⁻⁵⁰·³).
+  This ratio may determine Lambda/R through the conformal-to-Einstein
+  reduction. The formula would be:
+    Lambda ∝ R_FS × [(1,1) fraction] / [(3,3) fraction]
+
+  With our numbers:
+    Lambda ∝ 24 × 0.468/0.532 = {24 * 0.468/0.532:.4f}
 """)
 
-# ============================================================
-# Exact algebraic values
-# ============================================================
-print("EXACT VALUES (algebraic, depends only on H=3):")
-print(f"  H³ - 1 = 26")
-print(f"  1/√26 = κ_real (extrinsic curvature, real directions)")
-print(f"  -25/√26 = κ_Hopf (extrinsic curvature, Hopf direction)")
-print(f"  3/26 = Λ (cosmological constant in natural units)")
-print(f"  114/13 = R_∂B (scalar curvature of Born floor boundary)")
+# The (1,1)/(3,3) ratio
+scalar_frac = 0.468
+graviton_frac = 0.532
+ratio = scalar_frac / graviton_frac
+
+print(f"  Scalar/Graviton ratio: {ratio:.6f}")
+print(f"  R × ratio = {R_FS * ratio:.4f}")
+print(f"  R × ratio / (4π) = {R_FS * ratio / (4 * math.pi):.4f}")
+
+# The ratio 0.468/0.532 ≈ 0.879... is it a clean fraction?
+# 0.468 + 0.532 = 1.000. So scalar = 0.468, graviton = 0.532.
+# Ratio ≈ 7/8 = 0.875? Close but not exact.
+# Or (H²-1)/H² = 8/9 = 0.889? Not exact either.
+
+# These fractions are seed-dependent (measured at seed 42).
+# Need to average over seeds for a clean result.
+
+print(f"\n  Is the ratio a clean fraction of H?")
+for num, den, name in [(7, 8, "7/8"), (8, 9, "8/9"), (13, 15, "13/15"),
+                        (26, 27, "26/27"), (23, 30, "23/30"),
+                        (H**2-1, H**2, "(H²-1)/H²"),
+                        (H**2, H**2+1, "H²/(H²+1)")]:
+    frac = num/den
+    print(f"    {name:>12s} = {frac:.6f} (diff = {abs(frac - ratio):.4f})")
+
+
+# ═══════════════════════════════════════════════════════════════
+#  Seed-averaged scalar/graviton ratio
+# ═══════════════════════════════════════════════════════════════
+
+print(f"\n\n{'='*80}")
+print("SEED-AVERAGED SCALAR/GRAVITON RATIO")
+print("="*80)
+
+import torch
+from solver.crystals import Entangler
+
+torch.set_grad_enabled(False)
+
+dim_sq = MASS_DIM * MASS_DIM
+swap = torch.zeros(dim_sq, dim_sq, dtype=torch.cfloat)
+for i in range(MASS_DIM):
+    for j in range(MASS_DIM):
+        swap[j * MASS_DIM + i, i * MASS_DIM + j] = 1.0
+
+P_sym = (torch.eye(dim_sq, dtype=torch.cfloat) + swap) / 2
+trace_vec = torch.zeros(dim_sq, dtype=torch.cfloat)
+for i in range(MASS_DIM):
+    trace_vec[i * MASS_DIM + i] = 1.0
+trace_vec = trace_vec / trace_vec.abs().pow(2).sum().sqrt()
+P_trace = torch.outer(trace_vec, trace_vec.conj())
+P_graviton = P_sym - P_trace
+P_anti = (torch.eye(dim_sq, dtype=torch.cfloat) - swap) / 2
+
+scalar_fracs = []
+graviton_fracs = []
+gauge_fracs = []
+
+corr = torch.eye(H, dtype=torch.float32)
+for seed in range(200):
+    ent = Entangler(corr, seed=seed).build()
+    v = ent.joint.reshape(dim_sq)
+    total = v.abs().pow(2).sum().item()
+    scalar_fracs.append((P_trace @ v).abs().pow(2).sum().item() / total)
+    graviton_fracs.append((P_graviton @ v).abs().pow(2).sum().item() / total)
+    gauge_fracs.append((P_anti @ v).abs().pow(2).sum().item() / total)
+
+s_avg = sum(scalar_fracs) / len(scalar_fracs)
+g_avg = sum(graviton_fracs) / len(graviton_fracs)
+a_avg = sum(gauge_fracs) / len(gauge_fracs)
+s_std = (sum((x-s_avg)**2 for x in scalar_fracs)/len(scalar_fracs))**0.5
+g_std = (sum((x-g_avg)**2 for x in graviton_fracs)/len(graviton_fracs))**0.5
+
+ratio_avg = s_avg / g_avg
+ratio_std = ratio_avg * ((s_std/s_avg)**2 + (g_std/g_avg)**2)**0.5
+
+print(f"  Identity crystal (200 seeds):")
+print(f"    Scalar (1,1):     {s_avg:.6f} ± {s_std:.6f}")
+print(f"    Graviton (3,3):   {g_avg:.6f} ± {g_std:.6f}")
+print(f"    Gauge Λ²:         {a_avg:.6f}")
+print(f"    Scalar/Graviton:  {ratio_avg:.6f} ± {ratio_std:.6f}")
+
+# Clean fraction check
+print(f"\n  Clean fraction candidates for scalar/graviton ratio:")
+for num, den, name in [(7, 8, "7/8"), (8, 9, "8/9"), (13, 15, "13/15"),
+                        (26, 27, "26/27"), (23, 30, "23/30"),
+                        (H**2-1, H**2, "(H²-1)/H²"),
+                        (H**2, H**2+1, "H²/(H²+1)"),
+                        (H, H+1, "H/(H+1)"),
+                        (1, 1, "1")]:
+    frac = num/den
+    sigma = abs(frac - ratio_avg) / ratio_std if ratio_std > 0 else float('inf')
+    marker = " ★" if sigma < 2 else " ◇" if sigma < 5 else ""
+    print(f"    {name:>12s} = {frac:.6f} ({sigma:.1f}σ){marker}")
+
+
+print(f"\n{'='*80}")
+print("FINDINGS")
+print("="*80)

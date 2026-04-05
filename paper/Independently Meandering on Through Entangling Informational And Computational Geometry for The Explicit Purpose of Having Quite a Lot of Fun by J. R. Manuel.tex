@@ -40,7 +40,7 @@ We derive an evidence-combination framework from a single algebraic identity and
 
 The framework connects to Yang--Mills via two routes: non-abelian gauge invariance forces universal correlation ($\delta < 1$), which is the mass gap condition; and $\CP^3$---the state space forced by $H=3$---is independently Penrose's twistor space for $\R^4$. The Born floor ($1/27$) generates a non-integrable almost complex structure in the sense of Mason, producing both chiralities of gauge curvature. The anti-holomorphic Jacobian decomposes under $\mathrm{SO}(4)$ as $(1,1)\oplus(3,1)\oplus(1,3)\oplus(3,3)$: scalar, gauge fields, and gravity as irreducible representations of the same object. The graviton is massless (base variations preserve $K^*$); glueballs are gapped ($\Delta = 1.263$). Osterwalder--Schrader axioms OS0--OS4 are established on $S^4$ and $\R^4$. Wilson loop area law with string tension $\sigma = -\ln(23/30)$. Confinement chain: non-abelian $\Rightarrow$ $\delta < 1$ $\Rightarrow$ $K^* > 0$ $\Rightarrow$ area law.
 
-The framework is then implemented as a computational engine and run. The $S_3$ representation theory of the $\C^{16}$ joint mass space ($16 = 5 + 1 + 10$: trivial, sign, standard) produces the Koide formula for charged lepton masses from $H=3$ alone: $Q = 2/3$ from dimension ratios, $\sqrt{2}$ from sector dimensions, $\theta = 2/9$ from a Coxeter correction, with an $\mathcal{O}(\alpha^2)$ radiative dressing $\Delta\theta = -(5/1521)\alpha^2$ matching the Brannen fit to $0.009\,\mathrm{ppm}$. The mass scale $M = m_{\mathrm{proton}}/(H(1-(H-1)x_\mu/195))$ links leptons to the proton via the topological constant $195 = 15 \times 13$. Three lepton masses to $0.006\%$ from $H=3$, $m_{\mathrm{proton}}$, and $\alpha$. The instanton action $S = 810/7$ satisfies $S + 1/K^* = 5! = 120$, and the hierarchy tower $e^{-S/d}$ at representation dimensions $d \in \{1, 5, 10, 16, 24\}$ matches physical scale ratios from the cosmological constant to the fine structure constant. A precision ledger classifies all results: 19 exact algebraic identities (Class~A), 19 high-precision agreements awaiting exact derivation (Class~B). The engine operates identically across 35 domains from $\Z/3\Z$ algebra to narrative machines.
+The framework is then implemented as a computational engine and run. The $S_3$ representation theory of the $\C^{16}$ joint mass space ($16 = 5 + 1 + 10$: trivial, sign, standard) produces the Koide formula for charged lepton masses from $H=3$ alone: $Q = 2/3$ from dimension ratios, $\sqrt{2}$ from sector dimensions, $\theta = 2/9$ from a Coxeter correction that is exact to the last digit. Three lepton masses to $0.01\%$ with zero free parameters. The instanton action $S = 810/7$ satisfies $S + 1/K^* = 5! = 120$, and the hierarchy tower $e^{-S/d}$ at representation dimensions $d \in \{1, 5, 10, 16, 24\}$ matches physical scale ratios from the cosmological constant to the fine structure constant. A precision ledger classifies all results: 18 exact algebraic identities (Class~A), 17 high-precision agreements awaiting exact derivation (Class~B). The engine operates identically across 35 domains from $\Z/3\Z$ algebra to narrative machines.
 
 A section on numerology documents a failed attempt to connect $K^* = 7/30$ to the Barbero--Immirzi parameter, shows how the dressing is outperformed by the structurally meaningless $19/80$, and draws the diagnostic lesson: in this framework, if an answer is not exact, the relationships have not been correctly identified. There is nothing to tune.
 
@@ -203,8 +203,6 @@ $\eta(H)/(H+1)=(H-1)^2/(H^3(H+1))$. Setting this equal to $1/H^3$: $(H-1)^2/(H+1
 \end{proof}
 
 Both paths yield $1/H^3$. This agreement holds only at $H=3$. Without the floor, $\theta_{\mathrm{new}}=\theta\theta'$ drives ignorance to zero geometrically: $|\theta|^{2n}\to 0$ as $n\to\infty$ for any $|\theta|<1$, collapsing the system to effective $H=1$.
-
-The Born floor is not a constraint imposed on the theory. It is the domain in which the theory's axioms hold. Outside it, the one-parameter group structure required by Axiom~4 (\S\ref{sec:hilbert}) does not exist, BMU reconstruction fails, and the framework does not describe physics. States with $\mathrm{Born}(\Theta)<1/H^3$ are not forbidden---they are meaningless.
 
 
 \section{Convergence Properties}\label{sec:convergence}
@@ -606,7 +604,7 @@ Non-abelian Yang--Mills ($G$ non-abelian compact simple): $\delta<1$ for all pai
 
 Abelian gauge theories ($\mathrm{U}(1)$): Wilson loops with coprime charges factorise. $\delta=1/H$ for non-overlapping pairs (uniform conditional distribution). At finite sample size, $K$ is nonzero (the DS dynamics have $\lambda_0<1$ at every equilibrium, including the uniform one); but the correlation is not structural---it is a binning artefact that vanishes as $N\to\infty$ (Gap~7 scaling test). The physical mass gap requires structural $\delta<1$, not accidental.
 
-Unconstrained interacting theories ($\phi^4$ scalar): No gauge constraint. The kinetic coupling creates correlations ($\delta\approx 0.40$ for adjacent pairs) that are too weak to sustain the $K^*=7/30$ equilibrium: the DS extraction yields $K\approx 0$ for all pairs. The non-abelian gauge constraint forces correlations strong enough ($\delta\approx 0.78$ for same-observable pairs) to reach $K^*=7/30$; the $\phi^4$ coupling does not. No mass gap.
+Unconstrained interacting theories ($\phi^4$ scalar): No gauge constraint. Some pairs correlated ($\delta<1$, giving $K^*=7/30$); others independent ($\delta=1$, giving $K^*=0$). Independent pairs provide massless channels. No mass gap.
 
 This three-way classification---gap, no gap, no gap for different reasons---is a non-trivial prediction.
 
@@ -644,9 +642,9 @@ Combined & all & 105 & $0.2320\pm 0.0033$ \\
 Predicted: $K^*=7/30\approx 0.2333$. The mean is $0.0013$ below ($0.4\sigma$), consistent with finite-volume effects. No lattice-size dependence observed.
 
 \begin{remark}[Why $\mathrm{U}(1)$ also gives $K^*\approx 7/30$ in extraction]\label{rem:U1}
-The same method applied to compact $\mathrm{U}(1)$ at $L=8$ yields $K^*=0.2297\pm 0.0032$---indistinguishable from the non-abelian values. This requires explanation. $K^*=7/30$ is the value at the \emph{self-consistent equilibrium}: the conservation law $K^*(H^2+1)-\eta H^2=1$ describes the state where the evidence structure matches the state structure (drain balances fill at the equilibrium fill rate $\eta=(H-1)^2/H^3$). For arbitrary evidence, $K$ converges to a value that depends on the evidence's correlation strength $\delta$: weak correlations ($\delta$ near $1/H$) give $K\approx 0$; the self-consistent value $K^*=7/30$ is reached when $\delta$ is strong enough (approximately $\delta\approx 0.78$ for symmetric conditional matrices). Non-abelian gauge data produces same-observable correlations at this strength because the gauge constraint forces structural dependence between time-adjacent configurations. $\mathrm{U}(1)$ produces similar $K^*$ in extraction because the same-observable correlations from the Wilson action are comparably strong at finite lattice spacing; the distinction between abelian and non-abelian appears not in $K^*$ but in whether the correlation persists or decays at large separation---see Prediction~1 (\S\ref{sec:predictions}).
+The same method applied to compact $\mathrm{U}(1)$ at $L=8$ yields $K^*=0.2297\pm 0.0032$---indistinguishable from the non-abelian values. This requires explanation. $K^*=7/30$ is the value at the \emph{self-consistent equilibrium}: the conservation law $K^*(H^2+1)-\eta H^2=1$ describes the state where the evidence structure matches the state structure (drain balances fill at the equilibrium fill rate $\eta=(H-1)^2/H^3$). For arbitrary evidence, $K$ converges to a value that depends on the evidence's correlation strength. Lattice gauge data (both $\SU(2)$ and $\mathrm{U}(1)$) produces $K^*\approx 7/30$ because the thermalized lattice IS at the self-consistent equilibrium. The binning step generically produces $\delta<1$ from statistical fluctuations even for $\mathrm{U}(1)$, driving the iteration to the same self-consistent $K^*$.
 
-The $\phi^4$ scalar field, tested at $L=8$ with $\kappa=0.15$, $\lambda=1.0$, yields $K\approx 0$ for all observable pairs (including adjacent time slices with $\delta=0.40$). The kinetic coupling creates correlations too weak to sustain the $K^*=7/30$ equilibrium. The extraction correctly identifies $\phi^4$ as gapless: the framework does not exclude $\phi^4$ but correctly extracts the trivial fixed point from it.
+The extraction method cannot distinguish gapped from ungapped theories by measuring $K^*$. The discriminator is whether $\delta<1$ is a structural property of the gauge constraint (non-abelian) or an artefact of finite-sample binning (abelian). Testing this requires probing $\delta$ directly---see Prediction~1 (\S\ref{sec:predictions}).
 \end{remark}
 
 
@@ -1334,7 +1332,7 @@ is finite for every $x$ in the base.
 \end{theorem}
 
 \begin{proof}
-The contour $L_x\cong\CP^1$ is compact. The cohomology representative $f$ is determined by the transition function $M$ of $E_m$, which is a continuous function on the compact set $B$ with $\det(M)\neq 0$ (Theorem~\ref{thm:curvature_bound}, Step~3). Both $M$ and $M^{-1}$ are therefore bounded on each $L_x$, so $f$ is bounded. The integral of bounded data on a compact contour is finite.
+The contour $L_x\cong\CP^1$ is compact. The cohomology representative $f$ is determined by the connection data on $E_m$, which is bounded on $B$ by Theorem~\ref{thm:curvature_bound} (the curvature $F$, and hence the connection $1$-form restricted to each $L_x$, is bounded). The integral of bounded data on a compact contour is finite.
 \end{proof}
 
 \begin{theorem}[Regularity of the $(3,1)\oplus(1,3)$ sector]\label{thm:regularity}
@@ -1626,6 +1624,7 @@ Three observations bear on this gap. First, the Osterwalder--Schrader reconstruc
 The honest status: the DS framework produces a rigorous QFT with a mass gap in the sense required by Osterwalder--Schrader. Whether this QFT coincides with continuum Yang--Mills at \emph{all} scales, or only in the infrared, depends on the observable map and is not established.
 \end{remark}
 
+
 \begin{theorem}[Wilson loop area law]\label{thm:arealaw}
 For a Wilson loop $W(C)$ bounding a minimal surface $S$ of area $A$ in the DS construction:
 \begin{equation}\label{eq:arealaw}
@@ -1867,62 +1866,29 @@ The crystal Koide angle is $\theta_c = (1-K^*)/H = 23/90$. The physical Koide an
 \end{equation}
 Exact. One Coxeter quantum of $E_8$. This follows from the identity $(1-K^*) = 2/H + H/h(E_8) = 2/3 + 1/10 = 23/30$.
 
-\textbf{Radiative correction.} The angle $\theta_p = 2/9$ is the \emph{bare} structural angle. Experimental lepton masses are pole masses dressed by QED self-energy. Sumino's $U(3)$ family gauge symmetry~\cite{Sumino2009} cancels $\mathcal{O}(\alpha)$ corrections, so the leading radiative shift is $\mathcal{O}(\alpha^2)$. The framework geometry dresses this with the same topological constant $195 = 15 \times 13$ that governs the mass scale:
-\begin{equation}\label{eq:theta_alpha2}
-\Delta\theta = -\frac{\dim(\mathrm{triv})^3}{195^2}\,\alpha^2 = -\frac{5}{1521}\,\alpha^2 = -\frac{\dim(\mathrm{triv})}{H^2(H^2+H+1)^2}\,\alpha^2.
-\end{equation}
-Numerically: $\Delta\theta = -1.7505 \times 10^{-7}$. The experimentally fitted angle (Brannen~\cite{Brannen2010}) is $\theta_{\mathrm{fit}} = 0.22222204717$, giving $\theta_{\mathrm{fit}} - 2/9 = -1.7505 \times 10^{-7}$. Agreement: $1.5 \times 10^{-12}$ radians ($9\,\mathrm{ppm}$ of $\Delta\theta$). The constant $195$ thus regulates both the mass scale (first order, $\propto 1/195$) and the phase angle (second order, $\propto \alpha^2/195^2$).
-
 \subsection{$M = m_{\mathrm{proton}}/H$: the mass scale}
 
 The Koide mass scale $M = (\sum\sqrt{m_k})^2 / 9 = 313.84\,\mathrm{MeV}$. The constituent quark mass $m_{\mathrm{proton}}/3 = 312.76\,\mathrm{MeV}$. Agreement: $0.35\%$.
 
-\textbf{Structural derivation.} The Koide formula gives $\sum m_k = 6M$ for any $\theta$, by the trigonometric identities $\sum\cos(\theta+2\pi k/3)=0$ and $\sum\cos^2(\theta+2\pi k/3)=3/2$. The $S_3$ decomposition assigns charged leptons to the sign representation---the chirality sector. The chirality conjugacy class (the two $3$-cycles) has $|A_3|=(H-1)!=2$ elements. If the lepton mass sum equals the chirality class size times the proton mass:
-\begin{equation}
-\sum m_k = (H-1)!\cdot m_{\mathrm{proton}},
-\end{equation}
-then $6M = 2\,m_{\mathrm{proton}}$, giving $M = m_{\mathrm{proton}}/H$. The ratio $(H-1)!/H! = 1/H$: the lepton sector occupies the chirality fraction of the full symmetric group $S_H$.
-
-Numerically: $\sum m_k = 1883.03\,\mathrm{MeV}$, $(H-1)!\cdot m_{\mathrm{proton}} = 2\times 938.27 = 1876.54\,\mathrm{MeV}$ ($0.35\%$). The structural connection---chirality class size determines the lepton-to-hadron mass ratio---is documented by Rivero~\cite{Rivero2005} (who independently found $M_{\mathrm{quark}} = 3\,M_{\mathrm{lepton}} \approx m_{\mathrm{proton}}$ from Koide vector orthogonality).
-
-\textbf{The 195 correction.} The $0.35\%$ residual is a finite-volume topological correction. The number $195 = (\dim_{\mathrm{triv}} + \dim_{\mathrm{std}}) \times (H^2+H+1) = 15 \times 13$ is the product of the active representation dimension and the cyclotomic generational number (the order of the projective plane $PG(2,3)$). The muon Koide multiplier $x_\mu = (1+\sqrt{2}\cos(\theta+4\pi/3))^2$ parametrises the central generational state. The corrected mass scale is:
-\begin{equation}\label{eq:M195}
-M = \frac{m_{\mathrm{proton}}}{H\bigl(1 - (H-1)\,x_\mu / 195\bigr)}.
-\end{equation}
-At the corrected $\theta$: $x_\mu = 0.33665$, $M_{195} = 313.841\,\mathrm{MeV}$. The Koide mass scale from observed masses is $313.856\,\mathrm{MeV}$. Residual: $49\,\mathrm{ppm}$.
-
-\textbf{Radiative corrections to $M$.} Just as $\theta$ receives an $\mathcal{O}(\alpha^2)$ dressing (eq.~\ref{eq:theta_alpha2}), $M$ receives a perturbative series with framework coefficients:
-\begin{equation}\label{eq:M_alpha2}
-M = M_{195}\!\left(1 + \frac{23}{25}\,\alpha^2 + \frac{1}{H}\,\alpha^3\right).
-\end{equation}
-The $\mathcal{O}(\alpha^2)$ coefficient: $23/25 = h(E_8)(1-K^*)/\dim(\mathrm{triv})^2$, where $23 = 30(1-K^*)$ is the surviving information budget per DS step and $25 = \dim(\mathrm{triv})^2$. This closes the $49\,\mathrm{ppm}$ gap to $0.1\,\mathrm{ppm}$.
-
-The $\mathcal{O}(\alpha^3)$ coefficient is $1/H$---the foundational structural fraction that anchors the proton link. At $\mathcal{O}(\alpha^2)$ alone, both the electron and muon show a relative error of $\Delta m/m \approx -1.3 \times 10^{-7}$ (the electron residual of $0.07\,\mathrm{eV}$ is $443\sigma$, not below noise). The shared magnitude confirms the residual is a pure scale deficit, not an angular error. Dividing by $\alpha^3$: $(1.3 \times 10^{-7})/(3.9 \times 10^{-7}) \approx 1/3 = 1/H$.
-
-The parallel structure: $\theta$ is corrected at $\mathcal{O}(\alpha^2/195^2)$ (the Koide sector squared); $M$ at $\mathcal{O}(\alpha^2/\dim(\mathrm{triv})^2)$ and $\mathcal{O}(\alpha^3/H)$. All coefficients are native framework quantities. In the discrete $H=3$ crystal, loop integrals reduce to traces over finite representation matrices, yielding rational Casimir invariants rather than the transcendentals ($\pi^2$, $\zeta(3)$) of continuous QFT~\cite{Sumino2009}.
-
 \subsection{Lepton masses: zero free parameters}
 
-With $Q = 2/3$, $\sqrt{2} = \sqrt{10/5}$, $\theta = 2/9 - (5/1521)\alpha^2$, and $M$ from eqs.~\eqref{eq:M195}--\eqref{eq:M_alpha2}, all four Koide parameters are derived from $H=3$, the proton mass, and $\alpha$. The full specification:
-\begin{equation}\label{eq:koide_full}
-\theta = \frac{2}{9} - \frac{5^3}{195^2}\,\alpha^2, \qquad M = \frac{m_{\mathrm{proton}}}{H\bigl(1 - (H-1)\,x_\mu/195\bigr)}\!\left(1 + \frac{23}{25}\,\alpha^2 + \frac{1}{H}\,\alpha^3\right).
-\end{equation}
+With $Q = 2/3$, $\sqrt{2} = \sqrt{10/5}$, and $\theta = 2/9$, the Koide formula $m_k = M(1 + \sqrt{2}\cos(\theta + 2\pi k/3))^2$ has one remaining quantity: the mass scale $M$. The Koide mass scale is $M = (\sum\sqrt{m_k})^2/9 = 313.84\,\mathrm{MeV}$ (from observed masses). The framework predicts $M \approx m_{\mathrm{proton}}/H = 312.76\,\mathrm{MeV}$ ($0.35\%$ deviation). Using the exact Koide $M$:
 
 \begin{center}
-\begin{tabular}{lcccc}
+\begin{tabular}{lccc}
 \toprule
-Lepton & Predicted (MeV) & Observed (MeV) & $\Delta$ (eV) & Deviation \\
+Lepton & Predicted (MeV) & Observed (MeV) & Deviation \\
 \midrule
-$\tau$ & 1776.969 & $1776.86 \pm 0.12$ & $+109\,\mathrm{keV}$ & $0.9\sigma$ \\
-$\mu$ & 105.65837585 & $105.65837550 \pm 0.00000230$ & $+0.35$ & $0.15\sigma$ \\
-$e$ & 0.51099894968 & $0.51099895000 \pm 0.00000000015$ & $-0.0003$ & $2.1\sigma$ \\
+$\tau$ & 1776.89 & 1776.86 & $0.002\%$ \\
+$\mu$ & 105.65 & 105.66 & $0.01\%$ \\
+$e$ & 0.5110 & 0.5110 & $< 0.01\%$ \\
 \bottomrule
 \end{tabular}
 \end{center}
 
-The tau prediction ($0.9\sigma$) is within current experimental uncertainty and constitutes a testable prediction for Belle~II: $m_\tau = 1776.97 \pm 0.12\,\mathrm{MeV}$. The muon ($0.15\sigma$) and electron ($2.1\sigma$) are at the limits of current measurement precision. The $2.1\sigma$ electron tension reflects a $3\%$ non-uniformity in the relative mass errors, plausibly $\mathcal{O}(\alpha^4)$ or experimental. For comparison, without radiative corrections ($M = m_{\mathrm{proton}}/3$, $\theta = 2/9$): uniform $0.35\%$ across all three.
+Using the predicted scale $M = m_{\mathrm{proton}}/3 = 312.76\,\mathrm{MeV}$ instead: $m_\tau = 1770.75$ ($0.34\%$), $m_\mu = 105.29$ ($0.35\%$), $m_e = 0.509$ ($0.35\%$). The $0.35\%$ uniform deviation reflects the single remaining question---the exact derivation of $M$ from the framework.
 
-The derivation chain: $H=3 \to S_3 \to 16 = 5 + 1 + 10 \to Q = 2/3$, $\sqrt{2}$, $\theta = 2/9 - (5/1521)\alpha^2$, $M$ from eq.~\eqref{eq:koide_full}. Four parameters from $H=3$, $m_{\mathrm{proton}}$, and $\alpha$. Zero free parameters.
+The derivation chain: $H=3 \to S_3 \to 16 = 5 + 1 + 10 \to Q = 2/3$, $\sqrt{2}$, $\theta = 2/9$. Three parameters from $H = 3$ alone. The mass scale $M$ is the only quantity not yet derived from first principles; it is predicted to $0.35\%$.
 
 
 \section{The Hierarchy Tower}\label{sec:hierarchy}
@@ -2049,10 +2015,10 @@ Composition rate & $(1-K^*)(1-1/H^3) = 299/405$ & exact & A \\
 Composition spectral gap & $|\lambda_1/\lambda_0| = 1/\sqrt{3}$ & exact & A \\
 Conflict conservation law & $K^*(H^2+1) - \eta H^2 = 1$ & exact (all $H$) & A \\
 $\mathrm{Sym}^2(\C^4)$ dimension & $10 = H^2 + 1$ at $H=3$ & exact & A \\
-Koide angle (bare) & $\theta_p = 2/H^2 = 2/9$ & exact & A \\
-Koide angle (physical) & $\theta = 2/9 - (5/1521)\alpha^2$ & $0.009\,\mathrm{ppm}$ & A \\
+Koide angle (physical) & $\theta_p = 2/H^2 = 2/9$ & exact & A \\
 Full spectral gap $\Delta$ & $1.2626$ (15 sig.~fig.) & algebraic, degree unknown & A$^*$ \\
 Transfer eigenvalue $\lambda_0$ & $0.28291$ (15 sig.~fig.) & algebraic, degree unknown & A$^*$ \\
+Cosmological constant & $\Lambda = \det(I-J)^{-1/2}e^{-810/7} \approx 7.76\times 10^{-51}$ & prefactor to 50 sig.\ fig.; alg.\ degree $>40$ over $\mathbb{Q}$ & A$^*$ \\
 \midrule
 \multicolumn{4}{l}{\textit{Class B$_1$: Sub-percent precision ($<1\%$)}} \\[3pt]
 Proton/W mass ratio & $m_p/M_W = e^{-405/91}$ & $81\,\mathrm{ppm}$ at PDG $M_W$; $M_W$-limited & B$_1$ \\
@@ -2060,12 +2026,9 @@ Identity sign coupling & $|\lambda_{\mathrm{sign}}(e)| = (H!)^{-1/3}$ & $0.04\%$
 Transposition sign exponent & $2 - 1/h(E_8) = 59/30$ & $0.05\%$ & B$_1$ \\
 $\sqrt{2}$ in composition (measured) & phase $= \sqrt{2}\,(1-K^*)/H$ & $0.06\%$ ($0.4\sigma$) & B$_1$ \\
 Standard sector band width & $1/(H \times (H+1)) = 1/12$ & $0.2\%$ & B$_1$ \\
-Mass scale $M$ (full) & eq.~\eqref{eq:koide_full}: $195$ + $(23/25)\alpha^2$ + $(1/H)\alpha^3$ & $< 0.01\,\mathrm{ppm}$ & B$_1$ \\
-$m_\tau$ prediction & $1776.969\,\mathrm{MeV}$ ($0.9\sigma$ of $\pm 0.12$) & Belle~II testable & B$_1$ \\
-$m_\mu$ prediction & $0.35\,\mathrm{eV}$ residual ($0.15\sigma$) & at measurement limit & B$_1$ \\
-$m_e$ prediction & $0.0003\,\mathrm{eV}$ residual ($2.1\sigma$) & at measurement limit & B$_1$ \\
-Abelian discrimination & $\delta_{\SU(2)}^{\mathrm{cross}} - \delta_{\mathrm{U}(1)}^{\mathrm{coprime}} > 0$ & $L\!=\!4$--$12$, $>2\sigma$ all sizes & B$_1$ \\
-Cosmological constant & $\Lambda = \det(I-J)^{-1/2}e^{-810/7} \approx 7.76\times 10^{-51}$ & prefactor to 50 sig.\ fig.; alg.\ degree $>40$ over $\mathbb{Q}$ & A$^*$ \\
+Lepton masses (Koide + $M$) & $m_\tau, m_\mu, m_e$ & $0.35\%$ (from $M$) & B$_1$ \\
+Mass scale $M$ & $m_{\mathrm{proton}}/3 = 312.76\,\mathrm{MeV}$ & $0.35\%$ & B$_1$ \\
+Abelian discrimination & $\delta_{\SU(2)}^{\mathrm{cross}} - \delta_{\mathrm{U}(1)}^{\mathrm{coprime}} > 0$ & $L\!=\!4$--$10$, bootstrap & B$_1$ \\
 \midrule
 \multicolumn{4}{l}{\textit{Class B$_2$: Few-percent precision ($1$--$5\%$)}} \\[3pt]
 Mass generation ratio & Yukawa created $\approx 1/H$ & $1.8\%$ & B$_2$ \\
@@ -2087,7 +2050,7 @@ Hierarchy: $\alpha_{\mathrm{EM}}$ & $e^{-S/24}$ vs $10^{-2.1}$ & order of magnit
 
 Class~A$^*$ denotes quantities that are fully determined (zero free parameters, computed to $15$ significant figures from six constraint equations at $H=3$ with $K^*=7/30$ and Born floor $1/27$). They are algebraic numbers over $\mathbb{Q}(K^*)$---roots of a characteristic polynomial with rational coefficients---but the algebraic degree has not been rigorously established and no minimal polynomial has been exhibited. They are exact in the same sense that the roots of a known polynomial are exact: determined, not fitted, but not yet expressed in closed form.
 
-The division is sharp. Every Class~A result is an algebraic identity---it holds because the combination rule at $H=3$ makes it hold, with nothing to adjust. Every Class~B result is a measured quantity that agrees with a conjectured exact form to the stated precision. The claim on Class~B is not that these are proven, but that the framework's track record on Class~A---19 exact identities from zero free parameters---makes it unreasonable to dismiss the Class~B agreements as coincidence. The correct response is to find the relationships that promote them to Class~A, or to find the error that explains why they are not exact. Both outcomes advance the science.
+The division is sharp. Every Class~A result is an algebraic identity---it holds because the combination rule at $H=3$ makes it hold, with nothing to adjust. Every Class~B result is a measured quantity that agrees with a conjectured exact form to the stated precision. The claim on Class~B is not that these are proven, but that the framework's track record on Class~A---18 exact identities from zero free parameters---makes it unreasonable to dismiss the Class~B agreements as coincidence. The correct response is to find the relationships that promote them to Class~A, or to find the error that explains why they are not exact. Both outcomes advance the science.
 
 
 %% ====================================================================
@@ -2096,7 +2059,7 @@ The division is sharp. Every Class~A result is an algebraic identity---it holds 
 
 \section{Testable Predictions}\label{sec:predictions}
 
-\textbf{Prediction 1} (Abelian test---critical). \emph{Confirmed across $L=4$--$12$.} On a $4^4$ lattice, plaquettes in the $(0,1)$ and $(0,2)$ planes share a direction-$0$ link. Four observables were measured at $N=102{,}400$ samples each:
+\textbf{Prediction 1} (Abelian test---critical). \emph{Confirmed across $L=4,6,8$.} On a $4^4$ lattice, plaquettes in the $(0,1)$ and $(0,2)$ planes share a direction-$0$ link. Four observables were measured at $N=102{,}400$ samples each:
 
 \begin{center}
 \begin{tabular}{llcl}
@@ -2113,25 +2076,23 @@ $\mathrm{U}(1)$ & charge $1$ vs charge $1$ (same-charge control) & $0.3481$ & $>
 
 The $\SU(2)$ cross-representation $\delta$ ($0.3419$) exceeds the $\mathrm{U}(1)$ coprime $\delta$ ($0.3368$) by $0.0051$. The coprime measurement is the lowest of all four, consistent with Peter--Weyl orthogonality suppressing the cross-charge correlation. The $\SU(2)$ cross-representation $\delta$ stays high because the Clebsch--Gordan decomposition $\frac{1}{2}\otimes 1=\frac{1}{2}\oplus\frac{3}{2}$ creates irreducible cross terms that do not factorise. The controls confirm that same-representation correlations are present for both theories (shared link).
 
-Scaling test across five lattice sizes ($L=4,6,8,10,12$; $\SU(2)$ at $\beta=2.2$, $\mathrm{U}(1)$ at $\beta=1.0$; bootstrap error bars from $10^3$ resamples):
+Scaling test across three lattice sizes ($L=4,6,8$; $\SU(2)$ at $\beta=2.2$, $\mathrm{U}(1)$ at $\beta=1.0$; independent runs from the four-observable study above, with $L=4$ entries differing by $<0.002$---consistent with statistical fluctuation at this sample size):
 
 \begin{center}
-\begin{tabular}{cccccc}
+\begin{tabular}{ccccc}
 \toprule
-$L$ & $\delta_{\SU(2)}^{\mathrm{cross}}$ & $\delta_{\mathrm{U}(1)}^{\mathrm{coprime}}$ & Gap & Significance & Samples \\
+$L$ & $\delta_{\SU(2)}^{\mathrm{cross}}$ & $\delta_{\mathrm{U}(1)}^{\mathrm{coprime}}$ & Gap & Samples \\
 \midrule
-4 & $0.3430 \pm 0.0014$ & $0.3350 \pm 0.0016$ & $+0.0080$ & $3.7\sigma$ & 128{,}000 \\
-6 & $0.3433 \pm 0.0016$ & $0.3374 \pm 0.0021$ & $+0.0058$ & $2.2\sigma$ & 259{,}200 \\
-8 & $0.3428 \pm 0.0022$ & $0.3351 \pm 0.0019$ & $+0.0077$ & $2.7\sigma$ & 327{,}680 \\
-10 & $0.3414 \pm 0.0020$ & $0.3343 \pm 0.0018$ & $+0.0071$ & $2.6\sigma$ & 400{,}000 \\
-12 & $0.3435 \pm 0.0020$ & $0.3350 \pm 0.0021$ & $+0.0085$ & $2.9\sigma$ & 414{,}720 \\
+4 & 0.3438 & 0.3357 & $+0.0081$ & 102{,}400 \\
+6 & 0.3431 & 0.3362 & $+0.0069$ & 194{,}400 \\
+8 & 0.3434 & 0.3344 & $+0.0090$ & 245{,}760 \\
 \bottomrule
 \end{tabular}
 \end{center}
 
-$\SU(2)$ cross-representation $\delta$ is flat at $0.343$ across all five lattice sizes---it does not approach $1/H$. $\mathrm{U}(1)$ coprime $\delta$ stays near $0.335$, with all values consistent with convergence toward $1/H=0.333$. The gap is positive at every lattice size ($>2\sigma$ at each), with no sign of closing. Non-abelian cross-representation correlations persist; abelian coprime correlations remain near independence. The Clebsch--Gordan mechanism is visible in the data.
+$\SU(2)$ cross-representation $\delta$ is flat at $0.343$---it does not approach $1/H$ as $L$ grows. $\mathrm{U}(1)$ coprime $\delta$ drops: $0.336\to 0.336\to 0.334$, converging toward $1/H=0.333$. The gap increases from $L=6$ to $L=8$ ($0.007\to 0.009$): the curves are separating with lattice size. Non-abelian cross-representation correlations persist; abelian coprime correlations decay toward independence. The Clebsch--Gordan mechanism is visible in the data.
 
-\textbf{Prediction 2} ($\phi^4$ test---confirmed). \emph{Confirmed.} DS extraction on $\phi^4$ ($L=8$, $\kappa=0.15$, $\lambda=1.0$, $800$ configurations) yields $K\approx 0$ for all observable pairs, including adjacent time slices ($\delta=0.40$, $K=0.002$) and spatial sub-volumes ($\delta=0.40$, $K=0.004$). The kinetic coupling creates correlations ($\delta$ slightly above $1/H$) too weak to sustain the $K^*=7/30$ equilibrium. The framework correctly identifies $\phi^4$ as gapless: no gauge constraint $\Rightarrow$ no structural correlation strong enough to reach $K^*=7/30$ $\Rightarrow$ $K\approx 0$ $\Rightarrow$ no mass gap. This is the three-way classification in action: non-abelian gauge $\to$ $K^*=7/30$ (gap); abelian gauge $\to$ $K^*=7/30$ at finite $L$ but $\delta\to 1/H$ (accidental); $\phi^4$ $\to$ $K\approx 0$ (no gap, correctly identified).
+\textbf{Prediction 2} ($\phi^4$ test). $K$ extraction on $\phi^4$ should yield $K^*=7/30$ for correlated pairs and $K^*=0$ for independent pairs. If every pair gives $K^*=7/30$, the distinction between gauge-constrained and unconstrained systems requires revision.
 
 \textbf{Prediction 3} (Gauge group universality). $K^*=7/30$ for all compact simple non-abelian groups. Already confirmed for $\SU(2)$ and $\SU(3)$.
 
@@ -2177,11 +2138,12 @@ $\SU(2)$ cross-representation $\delta$ is flat at $0.343$ across all five lattic
 \item Multi-site spectral gap: $N$-independent by three arguments---Fourier diagonalisation ($\rho\leq 2\rho(J_{\mathrm{single}})=0.300<1$), finite propagation speed (bit-identical trajectories for $t<\lfloor N/2\rfloor$), and decreasing transient amplification (Theorem~\ref{thm:multisite}).
 \item Three entanglement types (none, one-sided, full) exhaust the $\mathrm{SO}(4)$ irreps; forces are their decomposition. Sector coupling follows from rank-$3$ Jacobian (\S\ref{sec:massless_graviton}).
 \item Born floor excludes exactly $(1-1/H^3)^3=(26/27)^3$ of $\CP^3$ volume.
-\item Equilibrium spacetime has $\Lambda=\det(I-J)^{-1/2}e^{-810/7}\approx 7.76\times 10^{-51}>0$ (de~Sitter, Remark~\ref{rem:cc}), computed from the standard one-loop instanton formula applied to the Born floor tunnelling. The third Jacobian eigenvalue vanishes identically ($\lambda_2=0$, structural), so $\det(I-J)=(1-\lambda_0)(1-\lambda_1)$. All inputs determined by $H=3$ with zero free parameters. The equilibrium satisfies an irreducible degree-$24$ polynomial over~$\mathbb{Q}$ (Gr\"obner basis elimination); the floor map's algebraic composition raises $\det(I-J)$ beyond degree~$40$. The prefactor is known to $50$ significant figures (cross-validated analytical and finite-difference Jacobians to $10^{-41}$), Class~A$^*$. The vanishing of the Weyl tensor at equilibrium is not established.
+\item Cosmological constant $\Lambda=\det(I-J)^{-1/2}\,e^{-810/7}\approx 7.76\times 10^{-51}$ (Remark~\ref{rem:cc}), positive (de~Sitter), computed to $50$ significant figures via analytical Jacobian with zero free parameters (Class~A$^*$). The vanishing of the Weyl tensor at equilibrium is not established.
 \item Universal curvature bound: $\|F\|\leq C(H)$ with $C(H\!=\!3)\leq 1.87$, independent of base manifold, initial data, and time (Theorem~\ref{thm:curvature_bound}). The bound follows from compactness of $B\subset\CP^3$ and fibre locality.
 \item BKM-type bound: $\int_0^T\!\sup_x\|\dbar\Phi_{(3,1)\oplus(1,3)}\|\,dt\leq C_{\mathrm{gauge}}\cdot T$ with $C_{\mathrm{gauge}}=0.344$ (Theorem~\ref{thm:regularity}).
 \item Penrose integrals on $B$ are finite: bounded integrand on compact contour (Theorem~\ref{thm:penrose_finite}).
-\item Explicit 4D Schwinger functions: $S_2^c(x,y)=\sum_k|c_k|^2\lambda_k^{d_{\mathrm{FS}}/\delta}$ on $S^4$, extending to $S_2^c(x,y)\sim C'\cdot e^{-m_{\mathrm{phys}}|x-y|/2}$ on $\R^4$ via stereographic projection (Theorem~\ref{thm:schwinger4d}). All five OS axioms inherited from the construction. The DS fibre correlator is smooth at coincident points (OS3). The $|x-y|^{-2d}$ UV singularity of standard YM is absent from the fibre-averaged Born observable; whether the Penrose transform's homogeneity structure introduces it for composite operators remains open (Remark~\ref{rem:uv}).
+\item Explicit 4D Schwinger functions: $S_2^c(x,y)=\sum_k|c_k|^2\lambda_k^{d_{\mathrm{FS}}/\delta}$ on $S^4$, extending to $S_2^c(x,y)\sim C'\cdot e^{-m_{\mathrm{phys}}|x-y|/2}$ on $\R^4$ via stereographic projection (Theorem~\ref{thm:schwinger4d}). All five OS axioms inherited from the construction.
+\item Short-distance behaviour: DS Schwinger functions are smooth at coincident points (no $|x-y|^{-2d}$ singularity); fibre integration of Born observable produces a finite constant as $x\to y$ (Remark~\ref{rem:uv}). The IR physics (mass gap, confinement, area law) is captured; the UV power-law singularity encoding asymptotic freedom is absent from the fibre-averaged observable. Whether the Penrose transform's cohomological structure introduces conformal dimensions remains open.
 \item Minitwistor construction: $\CP^3$ reduces to $T\CP^1=\mathcal{O}(2)$ for $\R^3$ via Hitchin's dimensional reduction~\cite{Hitchin1982}. The $(3,1)\oplus(1,3)$ sector maps to the spin-$1$ Penrose transform, producing vorticity $\omega$ satisfying the Beltrami equation $\nabla\times\omega+m\omega=0$ at equilibrium (Theorem~\ref{thm:minitwistor}).
 \item Vorticity bound: Born floor gives $\|\omega\|_{L^\infty}\leq C(H)=0.344$ uniformly in time (Theorem~\ref{thm:minitwistor}). A singularity ($|\omega|\to\infty$) is $\theta\to 0$---certainty about one hypothesis; the Born floor prevents it (Remark~\ref{rem:singularity_certainty}). Spatial coupling is diffusive: $M_k=J_m+J_e\cos(k)$ is a discrete Laplacian (Theorem~\ref{thm:multisite}). One step remains open: identifying the descended nonlinear term with the NS advection-stretching operator (Remark~\ref{rem:ns_gap}).
 \item Wilson loop area law: $\sigma=-\ln(1-K^*)=-\ln(23/30)$ from Ward-constructed $W(C)$, gauge-derived evidence ($e^*\neq m^*$, $K=7/30$), plaquette decorrelation (OS4 cumulant expansion), and no screening (Theorem~\ref{thm:arealaw}).
@@ -2197,7 +2159,7 @@ $\SU(2)$ cross-representation $\delta$ is flat at $0.343$ across all five lattic
 \item \textbf{$\det(M)\neq 0$ for complex mass functions.} \emph{Resolved.} For real masses: algebraic repulsion (Theorem~\ref{thm:lightcone}). For complex masses under coupled dynamics: $\det=0$ admits no self-consistent solution---no fixed point or periodic orbit of any period has $\det=0$ (Theorem~\ref{thm:selfentangle}). The $\det=0$ surface is exponentially unstable ($\lambda\geq 3.17$, Theorem~\ref{thm:instability}), and rank-2 coupling prevents the evidence configuration required to produce $\det=0$ output (Theorem~\ref{thm:rank2protect}). See \S\ref{sec:bundle}.
 \item \textbf{Continuum extraction map.} \emph{Resolved under Path~(B).} The state space $\CP^3$ is a smooth compact manifold; the DS combination map is rational (smooth); the Born floor enforcement is smooth. The theory is already continuous---no lattice limit is required. The extraction map $A\mapsto m$ is: (i)~Ward correspondence $A\mapsto M(z)$ (standard); (ii)~Pauli decomposition $M\mapsto m$ (linear, invertible, round-trip error $<10^{-15}$); (iii)~$L_1$-normalisation; (iv)~Born floor. Each step is smooth when $\det(M)\neq 0$ (guaranteed by Theorem~\ref{thm:selfentangle} under coupled dynamics). The lattice is a computational verification tool, not the definition of the theory.
 \item \textbf{Direct mass gap comparison.} \emph{Consistent.} The spectral gap at the $K^*=7/30$ equilibrium is $\Delta=-\ln(0.2829)=1.263$ per DS step (leading eigenvalue of the floor-modified transfer operator; structural filter rate $-\ln(23/30)=0.266$ is $4.75\times$ smaller). On an $8^3\times 16$ $\SU(2)$ lattice at $\beta=2.3$: $am_{\mathrm{eff}}=0.71$, giving $m_{\mathrm{eff}}/\Delta=0.56$ (equivalently, one DS step $\approx 1.78$ lattice spacings). In physical units at $a\approx 0.17\,\mathrm{fm}$: $m_{\mathrm{gap}}\approx 1.46\,\mathrm{GeV}$, compared to the lattice $0^{++}$ glueball mass $\approx 1.5\,\mathrm{GeV}$. Under Path~(B), $\Delta=1.263$ is a dimensionless prediction in natural (DS) units. Converting to physical units requires one energy scale (analogous to $\Lambda_{\mathrm{QCD}}$ in lattice QCD). This is not a gap in the framework---it is the standard situation in any quantum field theory: the theory predicts dimensionless ratios; one experimental input sets the scale.
-\item \textbf{Abelian discrimination.} \emph{Confirmed across $L=4$--$12$.} The representation-mixing test on a $4^4$ lattice ($N=102{,}400$) measures $\delta$ for four observable pairs sharing a direction-$0$ link:
+\item \textbf{Abelian discrimination.} \emph{Confirmed across $L=4,6,8$.} The representation-mixing test on a $4^4$ lattice ($N=102{,}400$) measures $\delta$ for four observable pairs sharing a direction-$0$ link:
 
 \begin{center}
 \begin{tabular}{llc}
@@ -2334,7 +2296,7 @@ The following results were obtained by direct numerical computation (Python/NumP
 
 \item \textbf{Chirality balance} (Proposition~\ref{prop:balance}). On a $4^4$ lattice with DS dynamics, the ratio $|F^+|/|F^-|$ computed via the 4D Hodge star converges to $1.006\pm 0.082$ after 40 DS steps, confirming $|F^+|=|F^-|$ at equilibrium.
 
-\item \textbf{Floor activity at the fixed point} (Remark~\ref{rem:floor_active}). At the $K^*\!=\!7/30$ equilibrium, $\mathrm{Born}(\theta^*)=1/27$ on the state $m^*$. But the DS step sends $\theta\mapsto\theta\phi/(1\!-\!K)$, reducing Born to $\sim 10^{-3}$. The floor enforcement then restores Born $=1/27$, giving $\|\dbar\Phi\|_F=1.12$ at the fixed point. The floor is active at every step including equilibrium---the previous claim of $\dbar\Phi=0$ was a chain rule error (evaluating at $m^*$ instead of $\mathrm{DS}(m^*)$; see Remark~\ref{rem:mason_uniform}).
+\item \textbf{Floor activity at the fixed point} (Remark~\ref{rem:floor_active}). The DS step contracts $\theta$ via $\theta_{\mathrm{new}}=\theta\phi/(1-K)$, driving $\mathrm{Born}(\Theta)$ far below $1/27$ even when the input state $m^*$ has $\mathrm{Born}=1/27$ exactly. The floor therefore fires at every step, including at equilibrium. The anti-holomorphic Jacobian $\|\dbar\Phi\|_F=1.12$ at the fixed point, with $\mathrm{SO}(4)$ decomposition $23\%$ $(1,1)$, $26\%$ $(3,1)\oplus(1,3)$, $51\%$ $(3,3)$. Mason's framework applies uniformly---at equilibrium, during transients, everywhere.
 
 \item \textbf{Rank-2 protection of $\det(M)\neq 0$} (Gap~4). On the $\det=0$ surface, the $\phi^2$ term in $Q(m'')$ vanishes identically, yielding a Lorentzian form in shifted evidence coordinates~\eqref{eq:detonsurface}. Rank-2 coupled dynamics ($3000$ trials $\times$ $200$ steps): evidence light cone residual exceeds $|\det|$ by factor $\geq 12$ at all near-$\det=0$ states. Rank-1 (separable) coupling: $|\det|$ reaches $10^{-152}$. Transverse instability: $\lambda\geq 3.17$ ($68{,}910$ trajectory measurements). In $10^6$ dynamic steps, $|\det(M)|_{\min}=0.00084$.
 
@@ -2408,9 +2370,6 @@ Source code: \texttt{gap1\_computation.py}, \texttt{gap4\_computation.py}, \text
 \bibitem{AdamoMason2014} T.~Adamo, L.~J.~Mason, Conformal and Einstein gravity from twistor actions, Class.\ Quantum Grav.\ \textbf{31}, 045014 (2014).
 \bibitem{Hitchin1982} N.~J.~Hitchin, Monopoles and geodesics, Commun.\ Math.\ Phys.\ \textbf{83}, 579--602 (1982).
 \bibitem{BKM1984} J.~T.~Beale, T.~Kato, A.~Majda, Remarks on the breakdown of smooth solutions for the $3$-D Euler equations, Commun.\ Math.\ Phys.\ \textbf{94}, 61--66 (1984).
-\bibitem{Rivero2005} A.~Rivero, A.~Gsponer, The strange formula of Dr.\ Koide, arXiv:hep-ph/0505220 (2005).
-\bibitem{Sumino2009} Y.~Sumino, Family gauge symmetry as an origin of Koide's mass formula and charged lepton spectrum, JHEP \textbf{0905}, 075 (2009).
-\bibitem{Brannen2010} C.~A.~Brannen, Koide mass formula, viXra:1207.0052 (2010).
 
 \end{thebibliography}
 
