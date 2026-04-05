@@ -30,7 +30,7 @@ Everything derives from H = 3:
 | K* | 7/30 | Exact (conservation law) |
 | Born floor | 1/27 | Exact (self-consistency) |
 | Δ (spectral gap) | 1.2626 | Transcendental, = -ln(λ₀), 50 sig fig |
-| λ₀ | 0.28291 | Algebraic, degree 19 over Q, Gal=S₁₉ |
+| λ₀ | 0.28291 | Algebraic over Q, degree >30 (500-digit verified) |
 | S (instanton action) | 810/7 | Exact |
 | S + 1/K* | 120 = 5! | Exact |
 
