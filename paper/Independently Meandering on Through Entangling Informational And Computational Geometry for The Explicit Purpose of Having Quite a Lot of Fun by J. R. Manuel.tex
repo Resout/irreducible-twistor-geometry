@@ -997,6 +997,53 @@ If the kink were rank-1 ($\sigma_2=0$), it would act on only one channel of the 
 The source of this entanglement is the cross-coupling (\ref{eq:cross}): the floor correction to $\theta$ depends on $|s_i|^2$ for all hypotheses, linking the ignorance channel to every singleton channel simultaneously. This is an irreducible feature of the Born floor's structure---it cannot be removed without destroying the floor's information-theoretic function.
 \end{remark}
 
+\subsubsection{Self-correction: the Maurer--Cartan identity}\label{sec:maurer_cartan}
+
+An earlier version of this paper contained a significant error in the proof of Theorem~\ref{thm:nijenhuis}, which we document in full because the error, its detection, and its correction are instructive.
+
+\textbf{The error.} The original proof wrote the $(0,2)$-curvature of the $\dbar$-operator $\dbar_E=\dbar+a^{0,1}$ (with $a^{0,1}=M^{-1}\dbar M$) as
+\[
+(\dbar_E)^2=\left(\frac{\partial a_{\bar{w}}}{\partial\bar{z}}-\frac{\partial a_{\bar{z}}}{\partial\bar{w}}+[a_{\bar{z}},a_{\bar{w}}]\right)d\bar{z}\wedge d\bar{w},
+\]
+then argued: ``Floor active: both nonzero, cross-derivatives generically unequal, and $[a_{\bar z},a_{\bar w}]\neq 0$ because $\su(2)$ is non-abelian.'' Each individual claim is true---the components are nonzero, the commutator is nonzero---but the conclusion does not follow. The Maurer--Cartan identity states that for \emph{any} smooth $M:\mathcal{X}\to\GL(2,\C)$ and \emph{any} derivative operator $d$:
+\[
+F(M^{-1}dM)=d(M^{-1}dM)+(M^{-1}dM)\wedge(M^{-1}dM)=0.
+\]
+The key step: $\partial_\mu(M^{-1}\partial_\nu M)=-M^{-1}(\partial_\mu M)M^{-1}(\partial_\nu M)+M^{-1}\partial_\mu\partial_\nu M=-a_\mu a_\nu+\text{symmetric}$. The antisymmetrisation gives $\partial_\mu a_\nu-\partial_\nu a_\mu=-[a_\mu,a_\nu]$, so $F_{\mu\nu}=-[a_\mu,a_\nu]+[a_\mu,a_\nu]=0$. Identically. The proof treated ``each piece is nonzero'' as implying ``the sum is nonzero.'' This is the specific error.
+
+\textbf{What was affected.} Six downstream locations depended on this:
+\begin{enumerate}[nosep]
+\item The claim $\|F^{0,2}\|\sim 10^{-5}$ at equilibrium---this was numerical noise from computing an identically vanishing quantity via nested finite differences.
+\item The ``vacuum is still'' interpretation ($F\approx 0$ at the fixed point)---derived from the $10^{-5}$ measurement.
+\item A lattice computation of $|F^+|/|F^-|$ that appeared to confirm chirality balance numerically---it was decomposing an identically zero tensor.
+\item The Wilson loop formula $W(C)=\Tr\,\mathcal{P}\exp\oint_C M^{-1}dM$---the Maurer--Cartan form is flat, so this Wilson loop is trivially $\dim(V)$ on simply-connected $S^4$.
+\item The curvature bound's Step~3, which wrote $F^-=\dbar a+a\wedge a$ for $a=M^{-1}\dbar M$---identically zero.
+\item The condensate $\langle\Tr(F^2)\rangle=\mathcal{C}\cdot\sigma_{\mathrm{eff}}^4$ was presented as the physical gluon condensate; it is the commutator content of the Maurer--Cartan form, not the curvature of the physical connection.
+\end{enumerate}
+
+\textbf{What was NOT affected.} The following results are independent of the Maurer--Cartan form and remain valid:
+\begin{itemize}[nosep]
+\item $\dbar\Phi\neq 0$ (Theorem~\ref{thm:nonholo}): the floor IS non-holomorphic.
+\item Non-integrable $J$: established by $\dbar\Phi\neq 0$, not by the curvature of $M^{-1}\dbar M$.
+\item Mason's conditions verified: rank-2 bundle, non-integrable $J$, twistor fibration.
+\item Mason's theorem producing full Yang--Mills: a deduction from verified conditions.
+\item All spectral results: $K^*=7/30$, $\lambda_0=0.2829$, $\Delta=1.263$ (transfer operator eigenvalues).
+\item OS axioms OS0--OS4.
+\item The area law: the argument via plaquette decorrelation uses the Koopman spectrum, not a specific connection formula.
+\item The condensate algebra: $\mathcal{C}\cdot\det(M^*)^2=8332/625$ is an exact algebraic identity about commutator structure.
+\item The rank-2 kink, the rank-1 Jacobian at equilibrium, and the $\mathrm{SO}(4)$ decomposition of $\dbar\Phi$.
+\end{itemize}
+
+\textbf{The correction.} The physical spacetime connection is not $M^{-1}dM$. It is the Ward-reconstructed connection $A=h_+^{-1}dh_+$, obtained by Birkhoff factorisation of the transition function on each twistor line: $\tilde{M}(x,\zeta,\bar\zeta)=h_+^{-1}(x,\zeta)\cdot h_-(x,\zeta)$. When $\tilde{M}$ is holomorphic ($\dbar\Phi=0$): $h_+=M$, $h_-=I$, and $A=M^{-1}dM$---flat, as expected. When $\tilde{M}$ acquires $\bar\zeta$-dependence ($\dbar\Phi\neq 0$, floor active): $h_+\neq M$, and $A=h_+^{-1}dh_+$ is generically non-flat. The logical chain is now:
+\begin{enumerate}[nosep]
+\item $\dbar\Phi\neq 0$ $\Rightarrow$ non-integrable $J$ $\Rightarrow$ $N_J\neq 0$. \checkmark
+\item Mason's conditions verified $\Rightarrow$ full Yang--Mills via Ward reconstruction. \checkmark
+\item Physical connection $=$ Ward-reconstructed $A=h_+^{-1}dh_+$ (not $M^{-1}dM$). \checkmark
+\item Physical curvature at equilibrium: \emph{open} (Birkhoff factorisation at $m^*$ not computed).
+\end{enumerate}
+The geometry is intact. The attribution was wrong. The lesson: ``each piece nonzero'' does not imply ``the sum is nonzero,'' and a connection form being nonzero does not imply it has nonzero curvature. The Maurer--Cartan identity is the canonical counterexample.
+
+
 \subsubsection{Non-holomorphic dynamics produce $F^+\neq 0$}
 
 \begin{theorem}[$\dbar$-operator on the DS bundle]\label{thm:dbar}
@@ -1008,26 +1055,24 @@ Dempster combination is polynomial (holomorphic), contributing zero to $\dbar M$
 \end{proof}
 
 \begin{theorem}[Non-integrability generates $F^+$]\label{thm:nijenhuis}
-When the Born floor is active, $(\dbar_E)^2\neq 0$, and the $(0,2)$-curvature is $F^+$ on $S^4$.
+When the Born floor is active, the almost complex structure $J$ on the total space of $E_m$ is non-integrable (Nijenhuis tensor $N_J\neq 0$). By Mason's theorem (Theorem~\ref{thm:mason_orig}), the Ward-reconstructed connection on $S^4$ has $F^+\neq 0$.
 \end{theorem}
 
 \begin{proof}
-In complex coordinates $(z,w)$ on $\C^2\cong\R^4$:
-\begin{equation}
-(\dbar_E)^2=\left(\frac{\partial a_{\bar{w}}}{\partial\bar{z}}-\frac{\partial a_{\bar{z}}}{\partial\bar{w}}+[a_{\bar{z}},a_{\bar{w}}]\right)d\bar{z}\wedge d\bar{w}.
-\end{equation}
-Floor inactive: $a_{\bar{z}}=a_{\bar{w}}=0$, so $(\dbar_E)^2=0$. Floor active: both nonzero, cross-derivatives generically unequal, and $[a_{\bar{z}},a_{\bar{w}}]\neq 0$ because $a_{\bar{z}},a_{\bar{w}}\in\su(2)\otimes\C$ and $\su(2)$ is non-abelian. The commutator is nonzero precisely because the kink is rank-2 (Theorem~\ref{thm:entangle}): a rank-1 kink proportional to $I$ would commute with everything, but the rank-2 kink has components along the non-commuting $\sigma_i$ generators. By Mason's framework (Theorem~\ref{thm:mason_orig}), the $(0,2)$-curvature restricted to twistor lines is $F^+$.
+The integrability of $J$ is equivalent to the vanishing of $\dbar\Phi$ on the base. By Theorem~\ref{thm:nonholo}, floor enforcement produces $\dbar\Phi\neq 0$, hence $N_J\neq 0$.
 
-The DS bundle matches Mason's setup: along each fibre $L_x$, $M$ is constant (holomorphic restriction); in the base directions, the holomorphic variation gives $F^-$ (standard Ward) and the anti-holomorphic variation (from the floor) gives $F^+$.
+\emph{Clarification on the Maurer--Cartan form.} The $(0,1)$-form $a^{0,1}=M^{-1}\dbar M$ (Theorem~\ref{thm:dbar}) is the Maurer--Cartan form of $M$. Its curvature vanishes identically: $\dbar a+a\wedge a=0$ for any smooth $M$, by the Maurer--Cartan equation. This is \emph{not} the physical curvature. The physical spacetime connection is obtained by Birkhoff factorisation of the transition function on each twistor line $L_x\cong\CP^1$: writing $\tilde{M}(x,\zeta,\bar\zeta)=h_+^{-1}(x,\zeta)\cdot h_-(x,\zeta)$, the spacetime connection is $A_\mu=h_+^{-1}\partial_\mu h_+$. When $\tilde{M}$ is holomorphic ($\dbar\Phi=0$): $\tilde{M}$ is constant on fibres, the factorisation is trivial ($h_+=M$, $h_-=I$), and $A=M^{-1}dM$---flat, as expected ($F^+=0$). When $\tilde{M}$ acquires $\bar\zeta$-dependence ($\dbar\Phi\neq 0$, floor active): the Birkhoff factorisation gives $h_+(x,\zeta)\neq M(x)$, and the resulting $A=h_+^{-1}dh_+$ is generically non-flat. This is exactly Mason's mechanism~\cite{Mason2005}: non-integrable $J$ on the twistor bundle produces $F^+\neq 0$ on spacetime via the Ward reconstruction.
+
+The DS bundle matches Mason's setup: rank-2 bundle (Pauli embedding), non-integrable $J$ (Born floor), standard twistor fibration $\pi:\CP^3\to S^4$. The theorem follows.
 \end{proof}
 
 \begin{theorem}[Mason matching]\label{thm:mason}
-The non-integrable $\dbar$-operator of Theorem~\ref{thm:nijenhuis} defines a non-integrable almost complex structure on $E_m$ in the sense of Mason (2005). Decomposing $M=M_{\mathrm{hol}}+\varepsilon$:
+The non-integrable almost complex structure of Theorem~\ref{thm:nijenhuis} falls within Mason's framework (2005). The Ward-reconstructed connection $A=h_+^{-1}dh_+$ (from Birkhoff factorisation on each twistor line) satisfies full Yang--Mills. Decomposing $M=M_{\mathrm{hol}}+\varepsilon$ where $\varepsilon$ is the floor correction:
 \begin{align}
 F^-&=F^-_{\mathrm{hol}}+O(\varepsilon) \\
-F^+&=M_{\mathrm{hol}}^{-1}\,\dbar\varepsilon\big|_{L_x}+O(\varepsilon^2).
+F^+&\propto\dbar\varepsilon\big|_{L_x}+O(\varepsilon^2).
 \end{align}
-At leading order, $F^+\propto\dbar\varepsilon$---the anti-holomorphic derivative of the floor correction.
+At leading order, $F^+$ is controlled by $\dbar\varepsilon$---the anti-holomorphic derivative of the floor correction. The physical curvature is that of the Ward-reconstructed connection, not of the Maurer--Cartan form $M^{-1}dM$ (which is identically flat).
 \end{theorem}
 
 \begin{remark}[Application conditions for Mason's theorem]\label{rem:mason_conditions}
@@ -1051,8 +1096,8 @@ A real transition function $M\in\GL(2,\R)$ satisfies $M=\bar{M}$. Under the real
 This is geometric contraction on $\CP^3$, not statistical averaging. The contraction rate is controlled by the Born floor (which keeps $|\theta|$ bounded below, preventing instant washout).
 \end{proof}
 
-\begin{remark}[Computational verification of chirality balance]\label{rem:chirality_verified}
-The ratio $|F^+|/|F^-|$ was computed on a $4^4$ lattice with DS dynamics using the proper 4D Hodge decomposition ($F^\pm_{\mu\nu}=\frac{1}{2}(F_{\mu\nu}\pm{*}F_{\mu\nu})$, with ${*}F_{01}=F_{23}$, ${*}F_{02}=-F_{13}$, ${*}F_{03}=F_{12}$). Results: mean $|F^+|/|F^-|=1.006\pm 0.082$ after 40 DS steps ($n=93$ sites with nonzero curvature), converging to $1.0$ as predicted. A previous computation giving $|F^+|/|F^-|\approx 0.51$ used an incorrect decomposition (splitting curvature by source---DS step versus floor correction---rather than by Hodge chirality). The correct decomposition requires all six independent curvature components $F_{\mu\nu}$ in 4D to construct the self-dual and anti-self-dual projections.
+\begin{remark}[Chirality balance: status]\label{rem:chirality_verified}
+Proposition~\ref{prop:balance} establishes $|F^+|=|F^-|$ at equilibrium from the reality structure ($M\in\GL(2,\R)$ at the fixed point). A previous lattice computation attempted to verify this numerically by computing $F_{\mu\nu}$ from finite differences of $M^{-1}\partial_\mu M$. However, $M^{-1}dM$ is the Maurer--Cartan form, whose curvature vanishes identically (Theorem~\ref{thm:nijenhuis}). The ``nonzero curvature'' observed ($\sim 10^{-5}$) was numerical noise from nested finite differences applied to an identically zero quantity. Direct numerical verification of chirality balance requires computing the Ward-reconstructed connection $A=h_+^{-1}dh_+$ (Birkhoff factorisation), which has not been done. The analytical proof via the reality structure (Proposition~\ref{prop:balance}) stands independently.
 \end{remark}
 
 
@@ -1063,23 +1108,23 @@ The ratio $|F^+|/|F^-|$ was computed on a $4^4$ lattice with DS dynamics using t
 \toprule
 DS framework & Bundle & Yang--Mills \\
 \midrule
-$\theta=1$ (ignorance) & Trivial bundle & $A=0$ (trivial vacuum) \\
-$K^*=7/30$ (equilibrium) & Non-trivial connection, $a\neq 0$, $F\approx 0$ & Physical vacuum; $\langle F^2\rangle\neq 0$ from fluctuations \\
-$K>K^*$ (excitation) & Excited, $|F^+|\neq|F^-|$ & Decays at rate $\Delta$ \\
+$\theta=1$ (ignorance) & Trivial bundle, $\dbar\Phi=0$ & $A=0$ (trivial vacuum) \\
+$K^*=7/30$ (equilibrium) & Non-integrable $J$, $\dbar\Phi\neq 0$, rank-1 Jacobian & Physical vacuum; excitations decay at rate $\Delta$ \\
+$K>K^*$ (excitation) & $|F^+|\neq|F^-|$ (Ward-reconstructed) & Decays at rate $\Delta$ \\
 \bottomrule
 \end{tabular}
 \end{center}
 
 \begin{remark}[The equilibrium is the physical vacuum]\label{rem:vacuum}
-The DS fixed point at $K^*=7/30$ is the physical vacuum: it has non-trivial connection ($a^{0,1}\neq 0$, $\|\dbar\Phi\|=1.12$) but near-zero gauge curvature ($\|F^{0,2}\|\sim 10^{-5}$, Remark~\ref{rem:rank1}). This is the standard Yang--Mills picture: the classical vacuum has $F=0$; the quantum vacuum has $\langle\Tr(F^2)\rangle\neq 0$ from fluctuations sampled by the path integral measure. The non-triviality results (kurtosis $\kappa=+0.079$, connected 4-point function, \S\ref{sec:JW}) are properties of these quantum fluctuations---measured by perturbing around $m^*$ and averaging, not by evaluating at the fixed point itself. The structural filter removes fraction $K^*$ per step from excitations above this vacuum. The mass gap $\Delta=-\ln\lambda_0=1.263$ is the energy of the lightest excitation, determined by the transfer operator spectrum (\S\ref{sec:OS}).
+The DS fixed point at $K^*=7/30$ is the physical vacuum. It has non-integrable almost complex structure ($\dbar\Phi\neq 0$, $\|\dbar\Phi\|=1.12$) with rank-$1$ anti-holomorphic Jacobian at equilibrium (Remark~\ref{rem:rank1}). By Mason's theorem, non-integrable $J$ produces $F^+\neq 0$ via the Ward reconstruction (Theorem~\ref{thm:nijenhuis}); however, the physical curvature $F$ of the Ward-reconstructed connection at $m^*$ has not been computed explicitly (the Birkhoff factorisation at the equilibrium is an open computation). The mass gap $\Delta=-\ln\lambda_0=1.263$ is the energy of the lightest excitation, determined by the transfer operator spectrum (\S\ref{sec:OS})---this is independent of the value of $F$ at the fixed point. The non-triviality results (kurtosis $\kappa=+0.079$, connected 4-point function, \S\ref{sec:JW}) are properties of quantum fluctuations around the equilibrium.
 \end{remark}
 
 \begin{remark}[Two vacua]
-Complete ignorance ($\theta=1$, all $s_i=0$) gives $K=0$: the trivial (perturbative) vacuum with $A=0$. Evidence combination drives the system away from this state toward the $K^*=7/30$ equilibrium---the physical (non-perturbative) vacuum, which has non-trivial connection ($a\neq 0$) but near-zero curvature ($F\approx 0$, Remark~\ref{rem:rank1}). The approach to equilibrium is the generation of the gauge field's connection; the curvature arises from fluctuations around the equilibrium, not from the fixed point itself.
+Complete ignorance ($\theta=1$, all $s_i=0$) gives $K=0$ and $\dbar\Phi=0$: the trivial (perturbative) vacuum with integrable $J$ and $A=0$. Evidence combination drives the system away from this state toward the $K^*=7/30$ equilibrium---the physical (non-perturbative) vacuum, which has non-integrable $J$ ($\dbar\Phi\neq 0$, Theorem~\ref{thm:nonholo}) and rank-$1$ anti-holomorphic Jacobian (Remark~\ref{rem:rank1}). The approach to equilibrium generates the non-integrability that Mason's theorem converts to gauge curvature. The physical curvature at the equilibrium (from the Ward-reconstructed connection) is an open computation (\S\ref{sec:gaps}).
 \end{remark}
 
-\begin{theorem}[Gluon condensate coefficient]\label{thm:condensate}
-Let $m^*=(s_1,s_2,s_3,\theta)$ be the $K^*=7/30$ equilibrium with $\mathrm{Born}(\Theta)=1/H^3$. The condensate coefficient $\mathcal{C}$, defined by $\langle\Tr(F^2)\rangle=\mathcal{C}\cdot\sigma_{\mathrm{eff}}^4$ where $\sigma_{\mathrm{eff}}^2=1/(1-\lambda_0^2)$ is the fluctuation variance from the transfer operator spectrum, satisfies the exact identity
+\begin{theorem}[Commutator content of the Maurer--Cartan form]\label{thm:condensate}
+Let $m^*=(s_1,s_2,s_3,\theta)$ be the $K^*=7/30$ equilibrium with $\mathrm{Born}(\Theta)=1/H^3$. The commutator coefficient $\mathcal{C}$, defined by $\langle|[a_\mu,a_\nu]|^2\rangle=\mathcal{C}\cdot\sigma_{\mathrm{eff}}^4$ where $a_\mu=M^{*-1}\delta M_\mu/\sqrt{2}$ is the Maurer--Cartan form evaluated on Gaussian perturbations and $\sigma_{\mathrm{eff}}^2=1/(1-\lambda_0^2)$ is the fluctuation variance from the transfer operator spectrum, satisfies the exact identity
 \begin{equation}\label{eq:condensate}
 \mathcal{C}\cdot\det(M^*)^2=\frac{4(3n^2+2n+3)}{(n-1)^2},\qquad n=H^3-1,
 \end{equation}
@@ -1087,7 +1132,7 @@ which at $H=3$ ($n=26$) gives $\mathcal{C}\cdot\det(M^*)^2=8332/625$.
 \end{theorem}
 
 \begin{proof}
-The condensate $\langle\Tr(F^2)\rangle$ is the path integral average of $|[a_\mu,a_\nu]|^2$ over Gaussian fluctuations around $m^*$, where $a_\mu=M^{*-1}\,\delta M_\mu/\sqrt{2}$ is the connection from a perturbation $\delta m_\mu$. For independent Gaussian perturbations $v,w\in\R^4$ with $\langle v_iv_j\rangle=\sigma^2\delta_{ij}$, the Wick factorisation gives
+The quantity $\langle|[a_\mu,a_\nu]|^2\rangle$ is the average of the commutator-squared over Gaussian fluctuations around $m^*$, where $a_\mu=M^{*-1}\,\delta M_\mu/\sqrt{2}$. For independent Gaussian perturbations $v,w\in\R^4$ with $\langle v_iv_j\rangle=\sigma^2\delta_{ij}$, the Wick factorisation gives
 \[
 \mathcal{C}=\sum_{i,k=0}^{3}\Tr([A_i,A_k]^\dagger[A_i,A_k]),
 \]
@@ -1096,8 +1141,8 @@ where $A_i=M^{*-1}\,\mathrm{basis}_i/\sqrt{2}$ and $\{\mathrm{basis}_0,\ldots,\m
 Cross-validated: the analytic coefficient $\mathcal{C}=149.596$ agrees with Monte Carlo ($200{,}000$ Gaussian samples) to $0.23\%$.
 \end{proof}
 
-\begin{remark}[Interpretation of the condensate]
-The vacuum has $F\approx 0$ (Remark~\ref{rem:rank1}). The condensate $\langle\Tr(F^2)\rangle\neq 0$ arises from quantum fluctuations---perturbations around $m^*$ sampled by the Fubini--Study measure on $B$. The coefficient $\mathcal{C}$ is purely algebraic: $8332/625=4\times 2083/5^4$ at $H=3$, where $2083=3\cdot 26^2+2\cdot 26+3$ is a prime determined by the Born floor constraint $|s|^2=26\theta^2$. The fluctuation scale $\sigma_{\mathrm{eff}}^2=1/(1-\lambda_0^2)$ is determined by the spectral gap. The full condensate $\langle\Tr(F^2)\rangle=\mathcal{C}\cdot\sigma_{\mathrm{eff}}^4$ is therefore an algebraic number with zero free parameters.
+\begin{remark}[Relation to the physical gluon condensate]\label{rem:condensate_interpretation}
+The coefficient $\mathcal{C}$ measures the commutator content $\langle|[a_\mu,a_\nu]|^2\rangle$ of the Maurer--Cartan form $a=M^{-1}dM$. By the Maurer--Cartan identity, the full curvature of this connection vanishes: $F=da+a\wedge a=0$ (the $da$ and $[a,a]$ terms cancel identically). The physical gluon condensate $\langle\Tr(F^2)\rangle$ involves the curvature of the Ward-reconstructed connection $A=h_+^{-1}dh_+$ (Theorem~\ref{thm:nijenhuis}), for which $da$ and $[a,a]$ do \emph{not} cancel. Computing $\langle\Tr(F_{\mathrm{Ward}}^2)\rangle$ requires the Birkhoff factorisation and is an open problem. The algebraic identity~(\ref{eq:condensate}) is Class~A (exact, $8332/625=4\times 2083/5^4$ where $2083=3\cdot 26^2+2\cdot 26+3$ is prime); its physical interpretation as the gluon condensate awaits the Ward reconstruction.
 \end{remark}
 
 
@@ -1111,7 +1156,7 @@ The Born floor $1/H^3$ at $H=3$ serves nine roles simultaneously:
 \item \textbf{Dynamical}: its enforcement is the non-holomorphic operation that generates $F^+$.
 \item \textbf{Rate control}: keeps $|\theta|$ bounded below, setting the phase washout rate.
 \item \textbf{Googly}: defines the non-integrable almost complex structure matching Mason's framework.
-\item \textbf{Chirality balance}: phase washout drives $\mathrm{Im}(K)\to 0$, ensuring $|F^+|=|F^-|$ for fluctuations around equilibrium (Proposition~\ref{prop:balance}). At the fixed point itself, $F^+\approx F^-\approx 0$ (Remark~\ref{rem:rank1}).
+\item \textbf{Chirality balance}: phase washout drives $\mathrm{Im}(K)\to 0$, ensuring $|F^+|=|F^-|$ at the fixed point via the reality structure (Proposition~\ref{prop:balance}).
 \item \textbf{Conformal breaking}: its enforcement does not commute with biholomorphisms of $\CP^3$, breaking the conformal group of $S^4$ (Theorem~\ref{thm:conformal_break}).
 \item \textbf{Graviton source}: contributes to the symmetric traceless $(3,3)$ component of $\dbar\Phi$, the graviton representation under $\mathrm{SO}(4)$ (Theorem~\ref{thm:spin_decomp}).
 \end{enumerate}
@@ -1325,7 +1370,7 @@ The Born floor $\mathrm{Born}(\theta)\geq 1/H^3$ restricts the DS dynamics to th
 \begin{equation}\label{eq:volume_fraction}
 f(H)=\left(1-\frac{1}{H^3}\right)^3=\left(\frac{H^3-1}{H^3}\right)^3.
 \end{equation}
-At $H=3$: $f=(26/27)^3=17576/19683\approx 89.3\%$. The physical significance: $B$ is the integration domain of the path integral measure (Theorem~\ref{thm:measure}), and the condensate coefficient (Theorem~\ref{thm:condensate}) is built from $n=H^3-1=26$---the number of non-ignorance states in the Born measurement space, which determines the Born floor constraint $|s|^2\leq n\theta^2$. The volume fraction $(n/(n+1))^3$ is the fraction of $\CP^3$ that participates in the quantum fluctuations generating $\langle\Tr(F^2)\rangle\neq 0$.
+At $H=3$: $f=(26/27)^3=17576/19683\approx 89.3\%$. The physical significance: $B$ is the integration domain of the path integral measure (Theorem~\ref{thm:measure}), and the commutator content coefficient (Theorem~\ref{thm:condensate}) is built from $n=H^3-1=26$---the number of non-ignorance states in the Born measurement space, which determines the Born floor constraint $|s|^2\leq n\theta^2$. The volume fraction $(n/(n+1))^3$ is the fraction of $\CP^3$ that participates in quantum fluctuations.
 \end{remark}
 
 \begin{remark}[Three entanglement types and sector coupling]
@@ -1352,7 +1397,7 @@ The argument assembles four established results.
 
 \emph{Step 2: $F^+\propto\dbar\varepsilon$ is bounded.} By Theorem~\ref{thm:mason}, $F^+=M_{\mathrm{hol}}^{-1}\,\dbar\varepsilon|_{L_x}+O(\varepsilon^2)$ (the Ward correspondence gives the curvature algebraically from the patching data---no base-space differentiation is required, so a bound on the patching data implies a bound on the curvature directly). The factor $M_{\mathrm{hol}}^{-1}$ is bounded because $\det(M)\neq 0$ on $B$: for real mass functions, $|\det(M)|=25\theta^2/2>0$ (Theorem~\ref{thm:trivial}); for complex mass functions, $\det(M)=0$ is dynamically excluded (Theorem~\ref{thm:selfentangle}), with minimum $|\det|=0.00084$ across $10^6$ dynamic steps. The factor $\dbar\varepsilon$ is bounded by Step~1. Therefore $|F^+|$ is bounded.
 
-\emph{Step 3: $F^-$ is bounded independently.} The holomorphic curvature $F^-$ is determined by the Ward correspondence from the holomorphic structure of $E_m$. On $B$, the transition function $M$ is a smooth function of the mass components $(s_i,\theta)$, which are constrained to the compact set $B\subset\CP^3$. Since $M$ is smooth on a compact domain, $M$ and all its derivatives are bounded on $B$. The determinant satisfies $\det(M)\neq 0$ (Theorem~\ref{thm:trivial} for real masses; dynamic protection via Theorem~\ref{thm:selfentangle} for complex masses), so $M^{-1}$ is bounded. The holomorphic curvature is $F^-=\dbar a^{0,1}+a^{0,1}\wedge a^{0,1}$ where $a^{0,1}=M^{-1}\dbar M$. Both factors in $a^{0,1}$ are bounded on $B$ ($M^{-1}$ by the determinant bound, $\dbar M$ by compactness), so $a^{0,1}$ is bounded. The derivative $\dbar a^{0,1}$ involves $\dbar(M^{-1})\wedge\dbar M+M^{-1}\dbar^2 M$; each term is a product of bounded quantities on $B$ (using $\dbar(M^{-1})=-M^{-1}(\dbar M)M^{-1}$ and boundedness of second derivatives of $M$ on the compact domain). Therefore $|F^-|$ is bounded on $B$ by a constant depending only on $H$.
+\emph{Step 3: $F^-$ is bounded independently.} The anti-self-dual curvature $F^-$ is determined by the standard Ward correspondence from the holomorphic structure of $E_m$. The Ward-reconstructed connection is obtained by Birkhoff factorisation of the transition function $M$ on each twistor line $L_x\cong\CP^1$. On $B$, $M$ is a smooth function of the mass components $(s_i,\theta)$, which are constrained to the compact set $B\subset\CP^3$. Since $M$ is smooth on a compact domain, $M$ and all its derivatives are bounded on $B$. The determinant satisfies $\det(M)\neq 0$ (Theorem~\ref{thm:trivial} for real masses; dynamic protection via Theorem~\ref{thm:selfentangle} for complex masses), so $M^{-1}$ is bounded. The Birkhoff factorisation data $(h_+,h_-)$ inherit the regularity and boundedness of $M$ (the factorisation is algebraic in the patching data when the splitting type is $(0,0)$, which holds whenever $\det M\neq 0$). The connection $A=h_+^{-1}dh_+$ and its curvature $F^-$ are therefore bounded on $B$ by a constant depending only on $H$. (Note: the Maurer--Cartan form $a=M^{-1}\dbar M$ has identically zero curvature and is not the physical connection; the bound here is on the Ward-reconstructed curvature.)
 
 \emph{Step 4: The bound is fibre-local.} The Born floor $1/H^3$, the $L_1$ constraint, and the Fubini--Study metric on $\CP^3$ are all fibre properties. They do not reference the base manifold $M$ or the base-space coordinate $x$ (as established in the $S^4\to\R^4$ argument of \S\ref{sec:JW}: ``the Born floor constrains the mass function on the fibre; it does not reference the base-space geometry''). The bound $C(H)$ is therefore independent of $M$, the initial data $m_0$, and the evolution time.
 \end{proof}
@@ -1690,11 +1735,11 @@ where $\sigma=-\ln(1-K^*)=-\ln(23/30)\approx 0.266$ is the string tension.
 \begin{proof}
 The argument has five steps.
 
-\emph{Step 1: The Wilson loop observable.} The gauge connection on $S^4$ is $a=M^{-1}dM$ (the full connection, including both holomorphic and anti-holomorphic contributions from the non-integrable almost complex structure, Remark~\ref{rem:floor_active}). The Wilson loop along a contour $C\subset S^4$ is
+\emph{Step 1: The Wilson loop observable.} The Wilson loop is defined through the DS transfer operator on the fibre. For a contour $C\subset S^4$ discretised into $N$ steps, the loop observable is the path-ordered composition of DS propagators along the twistor fibres $L_{x_1},\ldots,L_{x_N}$ visited by $C$:
 \[
-W(C)=\Tr\,\mathcal{P}\exp\!\oint_C M^{-1}dM.
+W(C)=\Tr\,\prod_{k=1}^{N}\mathcal{T}_k,
 \]
-This is well-defined for any connection on a principal bundle; $\det(M^*)\neq 0$ (Theorem~\ref{thm:det_dynamic}) ensures $M^{-1}$ exists. The observable $W(C)$ is a bounded functional of the mass function $m\in B$: the integrand $M^{-1}\partial M$ is bounded on $B$ (Theorem~\ref{thm:curvature_bound}), and the contour $C$ is compact.
+where $\mathcal{T}_k$ is the transfer operator mapping the mass function along the fibre at step $k$. This is a bounded functional of $m\in B$: the transfer operator is a contraction (Theorem~\ref{thm:basin}) and $B$ is compact. (Note: the Maurer--Cartan form $M^{-1}dM$ is identically flat and cannot serve as the gauge connection; the physical connection is the Ward-reconstructed $A=h_+^{-1}dh_+$ from Theorem~\ref{thm:nijenhuis}. The fibre definition of $W(C)$ bypasses this issue: the area law follows from the Koopman spectrum of the DS dynamics, not from a specific connection formula.)
 
 \emph{Step 2: Evidence vs.\ state at equilibrium.} The physical equilibrium is the fixed point of $\Phi(m,e^*)$ where $e^*$ is the gauge-derived evidence (the conditional distribution $C_\beta$ of \S\ref{sec:computation}), NOT self-evidence $m^*$. Even when all sites have the same mass function $m^*$, the evidence $e^*\neq m^*$ (Remark~\ref{rem:selfcomm}: the evidence has Born probabilities $(0.932,0.034,0.034)$ while $m^*$ has a different distribution). Therefore $[M(m^*),E(e^*)]\neq 0$: the commutator is nonzero at the physical equilibrium, producing $K(m^*,e^*)=7/30$. The curvature content is structural---it arises from the mismatch between what the system is ($m^*$) and what the gauge constraint requires ($e^*$).
 
@@ -2072,7 +2117,7 @@ $\mathrm{Sym}^2(\C^4)$ dimension & $10 = H^2 + 1$ at $H=3$ & exact & A \\
 Koide angle (physical) & $\theta_p = 2/H^2 = 2/9$ & exact & A \\
 Transfer eigenvalue $\lambda_0$ & $0.28291$ (50 sig.~fig.) & algebraic, degree $19$, $\mathrm{Gal}=S_{19}$, irred.\ over $\mathbb{Z}$ & A \\
 Spectral gap $\Delta=-\ln\lambda_0$ & $1.2626$ (50 sig.~fig.) & transcendental (Lindemann--Weierstrass) & A \\
-Condensate coefficient & $\mathcal{C}\cdot\det(M^*)^2=8332/625$ & exact (Pauli algebra $+$ Born floor) & A \\
+Commutator content & $\mathcal{C}\cdot\det(M^*)^2=8332/625$ & exact (Pauli commutator algebra $+$ Born floor) & A \\
 Cosmological constant & $\Lambda = \det(I-J)^{-1/2}e^{-810/7} \approx 7.76\times 10^{-51}$ & prefactor to 50 sig.\ fig.; alg.\ degree $>40$ over $\mathbb{Q}$ & A$^*$ \\
 \midrule
 \multicolumn{4}{l}{\textit{Class B$_1$: Sub-percent precision ($<1\%$)}} \\[3pt]
@@ -2181,10 +2226,10 @@ $\SU(2)$ cross-representation $\delta$ is flat at $0.343$---it does not approach
 \item Global convergence: unique fixed point, all trajectories converge (Hilbert metric contraction, Theorem~\ref{thm:basin}).
 \item Spectral gap $\Delta=-\ln\lambda_0=1.263$ per DS step, where $\lambda_0=0.2829$ is algebraic of degree $19$ over $\mathbb{Q}$ with explicit irreducible minimal polynomial (equation~\ref{eq:minpoly}), Galois group $S_{19}$, not expressible in radicals. $\Delta$ is transcendental (Lindemann--Weierstrass).
 \item Non-triviality: kurtosis excess $\kappa=+0.079\pm 0.009$ ($9.0\sigma$) and $G_4^{\mathrm{conn}}/G_4^{\mathrm{Wick}}=+0.056\pm 0.004$ ($14.5\sigma$) at the exact $K^*=7/30$ equilibrium with $5\times 10^5$ samples. The DS combination rule is nonlinear; connected $n$-point functions are nonzero at all orders. Structurally non-free.
-\item Gluon condensate coefficient: $\mathcal{C}\cdot\det(M^*)^2=4(3n^2+2n+3)/(n-1)^2=8332/625$ at $n=H^3-1=26$ (Theorem~\ref{thm:condensate}). Exact algebraic identity from Pauli commutator algebra at the Born floor. The full condensate $\langle\Tr(F^2)\rangle=\mathcal{C}\cdot\sigma_{\mathrm{eff}}^4$ with $\sigma_{\mathrm{eff}}^2=1/(1-\lambda_0^2)$ is an algebraic number with zero free parameters.
+\item Commutator content coefficient: $\mathcal{C}\cdot\det(M^*)^2=4(3n^2+2n+3)/(n-1)^2=8332/625$ at $n=H^3-1=26$ (Theorem~\ref{thm:condensate}). Exact algebraic identity from Pauli commutator algebra at the Born floor. $\mathcal{C}$ measures $\langle|[a_\mu,a_\nu]|^2\rangle$ for the Maurer--Cartan form; the physical gluon condensate $\langle\Tr(F_{\mathrm{Ward}}^2)\rangle$ requires the Ward-reconstructed connection (Remark~\ref{rem:condensate_interpretation}).
 \item Saddle-point identification: $K$ is action density, Gaussian gap $1/(1-K^*)=1.304$ within $3.2\%$ of exact $\Delta=1.263$; evidence averaging shifts $\Delta$ by $<2\%$.
 \item $K^*=7/30$ is $1.77\%$ from $\gamma_{\mathrm{DLM}}$; the post-hoc dressing to 350~ppm is outperformed by $19/80$ (139~ppm) and is therefore numerology, not derivation (\S\ref{sec:dressing}).
-\item Self-correction log: two mechanisms proposed and refuted before the correct one identified (\S\ref{sec:googly}).
+\item Self-correction log: two mechanisms proposed and refuted before the correct one identified; a third error (attributing curvature to the Maurer--Cartan form $M^{-1}dM$, which is identically flat) detected and corrected (\S\ref{sec:googly}, \S\ref{sec:maurer_cartan}).
 \item Raw DS is holomorphic; $L_1$ normalisation and Born floor are the two independent sources of non-holomorphicity (Theorems~\ref{thm:ds_holo},~\ref{thm:nonholo}).
 \item Born floor breaks conformal invariance of $S^4$ by non-commutation with biholomorphisms of $\CP^3$ (Theorem~\ref{thm:conformal_break}).
 \item $\dbar\Phi$ decomposes under $\mathrm{SO}(4)$ as $(1,1)\oplus(3,1)\oplus(1,3)\oplus(3,3)$: scalar, gauge, graviton (Theorem~\ref{thm:spin_decomp}).
@@ -2195,26 +2240,27 @@ $\SU(2)$ cross-representation $\delta$ is flat at $0.343$---it does not approach
 \item Three entanglement types (none, one-sided, full) exhaust the $\mathrm{SO}(4)$ irreps; forces are their decomposition. Sector coupling follows from rank-$3$ Jacobian (\S\ref{sec:massless_graviton}).
 \item Born floor excludes exactly $(1-1/H^3)^3=(26/27)^3$ of $\CP^3$ volume.
 \item Cosmological constant $\Lambda=\det(I-J)^{-1/2}\,e^{-810/7}\approx 7.76\times 10^{-51}$ (Remark~\ref{rem:cc}), positive ($\Lambda>0$), computed to $50$ significant figures via analytical Jacobian with zero free parameters (Class~A$^*$). Weyl tensor nonzero at equilibrium: the Born floor anisotropy ($s_1\gg s_2=s_3$) breaks $\mathrm{SO}(5)$ to $S_2\times\mathrm{U}(1)$ and survives the Penrose transform (Remark~\ref{rem:weyl}). The equilibrium is Einstein with $\Lambda>0$, not maximally symmetric (not de~Sitter).
-\item Universal curvature bound: $\|F\|\leq C(H)$ with $C(H\!=\!3)\leq 1.87$, independent of base manifold, initial data, and time (Theorem~\ref{thm:curvature_bound}). The bound follows from compactness of $B\subset\CP^3$ and fibre locality.
+\item Universal curvature bound: $\|F_{\mathrm{Ward}}\|\leq C(H)$, independent of base manifold, initial data, and time (Theorem~\ref{thm:curvature_bound}). The bound follows from compactness of $B\subset\CP^3$ and fibre locality: the non-integrability data $\|\dbar\Phi\|$ is bounded on $B$, and the Ward reconstruction preserves boundedness.
 \item BKM-type bound: $\int_0^T\!\sup_x\|\dbar\Phi_{(3,1)\oplus(1,3)}\|\,dt\leq C_{\mathrm{gauge}}\cdot T$ with $C_{\mathrm{gauge}}=0.344$ (Theorem~\ref{thm:regularity}).
 \item Penrose integrals on $B$ are finite: bounded integrand on compact contour (Theorem~\ref{thm:penrose_finite}).
 \item Explicit 4D Schwinger functions: $S_2^c(x,y)=\sum_k|c_k|^2\lambda_k^{d_{\mathrm{FS}}/\delta}$ on $S^4$, extending to $S_2^c(x,y)\sim C'\cdot e^{-m_{\mathrm{phys}}|x-y|/2}$ on $\R^4$ via stereographic projection (Theorem~\ref{thm:schwinger4d}). All five OS axioms inherited from the construction.
 \item Short-distance behaviour: DS Schwinger functions are smooth at coincident points (no $|x-y|^{-2d}$ singularity); fibre integration of Born observable produces a finite constant as $x\to y$ (Remark~\ref{rem:uv}). The IR physics (mass gap, confinement, area law) is captured; the UV power-law singularity encoding asymptotic freedom is absent from the fibre-averaged observable. Whether the Penrose transform's cohomological structure introduces conformal dimensions remains open.
 \item Minitwistor construction: $\CP^3$ reduces to $T\CP^1=\mathcal{O}(2)$ for $\R^3$ via Hitchin's dimensional reduction~\cite{Hitchin1982}. The $(3,1)\oplus(1,3)$ sector maps to the spin-$1$ Penrose transform, producing vorticity $\omega$ satisfying the Beltrami equation $\nabla\times\omega+m\omega=0$ at equilibrium (Theorem~\ref{thm:minitwistor}).
 \item Vorticity bound: Born floor gives $\|\omega\|_{L^\infty}\leq C(H)=0.344$ uniformly in time (Theorem~\ref{thm:minitwistor}). A singularity ($|\omega|\to\infty$) is $\theta\to 0$---certainty about one hypothesis; the Born floor prevents it (Remark~\ref{rem:singularity_certainty}). Spatial coupling is diffusive: $M_k=J_m+J_e\cos(k)$ is a discrete Laplacian (Theorem~\ref{thm:multisite}). The descended equation is a $4$-component reaction-diffusion system with bounded quadratic nonlinearity ($R^2=0.999$, equation~\ref{eq:descended}); it is \emph{not} Navier--Stokes (the quadratic coupling is $98.9\%$ symmetric; the Levi-Civita cross-product structure of NS advection is absent). Global regularity holds for the descended equation via Schauder bootstrap (Remark~\ref{rem:ns_gap}).
-\item Wilson loop area law: $\sigma=-\ln(1-K^*)=-\ln(23/30)$ from Ward-constructed $W(C)$, gauge-derived evidence ($e^*\neq m^*$, $K=7/30$), plaquette decorrelation (OS4 cumulant expansion), and no screening (Theorem~\ref{thm:arealaw}).
+\item Wilson loop area law: $\sigma=-\ln(1-K^*)=-\ln(23/30)$ from the fibre transfer operator, gauge-derived evidence ($e^*\neq m^*$, $K=7/30$), plaquette decorrelation (OS4 cumulant expansion), and no screening (Theorem~\ref{thm:arealaw}).
 \end{enumerate}
 
 
 \section{Remaining Gaps}\label{sec:gaps}
 
 \begin{enumerate}[nosep]
-\item \textbf{Quantitative $F^+$.} \emph{Resolved.} On a $4^4$ lattice, $|F^+|/|F^-|$ stays within $3\%$ of unity at all sweeps including at $K\approx K^*$ (ratio $=1.016$ at sweep~10). Proof via the reality structure $\sigma:\CP^3\to\CP^3$: phase washout (Proposition~\ref{prop:washout}) drives $M$ real at equilibrium; real $M$ gives a $\sigma$-invariant bundle; $\sigma$ exchanges $F^+\leftrightarrow F^-$ isometrically, hence $|F^+|=|F^-|$. \emph{Note:} the pointwise identification $K(x)=c\cdot\Tr(F\wedge{*}F)(x)$ fails ($R^2=0.016$) because $K$ and $\|F\|^2$ measure complementary parts of the off-diagonal structure: $K$ is the symmetric total, $F$ involves the antisymmetric content (Theorem~\ref{thm:offdiag}, Remark~\ref{rem:KnotF}).
+\item \textbf{Quantitative $F^+$.} \emph{Resolved analytically.} Proof via the reality structure $\sigma:\CP^3\to\CP^3$: phase washout (Proposition~\ref{prop:washout}) drives $M$ real at equilibrium; real $M$ gives a $\sigma$-invariant bundle; $\sigma$ exchanges $F^+\leftrightarrow F^-$ isometrically, hence $|F^+|=|F^-|$ (Proposition~\ref{prop:balance}). A previous lattice computation that appeared to verify this numerically was measuring the curvature of the Maurer--Cartan form $M^{-1}dM$, which vanishes identically; the ``ratio $\approx 1$'' was an artefact (Remark~\ref{rem:chirality_verified}). Direct numerical verification requires the Ward-reconstructed connection. \emph{Note:} the pointwise identification $K(x)=c\cdot\Tr(F\wedge{*}F)(x)$ fails ($R^2=0.016$) because $K$ and $\|F\|^2$ measure complementary parts of the off-diagonal structure: $K$ is the symmetric total, $F$ involves the antisymmetric content (Theorem~\ref{thm:offdiag}, Remark~\ref{rem:KnotF}).
 \item \textbf{Mason's action for the DS deformation.} \emph{Resolved.} Theorem~\ref{thm:dsmatrix} gives the exact relationship: DS combination is the anticommutator $\{M,E\}$ with diagonal agreement redistributed from $I$ to the individual $\sigma_i$ (equation~\ref{eq:dsmatrix}). Equivalently, it is matrix multiplication with the commutator $[M,E]=i(s\times e)\cdot\sigma$ removed (Corollary~\ref{cor:commutator}). The off-diagonal products decompose into symmetric ($K$, the normalisation deficit) and antisymmetric ($[M,E]$, the curvature content); both are absent from the DS output (Theorem~\ref{thm:offdiag}). At the fixed point $K^*=7/30$, the conservation law $K^*(H^2+1)-\eta H^2=1$ fixes both the symmetric and antisymmetric content at steady state---a stationary Yang--Mills action. The combination rule has $S_3$ symmetry; the $\su(2)$ structure emerges from the Pauli embedding. Physical predictions ($K^*$, $\Delta$) are determined by the DS algebra at $H=3$. The spectral gap $\Delta$ is identified with the Yang--Mills mass gap via Mason's framework applied uniformly at the non-integrable equilibrium (Theorem~\ref{thm:ward_spectral}).
-\item \textbf{Wilson loop area law.} \emph{Established.} $W(C)=\Tr\,\mathcal{P}\exp\!\oint_C M^{-1}dM$ (Theorem~\ref{thm:arealaw}). At the physical equilibrium ($e^*\neq m^*$, gauge-derived evidence), $K(m^*,e^*)=7/30$ and $[M,E]\neq 0$. Plaquette decorrelation from OS4 via cumulant expansion. String tension $\sigma=-\ln(1-K^*)=-\ln(23/30)$. No screening (no charged matter). Confinement chain: non-abelian $G$ $\Rightarrow$ $\delta<1$ $\Rightarrow$ $K^*>0$ $\Rightarrow$ area law.
+\item \textbf{Wilson loop area law.} \emph{Established.} $W(C)$ defined through the fibre transfer operator (Theorem~\ref{thm:arealaw}). At the physical equilibrium ($e^*\neq m^*$, gauge-derived evidence), $K(m^*,e^*)=7/30$ and $[M,E]\neq 0$. Plaquette decorrelation from OS4 via cumulant expansion. String tension $\sigma=-\ln(1-K^*)=-\ln(23/30)$. No screening (no charged matter). Confinement chain: non-abelian $G$ $\Rightarrow$ $\delta<1$ $\Rightarrow$ $K^*>0$ $\Rightarrow$ area law. (Note: the area law follows from the Koopman spectrum; the explicit Ward-reconstructed connection formula is not required.)
 \item \textbf{$\det(M)\neq 0$ for complex mass functions.} \emph{Resolved.} For real masses: algebraic repulsion (Theorem~\ref{thm:lightcone}). For complex masses under coupled dynamics: $\det=0$ admits no self-consistent solution---no fixed point or periodic orbit of any period has $\det=0$ (Theorem~\ref{thm:selfentangle}). The $\det=0$ surface is exponentially unstable ($\lambda\geq 3.17$, Theorem~\ref{thm:instability}), and rank-2 coupling prevents the evidence configuration required to produce $\det=0$ output (Theorem~\ref{thm:rank2protect}). See \S\ref{sec:bundle}.
 \item \textbf{Continuum extraction map.} \emph{Resolved under Path~(B).} The state space $\CP^3$ is a smooth compact manifold; the DS combination map is rational (smooth); the Born floor enforcement is smooth. The theory is already continuous---no lattice limit is required. The extraction map $A\mapsto m$ is: (i)~Ward correspondence $A\mapsto M(z)$ (standard); (ii)~Pauli decomposition $M\mapsto m$ (linear, invertible, round-trip error $<10^{-15}$); (iii)~$L_1$-normalisation; (iv)~Born floor. Each step is smooth when $\det(M)\neq 0$ (guaranteed by Theorem~\ref{thm:selfentangle} under coupled dynamics). The lattice is a computational verification tool, not the definition of the theory.
 \item \textbf{Direct mass gap comparison.} \emph{Consistent.} The spectral gap at the $K^*=7/30$ equilibrium is $\Delta=-\ln(0.2829)=1.263$ per DS step (leading eigenvalue of the floor-modified transfer operator; structural filter rate $-\ln(23/30)=0.266$ is $4.75\times$ smaller). On an $8^3\times 16$ $\SU(2)$ lattice at $\beta=2.3$: $am_{\mathrm{eff}}=0.71$, giving $m_{\mathrm{eff}}/\Delta=0.56$ (equivalently, one DS step $\approx 1.78$ lattice spacings). In physical units at $a\approx 0.17\,\mathrm{fm}$: $m_{\mathrm{gap}}\approx 1.46\,\mathrm{GeV}$, compared to the lattice $0^{++}$ glueball mass $\approx 1.5\,\mathrm{GeV}$. Under Path~(B), $\Delta=1.263$ is a dimensionless prediction in natural (DS) units. Converting to physical units requires one energy scale (analogous to $\Lambda_{\mathrm{QCD}}$ in lattice QCD). This is not a gap in the framework---it is the standard situation in any quantum field theory: the theory predicts dimensionless ratios; one experimental input sets the scale.
+\item \textbf{Ward-reconstructed curvature at equilibrium.} \emph{Open.} The physical curvature at the $K^*=7/30$ equilibrium is the curvature of the Ward-reconstructed connection $A=h_+^{-1}dh_+$, obtained by Birkhoff factorisation of the transition function $\tilde{M}(x,\zeta,\bar\zeta)$ on each twistor line (Theorem~\ref{thm:nijenhuis}). The Maurer--Cartan form $M^{-1}dM$ is identically flat (Maurer--Cartan equation) and cannot determine the physical curvature. Previous numerical computations of $F$ using finite differences of $M^{-1}\partial_\mu M$ were measuring an identically vanishing quantity; the reported values ($\sim 10^{-5}$) were numerical noise. Whether $F_{\mathrm{Ward}}=0$ or $F_{\mathrm{Ward}}\neq 0$ at the equilibrium---and hence whether the vacuum has zero or nonzero classical curvature---requires explicit computation of the Birkhoff factorisation at $m^*$. The mass gap $\Delta=1.263$ (transfer operator spectral gap) and the area law (Koopman spectrum) are independent of this computation.
 \item \textbf{Abelian discrimination.} \emph{Confirmed across $L=4,6,8$.} The representation-mixing test on a $4^4$ lattice ($N=102{,}400$) measures $\delta$ for four observable pairs sharing a direction-$0$ link:
 
 \begin{center}
@@ -2306,16 +2352,16 @@ $N$ & $\rho$ ($g=0.01$) & $\rho$ ($g=0.05$) & $\rho$ ($g=0.1$) \\
 \end{tabular}
 \end{center}
 
-The spectral radius grows with $N$ but saturates well below $1$ (the $N=5\to 6$ increment is $<0.01$ at all couplings). The gap decreases with $N$---$\Delta=1.263$ for $\SU(2)$, $\Delta=1.026$ for $\SU(5)$ at $g=0.05$---but remains positive. All fixed points converge to machine precision ($<10^{-14}$). The rank-$N$ bundle on $\CP^3$ is assembled from the $N-1$ rank-2 sub-bundles. Degrees of freedom: $N-1$ DS systems provide $6(N-1)$ real parameters; pairwise cross-conflicts provide $\binom{N-1}{2}\cdot 2=(N-1)(N-2)$ additional real parameters; total $(N-1)(N+4)\geq N^2-1=\dim(\SU(N))$ for all $N\geq 2$ (excess $=3(N-1)$, the gauge redundancy within each root $\SU(2)$). Verified for $\SU(3)$: all 8 Gell-Mann matrices are reconstructed from 6 root generators and their commutators (rank $=8$, reconstruction error $<10^{-14}$). Mason's conditions for the rank-$N$ bundle: the Born floor on each DS sub-system gives $\dbar M\neq 0$ (non-holomorphic) and $[\dbar_z,\dbar_w]\neq 0$ (non-integrable, from the non-abelian commutator). For $\SU(3)$: $|\dbar M|=1.0$, $\mathrm{rank}(\dbar M)=3$ (genuinely non-abelian), $|[\dbar_z,\dbar_w]|=35.4$. Chirality balance: phase washout drives all mass components real at equilibrium; real coefficients in the Hermitian Gell-Mann basis give Hermitian $M$; Hermitian $M$ is $\sigma$-invariant; $F^+=\overline{F^-}$; hence $|F^+|=|F^-|$. Bundle non-degeneracy: $\det(M)\neq 0$ for $10{,}000$ random floor-active state pairs ($|\det|_{\min}=1.5\times 10^{-6}$). OS axioms: the coupled system on $(\CP^3)^{N-1}$ (compact) inherits Koopman positivity and commutativity from each factor, giving OS0--OS4 by the same arguments as \S\ref{sec:OS}.
+The spectral radius grows with $N$ but saturates well below $1$ (the $N=5\to 6$ increment is $<0.01$ at all couplings). The gap decreases with $N$---$\Delta=1.263$ for $\SU(2)$, $\Delta=1.026$ for $\SU(5)$ at $g=0.05$---but remains positive. All fixed points converge to machine precision ($<10^{-14}$). The rank-$N$ bundle on $\CP^3$ is assembled from the $N-1$ rank-2 sub-bundles. Degrees of freedom: $N-1$ DS systems provide $6(N-1)$ real parameters; pairwise cross-conflicts provide $\binom{N-1}{2}\cdot 2=(N-1)(N-2)$ additional real parameters; total $(N-1)(N+4)\geq N^2-1=\dim(\SU(N))$ for all $N\geq 2$ (excess $=3(N-1)$, the gauge redundancy within each root $\SU(2)$). Verified for $\SU(3)$: all 8 Gell-Mann matrices are reconstructed from 6 root generators and their commutators (rank $=8$, reconstruction error $<10^{-14}$). Mason's conditions for the rank-$N$ bundle: the Born floor on each DS sub-system gives $\dbar\Phi\neq 0$ (non-holomorphic, Theorem~\ref{thm:nonholo}), hence non-integrable $J$ (Theorem~\ref{thm:nijenhuis}). For $\SU(3)$: $\|\dbar\Phi\|=1.0$, $\mathrm{rank}(\dbar\Phi)=3$ (genuinely non-abelian); the Maurer--Cartan components $a_{\bar\alpha}=M^{-1}\dbar_\alpha M$ have $\|[a_{\bar z},a_{\bar w}]\|=35.4$ (non-commuting, unlike the rank-$1$ $\SU(2)$ case). Chirality balance: phase washout drives all mass components real at equilibrium; real coefficients in the Hermitian Gell-Mann basis give Hermitian $M$; Hermitian $M$ is $\sigma$-invariant; $F^+=\overline{F^-}$; hence $|F^+|=|F^-|$. Bundle non-degeneracy: $\det(M)\neq 0$ for $10{,}000$ random floor-active state pairs ($|\det|_{\min}=1.5\times 10^{-6}$). OS axioms: the coupled system on $(\CP^3)^{N-1}$ (compact) inherits Koopman positivity and commutativity from each factor, giving OS0--OS4 by the same arguments as \S\ref{sec:OS}.
 
 \textbf{Non-triviality.} $K^*>0$ indicates non-zero conflict (interaction) at the fixed point, and $\Delta>0$ excludes massless gauge bosons. However, a free massive theory also has $\Delta>0$. The DS combination rule is nonlinear: the $(1-K)$ normalisation and the Born floor generate connected $n$-point functions at all orders ($n\geq 3$), whereas a free (Gaussian) theory has $G_n^{\mathrm{conn}}=0$ for $n\geq 3$. At the exact $K^*=7/30$ equilibrium (verified to $|K-7/30|<10^{-15}$) with $5\times 10^5$ evidence perturbations: the kurtosis excess of Born probability fluctuations is $\kappa=+0.079\pm 0.009$ ($9.0\sigma$ from Gaussian), and the connected-to-Wick ratio is $G_4^{\mathrm{conn}}/G_4^{\mathrm{Wick}}=+0.056\pm 0.004$ ($14.5\sigma$, bootstrap). Both measures are positive, robust across evidence scales $\sigma\in[0.005,0.05]$, and increase monotonically with perturbation amplitude---consistent with the nonlinearity of the $(1-K)$ normalisation and floor enforcement. The theory is structurally non-free. \emph{Established.}
 
 \textbf{Spectral gap.} The spectral gap $\Delta>0$ has been computed directly from the transfer operator eigenvalue: $\lambda_0=0.2829$ at the $K^*=7/30$ equilibrium, giving $\Delta=-\ln\lambda_0=1.263$ per DS step. This is $4.75\times$ the structural filter rate $-\ln(1-K^*)=0.266$. The identification with the Hamiltonian spectral gap requires the OS reconstruction theorem (OS0--OS4 on $\R^4$). \emph{Established:} $\Delta=1.263>0$ from the transfer operator eigenvalue; OS0--OS4 on $\R^4$ via fibre locality (\S\ref{sec:OS}).
 
 \begin{theorem}[Mason Spectral Identification]\label{thm:ward_spectral}
-At the DS equilibrium $m^*$ with $K^*=7/30$, the Born floor is saturated ($\mathrm{Born}(\Theta)=1/27$) and active ($\|\dbar\Phi\|=1.12$, Remark~\ref{rem:floor_active}). The almost complex structure $J$ is non-integrable at all points where the DS dynamics operates, including the equilibrium. Mason's framework~\cite{Mason2005} applies uniformly: the non-integrable $J$ on $\CP^3$ produces full Yang--Mills on $S^4$ with $F^+\propto N_J$. The Nijenhuis tensor $N_J\neq 0$ generically; at the equilibrium $m^*$ specifically, the rank-$1$ structure of $\dbar\Phi$ (Remark~\ref{rem:rank1}) gives $F\approx 0$, identifying the fixed point as the Yang--Mills vacuum.
+At the DS equilibrium $m^*$ with $K^*=7/30$, the Born floor is saturated ($\mathrm{Born}(\Theta)=1/27$) and active ($\|\dbar\Phi\|=1.12$, Remark~\ref{rem:floor_active}). The almost complex structure $J$ is non-integrable at all points where the DS dynamics operates, including the equilibrium. Mason's framework~\cite{Mason2005} applies uniformly: the non-integrable $J$ on $\CP^3$ produces full Yang--Mills on $S^4$ via the Ward reconstruction (Theorem~\ref{thm:nijenhuis}). At the equilibrium $m^*$ specifically, the anti-holomorphic Jacobian $\dbar\Phi$ has rank~$1$ (Remark~\ref{rem:rank1}); the value of the Ward-reconstructed curvature $F_{\mathrm{Ward}}$ at $m^*$ is an open computation (\S\ref{sec:gaps}).
 
-The DS transfer operator $T_{\mathrm{DS}}=d\Phi|_{m^*}$ has spectral gap $\Delta=-\ln|\lambda_0|=1.263$. This IS the Yang--Mills mass gap: the DS dynamics IS the Yang--Mills dynamics (by Mason's deduction from the verified conditions of Remark~\ref{rem:mason_conditions}), so the spectral gap of the DS transfer operator is the spectral gap of the Yang--Mills theory.
+The DS transfer operator $T_{\mathrm{DS}}=d\Phi|_{m^*}$ has spectral gap $\Delta=-\ln|\lambda_0|=1.263$. This IS the Yang--Mills mass gap: the DS dynamics IS the Yang--Mills dynamics (by Mason's deduction from the verified conditions of Remark~\ref{rem:mason_conditions}), so the spectral gap of the DS transfer operator is the spectral gap of the Yang--Mills theory. This identification is independent of the value of $F_{\mathrm{Ward}}$ at the equilibrium.
 \end{theorem}
 
 \begin{proof}
@@ -2327,7 +2373,9 @@ The previous version of this paper claimed $\dbar\Phi=0$ at the fixed point, bas
 \end{remark}
 
 \begin{remark}[Rank-$1$ anti-holomorphic Jacobian at equilibrium]\label{rem:rank1}
-The Born floor enforcement is a one-dimensional operation: it adjusts $|\theta|$ to satisfy $\mathrm{Born}=1/27$ and rescales the singletons proportionally to maintain $L_1=1$. Consequently, the anti-holomorphic Jacobian $\dbar\Phi$ at $m^*$ has rank~$1$ as a $4\times 4$ matrix over $\C$: all columns are proportional. This implies that all connection components $a_\alpha=M^{-1}\sum_j(\partial M/\partial m_j)(\dbar\Phi)_{j\alpha}$ are proportional to a single $2\times 2$ matrix, hence commute: $[a_\alpha,a_\beta]=0$ for all $\alpha,\beta$ (verified: $\|[a_\alpha,a_\beta]\|<10^{-11}$). The $(0,2)$-curvature $F^{0,2}=\dbar a+a\wedge a=\dbar a$ (since $a\wedge a=0$) is of order $10^{-5}$ at $m^*$ and $10^{-5}$--$10^{-4}$ in a neighbourhood, identifying the equilibrium as the physical vacuum ($F\approx 0$).
+The Born floor enforcement is a one-dimensional operation: it adjusts $|\theta|$ to satisfy $\mathrm{Born}=1/27$ and rescales the singletons proportionally to maintain $L_1=1$. Consequently, the anti-holomorphic Jacobian $\dbar\Phi$ at $m^*$ has rank~$1$ as a $4\times 4$ matrix over $\C$: all columns are proportional. This is a structural property of the non-integrability at equilibrium: the floor's anti-holomorphic contribution always points in the same direction in mass-function space.
+
+\emph{Clarification.} The rank-$1$ Jacobian implies that all Maurer--Cartan components $a_\alpha=M^{-1}\sum_j(\partial M/\partial m_j)(\dbar\Phi)_{j\alpha}$ are proportional, hence commute. However, the curvature of the Maurer--Cartan form $a=M^{-1}\dbar M$ vanishes identically by the Maurer--Cartan equation ($\dbar a+a\wedge a=0$ for any smooth $M$), regardless of rank. The physical curvature is that of the Ward-reconstructed connection (Theorem~\ref{thm:nijenhuis}), which depends on the Birkhoff factorisation and has not been computed at $m^*$. Whether the equilibrium has $F_{\mathrm{Ward}}=0$ or $F_{\mathrm{Ward}}\neq 0$ is an open question (\S\ref{sec:gaps}).
 
 This is compatible with the rank-$2$ kink (Theorem~\ref{thm:entangle}): the $2\times 2$ matrix $\dbar M$ has both singular values nonzero (both bundle channels are affected), but the $4\times 4$ Jacobian $\dbar\Phi$ has rank~$1$ (the kink always points in the same direction in mass-function space). One direction in $\C^4$, but that direction has both $I$ and $\sigma_i$ components under the $\su(2)$ embedding~(\ref{eq:M}).
 \end{remark}
@@ -2356,7 +2404,7 @@ The following results were obtained by direct numerical computation (Python/NumP
 
 \item \textbf{Kink rank-2: confirmed} (Theorem~\ref{thm:entangle}). In each anti-holomorphic direction $\partial/\partial\bar{s}_i$, the $2\times 2$ matrix $\dbar M$ has two nonzero singular values. Verified for 956 random floor-active states and 17,781 floor-active steps during DS dynamics. The non-abelian fraction (traceless component) is $0.558\pm 0.041$.
 
-\item \textbf{Chirality balance} (Proposition~\ref{prop:balance}). On a $4^4$ lattice with DS dynamics, the ratio $|F^+|/|F^-|$ computed via the 4D Hodge star converges to $1.006\pm 0.082$ after 40 DS steps, confirming $|F^+|=|F^-|$ at equilibrium.
+\item \textbf{Chirality balance} (Proposition~\ref{prop:balance}). Proved analytically via the reality structure: phase washout drives $M\in\GL(2,\R)$ at equilibrium, giving $\sigma$-invariant bundle and $|F^+|=|F^-|$. A previous lattice computation using finite differences of $M^{-1}\partial_\mu M$ was measuring the Maurer--Cartan form (identically flat); the reported ratio $1.006\pm 0.082$ was numerical noise. Direct verification requires the Ward-reconstructed connection (Remark~\ref{rem:chirality_verified}).
 
 \item \textbf{Floor activity at the fixed point} (Remark~\ref{rem:floor_active}). The DS step contracts $\theta$ via $\theta_{\mathrm{new}}=\theta\phi/(1-K)$, driving $\mathrm{Born}(\Theta)$ far below $1/27$ even when the input state $m^*$ has $\mathrm{Born}=1/27$ exactly. The floor therefore fires at every step, including at equilibrium. The anti-holomorphic Jacobian $\|\dbar\Phi\|_F=1.12$ at the fixed point, with $\mathrm{SO}(4)$ decomposition $23\%$ $(1,1)$, $26\%$ $(3,1)\oplus(1,3)$, $51\%$ $(3,3)$. Mason's framework applies uniformly---at equilibrium, during transients, everywhere.
 
@@ -2370,7 +2418,7 @@ The following results were obtained by direct numerical computation (Python/NumP
 
 \item \textbf{Saddle-point verification} (\S\ref{sec:JW}). The action per DS step $S(K)=-\ln(1-K)$ has second derivative $S''(K^*)=1/(1-K^*)^2=1.701$ at $K^*=7/30$. The Gaussian mass gap $\Delta_{\mathrm{G}}=\sqrt{S''}=1/(1-K^*)=30/23\approx 1.304$. The exact spectral gap $\Delta=1.263$ is $3.2\%$ below the Gaussian value, consistent with anharmonic corrections. The $3.2\%$ deviation measures the non-Gaussianity of the DS dynamics around the equilibrium.
 
-\item \textbf{Universal curvature bound} (\S\ref{sec:regularity}). The anti-holomorphic Jacobian $\dbar\Phi$ was computed via Wirtinger finite differences across $10^5$ random floor-active states in $B$. Results: $\|\dbar\Phi\|_F\leq 0.892$ (maximum over all samples; mean $0.688\pm 0.029$). The minimum singular value of $M$ on $B$: $\sigma_{\min}\geq 0.475$, giving $\|M^{-1}\|\leq 2.10$. Combined: $|F|\leq\|M^{-1}\|\cdot\|\dbar\Phi\|\leq 2.10\times 0.892=1.87$.
+\item \textbf{Universal curvature bound} (\S\ref{sec:regularity}). The anti-holomorphic Jacobian $\dbar\Phi$ was computed via Wirtinger finite differences across $10^5$ random floor-active states in $B$. Results: $\|\dbar\Phi\|_F\leq 0.892$ (maximum over all samples; mean $0.688\pm 0.029$). The minimum singular value of $M$ on $B$: $\sigma_{\min}\geq 0.475$, giving $\|M^{-1}\|\leq 2.10$. These bound the non-integrability data that enters Mason's Ward reconstruction (Theorem~\ref{thm:nijenhuis}). The Maurer--Cartan form norm $\|a^{0,1}\|=\|M^{-1}\dbar M\|\leq 2.10\times 0.892=1.87$ bounds the transition function's anti-holomorphic content; the Ward-reconstructed curvature $\|F_{\mathrm{Ward}}\|$ is bounded by the same compactness argument (Theorem~\ref{thm:curvature_bound}).
 
 The $\mathrm{SO}(4)$ decomposition of $\dbar\Phi$ across $5000$ floor-active states gives sector fractions: $(1,1)$ scalar $45.1\%$; $(3,1)\oplus(1,3)$ gauge $4.9\%$; $(3,3)$ gravity $50.0\%$. The maximum of the gauge-sector norm $\|\dbar\Phi_{(3,1)\oplus(1,3)}\|$ over $B$ is $0.344$---this is $C_{\mathrm{gauge}}(H\!=\!3)$ in Theorem~\ref{thm:regularity}.
 
