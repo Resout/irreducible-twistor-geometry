@@ -4,7 +4,7 @@ The framework of self evident irreducible geometry forcing many, if not all, que
 
 ## What This Is
 
-219 verification scripts for the framework described in:
+230 verification scripts for the framework described in:
 
 **"The Mass Gap from Enforced Uncertainty: Evidence Combination, Twistor Geometry, and Yang-Mills Theory"**
 *J. R. Manuel, 2026*
@@ -18,7 +18,7 @@ A single algebraic identity — the Dempster-Shafer combination rule at H=3 hypo
 - **Hierarchy tower** (cosmological constant to fine structure constant from S = 810/7)
 - **Navier-Stokes regularity** (vorticity bounded by Born floor on minitwistor)
 
-All from one equation. Zero free parameters. 18 exact algebraic identities (Class A). The state space CP³ is independently Penrose's twistor space for R⁴ — this is not assumed, it is forced by H=3.
+All from one equation. Zero free parameters. 20 exact algebraic identities (Class A). The state space CP³ is independently Penrose's twistor space for R⁴ — this is not assumed, it is forced by H=3.
 
 ## Constants
 
@@ -29,8 +29,8 @@ Everything derives from H = 3:
 | H | 3 | Forced (4 independent routes) |
 | K* | 7/30 | Exact (conservation law) |
 | Born floor | 1/27 | Exact (self-consistency) |
-| Δ (spectral gap) | 1.2626 | Algebraic (15 sig fig, 0 free params) |
-| λ₀ | 0.28291 | Algebraic (15 sig fig, 0 free params) |
+| Δ (spectral gap) | 1.2626 | Transcendental, = -ln(λ₀), 50 sig fig |
+| λ₀ | 0.28291 | Algebraic, degree 19 over Q, Gal=S₁₉ |
 | S (instanton action) | 810/7 | Exact |
 | S + 1/K* | 120 = 5! | Exact |
 
@@ -38,7 +38,7 @@ Everything derives from H = 3:
 
 ```
 paper/          LaTeX source + PDF
-computations/   219 standalone verification scripts (flat, no interdependencies)
+computations/   230 standalone verification scripts (flat, no interdependencies)
 ```
 
 Each `.py` file in `computations/` is a standalone verification of a specific claim. Key scripts:
