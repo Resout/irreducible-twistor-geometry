@@ -4,7 +4,7 @@ The framework of self evident irreducible geometry forcing many, if not all, que
 
 ## What This Is
 
-230 verification scripts for the framework described in:
+239 verification scripts for the framework described in:
 
 **"The Mass Gap from Enforced Uncertainty: Evidence Combination, Twistor Geometry, and Yang-Mills Theory"**
 *J. R. Manuel, 2026*
@@ -38,7 +38,7 @@ Everything derives from H = 3:
 
 ```
 paper/          LaTeX source + PDF
-computations/   230 standalone verification scripts (flat, no interdependencies)
+computations/   239 standalone verification scripts (flat, no interdependencies)
 ```
 
 Each `.py` file in `computations/` is a standalone verification of a specific claim. Key scripts:

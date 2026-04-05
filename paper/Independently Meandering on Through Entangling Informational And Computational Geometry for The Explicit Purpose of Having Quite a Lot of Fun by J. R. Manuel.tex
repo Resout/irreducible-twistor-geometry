@@ -44,7 +44,7 @@ The framework is then implemented as a computational engine and run. The $S_3$ r
 
 A section on numerology documents a failed attempt to connect $K^* = 7/30$ to the Barbero--Immirzi parameter, shows how the dressing is outperformed by the structurally meaningless $19/80$, and draws the diagnostic lesson: in this framework, if an answer is not exact, the relationships have not been correctly identified. There is nothing to tune.
 
-Computational verification: $K^* = 0.2320 \pm 0.0033$ (CV $= 1.4\%$) across $105$ independent analyses spanning $\SU(2)$ and $\SU(3)$ at seven lattice sizes. 230 verification scripts. All code public: \texttt{github.com/Resout/irreducible-twistor-geometry}.
+Computational verification: $K^* = 0.2320 \pm 0.0033$ (CV $= 1.4\%$) across $105$ independent analyses spanning $\SU(2)$ and $\SU(3)$ at seven lattice sizes. 239 verification scripts. All code public: \texttt{github.com/Resout/irreducible-twistor-geometry}.
 \end{abstract}
 
 \tableofcontents
@@ -1063,19 +1063,19 @@ The ratio $|F^+|/|F^-|$ was computed on a $4^4$ lattice with DS dynamics using t
 \toprule
 DS framework & Bundle & Yang--Mills \\
 \midrule
-$\theta=1$ (ignorance) & Trivial bundle & $A=0$ (vacuum) \\
-$K^*=7/30$ (equilibrium) & Non-trivial, both chiralities & $\langle F^2\rangle\neq 0$ (condensate) \\
+$\theta=1$ (ignorance) & Trivial bundle & $A=0$ (trivial vacuum) \\
+$K^*=7/30$ (equilibrium) & Non-trivial connection, $a\neq 0$, $F\approx 0$ & Physical vacuum; $\langle F^2\rangle\neq 0$ from fluctuations \\
 $K>K^*$ (excitation) & Excited, $|F^+|\neq|F^-|$ & Decays at rate $\Delta$ \\
 \bottomrule
 \end{tabular}
 \end{center}
 
-\begin{remark}[The equilibrium is not the vacuum]
-The DS fixed point at $K^*=7/30$ corresponds to the typical path-integral configuration, not the vacuum. In Yang--Mills, the vacuum has $A=0$, but the path integral is dominated by configurations with $\langle\Tr(F^2)\rangle\neq 0$---the gluon condensate. The structural filter removes fraction $K^*$ per step from excitations above this typical configuration. The structural filter decay rate is $-\ln(1-K^*)=0.266$ per step; the physical mass gap $\Delta=-\ln\lambda_0$ is determined by the leading eigenvalue $\lambda_0<1$ of the floor-modified transfer operator at the self-consistent equilibrium (\S\ref{sec:OS}).
+\begin{remark}[The equilibrium is the physical vacuum]\label{rem:vacuum}
+The DS fixed point at $K^*=7/30$ is the physical vacuum: it has non-trivial connection ($a^{0,1}\neq 0$, $\|\dbar\Phi\|=1.12$) but near-zero gauge curvature ($\|F^{0,2}\|\sim 10^{-5}$, Remark~\ref{rem:rank1}). This is the standard Yang--Mills picture: the classical vacuum has $F=0$; the quantum vacuum has $\langle\Tr(F^2)\rangle\neq 0$ from fluctuations sampled by the path integral measure. The non-triviality results (kurtosis $\kappa=+0.079$, connected 4-point function, \S\ref{sec:JW}) are properties of these quantum fluctuations---measured by perturbing around $m^*$ and averaging, not by evaluating at the fixed point itself. The structural filter removes fraction $K^*$ per step from excitations above this vacuum. The mass gap $\Delta=-\ln\lambda_0=1.263$ is the energy of the lightest excitation, determined by the transfer operator spectrum (\S\ref{sec:OS}).
 \end{remark}
 
-\begin{remark}[Why the vacuum has $K=0$]
-Complete ignorance ($\theta=1$, all $s_i=0$) gives $K=0$: no singletons means no cross-focal products. The bundle is trivially trivial. Evidence combination drives the system \emph{away} from this state toward the $K^*$ equilibrium. The approach to equilibrium is the generation of the gauge field.
+\begin{remark}[Two vacua]
+Complete ignorance ($\theta=1$, all $s_i=0$) gives $K=0$: the trivial (perturbative) vacuum with $A=0$. Evidence combination drives the system away from this state toward the $K^*=7/30$ equilibrium---the physical (non-perturbative) vacuum, which has non-trivial connection ($a\neq 0$) but near-zero curvature ($F\approx 0$, Remark~\ref{rem:rank1}). The approach to equilibrium is the generation of the gauge field's connection; the curvature arises from fluctuations around the equilibrium, not from the fixed point itself.
 \end{remark}
 
 
@@ -1089,7 +1089,7 @@ The Born floor $1/H^3$ at $H=3$ serves nine roles simultaneously:
 \item \textbf{Dynamical}: its enforcement is the non-holomorphic operation that generates $F^+$.
 \item \textbf{Rate control}: keeps $|\theta|$ bounded below, setting the phase washout rate.
 \item \textbf{Googly}: defines the non-integrable almost complex structure matching Mason's framework.
-\item \textbf{Chirality balance}: finite washout rate ensures $|F^+|=|F^-|$ at equilibrium rather than instant collapse to $F^+=0$.
+\item \textbf{Chirality balance}: phase washout drives $\mathrm{Im}(K)\to 0$, ensuring $|F^+|=|F^-|$ for fluctuations around equilibrium (Proposition~\ref{prop:balance}). At the fixed point itself, $F^+\approx F^-\approx 0$ (Remark~\ref{rem:rank1}).
 \item \textbf{Conformal breaking}: its enforcement does not commute with biholomorphisms of $\CP^3$, breaking the conformal group of $S^4$ (Theorem~\ref{thm:conformal_break}).
 \item \textbf{Graviton source}: contributes to the symmetric traceless $(3,3)$ component of $\dbar\Phi$, the graviton representation under $\mathrm{SO}(4)$ (Theorem~\ref{thm:spin_decomp}).
 \end{enumerate}
@@ -1372,7 +1372,7 @@ The identification of the $(3,1)\oplus(1,3)$ sector with the vorticity two-form 
 \]
 for every $T$, satisfying the BKM criterion.
 
-The regularity follows not from energy estimates or Sobolev embeddings (which fail to close in $3$D) but from the compactness of the Born-floor-restricted twistor fibre $B\subset\CP^3$. The bound is algebraic and fibre-local: it holds in any dimension, for any base topology, and does not weaken with time. The remaining steps---verifying that DS spatial coupling descends to a parabolic PDE and identifying it with Navier--Stokes---are stated as open problems in Remark~\ref{rem:ns_gap}.
+The regularity follows not from energy estimates or Sobolev embeddings (which fail to close in $3$D) but from the compactness of the Born-floor-restricted twistor fibre $B\subset\CP^3$. The bound is algebraic and fibre-local: it holds in any dimension, for any base topology, and does not weaken with time. The DS spatial coupling descends to a $4$-component reaction-diffusion equation with bounded quadratic nonlinearity (equation~\ref{eq:descended}), for which global regularity holds via the Schauder bootstrap. This descended equation is not the incompressible Navier--Stokes equation: the quadratic coupling is symmetric, lacking the antisymmetric Levi-Civita structure of NS advection (Remark~\ref{rem:ns_gap}).
 \end{remark}
 
 \begin{remark}[Why the argument is dimension-independent]
@@ -1788,7 +1788,7 @@ The Universal Query Engine operates as follows. Given paired observations $(x_i,
 \item \textbf{Compose.} Given $J_{AB}$ (the crystal of $A\leftrightarrow B$) and $J_{BC}$ (the crystal of $B\leftrightarrow C$), the composition $J_{AC} = J_{AB} \cdot J_{BC}$ (matrix multiplication, renormalised) produces the transitive crystal of $A\leftrightarrow C$ via $B$.
 \end{enumerate}
 
-The engine is deterministic: same input, same seed, same crystal, same Schmidt number, always. The code is public (230 scripts at \texttt{github.com/Resout/irreducible-twistor-geometry}).
+The engine is deterministic: same input, same seed, same crystal, same Schmidt number, always. The code is public (239 scripts at \texttt{github.com/Resout/irreducible-twistor-geometry}).
 
 
 \section{H=3 Resonance}\label{sec:resonance}
@@ -2289,7 +2289,7 @@ The spectral radius grows with $N$ but saturates well below $1$ (the $N=5\to 6$ 
 \textbf{Spectral gap.} The spectral gap $\Delta>0$ has been computed directly from the transfer operator eigenvalue: $\lambda_0=0.2829$ at the $K^*=7/30$ equilibrium, giving $\Delta=-\ln\lambda_0=1.263$ per DS step. This is $4.75\times$ the structural filter rate $-\ln(1-K^*)=0.266$. The identification with the Hamiltonian spectral gap requires the OS reconstruction theorem (OS0--OS4 on $\R^4$). \emph{Established:} $\Delta=1.263>0$ from the transfer operator eigenvalue; OS0--OS4 on $\R^4$ via fibre locality (\S\ref{sec:OS}).
 
 \begin{theorem}[Mason Spectral Identification]\label{thm:ward_spectral}
-At the DS equilibrium $m^*$ with $K^*=7/30$, the Born floor is saturated ($\mathrm{Born}(\Theta)=1/27$) and active ($\|\dbar\Phi\|=1.12$, Remark~\ref{rem:floor_active}). The almost complex structure $J$ is non-integrable at all points where the DS dynamics operates, including the equilibrium. Mason's framework~\cite{Mason2005} applies uniformly: the non-integrable $J$ on $\CP^3$ produces full Yang--Mills on $S^4$ with $F^+\propto N_J\neq 0$.
+At the DS equilibrium $m^*$ with $K^*=7/30$, the Born floor is saturated ($\mathrm{Born}(\Theta)=1/27$) and active ($\|\dbar\Phi\|=1.12$, Remark~\ref{rem:floor_active}). The almost complex structure $J$ is non-integrable at all points where the DS dynamics operates, including the equilibrium. Mason's framework~\cite{Mason2005} applies uniformly: the non-integrable $J$ on $\CP^3$ produces full Yang--Mills on $S^4$ with $F^+\propto N_J$. The Nijenhuis tensor $N_J\neq 0$ generically; at the equilibrium $m^*$ specifically, the rank-$1$ structure of $\dbar\Phi$ (Remark~\ref{rem:rank1}) gives $F\approx 0$, identifying the fixed point as the Yang--Mills vacuum.
 
 The DS transfer operator $T_{\mathrm{DS}}=d\Phi|_{m^*}$ has spectral gap $\Delta=-\ln|\lambda_0|=1.263$. This IS the Yang--Mills mass gap: the DS dynamics IS the Yang--Mills dynamics (by Mason's deduction from the verified conditions of Remark~\ref{rem:mason_conditions}), so the spectral gap of the DS transfer operator is the spectral gap of the Yang--Mills theory.
 \end{theorem}
@@ -2300,6 +2300,12 @@ Mason's theorem (Theorem~\ref{thm:mason_orig}) requires: (i)~a rank-2 bundle on 
 
 \begin{remark}[Uniformity of the Mason identification]\label{rem:mason_uniform}
 The previous version of this paper claimed $\dbar\Phi=0$ at the fixed point, based on checking the floor at $m^*$ (where $\mathrm{Born}=1/27$) rather than at $\mathrm{DS}(m^*)$ (where $\mathrm{Born}\ll 1/27$)---a chain rule error. The corrected picture is simpler: the Born floor participates in every DS step, the almost complex structure is non-integrable everywhere, and Mason applies uniformly. There is no regime switch between ``Mason during transients'' and ``Ward at equilibrium.'' The geometry is the same at all points of the dynamics.
+\end{remark}
+
+\begin{remark}[Rank-$1$ anti-holomorphic Jacobian at equilibrium]\label{rem:rank1}
+The Born floor enforcement is a one-dimensional operation: it adjusts $|\theta|$ to satisfy $\mathrm{Born}=1/27$ and rescales the singletons proportionally to maintain $L_1=1$. Consequently, the anti-holomorphic Jacobian $\dbar\Phi$ at $m^*$ has rank~$1$ as a $4\times 4$ matrix over $\C$: all columns are proportional. This implies that all connection components $a_\alpha=M^{-1}\sum_j(\partial M/\partial m_j)(\dbar\Phi)_{j\alpha}$ are proportional to a single $2\times 2$ matrix, hence commute: $[a_\alpha,a_\beta]=0$ for all $\alpha,\beta$ (verified: $\|[a_\alpha,a_\beta]\|<10^{-11}$). The $(0,2)$-curvature $F^{0,2}=\dbar a+a\wedge a=\dbar a$ (since $a\wedge a=0$) is of order $10^{-5}$ at $m^*$ and $10^{-5}$--$10^{-4}$ in a neighbourhood, identifying the equilibrium as the physical vacuum ($F\approx 0$).
+
+This is compatible with the rank-$2$ kink (Theorem~\ref{thm:entangle}): the $2\times 2$ matrix $\dbar M$ has both singular values nonzero (both bundle channels are affected), but the $4\times 4$ Jacobian $\dbar\Phi$ has rank~$1$ (the kink always points in the same direction in mass-function space). One direction in $\C^4$, but that direction has both $I$ and $\sigma_i$ components under the $\su(2)$ embedding~(\ref{eq:M}).
 \end{remark}
 
 \begin{proposition}[Continuous spectral family]\label{prop:continuous_spectrum}
