@@ -18,7 +18,7 @@ A single algebraic identity — the Dempster-Shafer combination rule at H=3 hypo
 - **Hierarchy tower** (cosmological constant to fine structure constant from S = 810/7)
 - **Regularity of descended spin-1 field** (vorticity bounded by Born floor on minitwistor; the descended equation is a 4-component reaction-diffusion system, not Navier-Stokes)
 
-All from one equation. Zero free parameters. 20 exact algebraic identities (Class A). The state space CP³ is independently Penrose's twistor space for R⁴ — this is not assumed, it is forced by H=3.
+All from one equation. Zero free parameters. 21 exact algebraic identities (Class A). The state space CP³ is independently Penrose's twistor space for R⁴ — this is not assumed, it is forced by H=3.
 
 ## Constants
 

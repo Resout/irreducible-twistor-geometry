@@ -40,7 +40,7 @@ We derive an evidence-combination framework from a single algebraic identity and
 
 The framework connects to Yang--Mills via two routes: non-abelian gauge invariance forces universal correlation ($\delta < 1$), which is the mass gap condition; and $\CP^3$---the state space forced by $H=3$---is independently Penrose's twistor space for $\R^4$. The Born floor ($1/27$) generates a non-integrable almost complex structure in the sense of Mason, producing both chiralities of gauge curvature. The anti-holomorphic Jacobian decomposes under $\mathrm{SO}(4)$ as $(1,1)\oplus(3,1)\oplus(1,3)\oplus(3,3)$: scalar, gauge fields, and gravity as irreducible representations of the same object. The graviton is massless (base variations preserve $K^*$); glueballs are gapped ($\Delta = 1.263$). Osterwalder--Schrader axioms OS0--OS4 are established on $S^4$ and $\R^4$. Wilson loop area law with string tension $\sigma = -\ln(23/30)$. Confinement chain: non-abelian $\Rightarrow$ $\delta < 1$ $\Rightarrow$ $K^* > 0$ $\Rightarrow$ area law.
 
-The framework is then implemented as a computational engine and run. The $S_3$ representation theory of the $\C^{16}$ joint mass space ($16 = 5 + 1 + 10$: trivial, sign, standard) produces the Koide formula for charged lepton masses from $H=3$ alone: $Q = 2/3$ from dimension ratios, $\sqrt{2}$ from sector dimensions, $\theta = 2/9$ from a Coxeter correction that is exact to the last digit. Three lepton masses to $0.01\%$ with zero free parameters. The instanton action $S = 810/7$ satisfies $S + 1/K^* = 5! = 120$, and the hierarchy tower $e^{-S/d}$ at representation dimensions $d \in \{1, 5, 10, 16, 24\}$ matches physical scale ratios from the cosmological constant to the fine structure constant. A precision ledger classifies all results: 20 exact algebraic identities (Class~A), 17 high-precision agreements awaiting exact derivation (Class~B). The engine operates identically across 35 domains from $\Z/3\Z$ algebra to narrative machines.
+The framework is then implemented as a computational engine and run. The $S_3$ representation theory of the $\C^{16}$ joint mass space ($16 = 5 + 1 + 10$: trivial, sign, standard) produces the Koide formula for charged lepton masses from $H=3$ alone: $Q = 2/3$ from dimension ratios, $\sqrt{2}$ from sector dimensions, $\theta = 2/9$ from a Coxeter correction that is exact to the last digit. Three lepton masses to $0.01\%$ with zero free parameters. The instanton action $S = 810/7$ satisfies $S + 1/K^* = 5! = 120$, and the hierarchy tower $e^{-S/d}$ at representation dimensions $d \in \{1, 5, 10, 16, 24\}$ matches physical scale ratios from the cosmological constant to the fine structure constant. A precision ledger classifies all results: 21 exact algebraic identities (Class~A), 17 high-precision agreements awaiting exact derivation (Class~B). The engine operates identically across 35 domains from $\Z/3\Z$ algebra to narrative machines.
 
 A section on numerology documents a failed attempt to connect $K^* = 7/30$ to the Barbero--Immirzi parameter, shows how the dressing is outperformed by the structurally meaningless $19/80$, and draws the diagnostic lesson: in this framework, if an answer is not exact, the relationships have not been correctly identified. There is nothing to tune.
 
@@ -1078,6 +1078,28 @@ The DS fixed point at $K^*=7/30$ is the physical vacuum: it has non-trivial conn
 Complete ignorance ($\theta=1$, all $s_i=0$) gives $K=0$: the trivial (perturbative) vacuum with $A=0$. Evidence combination drives the system away from this state toward the $K^*=7/30$ equilibrium---the physical (non-perturbative) vacuum, which has non-trivial connection ($a\neq 0$) but near-zero curvature ($F\approx 0$, Remark~\ref{rem:rank1}). The approach to equilibrium is the generation of the gauge field's connection; the curvature arises from fluctuations around the equilibrium, not from the fixed point itself.
 \end{remark}
 
+\begin{theorem}[Gluon condensate coefficient]\label{thm:condensate}
+Let $m^*=(s_1,s_2,s_3,\theta)$ be the $K^*=7/30$ equilibrium with $\mathrm{Born}(\Theta)=1/H^3$. The condensate coefficient $\mathcal{C}$, defined by $\langle\Tr(F^2)\rangle=\mathcal{C}\cdot\sigma_{\mathrm{eff}}^4$ where $\sigma_{\mathrm{eff}}^2=1/(1-\lambda_0^2)$ is the fluctuation variance from the transfer operator spectrum, satisfies the exact identity
+\begin{equation}\label{eq:condensate}
+\mathcal{C}\cdot\det(M^*)^2=\frac{4(3n^2+2n+3)}{(n-1)^2},\qquad n=H^3-1,
+\end{equation}
+which at $H=3$ ($n=26$) gives $\mathcal{C}\cdot\det(M^*)^2=8332/625$.
+\end{theorem}
+
+\begin{proof}
+The condensate $\langle\Tr(F^2)\rangle$ is the path integral average of $|[a_\mu,a_\nu]|^2$ over Gaussian fluctuations around $m^*$, where $a_\mu=M^{*-1}\,\delta M_\mu/\sqrt{2}$ is the connection from a perturbation $\delta m_\mu$. For independent Gaussian perturbations $v,w\in\R^4$ with $\langle v_iv_j\rangle=\sigma^2\delta_{ij}$, the Wick factorisation gives
+\[
+\mathcal{C}=\sum_{i,k=0}^{3}\Tr([A_i,A_k]^\dagger[A_i,A_k]),
+\]
+where $A_i=M^{*-1}\,\mathrm{basis}_i/\sqrt{2}$ and $\{\mathrm{basis}_0,\ldots,\mathrm{basis}_3\}=\{I,\sigma_1,\sigma_2,\sigma_3\}$. Expanding $M^{*-1}=\sqrt{2}\,(\theta\,I-s\cdot\sigma)/({\theta^2-|s|^2})$ and using $[\sigma_i,\sigma_j]=2i\varepsilon_{ijk}\sigma_k$, the numerator of $\mathcal{C}\cdot D^4$ (with $D=\theta^2-|s|^2$) evaluates to $16(3|s|^4+2|s|^2\theta^2+3\theta^4)$ by direct symbolic computation. At the Born floor ($|s|^2=n\theta^2$ with $n=H^3-1$), this reduces to $16(3n^2+2n+3)\theta^4$, while $D^4=(n-1)^4\theta^8$ and $\det(M^*)^2=(n-1)^2\theta^4/4$. The ratio gives~(\ref{eq:condensate}).
+
+Cross-validated: the analytic coefficient $\mathcal{C}=149.596$ agrees with Monte Carlo ($200{,}000$ Gaussian samples) to $0.23\%$.
+\end{proof}
+
+\begin{remark}[Interpretation of the condensate]
+The vacuum has $F\approx 0$ (Remark~\ref{rem:rank1}). The condensate $\langle\Tr(F^2)\rangle\neq 0$ arises from quantum fluctuations---perturbations around $m^*$ sampled by the Fubini--Study measure on $B$. The coefficient $\mathcal{C}$ is purely algebraic: $8332/625=4\times 2083/5^4$ at $H=3$, where $2083=3\cdot 26^2+2\cdot 26+3$ is a prime determined by the Born floor constraint $|s|^2=26\theta^2$. The fluctuation scale $\sigma_{\mathrm{eff}}^2=1/(1-\lambda_0^2)$ is determined by the spectral gap. The full condensate $\langle\Tr(F^2)\rangle=\mathcal{C}\cdot\sigma_{\mathrm{eff}}^4$ is therefore an algebraic number with zero free parameters.
+\end{remark}
+
 
 \section{The Nine Roles of the Born Floor}\label{sec:roles}
 
@@ -1303,7 +1325,7 @@ The Born floor $\mathrm{Born}(\theta)\geq 1/H^3$ restricts the DS dynamics to th
 \begin{equation}\label{eq:volume_fraction}
 f(H)=\left(1-\frac{1}{H^3}\right)^3=\left(\frac{H^3-1}{H^3}\right)^3.
 \end{equation}
-At $H=3$: $f=(26/27)^3=17576/19683\approx 89.3\%$. The physical significance of this fraction, if any, is not established.
+At $H=3$: $f=(26/27)^3=17576/19683\approx 89.3\%$. The physical significance: $B$ is the integration domain of the path integral measure (Theorem~\ref{thm:measure}), and the condensate coefficient (Theorem~\ref{thm:condensate}) is built from $n=H^3-1=26$---the number of non-ignorance states in the Born measurement space, which determines the Born floor constraint $|s|^2\leq n\theta^2$. The volume fraction $(n/(n+1))^3$ is the fraction of $\CP^3$ that participates in the quantum fluctuations generating $\langle\Tr(F^2)\rangle\neq 0$.
 \end{remark}
 
 \begin{remark}[Three entanglement types and sector coupling]
@@ -2050,6 +2072,7 @@ $\mathrm{Sym}^2(\C^4)$ dimension & $10 = H^2 + 1$ at $H=3$ & exact & A \\
 Koide angle (physical) & $\theta_p = 2/H^2 = 2/9$ & exact & A \\
 Transfer eigenvalue $\lambda_0$ & $0.28291$ (50 sig.~fig.) & algebraic, degree $19$, $\mathrm{Gal}=S_{19}$, irred.\ over $\mathbb{Z}$ & A \\
 Spectral gap $\Delta=-\ln\lambda_0$ & $1.2626$ (50 sig.~fig.) & transcendental (Lindemann--Weierstrass) & A \\
+Condensate coefficient & $\mathcal{C}\cdot\det(M^*)^2=8332/625$ & exact (Pauli algebra $+$ Born floor) & A \\
 Cosmological constant & $\Lambda = \det(I-J)^{-1/2}e^{-810/7} \approx 7.76\times 10^{-51}$ & prefactor to 50 sig.\ fig.; alg.\ degree $>40$ over $\mathbb{Q}$ & A$^*$ \\
 \midrule
 \multicolumn{4}{l}{\textit{Class B$_1$: Sub-percent precision ($<1\%$)}} \\[3pt]
@@ -2082,7 +2105,7 @@ Hierarchy: $\alpha_{\mathrm{EM}}$ & $e^{-S/24}$ vs $10^{-2.1}$ & order of magnit
 
 Class~A$^*$ denotes quantities that are fully determined (zero free parameters, computed to $50$ significant figures from six constraint equations at $H=3$ with $K^*=7/30$ and Born floor $1/27$) and algebraic over $\mathbb{Q}$, but whose minimal polynomial has not been exhibited. The eigenvalue $\lambda_0$ was formerly A$^*$; its degree-$19$ minimal polynomial~(\ref{eq:minpoly}) has now been found, promoting $\lambda_0$ and $\Delta=-\ln\lambda_0$ to Class~A. The remaining A$^*$ quantity is $\Lambda=\det(I-J)^{-1/2}\,e^{-810/7}$, where $\det(I-J)$ has algebraic degree exceeding $40$ (PSLQ with $300$-digit precision and coefficient bound $10^{12}$ finds no minimal polynomial of degree $\leq 80$; the high degree is a consequence of the $\sqrt{26R}$ in the floor map composing with the degree-$24$ fixed-point algebra).
 
-The division is sharp. Every Class~A result is an algebraic identity---it holds because the combination rule at $H=3$ makes it hold, with nothing to adjust. Every Class~B result is a measured quantity that agrees with a conjectured exact form to the stated precision. The claim on Class~B is not that these are proven, but that the framework's track record on Class~A---20 exact identities from zero free parameters---makes it unreasonable to dismiss the Class~B agreements as coincidence. The correct response is to find the relationships that promote them to Class~A, or to find the error that explains why they are not exact. Both outcomes advance the science.
+The division is sharp. Every Class~A result is an algebraic identity---it holds because the combination rule at $H=3$ makes it hold, with nothing to adjust. Every Class~B result is a measured quantity that agrees with a conjectured exact form to the stated precision. The claim on Class~B is not that these are proven, but that the framework's track record on Class~A---21 exact identities from zero free parameters---makes it unreasonable to dismiss the Class~B agreements as coincidence. The correct response is to find the relationships that promote them to Class~A, or to find the error that explains why they are not exact. Both outcomes advance the science.
 
 
 %% ====================================================================
@@ -2158,6 +2181,7 @@ $\SU(2)$ cross-representation $\delta$ is flat at $0.343$---it does not approach
 \item Global convergence: unique fixed point, all trajectories converge (Hilbert metric contraction, Theorem~\ref{thm:basin}).
 \item Spectral gap $\Delta=-\ln\lambda_0=1.263$ per DS step, where $\lambda_0=0.2829$ is algebraic of degree $19$ over $\mathbb{Q}$ with explicit irreducible minimal polynomial (equation~\ref{eq:minpoly}), Galois group $S_{19}$, not expressible in radicals. $\Delta$ is transcendental (Lindemann--Weierstrass).
 \item Non-triviality: kurtosis excess $\kappa=+0.079\pm 0.009$ ($9.0\sigma$) and $G_4^{\mathrm{conn}}/G_4^{\mathrm{Wick}}=+0.056\pm 0.004$ ($14.5\sigma$) at the exact $K^*=7/30$ equilibrium with $5\times 10^5$ samples. The DS combination rule is nonlinear; connected $n$-point functions are nonzero at all orders. Structurally non-free.
+\item Gluon condensate coefficient: $\mathcal{C}\cdot\det(M^*)^2=4(3n^2+2n+3)/(n-1)^2=8332/625$ at $n=H^3-1=26$ (Theorem~\ref{thm:condensate}). Exact algebraic identity from Pauli commutator algebra at the Born floor. The full condensate $\langle\Tr(F^2)\rangle=\mathcal{C}\cdot\sigma_{\mathrm{eff}}^4$ with $\sigma_{\mathrm{eff}}^2=1/(1-\lambda_0^2)$ is an algebraic number with zero free parameters.
 \item Saddle-point identification: $K$ is action density, Gaussian gap $1/(1-K^*)=1.304$ within $3.2\%$ of exact $\Delta=1.263$; evidence averaging shifts $\Delta$ by $<2\%$.
 \item $K^*=7/30$ is $1.77\%$ from $\gamma_{\mathrm{DLM}}$; the post-hoc dressing to 350~ppm is outperformed by $19/80$ (139~ppm) and is therefore numerology, not derivation (\S\ref{sec:dressing}).
 \item Self-correction log: two mechanisms proposed and refuted before the correct one identified (\S\ref{sec:googly}).
