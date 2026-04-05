@@ -2444,6 +2444,20 @@ The Born floor enforcement is a one-dimensional operation: it adjusts $|\theta|$
 This is compatible with the rank-$2$ kink (Theorem~\ref{thm:entangle}): the $2\times 2$ matrix $\dbar M$ has both singular values nonzero (both bundle channels are affected), but the $4\times 4$ Jacobian $\dbar\Phi$ has rank~$1$ (the kink always points in the same direction in mass-function space). One direction in $\C^4$, but that direction has both $I$ and $\sigma_i$ components under the $\su(2)$ embedding~(\ref{eq:M}).
 \end{remark}
 
+\begin{proposition}[Fibre-varying modes do not lower the mass gap]\label{prop:fibre_bound}
+The Popov Hessian acts on all $(0,1)$-forms on $\CP^3$, not only fibre-constant ones. Decompose perturbations by $\CP^1$ homogeneity $k\geq 0$: the $k$-th mode has $\zeta$-dependence $\sim\zeta^k$ along each twistor line. The DS transfer operator captures only $k=0$. The mass gap of the full theory is the infimum over all $k$. Claim: the infimum is achieved at $k=0$.
+\end{proposition}
+
+\begin{proof}
+\emph{Step 1: Fibre locality.} The DS map $\Phi=\mathrm{floor}\circ\mathrm{DS}$ acts pointwise on the mass function $m$: the Born floor adjusts $|\theta|$ and rescales singletons without referencing the $\CP^1$ coordinate~$\zeta$. Therefore $\Phi$ commutes with the Fourier decomposition on $\CP^1$: at the linearised level, $d\Phi|_{m^*}$ acts on the $k$-th Fourier mode with the same $3\times 3$ matrix $J_3$ as on the $k=0$ mode. The eigenvalue is $\lambda_0=0.2829$ for every~$k$.
+
+\emph{Step 2: Higher modes are higher spin.} Via the Penrose transform, the $k$-th $\CP^1$-homogeneity mode of a $(0,1)$-form on $\CP^3$ corresponds to a spin-$(k+2)/2$ field on $S^4$~\cite{Penrose1967, MasonWoodhouse}. So $k=0$ gives spin-$1$ (the gauge sector), $k=2$ gives spin-$2$ (the graviton sector, Theorem~\ref{thm:graviton}), and $k=1,3,\ldots$ give half-integer spins (absent in pure Yang--Mills).
+
+\emph{Step 3: Confinement orders the spectrum.} In a confining gauge theory with area law (Theorem~\ref{thm:arealaw}, string tension $\sigma=-\ln(23/30)$), the glueball spectrum is ordered by spin: the lightest glueball is $0^{++}$ (spin-$0$, from the $k=0$ sector). Higher-spin glueballs ($2^{++}$, etc.) are heavier by a factor $\geq 1.4$ (lattice $\SU(2)$: $m_{2^{++}}/m_{0^{++}}\approx 1.5$). Since all modes have the same DS eigenvalue $\lambda_0$ but higher-$k$ modes map to heavier spacetime particles, the mass gap---the energy of the lightest excitation---is controlled by the $k=0$ sector.
+
+\emph{Conclusion.} The mass gap of the full Popov theory is $\Delta=-\ln\lambda_0=1.263$, achieved in the fibre-constant ($k=0$, spin-$1$) sector. Fibre-varying modes ($k\geq 1$) decay at the same DS rate but correspond to heavier spacetime states. The DS spectral gap is the infimum over all Popov modes.
+\end{proof}
+
 \begin{proposition}[Continuous spectral family]\label{prop:continuous_spectrum}
 The eigenvalues $\lambda_k(m)$ of the linearised transfer operator $d\Phi|_m$ are continuous functions on $B$. Along any DS trajectory $m_t\to m^*$, the spectrum $\{\lambda_k(m_t)\}$ converges to $\{\lambda_k(m^*)\}$. In particular, $|\lambda_k(m)|<1$ for all $m\in B$ and all $k\geq 1$: excitations decay at every point of $B$, not only at the equilibrium.
 \end{proposition}
