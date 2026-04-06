@@ -1871,19 +1871,25 @@ The Schwinger functions are $\mathrm{SO}(4)$-covariant.
 \end{theorem}
 
 \begin{proof}
-The argument has six steps, each verifiable independently.
+The argument has three steps.
 
-\emph{Step 1: The combination rule alone is not $\mathrm{SO}(4)$-equivariant.} The agreement term $s_is'_i$ is a Hadamard product in the hypothesis basis $\{h_1,h_2,h_3,\Theta\}$. The symmetry group of the Hadamard product on $\CP^3$ is the monomial group (permutations $\times$ diagonal phases), which does not contain $\mathrm{SO}(4)$. This is the standard situation: in QFT, the Hamiltonian is not manifest-rotationally-symmetric either. The relevant object is the dynamical system (rule $+$ evidence), not the rule alone.
+\emph{Step 1: The Schwinger functions depend on spacetime only through fibre distance.} By Theorem~\ref{thm:schwinger4d}, the connected two-point function is
+\[
+S_2^c(x,y)=\sum_{k\geq 1}|c_k|^2\,\lambda_k^{d_{\mathrm{FS}}(L_x,L_y)/\delta},
+\]
+where the coefficients $|c_k|^2$ and eigenvalues $\lambda_k$ are properties of the single-fibre DS transfer operator (they depend on $H=3$, $K^*=7/30$, and the Born floor---none of which reference the base point). The \emph{only} spacetime dependence is through $d_{\mathrm{FS}}(L_x,L_y)$, the Fubini--Study distance between twistor lines. The DS map $\Phi$ determines the function $f(t)=\sum_k|c_k|^2\lambda_k^t$ through its spectrum; it does not act at different base points. The non-equivariance of $\Phi$ under $\mathrm{SO}(4)$ (the Hadamard product is basis-dependent) is therefore irrelevant: $\Phi$ determines $f$, and $f$ is a function of one variable.
 
-\emph{Step 2: The gauge algebra determines the evidence, not the base point.} The hypotheses $\{h_1,h_2,h_3\}$ are embedded via the $\su(2)$ generators (equation~\ref{eq:hi}) in the $S^2$ twistor fibre ($S^2\cong\CP^1$ parametrises compatible complex structures on the tangent space at each $x\in S^4$). The conditional distributions $C^{(\alpha)}$ derived from gauge-invariant evidence depend on the structure constants $f^{abc}$, which are spacetime-independent. Therefore the evidence distribution is the same on every fibre of $\pi:\CP^3\to S^4$.
+\emph{Step 2: The fibre distance is $\mathrm{SO}(4)$-invariant.} The twistor fibration $\pi:\CP^3\to S^4$ is $\mathrm{Sp}(2)$-equivariant, where $\mathrm{Sp}(2)\subset\mathrm{PU}(4)$ acts on $\CP^3$ and covers $\mathrm{SO}(5)$ on $S^4$ (the full isometry group of the round $S^4$). For any $g\in\mathrm{Sp}(2)$ covering $R\in\mathrm{SO}(4)\subset\mathrm{SO}(5)$:
+\[
+d_{\mathrm{FS}}(L_{Rx},L_{Ry})=d_{\mathrm{FS}}(g(L_x),g(L_y))=d_{\mathrm{FS}}(L_x,L_y),
+\]
+by the $\mathrm{PU}(4)$-invariance of the Fubini--Study metric and the equivariance $\pi\circ g=R\circ\pi$. Therefore:
+\[
+S_2^c(Rx,Ry)=f\!\left(\frac{d_{\mathrm{FS}}(L_{Rx},L_{Ry})}{\delta}\right)=f\!\left(\frac{d_{\mathrm{FS}}(L_x,L_y)}{\delta}\right)=S_2^c(x,y).
+\]
+The same argument extends to $n$-point functions, whose spacetime dependence is through pairwise fibre distances (Theorem~\ref{thm:schwinger4d}).
 
-\emph{Step 3: Inter-fibre coupling is the gauge connection.} The combination rule acts fibre-wise. Fibres are coupled through the bundle $E\to\CP^3$, whose transition functions encode the gauge connection $A$ on $S^4$ via Mason's framework (Theorem~\ref{thm:mason_orig}). On each fibre, the DS dynamics uses evidence derived from the connection restricted to that fibre; the connection's smoothness ensures the evidence varies smoothly between neighbouring fibres.
-
-\emph{Step 4: Ensemble averaging restores $\mathrm{SO}(4)$.} The Schwinger $n$-point function at $(x_1,\ldots,x_n)$ is an ensemble average (over gauge configurations, i.e.\ over the path integral measure of Theorem~\ref{thm:measure}). By Step~2, the ensemble-averaged evidence is the same on every fibre. The bundle structure on $S^4$ is $\mathrm{SO}(5)$-covariant (the twistor fibration $\pi:\CP^3\to S^4$ respects the round metric). When $\mathrm{SO}(4)\subset\mathrm{SO}(5)$ acts on the base $S^4$, it permutes fibres; fibre uniformity of the ensemble-averaged evidence ensures the Schwinger functions are invariant. Therefore $S_n(x_1,\ldots,x_n)$ depends only on pairwise separations $|x_i-x_j|$.
-
-\emph{Step 5: Translation invariance on $\R^4$.} The Born floor $1/27$, the evidence distribution, and the combination dynamics are all determined by $H=3$ and the gauge algebra---none reference the base-space coordinate $x$. Therefore the Schwinger functions depend only on pairwise separations $|x_i-x_j|$ in the flat $\R^4$ metric.
-
-\emph{Step 6: Full Euclidean covariance.} Steps~4 and~5 together give $E(4)=\mathrm{SO}(4)\ltimes\R^4$ covariance: rotational invariance from the bundle structure, translational invariance from fibre uniformity.
+\emph{Step 3: Translation invariance on $\R^4$.} The Born floor, evidence distribution, and DS dynamics depend on $H=3$ and the gauge algebra---none reference the base-space coordinate $x$. Under stereographic projection, the fibre distance $d_{\mathrm{FS}}(L_x,L_y)\approx|x-y|/2$ for $|x-y|\ll R$. The Schwinger functions depend only on $|x_i-x_j|$. Combined with Step~2, this gives full $E(4)=\mathrm{SO}(4)\ltimes\R^4$ covariance.
 \end{proof}
 
 \begin{theorem}[OS2: Reflection positivity]\label{thm:OS2}

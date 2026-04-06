@@ -76,7 +76,7 @@ Key results (confirmed by independent computation at 120-digit precision):
 - **Koide formula**: Q = 2/3 from dim(V_std)/(dim(V_std)+dim(1_triv)) = 10/15; √2 from sector dimensions; θ = 2/9 from Coxeter correction. Three lepton masses to 0.01%
 - **Cosmological constant**: Λ = det(I−J)^{−1/2} e^{−810/7} ≈ 7.76 × 10⁻⁵¹, computed to 50 sig fig
 - **UV behavior**: the Born probability (homogeneity 0) gives smooth Schwinger functions — correct for that observable, but wrong for UV comparison. The curvature data (Penrose residue ρ₋₁, homogeneity -4) gives ⟨tr(F²)tr(F²)⟩ ~ |x-y|⁻⁸. Cup product tr(ρ₋₁²) ≠ 0 (|tr| = 3.70), non-degenerate on B. Full correlator: |x-y|⁻⁸ · exp(−1.263|x-y|)
-- **Navier-Stokes regularity**: conditional on the Born floor being a law of nature. The chain: Born floor → |ω|² ≤ 26 (algebraic) → fibre locality preserved by all NS terms → Born floor preserved (DS + L² energy + c₁ topology) → ||ω||_∞ ≤ C(H) uniformly → BKM → global smoothness. The Chen-Hou blowup point (1,0) lies outside the Born disk (ratio 1.61)
+- **Navier-Stokes regularity**: conditional on Born floor preservation under NS evolution. If Born ≥ 1/27 is maintained, then |ω|² ≤ 26 (algebraic identity) → BKM → global smoothness. Whether NS vortex stretching preserves the Born floor is the open question — equivalent to the NS regularity problem itself. The Chen-Hou blowup point (1,0) lies outside the Born disk (ratio 1.61)
 
 ## Repository Structure
 
