@@ -54,7 +54,43 @@ Computational verification: $K^* = 0.2320 \pm 0.0033$ (CV $= 1.4\%$) across $105
 \part{Pure Mathematics}\label{part:A}
 %% ====================================================================
 
-No physics enters Part~A. All results concern abstract evidence-combination systems operating on complex-valued mass functions.
+No physics enters Part~A. All results concern the algebra and geometry of bilinear products on $\C^{H+1}$.
+
+\section{The Unique Projective Space}\label{sec:unique_space}
+
+\begin{theorem}[Unique self-consistent tangent bundle]\label{thm:unique_cpn}
+The Riemann sphere $\CP^1$ is the unique compact complex projective space whose tangent bundle has self-consistent section algebra: the equation $(H-1)^2=H+1$ with $H=\dim H^0(T\CP^n)$ has $n=1$ as its only positive integer solution.
+\end{theorem}
+
+\begin{proof}
+The holomorphic vector fields on $\CP^n$ are the generators of $\mathrm{PGL}(n+1,\C)$, so $\dim H^0(T\CP^n)=(n+1)^2-1$. Substituting $H=(n+1)^2-1$ into $(H-1)^2=H+1$:
+\[
+((n+1)^2-2)^2=(n+1)^2.
+\]
+Expanding and simplifying: $n^4+4n^3+n^2-6n=0$, which factors completely over $\Z$:
+\begin{equation}\label{eq:quartic}
+n(n-1)(n+2)(n+3)=0.
+\end{equation}
+The roots are $n\in\{0,1,-2,-3\}$. Among positive integers: $n=1$ only. ($n=0$ gives $\CP^0$, a point, with $H=0$---trivial.)
+
+At $n=1$: $T\CP^1=\mathcal{O}(2)$, $H=\dim H^0(\mathcal{O}(2))=3$, and $(3-1)^2=4=3+1$.
+\end{proof}
+
+\begin{remark}[What the theorem says]\label{rem:unique_space}
+The self-consistency equation $(H-1)^2=H+1$ requires that the number of independent bilinear products on the section space (the left side) equals the dimension of the full representation (the right side). This is the condition that a structure's self-interaction exactly fills itself---that the derivative of the structure reproduces the structure. Among all compact projective spaces $\CP^n$, only the Riemann sphere satisfies this. Everything that follows---the algebra on $\C^4$, the Born floor $1/27$, the mass gap $\Delta=1.263$, the regularity of Navier--Stokes---is a consequence of the factorisation~(\ref{eq:quartic}).
+\end{remark}
+
+The chain from Theorem~\ref{thm:unique_cpn} to the full framework is:
+\begin{enumerate}[nosep]
+\item $n=1$: $T\CP^1=\mathcal{O}(2)$, $\dim H^0=3=H$ (Theorem~\ref{thm:unique_cpn}).
+\item $\C$ is the unique normed division algebra with an ordering-sensitive encoding (Theorem~\ref{thm:complex_unique}, \S\ref{sec:complex}).
+\item The bilinear product on $\C^{H+1}=\C^H\oplus\C$ respecting the section/base decomposition is unique (Theorem~\ref{thm:unique_product}, \S\ref{sec:product_unique}).
+\item The unique fixed point has $\mathrm{Born}=1/H^3=1/27$ (Theorem~\ref{thm:basin}, \S\ref{sec:basin}).
+\item $\CP^3$---the state space forced by $H=3$---is Penrose's twistor space (\S\ref{sec:twistor}).
+\item The Born floor generates Yang--Mills curvature (Theorem~\ref{thm:mason}, \S\ref{sec:mason}), a mass gap $\Delta=1.263$ (Theorem~\ref{thm:massgap}, \S\ref{sec:OS}), and Navier--Stokes regularity (Theorem~\ref{thm:ns_regularity}, \S\ref{sec:regularity}).
+\end{enumerate}
+No parameter is chosen. No assumption is physical. The quartic~(\ref{eq:quartic}) factors into four linear terms over $\Z$, and the unique positive root determines everything.
+
 
 \section{Motivation: The Obstruction That Forces the Framework}\label{sec:motivation}
 
@@ -2386,7 +2422,7 @@ $\SU(2)$ cross-representation $\delta$ is flat at $0.343$---it does not approach
 \section{What Is Established}\label{sec:established}
 
 \begin{enumerate}[nosep]
-\item $(H-1)^2=H+1$ only at $H=3$ (algebraic proof, Theorem~\ref{thm:selfconsist}).
+\item $(H-1)^2=H+1$ only at $H=3$ (algebraic proof, Theorem~\ref{thm:selfconsist}). Equivalently: $\CP^1$ is the unique compact projective space whose tangent bundle has self-consistent section algebra (Theorem~\ref{thm:unique_cpn}). The quartic $n(n-1)(n+2)(n+3)=0$ has $n=1$ as unique positive root.
 \item $\eta(H)$ peaks uniquely at $H=3$ (algebraic proof, Theorem~\ref{thm:optimal}).
 \item Budget matching: $K_{\mathrm{cons}}(H)=7/30$ uniquely at $H=3$ (Theorem~\ref{thm:budget}).
 \item $H=3\to\C^4\to$ Gleason $\to$ Born (theorem chain).
