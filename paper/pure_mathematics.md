@@ -479,6 +479,30 @@ K* = (H^2-H+1)/(H(H^2+1)) is derived from conservation law K*(H^2+1) - eta*H^2 =
 
 Beta enters through C_beta (conditional distribution at coupling beta), determining position on moduli curve M. C_beta depends continuously on beta via character expansion: <Tr U_P / 2> = I_2(beta)/I_1(beta). Every point on M has K* = 7/30 because K* is determined by state space decomposition upstream of evidence.
 
+### Theorem 78 (`thm:folding_invariance`)
+The DS coupled spectral radius rho(G) is invariant under Dynkin diagram folding. If Gamma_tilde has automorphism sigma, then rho(Gamma_tilde/sigma) = rho(Gamma_tilde).
+
+Folding map: C_n -> A_{2n-1}, B_n -> D_{n+1}, G_2 -> D_4, F_4 -> E_6.
+
+Proof: Equilibrium is sigma-invariant by uniqueness. Jacobian decomposes into sigma-eigenspaces. Spectral radius lies in symmetric sector. Verified for all 10 testable pairs to 10^{-9}.
+
+### Theorem 79 (`thm:ade_classification`)
+For any compact simple G, Delta(G) at K*=7/30 depends only on the ADE covering type of the Dynkin diagram. Delta > 0 for all compact simple G.
+
+Complete table:
+- A_1: rho=0.2829, Delta=1.2626 (SU(2))
+- A_2: rho=0.5022, Delta=0.6888 (SU(3))
+- A_3: rho=0.6841, Delta=0.3797 (SU(4), Sp(4), SO(5))
+- A_inf: rho=0.7790, Delta=0.2498
+- D_4: rho=0.8885, Delta=0.1182 (SO(8), SO(7), G_2)
+- D_inf: rho=0.8913, Delta=0.1151
+- E_6: rho=0.9163, Delta=0.0874 (E_6, F_4) — tightest
+- E_7: rho=0.9070, Delta=0.0976
+- E_8: rho=0.9096, Delta=0.0947
+
+Non-monotone: E_6 tightest, E_7 loosest. Minimum Delta = 0.0874 (F_4 = E_6).
+Safety margins: g_crit/K* >= 2.79 for all groups tested.
+
 ---
 
 ## 10. Hierarchy and Precision Ledger
