@@ -4,7 +4,7 @@ The framework of self-evident irreducible geometry forcing many, if not all, que
 
 ## What This Is
 
-257 verification scripts for the framework described in:
+267 verification scripts for the framework described in:
 
 **"The Mass Gap from Enforced Uncertainty: Evidence Combination, Twistor Geometry, and Yang-Mills Theory"**
 *J. R. Manuel, 2026*
@@ -13,11 +13,13 @@ A single algebraic identity — the Dempster-Shafer combination rule at H=3 hypo
 
 - **Quantum theory** (BMU reconstruction on CP³)
 - **Yang-Mills mass gap** (Δ = 1.2626, from K* = 7/30, via Mason's non-integrable twistor geometry)
+- **Popov identification** (DS transfer operator = Popov Hessian on fibre; rank-1 Nijenhuis kills [a*, δa]; verified to 120 digits)
 - **Einstein gravity** (conformal → Einstein via OS2 unitarity + Maldacena ghost exclusion)
 - **Koide formula** (three lepton masses to 0.01%, zero free parameters)
 - **Hierarchy tower** (cosmological constant to fine structure constant from S = 810/7)
-- **Regularity of descended spin-1 field** (vorticity bounded by Born floor on minitwistor; the descended equation is a 4-component reaction-diffusion system, not Navier-Stokes)
-- **Penrose residue bridge** (DS spectral gap = YM mass gap via non-integrable twistor geometry)
+- **UV cup product** (tr(ρ₋₁²) ≠ 0 on B; curvature data has homogeneity -4; gives |x-y|⁻⁸ for ⟨tr(F²)tr(F²)⟩)
+- **Navier-Stokes regularity** (conditional: Born floor → |ω|² ≤ 26 → BKM → global smoothness)
+- **Chen-Hou embedding** (3/r = H/r from S³ = SU(2); blowup point outside Born disk)
 
 All from one equation. Zero free parameters. 20 exact algebraic identities (Class A). The state space CP³ is independently Penrose's twistor space for R⁴ — this is not assumed, it is forced by H=3.
 
@@ -27,7 +29,7 @@ Everything derives from H = 3:
 
 | Quantity | Value | Status |
 |---|---|---|
-| H | 3 | Forced (4 independent routes) |
+| H | 3 | Forced (4 independent routes + unique CP^n, Theorem 1) |
 | K* | 7/30 | Exact (conservation law = Sym²(C⁴) decomposition) |
 | Born floor | 1/27 | Exact (self-consistency) |
 | Δ (spectral gap) | 1.2626 | Transcendental, = −ln(λ₀), 500-digit verified |
@@ -37,23 +39,27 @@ Everything derives from H = 3:
 
 ## Paper Structure
 
-The paper has 55 theorems, 0 conjectures, compiles to ~90 pages, and is organised in seven parts:
+The paper has 61 theorems, 0 conjectures, 2881 lines, and is organised in eight parts:
 
 | Part | Title | Content |
 |---|---|---|
+| — | Preface | Geometry as relationships, irreducible meaning, 3+1 from the complex derivative |
+| Bridge | The Three Uniqueness Theorems | Unique CP^n (quartic factorisation), unique field (C), unique product (DS) |
 | A | Pure Mathematics | DS combination, H=3, Born floor, structural filter, mass gap theorem, K*=7/30 |
 | B | Application to Yang-Mills | Universal correlation, δ<1, computational verification (105 analyses) |
-| C | Ward Correspondence & Googly Problem | Bundle construction, det≠0, SO(4) decomposition, Mason's framework, Maurer-Cartan self-correction, Penrose residue |
+| C | Ward Correspondence & Googly Problem | Bundle construction, det≠0, SO(4) decomposition, Mason's framework, Maurer-Cartan self-correction, Penrose residue, Chen-Hou embedding, NS regularity |
 | D | Construction and Axioms | OS0-OS4, path integral measure, explicit Schwinger functions, Wilson loop area law |
 | E | Outright Bullshit Numerology | Barbero-Immirzi near-miss exposed as numerology; diagnostic lesson |
 | F | The Crystal Laboratory | Universal Query Engine, Koide formula, hierarchy tower, S₃ representation theory |
-| G | Predictions & Remaining Gaps | 6 testable predictions, 8 gaps (7 resolved), Jaffe-Witten assessment |
+| G | Predictions & Remaining Gaps | 6 testable predictions, Jaffe-Witten assessment |
 
 The paper documents its own errors and their corrections: the Maurer-Cartan identity (M⁻¹dM is identically flat, not a gauge connection), the degree-19 PSLQ mirage (artefact at 500 digits), and two failed googly mechanisms before finding the correct one.
 
 ## The Identification: DS = Yang-Mills
 
 The Born floor on CP³ induces a non-integrable almost complex structure J'. Mason's theorem (2005) guarantees that the resulting twistor geometry produces full Yang-Mills equations (both chiralities). The physical curvature F⁺ lives in the Penrose residue — the 1/ζ pole on twistor lines that the Ward construction discards.
+
+The Popov identification theorem closes the loop: the Popov Hessian (second variation of J-holomorphic Chern-Simons) restricted to the DS fibre IS the DS transfer operator. The rank-1 Nijenhuis form kills the commutator correction [a*, δa] = 0 identically, making the identification algebraic. Eigenvalues match to 120 digits. The DS spectral gap, the Popov energy gap, and the Yang-Mills mass gap are three names for the same number.
 
 Key results (confirmed by independent computation at 120-digit precision):
 - Ward connection is pure gauge (F_Ward = 0) — correct, the Birkhoff framing is ζ-independent
@@ -69,13 +75,14 @@ Key results (confirmed by independent computation at 120-digit precision):
 - **Massless graviton**: base variations preserve K*, fibre perturbations are gapped at Δ = 1.263
 - **Koide formula**: Q = 2/3 from dim(V_std)/(dim(V_std)+dim(1_triv)) = 10/15; √2 from sector dimensions; θ = 2/9 from Coxeter correction. Three lepton masses to 0.01%
 - **Cosmological constant**: Λ = det(I−J)^{−1/2} e^{−810/7} ≈ 7.76 × 10⁻⁵¹, computed to 50 sig fig
-- **Regularity**: Born floor ⇒ compact fibre ⇒ universal curvature bound ⇒ BKM criterion satisfied; descended equation is harmonic map heat flow into S², not Navier-Stokes
+- **UV behavior**: the Born probability (homogeneity 0) gives smooth Schwinger functions — correct for that observable, but wrong for UV comparison. The curvature data (Penrose residue ρ₋₁, homogeneity -4) gives ⟨tr(F²)tr(F²)⟩ ~ |x-y|⁻⁸. Cup product tr(ρ₋₁²) ≠ 0 (|tr| = 3.70), non-degenerate on B. Full correlator: |x-y|⁻⁸ · exp(−1.263|x-y|)
+- **Navier-Stokes regularity**: conditional on the Born floor being a law of nature. The chain: Born floor → |ω|² ≤ 26 (algebraic) → fibre locality preserved by all NS terms → Born floor preserved (DS + L² energy + c₁ topology) → ||ω||_∞ ≤ C(H) uniformly → BKM → global smoothness. The Chen-Hou blowup point (1,0) lies outside the Born disk (ratio 1.61)
 
 ## Repository Structure
 
 ```
 paper/          LaTeX source + PDF
-computations/   257 standalone verification scripts (flat, no interdependencies)
+computations/   267 standalone verification scripts (flat, no interdependencies)
 ```
 
 Each `.py` file in `computations/` is a standalone verification of a specific claim. Key scripts:
@@ -89,14 +96,20 @@ Each `.py` file in `computations/` is a standalone verification of a specific cl
 **Yang-Mills identification:**
 - `ward_penrose_integral.py` — Penrose contour integral, F⁺ from Nijenhuis residue
 - `ward_highprecision.py` — 100-digit precision ratio verification
-- `ward_reconstruction.py` — Ward reconstruction at equilibrium
-- `ward_second_order_deepthink.py` — O(ε²) Birkhoff factorisation
+- `popov_second_variation.py` — Popov Hessian = DS transfer operator
+- `uv_cup_product.py` — tr(ρ₋₁²) non-degeneracy, UV power law verification
 
 **Gauge theory:**
 - `abelian_bulletproof.py` — SU(2) vs U(1) discrimination at L=4,6,8,10,12
-- `sun_from_su2.py` ��� N−1 root SU(2) subalgebras generate su(N)
+- `sun_from_su2.py` — N−1 root SU(2) subalgebras generate su(N)
 - `sun_coupled_gap.py` — coupled mass gap verified for SU(N), N=2 through 6
 - `wilson_area_law.py` — Wilson loop area law (confinement)
+
+**Regularity:**
+- `chen_hou_born_mapping.py` — Chen-Hou operator = R⁵ Laplacian, Born disk exclusion
+- `minitwistor_embedding.py` — CP³ → T(CP¹) dimensional reduction
+- `born_topological_closure.py` — Born floor preservation under NS evolution
+- `fibre_varying_bound.py` — fibre-varying curvature bound
 
 **Predictions:**
 - `phi4_ds_extraction.py` — φ⁴ scalar field test (Prediction 2)

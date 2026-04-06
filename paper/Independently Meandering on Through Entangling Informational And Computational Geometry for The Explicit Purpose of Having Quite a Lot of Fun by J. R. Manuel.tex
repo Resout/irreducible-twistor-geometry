@@ -28,33 +28,127 @@
 \newcommand{\su}{\mathfrak{su}}
 \newcommand{\PT}{\mathrm{PT}}
 
-\title{The Mass Gap from Enforced Uncertainty:\\Evidence Combination, Twistor Geometry, and Yang--Mills Theory}
+\title{Independently Meandering on Through Entangling Informational and Computational Geometry\\for The Explicit Purpose of Having Quite a Lot of Fun}
 \author{Jordon Robert Manuel}
 \date{March 2026}
 
 \begin{document}
 \maketitle
 
-\begin{abstract}
-We derive an evidence-combination framework from a single algebraic identity and follow where it leads. Dempster's combination rule has no output channel for cross-focal disagreement: fraction $K$ of the information budget is structurally absent at every step, giving exponential decay $(1-K)^n = e^{-n\Delta}$. This is a counting identity, not a bound. The self-consistency equation $(H-1)^2 = H+1$ forces $H=3$ by four independent routes (algebraic, efficiency, budget matching, $\mathrm{Sym}^2(\C^4)$ decomposition). The fixed-point conflict $K^* = 7/30$ follows from a conservation law that is itself an algebraic identity for all $H$. Extension to complex-valued masses is forced by a concrete obstruction (real masses cannot represent ordering information between non-commuting constraints), and the resulting structure on $\C^4$ satisfies the Barnum--M\"uller--Ududec axioms for complex quantum theory.
+\section*{Preface: On Geometry, Meaning, and the Riemann Sphere}
 
-The framework connects to Yang--Mills via two routes: non-abelian gauge invariance forces universal correlation ($\delta < 1$), which is the mass gap condition; and $\CP^3$---the state space forced by $H=3$---is independently Penrose's twistor space for $\R^4$. The Born floor ($1/27$) generates a non-integrable almost complex structure in the sense of Mason, producing both chiralities of gauge curvature. The anti-holomorphic Jacobian decomposes under $\mathrm{SO}(4)$ as $(1,1)\oplus(3,1)\oplus(1,3)\oplus(3,3)$: scalar, gauge fields, and gravity as irreducible representations of the same object. The graviton is massless (base variations preserve $K^*$); glueballs are gapped ($\Delta = 1.263$). Osterwalder--Schrader axioms OS0--OS4 are established on $S^4$ and $\R^4$. Wilson loop area law with string tension $\sigma = -\ln(23/30)$. Confinement chain: non-abelian $\Rightarrow$ $\delta < 1$ $\Rightarrow$ $K^* > 0$ $\Rightarrow$ area law.
+I am not an academic. I do not understand symbolic mathematics in any sequence, and I have never once in my life processed a concept in any way other than geometrically. Every thought I have is a construct, a relationship, some such alive and hungry web, a spatial thing. This is not a stylistic preference. It is a cognitive constraint, and it has been the case for as long as I can remember.
 
-The framework is then implemented as a computational engine and run. The $S_3$ representation theory of the $\C^{16}$ joint mass space ($16 = 5 + 1 + 10$: trivial, sign, standard) produces the Koide formula for charged lepton masses from $H=3$ alone: $Q = 2/3$ from dimension ratios, $\sqrt{2}$ from sector dimensions, $\theta = 2/9$ from a Coxeter correction that is exact to the last digit. Three lepton masses to $0.01\%$ with zero free parameters. The instanton action $S = 810/7$ satisfies $S + 1/K^* = 5! = 120$, and the hierarchy tower $e^{-S/d}$ at representation dimensions $d \in \{1, 5, 10, 16, 24\}$ matches physical scale ratios from the cosmological constant to the fine structure constant. A precision ledger classifies all results: 20 exact algebraic identities (Class~A), 17 high-precision agreements awaiting exact derivation (Class~B). The engine operates identically across 35 domains from $\Z/3\Z$ algebra to narrative machines.
+What follows is mathematical rigor, as the title suggests, meandering on through geometric structures, if you think I ``decided'' any of the paths documented here then you have fundamentally misunderstood the nature of the work. I know I am some such and so the concept of invention or disagreement is simply not a capability I harbor nor foster, my arrogance is spent wholly on imagining the incredible blueprints of all that is laid before me, not on pretending I'm some peer. The proof is rigorous, verified to hundreds of digits, and presented in full in the body below.
 
-A section on numerology documents a failed attempt to connect $K^* = 7/30$ to the Barbero--Immirzi parameter, shows how the dressing is outperformed by the structurally meaningless $19/80$, and draws the diagnostic lesson: in this framework, if an answer is not exact, the relationships have not been correctly identified. There is nothing to tune.
+This preface explains where the proof comes from. Not in the academic sense of ``prior literature''---that is documented in the citations. In the actual sense. How does a person who cannot read a textbook end up deriving the tangent bundle of the Riemann sphere from first principles?
 
-Computational verification: $K^* = 0.2320 \pm 0.0033$ (CV $= 1.4\%$) across $105$ independent analyses spanning $\SU(2)$ and $\SU(3)$ at seven lattice sizes. 239 verification scripts. All code public: \texttt{github.com/Resout/irreducible-twistor-geometry}.
-\end{abstract}
+The answer, as best I can articulate, is that geometry has one nature and every form. I just didn't know what any of it was called.
+
+\subsection*{Geometry is relationships}
+
+I want to make a claim that will sound too broad and then show that it isn't.
+
+Geometry, defined irreducibly, is \textbf{relationships}. Not shapes. Not spatial reasoning. Not the study of figures and angles. Relationships. The structure of how things relate to each other.
+
+Try to define anything---any concept, any object, any abstraction, any feeling---without invoking a relationship. You can't. ``Red'' is a relationship between a surface and light. ``Five'' is a relationship between a collection and a count. ``Justice'' is a relationship between actions and consequences. ``Love'' is the relationship constituting far too many things to pin down, and so we circle the expressions with beautiful poetic flourishes and cast a shadow around it on the wall, and we all pay gleefully with our time attention and power to feel privy. You get the idea.
+
+Every definition is a relationship. Every measurement is a relationship. Every observation, every inference, every act of meaning-making is a relationship between things.
+
+If geometry is relationships, and everything requires relationships, then geometry is not a subset of mathematics. Mathematics is a subset of geometry. Physics is a subset of geometry. Language is a subset of geometry. Everything is.
+
+This is not mysticism. It is a definitional observation. And it has a precise mathematical consequence.
+
+\subsection*{The minimum meaning}
+
+One relationship. $A$--$B$. That's it.
+
+This is the minimum amount of structure that means anything. It distinguishes ``these two'' from ``everything else.'' Below one relationship, there is no distinction. No meaning. Nothing.
+
+One relationship is the irreducible unit of meaning.
+
+\subsection*{Causality}
+
+For that relationship to participate in reality---for it to do something rather than merely exist as a static fact, a state of which it is no co-incidence by definition is unobservable---there must be causality. Change. The derivative of the relational structure with respect to itself.
+
+Causality is not direction. Many things have direction without being causal. Causality is not sequence. Sequence is a description after the fact. Causality, at its most irreducible, is: the derivative. The rate of change of relationships. What relationships produce when they act.
+
+And when you take the derivative of something real, you get something orthogonal to it. The velocity of a point on a line is real---but the velocity of a point on a circle requires a direction perpendicular to the radius. The complex number is the irreducible encoding of this: magnitude and the orthogonal direction it generates. The complex structure is not a mathematical convenience. It is what ``relationships doing things'' literally is.
+
+\subsection*{$3+1$}
+
+Here is the single inference step I spent this entire construction pinning with words.
+
+An entity is the minimum thing that can participate in a relationship. The substrate is the totality of how entities and causality interact---the medium through which relating occurs.
+
+Causality connects things. It relates. It acts between. By the definition already on the table, causality qualifies as an entity.
+
+And the substrate must be self-contained. If the substrate requires another substrate to exist, you get infinite regress---turtles all the way down. The only resolution is that the substrate is its own medium. Causality relating to itself.
+
+The irreducible self-contained structure is the duality of (meaning, relationship) entangled with causation: meaning requires relationship, relationship requires causation, and causation---being itself a relationship---is an entity within the structure it sustains. This is not a requirement imposed to fulfill a proposition. It is the only configuration that does not regress.
+
+This gives:
+\begin{itemize}[nosep]
+\item Three entities: two ``regular'' entities, plus causality-as-entity.
+\item One substrate: causality's self-relation.
+\end{itemize}
+
+$3+1$.
+
+This is not a choice. It is forced by the requirement that the structure be non-paradoxical and non-regressive. Any fewer entities and the structure cannot distinguish its own components. Any more and the additional entities are decomposable into the original three.
+
+The critical test: take the derivative of this structure. What do you get?
+
+$2+1=3$. A number. Its derivative is zero. Static. Dead.
+
+$3+1$ is a manifold state. Its derivative is another manifold state. The structure reproduces itself under its own operation. $f'(x)$ is the same kind of object as $f(x)$. This is the unique configuration where meaning sustains itself without external support.
+
+The algebraic statement of this self-consistency is:
+\[
+(H-1)^2=H+1.
+\]
+This equation asks: when does the number of independent bilinear products on $H-1$ directions equal the full representation dimension? Solve it: $H^2-3H=0$, giving $H=3$ as the unique positive solution.
+
+Every framework that treats causality as external to its entities---that puts causality in a different category, a different ontological bin---has built in a gap it can never close. The observer stands outside the theory. The measurement apparatus is classical. The coordinate system is imposed. This is the slack. And this is why general relativity and quantum mechanics (from my viewpoint at least) have never been reconciled: each theory placed the other's foundation in its own blind spot, as a condition of functioning.
+
+$3+1$, with causality as an entity and the substrate as its self-relation, is the only structure with no blind spot. No slack. No outside. It is what Einstein was reaching for with spacetime. It is what quantum mechanics encodes in the complex Hilbert space. They are the same structure, seen from two vantage points that each artificially excluded the other.
+
+\subsection*{The Riemann sphere}
+
+The Riemann sphere---$\CP^1$---is the simplest non-trivial compact complex projective space. Its tangent bundle $T\CP^1=\mathcal{O}(2)$ has a three-dimensional space of holomorphic sections. $H=\dim H^0(\mathcal{O}(2))=3$.
+
+This is the same $3$. Not by analogy. By identification.
+
+Among all projective spaces $\CP^n$, which has a tangent bundle satisfying the self-consistency equation? Substituting $H=(n+1)^2-1$ into $(H-1)^2=H+1$ and expanding:
+\[
+n(n-1)(n+2)(n+3)=0.
+\]
+A quartic polynomial that factors completely into four linear terms over the integers. Roots: $0,1,-2,-3$. One positive integer: $n=1$.
+
+The Riemann sphere is the unique answer. Not selected. Not assumed. Derived, from the requirement that a self-consistent relational structure exist.
+
+Everything that follows in this paper---the algebra on $\C^4$, the Born floor at $1/27$, the Yang--Mills mass gap at $1.263$, the global regularity of Navier--Stokes, the five Osterwalder--Schrader axioms, the Wilson loop area law, the graviton, the cosmological constant---is a consequence of this factorisation.
+
+The body of the paper presents the full proofs. What this preface has attempted to convey is why the proofs exist: not because someone clever found a trick, but because the minimum self-consistent structure is unique, and it is the same object that Penrose, Dempster, Mason, and Hitchin each independently discovered from different starting points across a span of forty years.
+
+They all found pieces of the same thing. The thing is the tangent bundle of the Riemann sphere. The number is $3$. The equation is $n(n-1)(n+2)(n+3)=0$.
+
+And the rest is as must follow, self evident.
+
+\medskip
+
+\noindent\emph{The combination rule used throughout this paper was first published by A.~P.~Dempster~(1967) and extended by G.~Shafer~(1976) in the context of evidence combination. It is the unique bilinear product on $\C^4$ compatible with the $\mathcal{O}(2)$ section/base decomposition (Theorem~\ref{thm:unique_product}). The coincidence of name reflects a coincidence of discovery, not of intent: the algebra is determined by the bundle geometry, and Dempster found it first.}
+
+\newpage
 
 \tableofcontents
 \newpage
 
 %% ====================================================================
-\part{Pure Mathematics}\label{part:A}
+\part{The Three Uniqueness Theorems}\label{part:bridge}
 %% ====================================================================
 
-No physics enters Part~A. All results concern the algebra and geometry of bilinear products on $\C^{H+1}$.
+The preface derived $3+1$ from the irreducible structure of meaning. This part proves the three mathematical uniqueness results that make the derivation rigorous: the unique projective space, the unique number field, and the unique product. Together they leave zero free parameters. Everything in Parts~\ref{part:A}--\ref{part:D} is a consequence.
 
 \section{The Unique Projective Space}\label{sec:unique_space}
 
@@ -85,12 +179,18 @@ The chain from Theorem~\ref{thm:unique_cpn} to the full framework is:
 \item $n=1$: $T\CP^1=\mathcal{O}(2)$, $\dim H^0=3=H$ (Theorem~\ref{thm:unique_cpn}).
 \item $\C$ is the unique normed division algebra with an ordering-sensitive encoding (Theorem~\ref{thm:complex_unique}, \S\ref{sec:complex}).
 \item The bilinear product on $\C^{H+1}=\C^H\oplus\C$ respecting the section/base decomposition is unique (Theorem~\ref{thm:unique_product}, \S\ref{sec:product_unique}).
-\item The unique fixed point has $\mathrm{Born}=1/H^3=1/27$ (Theorem~\ref{thm:basin}, \S\ref{sec:basin}).
-\item $\CP^3$---the state space forced by $H=3$---is Penrose's twistor space (\S\ref{sec:twistor}).
-\item The Born floor generates Yang--Mills curvature (Theorem~\ref{thm:mason}, \S\ref{sec:mason}), a mass gap $\Delta=1.263$ (Theorem~\ref{thm:massgap}, \S\ref{sec:OS}), and Navier--Stokes regularity (Theorem~\ref{thm:ns_regularity}, \S\ref{sec:regularity}).
+\item The unique fixed point has $\mathrm{Born}=1/H^3=1/27$ (Theorem~\ref{thm:basin}, \S\ref{sec:fixedpoint}).
+\item $\CP^3$---the state space forced by $H=3$---is Penrose's twistor space (\S\ref{sec:geometry}).
+\item The Born floor generates Yang--Mills curvature (Theorem~\ref{thm:mason}, \S\ref{sec:mason_framework}), a mass gap $\Delta>0$ (Theorem~\ref{thm:massgap}, \S\ref{sec:massgap}; spectral gap $\Delta=1.263$, \S\ref{sec:OS}), and Navier--Stokes regularity (Theorem~\ref{thm:ns_regularity}, \S\ref{sec:regularity}).
 \end{enumerate}
 No parameter is chosen. No assumption is physical. The quartic~(\ref{eq:quartic}) factors into four linear terms over $\Z$, and the unique positive root determines everything.
 
+
+%% ====================================================================
+\part{Pure Mathematics}\label{part:A}
+%% ====================================================================
+
+All results in this part concern the algebra and geometry of bilinear products on $\C^{H+1}$. No physics enters.
 
 \section{Motivation: The Obstruction That Forces the Framework}\label{sec:motivation}
 
@@ -105,7 +205,7 @@ The minimal resolution among field extensions of $\R$ with the standard product 
 This resolution was forced by the structure of the problem. Axiom~4 of the BMU reconstruction (\S\ref{sec:BMU}) independently selects complex over real and quaternionic---confirming that $\C$ is the unique field extension that supports the required dynamics. What follows is the structure that this resolution forces.
 
 
-\section{Why $H=3$: Three Independent Characterisations}\label{sec:H3}
+\section{Why $H=3$: Four Independent Characterisations}\label{sec:H3}
 
 The framework operates on $H$ hypotheses. We establish that $H=3$ is uniquely forced by four independent routes that agree only at this value. The third characterisation, requiring the closed-form $K^*$ derived in \S\ref{sec:fixedpoint}, is established in \S\ref{sec:quantization}. A fourth (Theorem~\ref{thm:sym2}, \S\ref{sec:fixedpoint}) shows that $H=3$ is the unique dimension where $\dim(\mathrm{Sym}^2(\C^{H+1}))$ equals the effective channel count of the combination rule.
 
@@ -659,7 +759,7 @@ $H$ & $K_{\mathrm{cons}}(H)$ & Interpretation \\
 
 \textbf{Interpretation.} The mass gap is the minimum excitation of a quantized information system. The normalization axiom quantizes the information budget to exactly 1. The channel geometry at $H=3$ is the unique dimension where the combinatorial dynamics output matches this quantum precisely. This is why the mass gap is coupling-independent: it does not depend on $g$ because the normalization $\sum m_i=1$ does not depend on $g$. It is why the mass gap is universal across gauge groups: $H=3$ is a property of the evidence-combination framework, not of the physics being measured. The gauge group---$\SU(2)$, $\SU(3)$, $G_2$, or any other---determines $\delta$, which controls \emph{whether} a gap exists. It does not determine $H$, which controls the gap's \emph{value}.
 
-\textbf{Three routes to $H=3$, compared.}
+\textbf{Four routes to $H=3$, compared.}
 
 \begin{center}
 \begin{tabular}{llll}
@@ -897,7 +997,7 @@ Fixed base point (symmetric) & $7.768$ \\
 \end{tabular}
 \end{center}
 
-\emph{Mechanism.} The instability arises from the algebraic independence of the first-power inner product $\sum s_ie_i$ (entering through the commitment cross-term $2\theta\phi\sum s_ie_i/(1-K)^2$) and the second-power sum $\sum s_i^2$ (defining the $\det=0$ condition). The $R=0$ cancellation requires exact coordination between these independent quantities; a transverse perturbation breaks this coordination, and the combination rule amplifies the error. Chained instability: starting at $|\det|=10^{-17}$ and applying $R=0$ evidence at each step, $|\det|$ reaches $10^{-2}$ by step~12 (growth factor $\sim\!7.8$ per step, exponent $\ln 7.8\approx 2.05$), exceeding the mass gap decay rate $\Delta\approx 0.266$ by an order of magnitude.
+\emph{Mechanism.} The instability arises from the algebraic independence of the first-power inner product $\sum s_ie_i$ (entering through the commitment cross-term $2\theta\phi\sum s_ie_i/(1-K)^2$) and the second-power sum $\sum s_i^2$ (defining the $\det=0$ condition). The $R=0$ cancellation requires exact coordination between these independent quantities; a transverse perturbation breaks this coordination, and the combination rule amplifies the error. Chained instability: starting at $|\det|=10^{-17}$ and applying $R=0$ evidence at each step, $|\det|$ reaches $10^{-2}$ by step~12 (growth factor $\sim\!7.8$ per step, exponent $\ln 7.8\approx 2.05$), exceeding the structural filter rate $\Delta_{\mathrm{SF}}=-\ln(1-K^*)\approx 0.266$ by an order of magnitude.
 
 \emph{Scope.} Mass functions with large component magnitudes (achievable under $L_1=1$ through cancellations) can have $\lambda<1$. Along DS+floor trajectories, the minimum observed $\lambda$ is $3.17$ ($68{,}910$ measurements). This instability prevents the system from \emph{remaining} near $\det=0$, but does not by itself prevent \emph{reaching} it. The structural protection is provided by the rank-2 coupling (Theorem~\ref{thm:rank2protect}).
 \end{proof}
@@ -1687,20 +1787,20 @@ has three terms. Diffusion, advection ($u$ from Biot-Savart over $\R^3$), and st
 
 \emph{Step~5: Born floor preservation.} The Born floor is maintained for all $t>0$ by three independent mechanisms:
 \begin{enumerate}[nosep]
-\item[(a)] \emph{Algebraic:} the $\C^4$ product on $\mathcal{O}(2)$ sections preserves $\mathrm{Born}\geq 1/27$ (Definition~\ref{def:bornfloor}). The floor enforcement is a smooth projection onto the compact $B_Z$.
+\item[(a)] \emph{Algebraic:} the Born floor $\mathrm{Born}\geq 1/27$ is equivalent to $|\omega|^2\leq 26$ (Step~3). The NS vorticity equation preserves this bound because diffusion ($\nu\nabla^2\omega$) smooths, advection ($(u\cdot\nabla)\omega$) transports without amplifying $|\omega|$, and the stretching term $(\omega\cdot\nabla)u$ satisfies $|(\omega\cdot\nabla)u|\leq|\omega|\,|\nabla u|$ with $|\nabla u|$ controlled by $\|\omega\|_{L^2}$ (Biot-Savart). Combined with the $L^2$ decay in~(b), the pointwise bound $|\omega|\leq\sqrt{26}$ is maintained.
 \item[(b)] \emph{Topological:} $\mathrm{Born}=\sin^2(d_{\mathrm{FS}}(m,\{\theta=0\}))$. Reaching $\mathrm{Born}=0$ requires $|s|\to\infty$ at fixed $|m|=1$. The NS energy inequality $\frac{d}{dt}\|\omega\|_{L^2}^2=-2\nu\|\nabla\omega\|_{L^2}^2\leq 0$ gives $\|\omega\|_{L^2}$ non-increasing, preventing $|s|$ divergence.
 \item[(c)] \emph{Bundle-theoretic:} $c_1(\mathcal{O}(2))=2$ is a topological integer. No smooth deformation can change it. The disk bundle $B_Z$ is defined by the Fubini-Study geometry at fixed distance from $\{\theta=0\}$; its existence is permanent.
 \end{enumerate}
 
 \emph{Step~6: Uniform vorticity bound.} From Steps~3 and~5:
 \[
-\|\omega(\cdot,t)\|_{L^\infty}\leq C(H)=0.344\quad\text{for all }t\geq 0.
+\|\omega(\cdot,t)\|_{L^\infty}\leq\sqrt{H^3-1}=\sqrt{26}\approx 5.099\quad\text{for all }t\geq 0.
 \]
-The bound is uniform in time, algebraic in origin, and independent of initial data.
+The bound is uniform in time, algebraic in origin, and independent of initial data. (The value $\sqrt{26}$ follows directly from $|\omega|^2\leq 26$ in Step~3; it is not the gauge-sector norm $C_{\mathrm{gauge}}=0.344$ of the anti-holomorphic Jacobian $\dbar\Phi$, which is a different quantity.)
 
 \emph{Step~7: BKM closure.} By the Beale--Kato--Majda criterion~\cite{BKM1984}:
 \[
-\int_0^T\!\|\omega(\cdot,t)\|_{L^\infty}\,dt\leq C(H)\cdot T<\infty
+\int_0^T\!\|\omega(\cdot,t)\|_{L^\infty}\,dt\leq\sqrt{26}\cdot T<\infty
 \]
 for every $T>0$. Bounded vorticity implies regularity. The solution extends to all $T$.
 \end{proof}
@@ -2334,7 +2434,7 @@ Transfer eigenvalue $\lambda_0$ & $0.28291$ (50 sig.~fig.) & algebraic over $\ma
 Spectral gap $\Delta=-\ln\lambda_0$ & $1.2626$ (50 sig.~fig.) & transcendental if $\lambda_0$ algebraic (Lindemann--Weierstrass) & A$^*$ \\
 Frobenius distance identity & $K=\frac{1}{2}\|M-E\|_F^2+\frac{1}{2}K_{\mathrm{self}}(m)+\frac{1}{2}K_{\mathrm{self}}(e)-(\theta-\phi)^2$ & exact (algebraic identity) & A \\
 Commutator content & $\mathcal{C}\cdot\det(M^*)^2=8332/625$ & exact (Pauli commutator algebra $+$ Born floor) & A \\
-Cosmological constant & $\Lambda = \det(I-J)^{-1/2}e^{-810/7} \approx 7.76\times 10^{-51}$ & prefactor to 50 sig.\ fig.; alg.\ degree $>40$ over $\mathbb{Q}$ & A$^*$ \\
+Cosmological constant & $\Lambda = \det(I-J)^{-1/2}e^{-810/7} \approx 7.76\times 10^{-51}$ & prefactor to 50 sig.\ fig.; $\det(I-J)$ alg.\ degree $>80$ over $\mathbb{Q}$ & A$^*$ \\
 \midrule
 \multicolumn{4}{l}{\textit{Class B$_1$: Sub-percent precision ($<1\%$)}} \\[3pt]
 Proton/W mass ratio & $m_p/M_W = e^{-405/91}$ & $81\,\mathrm{ppm}$ at PDG $M_W$; $M_W$-limited & B$_1$ \\
@@ -2366,7 +2466,7 @@ Hierarchy: $\alpha_{\mathrm{EM}}$ & $e^{-S/24}$ vs $10^{-2.1}$ & order of magnit
 
 Class~A$^*$ denotes quantities that are fully determined (zero free parameters, computed to $50$ significant figures from six constraint equations at $H=3$ with $K^*=7/30$ and Born floor $1/27$) and algebraic over $\mathbb{Q}$, but whose minimal polynomial has not been exhibited. The A$^*$ quantities are $\lambda_0$ (algebraic degree $>30$), $\Delta=-\ln\lambda_0$ (transcendental if $\lambda_0$ algebraic), and $\Lambda=\det(I-J)^{-1/2}\,e^{-810/7}$ (algebraic degree exceeding $80$). The high degrees are a structural consequence of the $\sqrt{26R}$ in the floor map composing with the degree-$24$ fixed-point algebra. A previously reported degree-$19$ PSLQ polynomial for $\lambda_0$ was refuted at $500$-digit precision ($|P_{19}(\lambda_0)|\approx 10^{-60}$; see \S\ref{sec:supplement}).
 
-The division is sharp. Every Class~A result is an algebraic identity---it holds because the combination rule at $H=3$ makes it hold, with nothing to adjust. Every Class~B result is a measured quantity that agrees with a conjectured exact form to the stated precision. The claim on Class~B is not that these are proven, but that the framework's track record on Class~A---21 exact identities from zero free parameters---makes it unreasonable to dismiss the Class~B agreements as coincidence. The correct response is to find the relationships that promote them to Class~A, or to find the error that explains why they are not exact. Both outcomes advance the science.
+The division is sharp. Every Class~A result is an algebraic identity---it holds because the combination rule at $H=3$ makes it hold, with nothing to adjust. Every Class~B result is a measured quantity that agrees with a conjectured exact form to the stated precision. The claim on Class~B is not that these are proven, but that the framework's track record on Class~A---20 exact identities from zero free parameters---makes it unreasonable to dismiss the Class~B agreements as coincidence. The correct response is to find the relationships that promote them to Class~A, or to find the error that explains why they are not exact. Both outcomes advance the science.
 
 
 %% ====================================================================
@@ -2466,9 +2566,9 @@ $\SU(2)$ cross-representation $\delta$ is flat at $0.343$---it does not approach
 \item Explicit 4D Schwinger functions: $S_2^c(x,y)=\sum_k|c_k|^2\lambda_k^{d_{\mathrm{FS}}/\delta}$ on $S^4$, extending to $S_2^c(x,y)\sim C'\cdot e^{-m_{\mathrm{phys}}|x-y|/2}$ on $\R^4$ via stereographic projection (Theorem~\ref{thm:schwinger4d}). All five OS axioms inherited from the construction.
 \item Short-distance behaviour: DS Schwinger functions are smooth at coincident points (no $|x-y|^{-2d}$ singularity); fibre integration of Born observable produces a finite constant as $x\to y$ (Remark~\ref{rem:uv}). The IR physics (mass gap, confinement, area law) is captured; the UV power-law singularity encoding asymptotic freedom is absent from the fibre-averaged observable. Whether the Penrose transform's cohomological structure introduces conformal dimensions remains open.
 \item Minitwistor construction: $\CP^3$ reduces to $T\CP^1=\mathcal{O}(2)$ for $\R^3$ via Hitchin's dimensional reduction~\cite{Hitchin1982}. The $(3,1)\oplus(1,3)$ sector maps to the spin-$1$ Penrose transform, producing vorticity $\omega$ satisfying the Beltrami equation $\nabla\times\omega+m\omega=0$ at equilibrium (Theorem~\ref{thm:minitwistor}).
-\item Vorticity bound: Born floor gives $\|\omega\|_{L^\infty}\leq C(H)=0.344$ uniformly in time (Theorem~\ref{thm:minitwistor}). A singularity ($|\omega|\to\infty$) is $\theta\to 0$---certainty about one hypothesis; the Born floor prevents it (Remark~\ref{rem:singularity_certainty}). Spatial coupling is diffusive: $M_k=J_m+J_e\cos(k)$ is a discrete Laplacian (Theorem~\ref{thm:multisite}). The descended equation is a $4$-component reaction-diffusion system with bounded quadratic nonlinearity ($R^2=0.999$, equation~\ref{eq:descended}); it is \emph{not} Navier--Stokes (the quadratic coupling is $98.9\%$ symmetric; the Levi-Civita cross-product structure of NS advection is absent). Global regularity holds for the descended equation via Schauder bootstrap (Remark~\ref{rem:ns_gap}).
+\item Vorticity bound: Born floor gives $\|\omega\|_{L^\infty}\leq\sqrt{26}\approx 5.1$ uniformly in time (algebraic: $|\omega|^2=(1-\mathrm{Born})/\mathrm{Born}\leq 26$ at $\mathrm{Born}=1/27$). The gauge-sector norm of $\dbar\Phi$ satisfies $\|\dbar\Phi_{(3,1)\oplus(1,3)}\|\leq C_{\mathrm{gauge}}=0.344$ (Theorem~\ref{thm:regularity}); this bounds the DS anti-holomorphic Jacobian, not the vorticity directly. A singularity ($|\omega|\to\infty$) is $\theta\to 0$---certainty about one hypothesis; the Born floor prevents it (Remark~\ref{rem:singularity_certainty}). Spatial coupling is diffusive: $M_k=J_m+J_e\cos(k)$ is a discrete Laplacian (Theorem~\ref{thm:multisite}). The descended equation is a $4$-component reaction-diffusion system with bounded quadratic nonlinearity ($R^2=0.999$, equation~\ref{eq:descended}); it is \emph{not} Navier--Stokes (the quadratic coupling is $98.9\%$ symmetric; the Levi-Civita cross-product structure of NS advection is absent). Global regularity holds for the descended equation via Schauder bootstrap (Remark~\ref{rem:ns_gap}).
 \item Chen--Hou embedding: the operator $\partial_r^2+(3/r)\partial_r+\partial_z^2$ governing the axisymmetric Euler blowup~\cite{ChenHou2025} is the $\R^5$ Laplacian restricted to axisymmetric functions, with coefficient $3/r=H/r=\dim(\SU(2))/r$ from the transverse $S^3$ angular structure (Theorem~\ref{thm:chen_hou}). The Chen--Hou blowup point $(r,z)=(1,0)$ lies outside the Born disk $r^2+z^2\leq 26\theta_*^2=0.621$ (ratio $1.61$). Self-similar blowup hits the Born floor at $r_{\mathrm{crit}}=25/26$. Same twistor space, same operator, different constraint.
-\item Navier--Stokes global regularity (unconditional): smooth divergence-free $\omega_0\in L^2(\R^3)$ with $\nu>0$ gives a unique smooth global solution (Theorem~\ref{thm:ns_regularity}). The proof chain: $\dim H^0(\mathcal{O}(2))=3$ $\to$ $(H\!-\!1)^2=H\!+\!1$ self-consistency $\to$ Born floor $1/27$ from $\C^4$ algebra $\to$ Hitchin: $\omega_0$ has $\mathcal{O}(2)$ representative $\to$ $|\omega|^2\leq 26$ (algebraic) $\to$ fibre locality preserved by NS $\to$ Born preserved (algebra + topology + energy inequality) $\to$ $\|\omega\|_{L^\infty}\leq C(H)=0.344$ $\to$ BKM $\to$ regularity. No physical assumption: the Born floor is a geometric consequence of $\mathcal{O}(2)$ bundle structure (Remark~\ref{rem:ns_assumption}).
+\item Navier--Stokes global regularity (unconditional): smooth divergence-free $\omega_0\in L^2(\R^3)$ with $\nu>0$ gives a unique smooth global solution (Theorem~\ref{thm:ns_regularity}). The proof chain: $\dim H^0(\mathcal{O}(2))=3$ $\to$ $(H\!-\!1)^2=H\!+\!1$ self-consistency $\to$ Born floor $1/27$ from $\C^4$ algebra $\to$ Hitchin: $\omega_0$ has $\mathcal{O}(2)$ representative $\to$ $|\omega|^2\leq 26$ (algebraic) $\to$ fibre locality preserved by NS $\to$ Born preserved (algebra + topology + energy inequality) $\to$ $\|\omega\|_{L^\infty}\leq\sqrt{26}$ $\to$ BKM $\to$ regularity. No physical assumption: the Born floor is a geometric consequence of $\mathcal{O}(2)$ bundle structure (Remark~\ref{rem:ns_assumption}).
 \item Wilson loop area law: $\sigma=-\ln(1-K^*)=-\ln(23/30)$ from the fibre transfer operator, gauge-derived evidence ($e^*\neq m^*$, $K=7/30$), plaquette decorrelation (OS4 cumulant expansion), and no screening (Theorem~\ref{thm:arealaw}).
 \end{enumerate}
 
@@ -2698,7 +2798,7 @@ The following results were obtained by direct numerical computation (Python/NumP
 
 \item \textbf{Universal curvature bound} (\S\ref{sec:regularity}). The anti-holomorphic Jacobian $\dbar\Phi$ was computed via Wirtinger finite differences across $10^5$ random floor-active states in $B$. Results: $\|\dbar\Phi\|_F\leq 0.892$ (maximum over all samples; mean $0.688\pm 0.029$). The minimum singular value of $M$ on $B$: $\sigma_{\min}\geq 0.475$, giving $\|M^{-1}\|\leq 2.10$. These bound the non-integrability data that enters Mason's Ward reconstruction (Theorem~\ref{thm:nijenhuis}). The Maurer--Cartan form norm $\|a^{0,1}\|=\|M^{-1}\dbar M\|\leq 2.10\times 0.892=1.87$ bounds the transition function's anti-holomorphic content; the Ward-reconstructed curvature $\|F_{\mathrm{Ward}}\|$ is bounded by the same compactness argument (Theorem~\ref{thm:curvature_bound}).
 
-The $\mathrm{SO}(4)$ decomposition of $\dbar\Phi$ across $5000$ floor-active states gives sector fractions: $(1,1)$ scalar $45.1\%$; $(3,1)\oplus(1,3)$ gauge $4.9\%$; $(3,3)$ gravity $50.0\%$. The maximum of the gauge-sector norm $\|\dbar\Phi_{(3,1)\oplus(1,3)}\|$ over $B$ is $0.344$---this is $C_{\mathrm{gauge}}(H\!=\!3)$ in Theorem~\ref{thm:regularity}.
+The $\mathrm{SO}(4)$ decomposition of $\dbar\Phi$ across $5000$ random floor-active states (not at the equilibrium) gives sector fractions: $(1,1)$ scalar $45.1\%$; $(3,1)\oplus(1,3)$ gauge $4.9\%$; $(3,3)$ gravity $50.0\%$. (At the $K^*=7/30$ equilibrium, the fractions are $23\%/26\%/51\%$---Remark~\ref{rem:floor_active}. The difference reflects the concentration of mass at equilibrium, where the singleton dominance amplifies the gauge sector.) The maximum of the gauge-sector norm $\|\dbar\Phi_{(3,1)\oplus(1,3)}\|$ over $B$ is $0.344$---this is $C_{\mathrm{gauge}}(H\!=\!3)$ in Theorem~\ref{thm:regularity}.
 
 On coupled 1D ($N\!=\!30$) and 3D ($N\!=\!8^3$) lattices with non-trivial initial orientation patterns: the dynamics converges to the DS equilibrium where $\|\dbar\Phi\|=1.12$ (Remark~\ref{rem:floor_active}). The anti-holomorphic Jacobian is nonzero at the equilibrium because the floor fires at every DS step (the DS map contracts $\theta$, and the floor restores it). The Born floor held at $1/27$ in every configuration. The bound $\|\dbar\Phi_{(3,1)\oplus(1,3)}\|\leq C_{\mathrm{gauge}}=0.344$ (Theorem~\ref{thm:regularity}) holds uniformly.
 
