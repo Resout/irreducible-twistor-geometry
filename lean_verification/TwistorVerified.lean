@@ -5,3 +5,12 @@ import TwistorVerified.Contraction
 import TwistorVerified.PauliEmbedding
 import TwistorVerified.NonHolomorphic
 import TwistorVerified.BudgetMatching
+import TwistorVerified.ConformalBreaking
+import TwistorVerified.DetProtection
+import TwistorVerified.UniqueProduct
+import TwistorVerified.PhaseSensitivity
+import TwistorVerified.GeometricAxioms
+import TwistorVerified.MasonConsequences
+import TwistorVerified.SpectralConsequences
+import TwistorVerified.ComplexUniqueness
+import TwistorVerified.FrobeniusIdentity
