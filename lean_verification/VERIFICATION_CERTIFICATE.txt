@@ -12,7 +12,7 @@ Repository: github.com/Resout/irreducible-twistor-geometry
 BUILD OUTPUT
 ================================================================
 
-Build completed successfully (3292 jobs).
+Build completed successfully (3293 jobs).
 Zero errors. Zero warnings. Zero sorry.
 
 ================================================================
@@ -26,9 +26,10 @@ Files:
   Contraction.lean:      19 theorems
   PauliEmbedding.lean:   20 theorems
   NonHolomorphic.lean:     6 theorems
+  BudgetMatching.lean:   19 theorems
   ─────────────────────────────────
-  TOTAL:                138 theorems
-  TOTAL LINES:         1072
+  TOTAL:                157 theorems
+  TOTAL LINES:         1227
 
 SORRY COUNT: 0
 
@@ -37,7 +38,7 @@ VERIFIED MATHEMATICAL CHAIN
 ================================================================
 
 H = 3 (unique positive integer satisfying (H-1)² = H+1)
-  ↓
+  ↓   (four independent routes, all verified)
 C⁴, CP³, Born floor 1/27, η = 4/27
   ↓
 DS combination rule (defined, L₁-preserving, commutative)
@@ -45,7 +46,7 @@ DS combination rule (defined, L₁-preserving, commutative)
 Structural filter: pre-norm total = 1-K (algebraic identity)
   ↓
 K* = 7/30 (conservation law, universal over ℚ for all H)
-  ↓
+  ↓   (budget matching: (H-3)(7H²-9H+10)=0, disc=-199<0)
 Pauli embedding: M = θI + s·σ (2×2 matrix)
   ↓
 det(M) = (θ² - Σsᵢ²)/2; at Born floor: det = -25θ²/2 ≠ 0
