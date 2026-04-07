@@ -12,7 +12,7 @@ Repository: github.com/Resout/irreducible-twistor-geometry
 BUILD OUTPUT
 ================================================================
 
-Build completed successfully (3291 jobs).
+Build completed successfully (3292 jobs).
 Zero errors. Zero warnings. Zero sorry.
 
 ================================================================
@@ -25,9 +25,10 @@ Files:
   BornFloor.lean:        10 theorems
   Contraction.lean:      19 theorems
   PauliEmbedding.lean:   20 theorems
+  NonHolomorphic.lean:     6 theorems
   ─────────────────────────────────
-  TOTAL:                132 theorems
-  TOTAL LINES:          994
+  TOTAL:                138 theorems
+  TOTAL LINES:         1072
 
 SORRY COUNT: 0
 
@@ -53,6 +54,14 @@ DS-Matrix decomposition: output = {M,E} components, [M,E] absent
   ↓
 Off-diagonal = K (symmetric, discarded) + [M,E] (antisymmetric, curvature)
   ↓
+DS combination is polynomial (holomorphic)
+  ↓
+Born floor involves |θ|² = θθ̄ (non-holomorphic)
+  ↓
+Floor fires at every step (verified at equilibrium values)
+  ↓
+∂̄Φ ≠ 0 (non-integrability, Mason's theorem applies)
+  ↓
 ρ ≤ 23/30 < 1 (contraction)
   ↓
 (23/30)^n → 0 (exponential decay)
@@ -68,8 +77,8 @@ WHAT IS NOT VERIFIED IN LEAN
 
 1. Exact eigenvalue λ₀ = 0.2829 (algebraic degree >30; Python 500-digit)
 2. Hilbert metric contraction (abstract proof; numerical bound IS verified)
-3. Twistor geometry: Ward, Mason, Nijenhuis, Penrose (no Mathlib infra)
-4. Popov identification: rank-1 ∂̄Φ (needs Wirtinger calculus)
+3. Twistor geometry: Ward, Mason, Penrose transform (no Mathlib infra)
+4. Popov identification: rank-1 ∂̄Φ (needs Wirtinger calculus over ℂ)
 5. OS axioms: Koopman spectral theory (not in Mathlib)
 6. ADE classification (Python computation, 36 groups)
 7. Physical identifications (modeling choices, not theorems)
