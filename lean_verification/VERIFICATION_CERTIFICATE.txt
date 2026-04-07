@@ -12,7 +12,7 @@ Repository: github.com/Resout/irreducible-twistor-geometry
 BUILD OUTPUT
 ================================================================
 
-Build completed successfully (3290 jobs).
+Build completed successfully (3291 jobs).
 Zero errors. Zero warnings. Zero sorry.
 
 ================================================================
@@ -24,8 +24,10 @@ Files:
   DSCombination.lean:    15 theorems
   BornFloor.lean:        10 theorems
   Contraction.lean:      19 theorems
+  PauliEmbedding.lean:   20 theorems
   ─────────────────────────────────
-  TOTAL:                112 theorems
+  TOTAL:                132 theorems
+  TOTAL LINES:          994
 
 SORRY COUNT: 0
 
@@ -43,7 +45,13 @@ Structural filter: pre-norm total = 1-K (algebraic identity)
   ↓
 K* = 7/30 (conservation law, universal over ℚ for all H)
   ↓
-det(M) ≠ 0 at Born floor (bundle non-degeneracy)
+Pauli embedding: M = θI + s·σ (2×2 matrix)
+  ↓
+det(M) = (θ² - Σsᵢ²)/2; at Born floor: det = -25θ²/2 ≠ 0
+  ↓
+DS-Matrix decomposition: output = {M,E} components, [M,E] absent
+  ↓
+Off-diagonal = K (symmetric, discarded) + [M,E] (antisymmetric, curvature)
   ↓
 ρ ≤ 23/30 < 1 (contraction)
   ↓
