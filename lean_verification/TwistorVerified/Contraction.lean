@@ -34,7 +34,7 @@ import TwistorVerified.DSCombination
     s''_i/s''_j = (s_i·e_i)/(s_j·e_j) = (s_i/s_j)·(e_i/e_j).
     Pure multiplicative contraction. -/
 theorem ratio_multiplicative_no_ignorance (si sj ei ej : ℚ)
-    (hsj : sj ≠ 0) (hej : ej ≠ 0) (hsiei : si * ei ≠ 0) :
+    (hsj : sj ≠ 0) (hej : ej ≠ 0) (_hsiei : si * ei ≠ 0) :
     (si * ei) / (sj * ej) = (si / sj) * (ei / ej) := by
   field_simp
 

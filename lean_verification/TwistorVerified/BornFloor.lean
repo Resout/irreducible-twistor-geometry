@@ -80,7 +80,7 @@ theorem det_nonzero_at_floor (m : MassFn)
 /-- Floor enforcement preserves L₁: if we rescale singletons by
     (1-t)/(s₁+s₂+s₃) and set θ=t, the total is 1. -/
 theorem floor_preserves_L1 (s1 s2 s3 t : ℚ)
-    (hS : s1 + s2 + s3 ≠ 0) (ht : 0 ≤ t) (ht1 : t ≤ 1) :
+    (hS : s1 + s2 + s3 ≠ 0) (_ht : 0 ≤ t) (_ht1 : t ≤ 1) :
     s1 * ((1 - t) / (s1 + s2 + s3)) +
     s2 * ((1 - t) / (s1 + s2 + s3)) +
     s3 * ((1 - t) / (s1 + s2 + s3)) + t = 1 := by
