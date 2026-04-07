@@ -39,3 +39,6 @@ the_expansion.md
 
 # Unpublished documents
 for_penrose.*
+/.lake
+.lake/
+lake-manifest.json
