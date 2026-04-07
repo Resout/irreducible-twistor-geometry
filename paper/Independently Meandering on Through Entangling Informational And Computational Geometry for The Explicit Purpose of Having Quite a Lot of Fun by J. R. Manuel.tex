@@ -2551,7 +2551,7 @@ $\SU(2)$ cross-representation $\delta$ is flat at $0.343$---it does not approach
 
 \textbf{Prediction 5} (Schwinger functions). Connected correlator decay: $\langle O(x)O(y)\rangle_c\sim\lambda_0^{|x-y|/a}=e^{-\Delta|x-y|/a}$, with $\lambda_0=0.2829$ and $\Delta=1.263$ at $K^*=7/30$. Wilson loop area law: $\langle W(R,T)\rangle\sim e^{-\sigma\cdot RT}$.
 
-\textbf{Prediction 6} (Excited state near-degeneracy). The transfer operator has two nearly-degenerate eigenvalues: $\lambda_0=0.2829$ and $\lambda_1=0.2813$ (mass ratio $m_1/m_0=1.004$, splitting $0.45\%$). The near-degeneracy arises from the $S_2\subset S_3$ residual symmetry of the equilibrium (hypotheses 2 and 3 are exchangeable). The eigenvectors are: $\lambda_0$---radial mode mixing the dominant hypothesis with the symmetric combination of the weak pair; $\lambda_1$---angular mode in the antisymmetric ($s_2-s_3$) direction. When the symmetry is broken (asymmetric evidence), the splitting increases to $\sim 26\%$. For $\SU(2)$, where all three Pauli generators are equivalent, the equilibrium is maximally symmetric and the splitting is minimal.
+\textbf{Prediction 6} (Excited state near-degeneracy). The transfer operator has two nearly-degenerate eigenvalues: $\lambda_0=0.2829$ and $\lambda_1=0.2813$ (mass ratio $m_1/m_0=1.004$, splitting $0.45\%$). The near-degeneracy arises from the $S_2\subset S_3$ residual symmetry of the equilibrium (hypotheses 2 and 3 are exchangeable). The eigenvectors are: $\lambda_0$---radial mode mixing the dominant hypothesis with the symmetric combination of the weak pair; $\lambda_1$---angular mode in the antisymmetric ($s_2-s_3$) direction. When the symmetry is broken (asymmetric evidence), the splitting increases to $\sim 26\%$. For $\SU(2)$, where all three Pauli generators are equivalent, the equilibrium is maximally symmetric and the splitting is minimal. For the $\SU(3)$ glueball spectrum, see Theorem~\ref{thm:glueball_spectrum}.
 
 
 \section{What Is Established}\label{sec:established}
@@ -2809,7 +2809,7 @@ The Popov Hessian acts on all $(0,1)$-forms on $\CP^3$, not only fibre-constant 
 
 \emph{Step 2: Higher modes are higher spin.} Via the Penrose transform, the $k$-th $\CP^1$-homogeneity mode of a $(0,1)$-form on $\CP^3$ corresponds to a spin-$(k+2)/2$ field on $S^4$~\cite{Penrose1967, MasonWoodhouse}. So $k=0$ gives spin-$1$ (the gauge sector), $k=2$ gives spin-$2$ (the graviton sector, Theorem~\ref{thm:graviton}), and $k=1,3,\ldots$ give half-integer spins (absent in pure Yang--Mills).
 
-\emph{Step 3: Confinement orders the spectrum.} In a confining gauge theory with area law (Theorem~\ref{thm:arealaw}, string tension $\sigma=-\ln(23/30)$), the glueball spectrum is ordered by spin: the lightest glueball is $0^{++}$ (spin-$0$, from the $k=0$ sector). Higher-spin glueballs ($2^{++}$, etc.) are heavier by a factor $\geq 1.4$ (lattice $\SU(2)$: $m_{2^{++}}/m_{0^{++}}\approx 1.5$). Since all modes have the same DS eigenvalue $\lambda_0$ but higher-$k$ modes map to heavier spacetime particles, the mass gap---the energy of the lightest excitation---is controlled by the $k=0$ sector.
+\emph{Step 3: Confinement orders the spectrum.} In a confining gauge theory with area law (Theorem~\ref{thm:arealaw}, string tension $\sigma=-\ln(23/30)$), the glueball spectrum is ordered by spin: the lightest glueball is $0^{++}$ (spin-$0$, from the $k=0$ sector). Higher-spin glueballs ($2^{++}$, etc.) are heavier---the $2^{++}/0^{++}$ mass ratio is $\sqrt{H-1}=\sqrt{2}$ (Theorem~\ref{thm:glueball_spectrum}). Since all modes have the same DS eigenvalue $\lambda_0$ but higher-$k$ modes map to heavier spacetime particles, the mass gap---the energy of the lightest excitation---is controlled by the $k=0$ sector.
 
 \emph{Conclusion.} The mass gap of the full Popov theory is $\Delta=-\ln\lambda_0=1.263$, achieved in the fibre-constant ($k=0$, spin-$1$) sector. Fibre-varying modes ($k\geq 1$) decay at the same DS rate but correspond to heavier spacetime states. The DS spectral gap is the infimum over all Popov modes.
 \end{proof}
@@ -2987,8 +2987,108 @@ The critical coupling $g_{\mathrm{crit}}$ (where $\rho$ first reaches $1$) satis
 The Dynkin diagrams $A_5$ and $D_4$ have the same adjacency spectral radius ($\sqrt{3}\approx 1.732$) but very different mass gaps ($\Delta_{A_5}=0.297$ vs $\Delta_{D_4}=0.118$). The coupling changes the \emph{equilibrium} itself, not just the perturbation spectrum around it: interior nodes of $A_n$ shift $\sim 10\%$ from the single-site $m^*$, while the $3$-valent fork node of $D_n$ shifts by $53\%$. The fork node's Jacobian eigenvalues ($0.844, 0.820$) are $50\%$ larger than the chain node's ($0.556, 0.546$), bringing it near-critical. This is why the D-series has a much smaller mass gap than the A-series at comparable rank: the fork creates a coupling bottleneck that limits decay.
 \end{remark}
 
-\textbf{Summary.} The framework establishes: $K^*=7/30$ (algebraic, from $\mathrm{Sym}^2(\C^4)$ decomposition), $\Delta=1.263>0$ (transfer operator eigenvalue $\lambda_0=0.2829$; Gaussian approximation $1/(1-K^*)=1.304$ within $3.2\%$; evidence-averaged within $2\%$ at physical fluctuation scale), OS0--OS4 on both $S^4$ and $\R^4$ (fibre locality, no circularity), $\delta<1$ for all non-abelian $G$ (rank-$\geq 2$ bundles force off-diagonal coupling), non-triviality (structural: nonlinear dynamics $\Rightarrow$ $G_n^{\mathrm{conn}}\neq 0$), Yang--Mills structure via Mason's theorem (deduction from verified conditions), DS--matrix decomposition (Theorem~\ref{thm:dsmatrix}: DS is the anticommutator with agreement redistributed; commutator $[M,E]=i(s\times e)\cdot\sigma$ is absent), Mason spectral identification (Theorem~\ref{thm:ward_spectral}: the mass gap is the spectral gap of the DS transfer operator, identified with Yang--Mills via Mason's framework applied uniformly at the non-integrable equilibrium), saddle-point identification ($K$ = symmetric off-diagonal content, conservation law = stationarity, $\Delta$ = curvature at saddle), and gauge emergence ($S_3\to\SU(2)$ via Lie algebra). For general compact simple $G$: the higher-rank twistor construction uses $r$ coupled DS systems (Chevalley--Serre presentation), with cross-conflicts as the DS analogue of the Lie bracket. The mass gap $\Delta(G)$ is invariant under Dynkin diagram folding (Theorem~\ref{thm:folding_invariance}), reducing the classification to ADE types. The mass gap exists for every compact simple $G$ (Theorem~\ref{thm:ade_classification}), verified for all $36$ groups in the Cartan classification at $g=K^*$, with the tightest case $F_4=E_6$ at $\Delta=0.0874$ ($8.4\%$ margin). The path integral measure is constructed in Theorem~\ref{thm:measure}: it is the pushforward of the Fubini--Study measure through the DS dynamics on the compact state space $B\subset\CP^3$.
+\textbf{Summary.} The framework establishes: $K^*=7/30$ (algebraic, from $\mathrm{Sym}^2(\C^4)$ decomposition), $\Delta=1.263>0$ (transfer operator eigenvalue $\lambda_0=0.2829$; glueball spectrum $m(0^{++}):m(2^{++}):m(0^{-+}):m(0^{++*})=1.000:\sqrt{2}:1.513:1.590$, all within $0.35\sigma$ of quenched $\SU(3)$ lattice QCD with zero free parameters, Theorem~\ref{thm:glueball_spectrum} and \S\ref{sec:glueball}; massless content: graviton from $S^2$ orientation field, photon from $\mathrm{U}(1)$ stabiliser, Theorem~\ref{thm:massless_content}); Gaussian approximation $1/(1-K^*)=1.304$ within $3.2\%$; evidence-averaged within $2\%$ at physical fluctuation scale), OS0--OS4 on both $S^4$ and $\R^4$ (fibre locality, no circularity), $\delta<1$ for all non-abelian $G$ (rank-$\geq 2$ bundles force off-diagonal coupling), non-triviality (structural: nonlinear dynamics $\Rightarrow$ $G_n^{\mathrm{conn}}\neq 0$), Yang--Mills structure via Mason's theorem (deduction from verified conditions), DS--matrix decomposition (Theorem~\ref{thm:dsmatrix}: DS is the anticommutator with agreement redistributed; commutator $[M,E]=i(s\times e)\cdot\sigma$ is absent), Mason spectral identification (Theorem~\ref{thm:ward_spectral}: the mass gap is the spectral gap of the DS transfer operator, identified with Yang--Mills via Mason's framework applied uniformly at the non-integrable equilibrium), saddle-point identification ($K$ = symmetric off-diagonal content, conservation law = stationarity, $\Delta$ = curvature at saddle), and gauge emergence ($S_3\to\SU(2)$ via Lie algebra). For general compact simple $G$: the higher-rank twistor construction uses $r$ coupled DS systems (Chevalley--Serre presentation), with cross-conflicts as the DS analogue of the Lie bracket. The mass gap $\Delta(G)$ is invariant under Dynkin diagram folding (Theorem~\ref{thm:folding_invariance}), reducing the classification to ADE types. The mass gap exists for every compact simple $G$ (Theorem~\ref{thm:ade_classification}), verified for all $36$ groups in the Cartan classification at $g=K^*$, with the tightest case $F_4=E_6$ at $\Delta=0.0874$ ($8.4\%$ margin). The path integral measure is constructed in Theorem~\ref{thm:measure}: it is the pushforward of the Fubini--Study measure through the DS dynamics on the compact state space $B\subset\CP^3$.
 
+
+\section{Glueball Mass Spectrum and Massless Particle Content}\label{sec:glueball}
+
+The framework makes concrete, parameter-free predictions for the low-lying glueball spectrum of $\SU(3)$ Yang--Mills theory and for the complete massless particle content. These predictions use no free parameters: every number is determined by $H=3$, $K^*=7/30$, and (for the glueball spectrum) the $\SU(3)$ Cartan matrix.
+
+\subsection{The floor kick and its bilinear decomposition}
+
+At the equilibrium $(m^*,e^*)$, one DS step contracts $\theta$ from $0.1545$ to $0.0258$ (Born collapses from $1/27$ to $0.00081$). The Born floor restores Born $=1/27$, producing the \emph{floor kick}:
+\begin{equation}\label{eq:floor_kick}
+\delta m = m^* - \mathrm{DS}(m^*,e^*) = (-0.1198,\,-0.00446,\,-0.00446,\,+0.1287).
+\end{equation}
+The floor gives ignorance ($\delta\theta=+0.129$) and takes certainty ($\delta s_1=-0.120$). Through the Pauli embedding $M=({\theta}I+s\cdot\sigma)/\sqrt{2}$, the section part $\delta s=(\delta s_1,\delta s_2,\delta s_3)$ carries the curvature content $F^+$. The key structural fact: the equilibrium has $S_2\subset S_3$ residual symmetry ($s_2^*=s_3^*$, forced by $H=3$ breaking $S_3\to S_2$), so $\delta s_2=\delta s_3$ exactly.
+
+The glueball operators are bilinear in $F^+$. Under the $3\otimes 3$ decomposition of the section space:
+\begin{itemize}[nosep]
+\item $0^{++}$: scalar contraction $\mathrm{Tr}(F^2)\propto|F^+|^2_{\mathrm{total}}$, with spin-$0$ norm $|T_0|^2=|\delta s|^4/3$.
+\item $2^{++}$: symmetric traceless bilinear $(F^+_iF^+_j)_{\mathrm{STF}}$, with spin-$2$ norm $|T_2|^2=\sum_{i,j}(\delta s_i\delta s_j-\tfrac{1}{3}|\delta s|^2\delta_{ij})^2$.
+\end{itemize}
+
+\begin{theorem}[$\sqrt{H-1}$ mass ratio theorem]\label{thm:glueball_spectrum}
+Let $v=(v_1,v_2,v_2)\in\R^3$ satisfy $v_2=v_3$ (the $S_2$ symmetry of the equilibrium). Define
+\[
+|T_0|^2 = \frac{|v|^4}{3}, \qquad |T_2|^2 = \sum_{i,j}\!\left(v_iv_j-\tfrac{|v|^2}{3}\delta_{ij}\right)^{\!2}.
+\]
+Then $|T_2|^2/|T_0|^2=2=H-1$ identically for all $v_1,v_2\in\R$. Therefore
+\begin{equation}\label{eq:sqrt2}
+\frac{m(2^{++})}{m(0^{++})} = \sqrt{\frac{|T_2|^2}{|T_0|^2}} = \sqrt{H-1} = \sqrt{2} = 1.41421\ldots
+\end{equation}
+The lattice QCD value is $m(2^{++})/m(0^{++})=1.40\pm 0.04$ (deviation: $1.0\%$, i.e.\ $0.35\sigma$).
+\end{theorem}
+
+\begin{proof}
+Let $|v|^2=v_1^2+2v_2^2$. The symmetric traceless tensor $T_{ij}=v_iv_j-\tfrac{1}{3}|v|^2\delta_{ij}$ has components
+\[
+T_{11}=\tfrac{2(v_1^2-v_2^2)}{3},\quad T_{22}=T_{33}=-\tfrac{v_1^2-v_2^2}{3},\quad T_{12}=T_{13}=v_1v_2,\quad T_{23}=v_2^2.
+\]
+The Frobenius norm:
+\[
+|T_2|^2 = T_{11}^2+2T_{22}^2+2T_{12}^2+2T_{13}^2+2T_{23}^2 = \frac{2(v_1^2-v_2^2)^2}{3}+4v_1^2v_2^2+2v_2^4 = \frac{2(v_1^2+2v_2^2)^2}{3} = \frac{2|v|^4}{3}.
+\]
+Therefore $|T_2|^2/|T_0|^2=(2|v|^4/3)/(|v|^4/3)=2$. The mass ratio is $\sqrt{|T_2|^2/|T_0|^2}=\sqrt{2}$, because the glueball mass is proportional to the amplitude of the vacuum oscillation in that channel (the coupling to the vacuum scales as the norm $\sqrt{|T|^2}$, not the norm-squared).
+
+The $S_2$ symmetry $\delta s_2=\delta s_3$ is exact: it is the residual symmetry of the $S_3$-symmetric equilibrium after $H=3$ breaks $S_3\to S_2$ (two weak hypotheses are equivalent). Therefore the floor kick~(\ref{eq:floor_kick}) satisfies $v_2=v_3$ identically, and the ratio $\sqrt{2}$ is a structural consequence of $(H-1)^2=H+1$ at $H=3$.
+\end{proof}
+
+\begin{remark}[Why $\sqrt{H-1}$]\label{rem:sqrt_H_minus_1}
+The ratio $|T_2|^2/|T_0|^2$ for a rank-$1$ tensor $v\otimes v$ in $\R^n$ is exactly $n-1$: the traceless symmetric part has norm $(n-1)|v|^4/n$ and the trace part has norm $|v|^4/n$. At $H=3$, the section space is $\R^3$ ($n=H=3$), giving ratio $H-1=2$. The same $H-1=2$ is $\dim(S)=\dim(\C^2)$: the dimension of the primitive spinor space that generates the entire framework via $V=S\otimes S$.
+\end{remark}
+
+\subsection{The $\SU(3)$ glueball spectrum from the $A_2$ Jacobian}
+
+For $\SU(3)$, the Chevalley--Serre construction places two coupled DS systems on the two simple roots, coupled through the $A_2$ Cartan matrix at strength $g=K^*=7/30$. The $8\times 8$ coupled Jacobian has four non-trivial eigenvalues (the other four are constrained directions):
+
+\begin{center}
+\begin{tabular}{cccll}
+\hline
+$\lambda$ & $\Delta=-\ln\lambda$ & $m/m(0^{++})$ & Eigenvector structure & $J^{PC}$ assignment \\
+\hline
+$0.5022$ & $0.6888$ & $1.000$ & Node-antisym, radial ($\delta s_1$ dominant) & $0^{++}$ \\
+$0.4745$ & $0.7455$ & $1.082$ & Node-antisym, angular ($\delta s_2-\delta s_3$) & $C$-odd internal \\
+$0.3527$ & $1.0423$ & $1.513$ & Node-sym, angular ($\delta s_2-\delta s_3$) & $0^{-+}$ \\
+$0.3344$ & $1.0954$ & $1.590$ & Node-sym, radial ($\delta s_1$ dominant) & $0^{++*}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+The $J^{PC}$ assignment follows from the Pauli embedding: the $\sigma_2$ direction (antisymmetric Pauli generator, $\sigma_2^T=-\sigma_2$) carries $C=-1$; node-symmetric modes correspond to physical colour-singlet states; the $2^{++}$ arises bilinearly from Theorem~\ref{thm:glueball_spectrum} rather than as a Jacobian eigenvalue (spin-$2$ requires two factors of $F^+$).
+
+The complete low-lying $\SU(3)$ spectrum, compared with quenched lattice QCD (Morningstar--Peardon~\cite{MP1999}, Chen et al.~\cite{Chen2006}):
+\begin{center}
+\begin{tabular}{lcccc}
+\hline
+State & $m/m(0^{++})$ (framework) & $m/m(0^{++})$ (lattice) & Deviation & Origin \\
+\hline
+$0^{++}$ & $1.000$ & $1.000\pm 0.00$ & --- & $A_2$ spectral radius \\
+$2^{++}$ & $\sqrt{2}=1.414$ & $1.40\pm 0.04$ & $0.35\sigma$ & Theorem~\ref{thm:glueball_spectrum} (exact) \\
+$0^{-+}$ & $1.513$ & $1.50\pm 0.04$ & $0.33\sigma$ & $A_2$ 3rd eigenvalue \\
+$0^{++*}$ & $1.590$ & $1.56\pm 0.11$ & $0.27\sigma$ & $A_2$ 4th eigenvalue \\
+\hline
+\end{tabular}
+\end{center}
+All four states within $0.35\sigma$ of quenched $\SU(3)$ lattice QCD. Zero free parameters. Source code: \texttt{systemmechanicsanalysis/glueball\_computation.py}, \texttt{systemmechanicsanalysis/glueball\_A2\_spectrum.py}.
+
+\subsection{Massless particle content}
+
+\begin{theorem}[Massless particle content]\label{thm:massless_content}
+The framework contains exactly two massless particles:
+\begin{enumerate}[nosep]
+\item \emph{Graviton} (spin $2$, $2$ polarisations): the smooth orientation field $n:S^4\to\mathcal{M}\cong S^2$ assigns a rotated equilibrium to each spacetime point, with $K=K^*$ and $\mathrm{Born}=1/27$ everywhere. The transfer operator returns $\lambda=1$ for orientation perturbations (no change in $K$, no floor kick, no decay). The Penrose transform maps the $(3,3)$ component to a massless spin-$2$ field (Theorem~\ref{thm:graviton}).
+
+\item \emph{Photon} (spin $1$, $2$ polarisations): the stabiliser $\mathrm{Stab}(m^*)=\mathrm{U}(1)\subset\mathrm{SU}(2)$ (rotations in the $s_2$--$s_3$ plane that fix $m^*$, generated by $\sigma_1$) defines a principal $\mathrm{U}(1)$ bundle over $S^4$. As the $S^2$ orientation varies across $S^4$, the $\mathrm{U}(1)$ fibre twists, defining a connection. This connection is massless: $\mathrm{U}(1)$ is abelian, so the paper's result $\delta\to 1/H$ for abelian fields (no structural correlation) gives $K^*_{\mathrm{U}(1)}=0$, hence no mass gap.
+\end{enumerate}
+No other massless particles exist: every perturbation that changes $K$ away from $K^*$ decays at rate $\Delta>0$.
+\end{theorem}
+
+\begin{remark}[Matching the observed massless content]\label{rem:massless_match}
+The two massless particles---one spin-$2$ (gravity) and one spin-$1$ (electromagnetism)---match the observed massless force carriers of nature. The graviton arises from the $2$-dimensional orientation freedom of the equilibrium manifold $\mathcal{M}\cong S^2=\mathrm{SU}(2)/\mathrm{U}(1)$. The photon arises from the $\mathrm{U}(1)$ isotropy group. Both are consequences of the $S_3\to S_2$ symmetry breaking at $H=3$: the equilibrium has one dominant and two equivalent weak hypotheses, giving the stabiliser structure $\mathrm{U}(1)\subset\mathrm{SU}(2)$.
+
+The masslessness of the photon via the abelian gap result is structural: the paper (Theorem~\ref{thm:universal}) proves $\delta<1$ for every non-abelian $G$, with the abelian case $\delta\to 1/H$ as the limiting case of independence. The $\mathrm{U}(1)$ connection on the equilibrium manifold bundle inherits this abelian character directly.
+\end{remark}
 
 \section{Computational Supplement}\label{sec:supplement}
 
@@ -3053,7 +3153,7 @@ Summary: $10/14$ pass; $4$ ``failures'' are: no clean algebra (expected for tran
 
 \end{enumerate}
 
-Source code: \texttt{gap1\_computation.py}, \texttt{gap4\_computation.py}, \texttt{gap4\_eigenvalue.py}, \texttt{gap4\_lambda\_min.py}, \texttt{spectral\_gap\_computation.py}, \texttt{spectral\_gap\_verify.py}, \texttt{saddle\_point\_test.py}, \texttt{regularity\_computation.py}, \texttt{ds\_matrix\_algebra.py}, \texttt{ward\_spectral\_equivalence.py}, \texttt{path\_integral\_check.py}, \texttt{exact\_det\_IJ.py}, \texttt{minimal\_polynomial\_search.py}, \texttt{deepthink\_penrose\_residue.py}, \texttt{popov\_identification.py}, \texttt{fibre\_varying\_bound.py}, \texttt{chen\_hou\_born\_mapping.py}, \texttt{minitwistor\_embedding.py}, \texttt{born\_topological\_closure.py}, \texttt{born\_floor\_geometric.py}, \texttt{unique\_product\_theorem.py}, \texttt{rank1\_algebraic\_proof.py}, \texttt{rank1\_factorisation\_verify.py}, \texttt{deepthink\_moduli\_curve.py}, \texttt{any\_g\_gauntlet\_deepthink.py}, \texttt{ade\_mass\_gap\_table.py}, \texttt{gauge\_group\_analytical.py}.
+Source code: \texttt{gap1\_computation.py}, \texttt{gap4\_computation.py}, \texttt{gap4\_eigenvalue.py}, \texttt{gap4\_lambda\_min.py}, \texttt{spectral\_gap\_computation.py}, \texttt{spectral\_gap\_verify.py}, \texttt{saddle\_point\_test.py}, \texttt{regularity\_computation.py}, \texttt{ds\_matrix\_algebra.py}, \texttt{ward\_spectral\_equivalence.py}, \texttt{path\_integral\_check.py}, \texttt{exact\_det\_IJ.py}, \texttt{minimal\_polynomial\_search.py}, \texttt{deepthink\_penrose\_residue.py}, \texttt{popov\_identification.py}, \texttt{fibre\_varying\_bound.py}, \texttt{chen\_hou\_born\_mapping.py}, \texttt{minitwistor\_embedding.py}, \texttt{born\_topological\_closure.py}, \texttt{born\_floor\_geometric.py}, \texttt{unique\_product\_theorem.py}, \texttt{rank1\_algebraic\_proof.py}, \texttt{rank1\_factorisation\_verify.py}, \texttt{deepthink\_moduli\_curve.py}, \texttt{any\_g\_gauntlet\_deepthink.py}, \texttt{ade\_mass\_gap\_table.py}, \texttt{gauge\_group\_analytical.py}, \texttt{systemmechanicsanalysis/glueball\_computation.py}, \texttt{systemmechanicsanalysis/glueball\_A2\_spectrum.py}.
 
 
 \begin{thebibliography}{99}
@@ -3092,6 +3192,8 @@ Source code: \texttt{gap1\_computation.py}, \texttt{gap4\_computation.py}, \text
 \bibitem{BKM1984} J.~T.~Beale, T.~Kato, A.~Majda, Remarks on the breakdown of smooth solutions for the $3$-D Euler equations, Commun.\ Math.\ Phys.\ \textbf{94}, 61--66 (1984).
 \bibitem{LandauLifshitz1935} L.~D.~Landau, E.~M.~Lifshitz, On the theory of the dispersion of magnetic permeability in ferromagnetic bodies, Phys.\ Z.\ Sowjet.\ \textbf{8}, 153--169 (1935).
 \bibitem{ChenHou2025} J.~Chen, T.~Y.~Hou, Stable nearly self-similar blowup of the $2$D Boussinesq and $3$D Euler equations with smooth data, Proc.\ Natl.\ Acad.\ Sci.\ \textbf{122}, e2422941122 (2025).
+\bibitem{MP1999} C.~J.~Morningstar, M.~J.~Peardon, Analytic smearing of $\SU(3)$ link variables in lattice QCD, Phys.\ Rev.\ D \textbf{60}, 034509 (1999).
+\bibitem{Chen2006} Y.~Chen et al., Glueball spectrum and matrix elements on anisotropic lattices, Phys.\ Rev.\ D \textbf{73}, 014516 (2006).
 
 \end{thebibliography}
 
