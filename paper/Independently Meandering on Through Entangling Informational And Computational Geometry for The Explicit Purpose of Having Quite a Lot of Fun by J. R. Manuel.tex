@@ -3449,6 +3449,24 @@ Up & $1.94$ & $2.16\pm 0.07$ & $10.2\%$ \\
 The middle quarks (strange, charm) are predicted to $0.5$--$1\%$. The lightest quarks are most sensitive to the precise $r^2$ value and carry the largest experimental uncertainties. The pattern $\theta=2/(nH^2)$ identifies $n$ with the dimension of the subspace in which the sector lives at the light point. The derivation of this pattern from the DS dynamics — in particular why the quark sectors are associated with $n=H-1$ and $n=H$ — is open.
 \end{conjecture}
 
+\begin{remark}[Fine structure constant]\label{rem:alpha}
+The polynomial $2H^4-3H^2+2$ evaluated at $H=3$ equals $137$ exactly:
+\begin{equation}\label{eq:137}
+2H^4-3H^2+2 = 2(81)-3(9)+2 = 162-27+2 = 137 = (H^2-1)(2H^2-1)+1.
+\end{equation}
+Adding the Born floor $1/H^3=1/27$ gives
+\begin{equation}\label{eq:alpha_formula}
+\frac{1}{\alpha} \;\stackrel{?}{=}\; (H^2-1)(2H^2-1)+1+\frac{1}{H^3} = 137+\frac{1}{27} = 137.037\ldots
+\end{equation}
+The measured value is $1/\alpha=137.036$. The deviation is $0.0008\%$.
+
+The integer $137$ has a structural interpretation within the framework: the GUT-scale electromagnetic coupling predicted by the framework is $1/\alpha_\mathrm{em}^\mathrm{GUT}=(H^2-1)^2=64$ (from $1/\alpha_\mathrm{GUT}=H(H^2-1)=24$ and $\sin^2\theta_W=H/(H^2-1)=3/8$). The remaining $H^4-H^2+1=73$ is the running contribution from the GUT scale to zero momentum; $73$ is prime and its derivation from the renormalisation group is open. The Born floor correction $1/H^3=1/27$ accounts for the fractional part.
+
+Separately, taking $1/\alpha_\mathrm{GUT}=H(H^2-1)=24$ and $\ln(M_\mathrm{GUT}/M_Z)=h(E_8)+H=33$ as inputs, the MSSM one-loop running gives $\sin^2\theta_W(M_Z)=0.2303$ (actual $0.2312$, $0.4\%$), $\alpha_s(M_Z)=0.1213$ (actual $0.1179$, $2.9\%$), and $1/\alpha_\mathrm{em}(M_Z)=127.0$ (actual $127.9$, $0.7\%$) — all within $3\%$.
+
+The identification $1/\alpha_\mathrm{GUT}=H(H^2-1)$ and the choice of $33$ for the logarithm are numerical observations, not derived from the DS dynamics. Equation~(\ref{eq:alpha_formula}) is a conjecture.
+\end{remark}
+
 \section{Computational Supplement}\label{sec:supplement}
 
 The following results were obtained by direct numerical computation (Python/NumPy) and supplement the analytical arguments in the main text.
