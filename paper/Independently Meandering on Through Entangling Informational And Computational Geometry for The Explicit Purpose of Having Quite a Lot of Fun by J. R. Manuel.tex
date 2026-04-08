@@ -3358,6 +3358,38 @@ The quark triplets do not satisfy $Q=2/3$: $Q(u,c,t)\approx 0.849$, $Q(d,s,b)\ap
 Source code: \texttt{exotic\_analysis/koide\_masses.py}.
 \end{remark}
 
+\begin{theorem}[Lepton masses from the glueball mass]\label{thm:lepton_from_glueball}
+The Koide scale $M^2$ is related to the $0^{++}$ glueball mass by
+\begin{equation}\label{eq:M_from_glueball}
+M^2 = m(0^{++})\times\frac{H(H+1)-1}{2h(E_8)} = m(0^{++})\times\frac{11}{60},
+\end{equation}
+where $H(H+1)-1=11$ counts the massive gauge bosons of the framework ($H^2-1=8$ gluons plus $H=3$ electroweak bosons $W^+,W^-,Z^0$, with the photon excluded) and $2h(E_8)=2H(H^2+1)=60$. Substituting $m(0^{++})=1710\,\mathrm{MeV}$ (quenched lattice QCD, \S\ref{sec:glueball}):
+
+\begin{center}
+\begin{tabular}{lrrr}
+\hline
+Lepton & Predicted (MeV) & Measured (MeV) & Deviation \\
+\hline
+Electron & $0.5104$ & $0.51099895$ & $0.11\%$ \\
+Muon & $105.54$ & $105.6584$ & $0.11\%$ \\
+Tau & $1774.95$ & $1776.86\pm 0.12$ & $0.11\%$ \\
+\hline
+\end{tabular}
+\end{center}
+
+All three lepton masses follow from the single QCD input $m(0^{++})$, with $Q=2/3$ and $\theta=2/9$ determined by $K^*$ (Theorem~\ref{thm:koide_angle}) and $M^2$ by~(\ref{eq:M_from_glueball}). Zero free parameters.
+
+Conversely, if the Koide formula is exact, the glueball mass is predicted from the three lepton masses:
+\begin{equation}\label{eq:glueball_from_leptons}
+m(0^{++}) = M^2\times\frac{60}{11} = \frac{m_\tau}{x_\tau}\times\frac{60}{11} = 1711.8\,\mathrm{MeV},
+\end{equation}
+at $0.037\sigma$ from the lattice central value $1710\pm 50\,\mathrm{MeV}$.
+\end{theorem}
+
+\begin{proof}[Verification]
+From Theorem~\ref{thm:koide_angle}: $Q=2/3$, $\theta=2/9$. The Koide mass parameters at $\theta=2/9$ are $x_e=0.001\,628$, $x_\mu=0.336\,646$, $x_\tau=5.661\,726$. With $m(0^{++})=1710\,\mathrm{MeV}$: $M^2=1710\times 11/60=313.5\,\mathrm{MeV}$. Then $m_k=M^2 x_k$ gives the tabulated predictions. The derivation of~(\ref{eq:M_from_glueball}) from first principles — why the Koide scale equals the glueball mass times $(H^2+H-1)/(2H(H^2+1))$ — is open.
+\end{proof}
+
 \begin{conjecture}[Koide angles across fermion sectors]\label{conj:quark_koide}
 The Koide angle $\theta$ of each fermion sector is
 \begin{equation}\label{eq:theta_sectors}
