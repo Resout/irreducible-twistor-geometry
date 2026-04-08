@@ -3467,6 +3467,22 @@ Separately, taking $1/\alpha_\mathrm{GUT}=H(H^2-1)=24$ and $\ln(M_\mathrm{GUT}/M
 The identification $1/\alpha_\mathrm{GUT}=H(H^2-1)$ and the choice of $33$ for the logarithm are numerical observations, not derived from the DS dynamics. Equation~(\ref{eq:alpha_formula}) is a conjecture.
 \end{remark}
 
+\begin{remark}[Electroweak scale and Higgs mass]\label{rem:higgs}
+Two further conjectured identities from $H=3$ and $m(0^{++})$:
+\begin{align}
+v &\;\stackrel{?}{=}\; m(0^{++})\times(H+1)^2 H^2 = m(0^{++})\times 144, \label{eq:vev}\\
+m_H &\;\stackrel{?}{=}\; m(0^{++})\times(H^4-H^2+1) = m(0^{++})\times 73. \label{eq:higgs}
+\end{align}
+With $m(0^{++})=1710\,\mathrm{MeV}$: the VEV prediction is $v=246.24\,\mathrm{GeV}$ (actual $v=246.22\,\mathrm{GeV}$, deviation $0.01\%$) and the Higgs mass prediction is $m_H=124.8\,\mathrm{GeV}$ (actual $125.25\,\mathrm{GeV}$, deviation $0.34\%$). Their ratio gives the Higgs quartic:
+\[
+\lambda = \frac{1}{2}\!\left(\frac{m_H}{v}\right)^2 = \frac{1}{2}\!\left(\frac{73}{144}\right)^2 = \frac{73^2}{2\cdot 144^2} \approx 0.1285 \quad\text{(actual }0.1294,\text{ deviation }0.7\%).
+\]
+
+The multipliers have structural interpretations: $144=(H+1)^2 H^2$ is the product of the fermion-per-generation count $(H+1)^2=16$ and the hypothesis-pair count $H^2=9$; equivalently $144=12^2=[H(H+1)]^2$ is the square of the total gauge generator count. The Higgs multiplier $H^4-H^2+1=73$ is the same prime that appears as the running contribution in the fine structure constant formula~(\ref{eq:alpha_formula}), consistent with both encoding the distance from the GUT scale to low energies.
+
+These are numerical observations. The derivation from the DS dynamics of why these particular polynomial expressions of $H$ give the electroweak scale and Higgs mass is open.
+\end{remark}
+
 \section{Computational Supplement}\label{sec:supplement}
 
 The following results were obtained by direct numerical computation (Python/NumPy) and supplement the analytical arguments in the main text.
