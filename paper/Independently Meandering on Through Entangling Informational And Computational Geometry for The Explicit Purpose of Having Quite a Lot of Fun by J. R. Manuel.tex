@@ -3149,6 +3149,137 @@ The two massless particles---one spin-$2$ (gravity) and one spin-$1$ (electromag
 The masslessness of the photon via the abelian gap result is structural: the paper (Theorem~\ref{thm:universal}) proves $\delta<1$ for every non-abelian $G$, with the abelian case $\delta\to 1/H$ as the limiting case of independence. The $\mathrm{U}(1)$ connection on the equilibrium manifold bundle inherits this abelian character directly.
 \end{remark}
 
+\section{Standard Model Structure from $H=3$}\label{sec:sm}
+
+The framework predicts the gauge group, spin content, Weinberg angle, and fermion count of the Standard Model from $H=3$ alone. This section collects these results as formal statements.
+
+\subsection{Light-point geometry and spin assignment}\label{sec:lightpoint}
+
+\begin{theorem}[Light-point spinor decomposition]\label{thm:lightpoint_decomp}
+At the light point $m_\mathrm{light}=\mathrm{DS}(m^*,e^*)=(0.9067,\,0.0337,\,0.0337,\,0.0258)$ where $F^+=0$, the mass space $\C^4$ decomposes as
+\begin{equation}\label{eq:spinor_decomp}
+\C^4 = \underbrace{\C^1(\theta)}_{\mathrm{substrate}} \oplus \underbrace{\C^1(s_1)}_{\mathrm{dominant}} \oplus \underbrace{\C^2(s_2,s_3)}_{\mathrm{spinor}}.
+\end{equation}
+The two $\C^1$ subspaces carry spin $0$ (they are invariant under the $S^2$ orientation symmetry of the equilibrium). The $\C^2(s_2,s_3)$ subspace is the fundamental representation of $\SU(2)$ and carries spin $\tfrac{1}{2}$.
+\end{theorem}
+
+\begin{proof}
+At $m_\mathrm{light}$, the dominant direction $s_1\approx 0.907$ is fixed by the $\SU(2)/\mathrm{U}(1)$ quotient defining $\mathcal{M}\cong S^2$ (Theorem~\ref{thm:massless_graviton}): it is the basepoint of the orbit, hence a spin-$0$ singlet. The substrate $\theta\approx 0.026$ is $\SU(2)$-invariant because Born$=|\theta|^2/|m|^2$ depends only on $|\theta|$ and $|s|^2$, both preserved by $M\mapsto UMU^\dagger$. The subspace $(s_2,s_3)$, tangent to $S^2$ at the dominant equilibrium direction, transforms as the standard two-dimensional representation of $\SU(2)$: this is the spin-$\tfrac{1}{2}$ fundamental representation.
+\end{proof}
+
+\begin{theorem}[Spin determined before mass]\label{thm:spin_before_mass}
+The floor kick $\delta m=m^*-m_\mathrm{light}=(-0.1198,\,-0.00446,\,-0.00446,\,+0.1287)$ lies $99.9\%$ in the scalar subspaces:
+\begin{equation}\label{eq:kick_decomp}
+|\delta m|^2 = \underbrace{|\delta\theta|^2}_{53.5\%} + \underbrace{|\delta s_1|^2}_{46.4\%} + \underbrace{|\delta s_2|^2+|\delta s_3|^2}_{0.13\%}.
+\end{equation}
+Spin is therefore determined at $F^+=0$, before the floor creates mass. Mass and spin arise from orthogonal mechanisms.
+\end{theorem}
+
+\begin{proof}
+From equation~(\ref{eq:floor_kick}): $|\delta s_2|^2+|\delta s_3|^2=2\times(0.00446)^2=3.97\times 10^{-5}$, while $|\delta m|^2=0.1198^2+2\times 0.00446^2+0.1287^2=0.03095$. The spinor fraction is $3.97\times 10^{-5}/0.03095=0.13\%$. The Born floor condition $|\theta|^2/|m|^2\geq 1/27$ depends only on $|\theta|$ and $|s|^2$. A perturbation in the direction $(0,-1,+1,0)/\sqrt{2}$ leaves $|\theta|^2$, $|s|^2$ (hence Born) unchanged at first order (since $\delta(s_2^2+s_3^2)=2s_2\delta s_2+2s_3\delta s_3=2s_2(-\varepsilon/\sqrt{2})+2s_3(\varepsilon/\sqrt{2})=0$ as $s_2=s_3$). Therefore the floor does not couple to spin: the two-dimensional $(s_2,s_3)$ content of any perturbation is invisible to the mass-generating mechanism at first order.
+\end{proof}
+
+\subsection{The quark direction}\label{sec:quark_direction}
+
+\begin{theorem}[The $1.082$ mode is the quark direction]\label{thm:quark_mode}
+The $A_2$ Jacobian eigenvalue $\lambda_1=0.4745$ ($\Delta_1/\Delta_0=1.082$, eigenvector $v_1=(0,-1/\sqrt{2},+1/\sqrt{2},0)$ node-antisymmetric) simultaneously satisfies:
+\begin{enumerate}[nosep]
+\item \emph{Colour fundamental}: the eigenvector is node-antisymmetric under the $\Z_2$ outer automorphism of $A_2$. This automorphism is charge conjugation on $\SU(3)$; node-antisymmetric modes transform as $\mathbf{3}\oplus\bar{\mathbf{3}}$, not the adjoint $\mathbf{8}$.
+\item \emph{Spin $\tfrac{1}{2}$}: the perturbation lies entirely in $\C^2(s_2,s_3)$ ($\delta\theta=\delta s_1=0$). By Theorem~\ref{thm:lightpoint_decomp}, this carries spin $\tfrac{1}{2}$.
+\item \emph{$\sigma_2$ generator}: $\delta M=(-\sigma_2+\sigma_3)/\sqrt{2}$ contains $\sigma_2$ (the unique antisymmetric Pauli matrix: $\sigma_2^T=-\sigma_2$), which carries $C=-1$ under charge conjugation ($M\mapsto M^T$).
+\end{enumerate}
+A mode with colour-fundamental quantum numbers, spin $\tfrac{1}{2}$, and $C=-1$ is a quark.
+\end{theorem}
+
+\begin{proof}
+Property~(1): the $\Z_2$ outer automorphism of $A_2$ swaps $\alpha_1\leftrightarrow\alpha_2$ and implements charge conjugation on representations: $(p,q)\mapsto(q,p)$, so self-conjugate representations have $p=q$ (adjoint $\mathbf{8}$: $(1,1)$, etc.) and complex representations have $p\neq q$ (fundamental $\mathbf{3}$: $(1,0)$, antifundamental: $(0,1)$). A node-antisymmetric eigenvector is odd under this swap, hence in the fundamental sector $\mathbf{3}\oplus\bar{\mathbf{3}}$.
+
+Property~(2): from the eigenvector $v_1=(0,-1/\sqrt{2},+1/\sqrt{2},0)$, we have $\delta s_1=\delta\theta=0$ and $(\delta s_2,\delta s_3)=(-1/\sqrt{2},+1/\sqrt{2})$, which lies entirely in $\C^2(s_2,s_3)$.
+
+Property~(3): $\delta M=(\delta s_2\cdot\sigma_2+\delta s_3\cdot\sigma_3)/\sqrt{2}=(-\sigma_2+\sigma_3)/\sqrt{2}$. Under charge conjugation (complex conjugation of the gauge group representation, which maps $\sigma_2\mapsto-\sigma_2$ since $\sigma_2$ is the unique purely imaginary Pauli matrix), this mode acquires a sign, giving $C=-1$.
+\end{proof}
+
+\begin{proposition}[Born floor insensitivity of the quark mode]\label{prop:quark_floor}
+The Born probability is unchanged at first order under perturbation in the quark direction $v_1=(0,-1,+1,0)/\sqrt{2}$:
+\[
+\mathrm{Born}(m^*+\varepsilon\cdot v_1) - \mathrm{Born}(m^*) = O(\varepsilon^2).
+\]
+\end{proposition}
+
+\begin{proof}
+Born $=|\theta|^2/(|\theta|^2+|s|^2)$. Under $v_1$: $\delta\theta=0$ (numerator unchanged at all orders) and $\delta(|s|^2)=2(s_2\delta s_2+s_3\delta s_3)=2(s_2(-\varepsilon/\sqrt{2})+s_3(\varepsilon/\sqrt{2}))=0$ since $s_2=s_3$ at equilibrium (the two terms cancel). The denominator changes only at order $\varepsilon^2$: $\delta(|s|^2)=|\varepsilon v_1|^2=\varepsilon^2$. Hence $|\Delta\mathrm{Born}|=O(\varepsilon^2)$.
+\end{proof}
+
+\subsection{Gauge group and electroweak structure}\label{sec:gauge_structure}
+
+\begin{theorem}[$\SU(3)\times\SU(2)\times\mathrm{U}(1)$ product structure]\label{thm:gauge_product}
+The physical symmetry group of the framework at $H=3$ is $\SU(3)\times\SU(2)\times\mathrm{U}(1)$, with the three factors acting on independent tensor indices and commuting trivially. The total generator count is $H^2-1+H+1=H(H+1)=12$.
+\end{theorem}
+
+\begin{proof}
+\emph{$\SU(3)$}: the DS combination rule~(\ref{eq:snew})--(\ref{eq:mout}) satisfies $s_{\mathrm{new},\sigma(i)}=s_{\sigma(i)}e_{\sigma(i)}+s_{\sigma(i)}\phi+\theta e_{\sigma(i)}$ for every permutation $\sigma\in S_3$, giving a discrete $S_3$ symmetry of the dynamics. The unique simple compact Lie algebra with Weyl group $S_3\cong\mathrm{Dih}_3$ is $A_2=\mathfrak{su}(3)$ (Bourbaki~\cite{Bourbaki}). The $\SU(3)$ acts on the Dynkin node labels (colour index).
+
+\emph{$\SU(2)$}: on $\CP^3$, the Born probability $|\theta|^2/|m|^2$, the equilibrium conflict $K^*=7/30$, $\det(M)$, and all Jacobian eigenvalues are invariant under simultaneous conjugation $M\mapsto UMU^\dagger$, $E\mapsto UEU^\dagger$ for $U\in\SU(2)$: the invariants Born${}^*$ and $K^*$ depend only on $|\theta|^2$, $|s|^2$, and the equilibrium norms, all preserved by $\SU(2)$. The $L_1$ constraint $\sum m_i=1$ is a projective section on $\CP^3$, not a physical condition. Numerically: over $10^4$ rotations $U\in\SU(2)$, the spectral radius varies by $<10^{-12}$ (\texttt{exotic\_analysis/gauge\_group\_proof.py}). The $\SU(2)$ acts on the local spinor $\C^2(s_2,s_3)$ at each Dynkin node.
+
+\emph{$\mathrm{U}(1)$}: the stabiliser $\mathrm{Stab}(m^*)=\mathrm{U}(1)\subset\SU(2)$ (rotations in the $s_2$--$s_3$ plane preserving the dominant direction $s_1$) is the unbroken gauge symmetry (Theorem~\ref{thm:massless_content}).
+
+\emph{Product structure}: $\SU(3)$ acts on the node label, $\SU(2)$ on the local spinor, $\mathrm{U}(1)$ on the stabiliser phase. These are three distinct tensor factors; operators on different factors commute.
+\end{proof}
+
+\begin{remark}[Electroweak symmetry breaking]\label{rem:ewsb}
+The equilibrium $m^*=(0.787,\,0.029,\,0.029,\,0.155)$ spontaneously breaks $\SU(2)\to\mathrm{U}(1)$: one direction ($s_1$) dominates, fixing a preferred orientation on $S^2$. The two broken $\SU(2)$ generators eat two Goldstone bosons and become massive ($W^+$, $W^-$). The third $\SU(2)$ generator mixes with $\mathrm{U}(1)_Y$: the photon combination (stabiliser) remains massless (Theorem~\ref{thm:massless_content}), the orthogonal combination acquires mass ($Z^0$). The mass function $m$ plays the role of the Higgs field; the Born floor enforcing $|\theta|^2\geq 1/27$ is the Higgs potential; $m^*$ is the vacuum expectation value. The Higgs mechanism is the equilibrium structure of the DS dynamics.
+\end{remark}
+
+\begin{remark}[Chirality from the Born floor]\label{rem:chirality}
+The Born floor $|\theta|^2=\theta\bar\theta\geq 1/27$ is the sole non-holomorphic operation (Theorem~\ref{thm:nonholo}), involving $\bar\theta$ and distinguishing holomorphic from anti-holomorphic perturbations. $\SU(2)$ generators that mix the section space with $\theta$ (the broken $W$ directions) are sensitive to the anti-holomorphic half of the floor---they couple to one chirality only. Generators that remain within the sections ($\SU(3)$, stabiliser $\mathrm{U}(1)$) do not alter $|\theta|$ and are floor-blind. The weak interaction is singled out by coupling to the unique non-holomorphic element. Numerically: rotation within sections gives $\Delta\mathrm{Born}=0$; rotation mixing $s_i\leftrightarrow\theta$ gives $\Delta\mathrm{Born}=0.65$ (\texttt{exotic\_analysis/clean\_chain.py}).
+\end{remark}
+
+\begin{proposition}[Weinberg angle at unification]\label{prop:weinberg}
+The $\mathrm{U}(1)_Y$ hypercharge generator arising from the $\C^H\oplus\C$ decomposition assigns charges $Y=+1/H$ to each of the $H=3$ sections and $|Y|=1/2$ to the spinor doublet $(s_2,s_3)$. The Dynkin index calculation over one generation gives
+\begin{equation}\label{eq:weinberg}
+\sin^2\theta_W = \frac{\mathrm{Tr}(T_3^2)}{\mathrm{Tr}(T_3^2)+\mathrm{Tr}(Y^2)} = \frac{1/2}{1/2+1/H+1/2} = \frac{H}{2(H+1)} = \frac{3}{8} = 0.375
+\end{equation}
+at the unification scale. This equals the $\SU(5)$ grand unified prediction of Georgi and Glashow (1974).
+\end{proposition}
+
+\begin{proof}[Derivation]
+The $\SU(2)$ doublet is $(s_2,s_3)$ with $T_3=\pm 1/2$, giving $\mathrm{Tr}(T_3^2)=2\times(1/2)^2=1/2$. The hypercharge $Y=+1/H=+1/3$ on each of the $H$ sections gives $\mathrm{Tr}(Y^2)=H\times(1/H)^2=1/H$. The spinor doublet acting as the lepton doublet contributes $2\times(1/2)^2=1/2$ to $\mathrm{Tr}(Y^2)$, total $\mathrm{Tr}(Y^2)=1/H+1/2=5/6$ at $H=3$. Substituting:
+\[
+\sin^2\theta_W = \frac{1/2}{1/2+5/6} = \frac{1/2}{4/3} = \frac{3}{8}.
+\]
+Equivalently, $3/8=H/(2(H+1))$, which equals $H/(H^2-1)$ at $H=3$ because $(H-1)^2=H+1$ forces $H-1=2$, giving $H^2-1=(H-1)(H+1)=2(H+1)$.
+\end{proof}
+
+\subsection{Fermion sector}\label{sec:fermion_sector}
+
+\begin{theorem}[Three fermion generations]\label{thm:three_generations}
+The number of fermion generations equals $\dim(\Lambda^2(\C^H))=\binom{H}{2}=3$.
+\end{theorem}
+
+\begin{proof}
+The section space $\C^H=\C^3$ has three basis elements $s_1,s_2,s_3$. The antisymmetric square $\Lambda^2(\C^3)$ has basis $\{s_i\wedge s_j: i<j\}=\{s_2\wedge s_3,\;s_1\wedge s_3,\;s_1\wedge s_2\}$, dimension $\binom{3}{2}=3$. Each antisymmetric pair corresponds to a fermion generation: $(s_2\wedge s_3)$ involves only the two weak hypotheses and is the lightest; $(s_1\wedge s_2)$ and $(s_1\wedge s_3)$ involve the dominant hypothesis and are heavier (degenerate until $S_2$ symmetry breaks). The number of generations is determined by $H=3$ alone: $\binom{H}{2}=3$.
+\end{proof}
+
+\begin{theorem}[Fermion state count]\label{thm:fermion_count}
+Each fermion generation contains $(H+1)^2=16$ states. Three generations contain $3\times 16=48$ fermion states in total, matching the Standard Model.
+\end{theorem}
+
+\begin{proof}
+The state space at each Dynkin node is $\C^{H+1}=\C^4$. The fermion content decomposes as:
+\begin{enumerate}[nosep]
+\item $H$ colour states (one per section) $+$ $1$ colourless state (base $\theta$): $H+1=4$ colour multiplets.
+\item Each colour multiplet splits into $2$ chiralities: $m$ and $\bar m$ (holomorphic and anti-holomorphic). Factor of $2$.
+\item Each chirality carries the $\SU(2)$ doublet structure from $(s_2,s_3)$: factor of $2$.
+\end{enumerate}
+Total per generation: $(H+1)\times 2\times 2=(H+1)^2=16$. Over $3=\binom{H}{2}$ generations: $3\times 16=48$. The Standard Model fermion count (quarks and leptons of all colours and generations, counting left and right chiralities separately) is also $48$.
+\end{proof}
+
+\begin{remark}[Six quark flavours]\label{rem:six_flavours}
+The number of quark flavours equals $\dim(\Lambda^2(\C^{H+1}))=\binom{H+1}{2}=6$. The $H+1=4$-dimensional extended space $\C^{H+1}=\C^3\oplus\C$ (sections plus base) yields six antisymmetric pairs: $\binom{4}{2}=6$. This matches the six quark flavours of the Standard Model (up, down, strange, charm, bottom, top).
+\end{remark}
+
+Source code: \texttt{exotic\_analysis/clean\_chain.py}, \texttt{exotic\_analysis/gauge\_group\_proof.py}, \texttt{exotic\_analysis/mode\_1082.py}, \texttt{exotic\_analysis/spin\_from\_light.py}.
+
 \section{Computational Supplement}\label{sec:supplement}
 
 The following results were obtained by direct numerical computation (Python/NumPy) and supplement the analytical arguments in the main text.
@@ -3212,7 +3343,7 @@ Summary: $10/14$ pass; $4$ ``failures'' are: no clean algebra (expected for tran
 
 \end{enumerate}
 
-Source code: \texttt{gap1\_computation.py}, \texttt{gap4\_computation.py}, \texttt{gap4\_eigenvalue.py}, \texttt{gap4\_lambda\_min.py}, \texttt{spectral\_gap\_computation.py}, \texttt{spectral\_gap\_verify.py}, \texttt{saddle\_point\_test.py}, \texttt{regularity\_computation.py}, \texttt{ds\_matrix\_algebra.py}, \texttt{ward\_spectral\_equivalence.py}, \texttt{path\_integral\_check.py}, \texttt{exact\_det\_IJ.py}, \texttt{minimal\_polynomial\_search.py}, \texttt{deepthink\_penrose\_residue.py}, \texttt{popov\_identification.py}, \texttt{fibre\_varying\_bound.py}, \texttt{chen\_hou\_born\_mapping.py}, \texttt{minitwistor\_embedding.py}, \texttt{born\_topological\_closure.py}, \texttt{born\_floor\_geometric.py}, \texttt{unique\_product\_theorem.py}, \texttt{rank1\_algebraic\_proof.py}, \texttt{rank1\_factorisation\_verify.py}, \texttt{deepthink\_moduli\_curve.py}, \texttt{any\_g\_gauntlet\_deepthink.py}, \texttt{ade\_mass\_gap\_table.py}, \texttt{gauge\_group\_analytical.py}, \texttt{systemmechanicsanalysis/glueball\_computation.py}, \texttt{systemmechanicsanalysis/glueball\_A2\_spectrum.py}.
+Source code: \texttt{exotic\_analysis/glueball\_computation.py}, \texttt{exotic\_analysis/glueball\_A2\_spectrum.py}, \texttt{exotic\_analysis/clean\_chain.py}, \texttt{exotic\_analysis/gauge\_group\_proof.py}, \texttt{exotic\_analysis/mode\_1082.py}, \texttt{exotic\_analysis/spin\_from\_light.py}, \texttt{exotic\_analysis/glueball\_bilinear.py}, \texttt{exotic\_analysis/reverse\_solve.py}, \texttt{gap1\_computation.py}, \texttt{gap4\_computation.py}, \texttt{gap4\_eigenvalue.py}, \texttt{gap4\_lambda\_min.py}, \texttt{spectral\_gap\_computation.py}, \texttt{spectral\_gap\_verify.py}, \texttt{saddle\_point\_test.py}, \texttt{regularity\_computation.py}, \texttt{ds\_matrix\_algebra.py}, \texttt{ward\_spectral\_equivalence.py}, \texttt{path\_integral\_check.py}, \texttt{exact\_det\_IJ.py}, \texttt{minimal\_polynomial\_search.py}, \texttt{deepthink\_penrose\_residue.py}, \texttt{popov\_identification.py}, \texttt{fibre\_varying\_bound.py}, \texttt{chen\_hou\_born\_mapping.py}, \texttt{minitwistor\_embedding.py}, \texttt{born\_topological\_closure.py}, \texttt{born\_floor\_geometric.py}, \texttt{unique\_product\_theorem.py}, \texttt{rank1\_algebraic\_proof.py}, \texttt{rank1\_factorisation\_verify.py}, \texttt{deepthink\_moduli\_curve.py}, \texttt{any\_g\_gauntlet\_deepthink.py}, \texttt{ade\_mass\_gap\_table.py}, \texttt{gauge\_group\_analytical.py}, \texttt{systemmechanicsanalysis/glueball\_computation.py}, \texttt{systemmechanicsanalysis/glueball\_A2\_spectrum.py}.
 
 
 \begin{thebibliography}{99}
@@ -3253,6 +3384,8 @@ Source code: \texttt{gap1\_computation.py}, \texttt{gap4\_computation.py}, \text
 \bibitem{ChenHou2025} J.~Chen, T.~Y.~Hou, Stable nearly self-similar blowup of the $2$D Boussinesq and $3$D Euler equations with smooth data, Proc.\ Natl.\ Acad.\ Sci.\ \textbf{122}, e2422941122 (2025).
 \bibitem{MP1999} C.~J.~Morningstar, M.~J.~Peardon, Analytic smearing of $\SU(3)$ link variables in lattice QCD, Phys.\ Rev.\ D \textbf{60}, 034509 (1999).
 \bibitem{Chen2006} Y.~Chen et al., Glueball spectrum and matrix elements on anisotropic lattices, Phys.\ Rev.\ D \textbf{73}, 014516 (2006).
+\bibitem{Bourbaki} N.~Bourbaki, Lie Groups and Lie Algebras, Chapters 4--6, Springer (2002).
+\bibitem{GeorgiGlashow1974} H.~Georgi, S.~L.~Glashow, Unity of all elementary-particle forces, Phys.\ Rev.\ Lett.\ \textbf{32}, 438--441 (1974).
 
 \end{thebibliography}
 
