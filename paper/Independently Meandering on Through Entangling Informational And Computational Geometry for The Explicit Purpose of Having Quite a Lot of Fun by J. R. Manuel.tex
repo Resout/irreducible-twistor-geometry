@@ -3483,6 +3483,45 @@ The multipliers have structural interpretations: $144=(H+1)^2 H^2$ is the produc
 These are numerical observations. The derivation from the DS dynamics of why these particular polynomial expressions of $H$ give the electroweak scale and Higgs mass is open.
 \end{remark}
 
+\begin{remark}[$W$ and $Z$ boson masses]\label{rem:WZ}
+Two further conjectured identities:
+\begin{align}
+m_W &\;\stackrel{?}{=}\; m(0^{++})\times\bigl(H(H+1)^2-1\bigr) = m(0^{++})\times 47, \label{eq:mW}\\
+m_Z &\;\stackrel{?}{=}\; m(0^{++})\times\frac{2^{H+2}(H+2)}{H} = m(0^{++})\times\frac{160}{3}. \label{eq:mZ}
+\end{align}
+With $m(0^{++})=1710\,\mathrm{MeV}$: $m_W=80\,370\,\mathrm{MeV}$ (PDG: $80\,369.2\,\mathrm{MeV}$, deviation $0.001\%$, difference $0.8\,\mathrm{MeV}$) and $m_Z=91\,200\,\mathrm{MeV}$ (PDG: $91\,187.6\,\mathrm{MeV}$, deviation $0.014\%$, difference $12.4\,\mathrm{MeV}$).
+
+The multiplier $H(H+1)^2-1=47$ is one less than the total generator count times the extended-sector dimension. The multiplier $2^{H+2}(H+2)/H=2^5\cdot 5/3$ has the structure of the $Z$ boson's embedding in the electroweak sector. Their ratio implies $\sin^2\theta_W^{}=1-(m_W/m_Z)^2=0.2234$, which differs from the measured value $0.2312$ at the $Z$ pole by $3.4\%$ — consistent with radiative corrections not captured in the multiplier approach.
+\end{remark}
+
+\begin{remark}[Complete mass hierarchy from $m(0^{++})$]\label{rem:hierarchy}
+Collecting all results of \S\ref{sec:sm} and \S\ref{sec:koide_lepton}, every mass in the following table is predicted from the single QCD input $m(0^{++})\approx 1710\,\mathrm{MeV}$ and $H=3$. Sources: $(\dag)$ Theorem (proved); $(\ddag)$ Theorem~\ref{thm:lepton_from_glueball} (verified, scale open); $(\S)$ Conjecture~\ref{conj:half_eigenvalue}; $(*)$ Remark (conjectured numerical observation).
+
+\begin{center}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{lrrrrl}
+\hline
+Particle & Multiplier & Expression & Predicted & Measured & Src \\
+\hline
+Electron & $3\times10^{-4}$ & $\tfrac{11}{60}x_e$ & $0.511\,\mathrm{MeV}$ & $0.511\,\mathrm{MeV}$ & $\ddag$ \\
+Muon & $0.062$ & $\tfrac{11}{60}x_\mu$ & $105.5\,\mathrm{MeV}$ & $105.7\,\mathrm{MeV}$ & $\ddag$ \\
+Pion & $0.082$ & $(\Delta_1-\Delta_0)/\Delta_0$ & $140.8\,\mathrm{MeV}$ & $139.6\,\mathrm{MeV}$ & $\S$ \\
+Proton & $0.541$ & $-\ln(\sqrt{\lambda_1})/\Delta_0$ & $925\,\mathrm{MeV}$ & $938\,\mathrm{MeV}$ & $\S$ \\
+Tau & $1.04$ & $\tfrac{11}{60}x_\tau$ & $1775\,\mathrm{MeV}$ & $1777\,\mathrm{MeV}$ & $\ddag$ \\
+$0^{++}$ & $1$ & $1$ & $1710\,\mathrm{MeV}$ & $1710\,\mathrm{MeV}$ & input \\
+$2^{++}$ & $\sqrt{2}$ & $\sqrt{H-1}$ & $2418\,\mathrm{MeV}$ & $2390\,\mathrm{MeV}$ & $\dag$ \\
+$W^\pm$ & $47$ & $H(H+1)^2-1$ & $80.37\,\mathrm{GeV}$ & $80.37\,\mathrm{GeV}$ & $*$ \\
+$Z^0$ & $160/3$ & $2^{H+2}(H+2)/H$ & $91.20\,\mathrm{GeV}$ & $91.19\,\mathrm{GeV}$ & $*$ \\
+Higgs & $73$ & $H^4-H^2+1$ & $124.8\,\mathrm{GeV}$ & $125.3\,\mathrm{GeV}$ & $*$ \\
+VEV & $144$ & $(H+1)^2H^2$ & $246.2\,\mathrm{GeV}$ & $246.2\,\mathrm{GeV}$ & $*$ \\
+$1/\alpha$ & $137.037$ & $(H^2-1)(2H^2-1)+1+1/H^3$ & $137.037$ & $137.036$ & $*$ \\
+\hline
+\end{tabular}
+\end{center}
+
+The hierarchy spans a factor of $\sim\!480\,000$ from the electron to the electroweak VEV. Every entry is algebraic in $H=3$. Maximum deviation: proton at $1.4\%$; five entries within $0.01\%$. The multipliers $73$ and $144$ both appear in the $\mathrm{U}(1)$ and $\mathrm{SU}(2)$ electroweak sector: $73$ gives both the Higgs mass and the running contribution to $1/\alpha$, while $144=12^2=[H(H+1)]^2$ is the square of the total generator count. The derivation of the integer multipliers from the DS dynamics is open.
+\end{remark}
+
 \section{Computational Supplement}\label{sec:supplement}
 
 The following results were obtained by direct numerical computation (Python/NumPy) and supplement the analytical arguments in the main text.
