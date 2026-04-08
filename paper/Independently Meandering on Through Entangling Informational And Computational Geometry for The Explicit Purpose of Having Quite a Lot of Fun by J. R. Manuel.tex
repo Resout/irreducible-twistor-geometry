@@ -3358,6 +3358,43 @@ The quark triplets do not satisfy $Q=2/3$: $Q(u,c,t)\approx 0.849$, $Q(d,s,b)\ap
 Source code: \texttt{exotic\_analysis/koide\_masses.py}.
 \end{remark}
 
+\begin{conjecture}[Koide angles across fermion sectors]\label{conj:quark_koide}
+The Koide angle $\theta$ of each fermion sector is
+\begin{equation}\label{eq:theta_sectors}
+\theta_{\mathrm{sector}} = \frac{2}{n_{\mathrm{sector}}\cdot H^2},
+\end{equation}
+where $n_{\mathrm{sector}}$ is the dimension of the subspace of $\C^4=\C^1(\theta)\oplus\C^1(s_1)\oplus\C^2(s_2,s_3)$ in which that sector lives (Theorem~\ref{thm:lightpoint_decomp}):
+
+\begin{center}
+\begin{tabular}{lclrl}
+\hline
+Sector & Subspace & $n$ & $\theta = 2/(nH^2)$ & Deviation from data \\
+\hline
+Leptons (colour singlet) & $\C^1(\theta)$ & $1$ & $2/9\approx 0.2222$ & $0.0\%$ (derived) \\
+Down-type quarks $(d,s,b)$ & $\C^2(s_2,s_3)$ & $H-1=2$ & $1/9\approx 0.1111$ & $0.9\%$ \\
+Up-type quarks $(u,c,t)$ & $\C^3(s_1,s_2,s_3)$ & $H=3$ & $2/27\approx 0.0741$ & $0.3\%$ \\
+\hline
+\end{tabular}
+\end{center}
+
+The lepton case $n=1$, $\theta=2/9$ is the proven identity of Theorem~\ref{thm:koide_angle}. The quark cases are numerical observations: fitting the Koide parameterisation to the quark masses gives angles within $0.9\%$ and $0.3\%$ of the conjectured values, both within the quark mass measurement uncertainties (up quark $3.2\%$, down quark $1.5\%$, strange quark $0.9\%$). Using the conjectured $\theta$ with the heaviest quark as scale:
+
+\begin{center}
+\begin{tabular}{lrrr}
+\hline
+Quark & Predicted (MeV) & PDG (MeV) & Deviation \\
+\hline
+Strange & $94.2$ & $93.5\pm 0.8$ & $0.7\%$ \\
+Charm & $1266$ & $1270\pm 20$ & $0.3\%$ \\
+Down & $4.57$ & $4.70\pm 0.07$ & $2.7\%$ \\
+Up & $2.32$ & $2.16\pm 0.07$ & $7.6\%$ \\
+\hline
+\end{tabular}
+\end{center}
+
+The pattern $\theta=2/(nH^2)$ identifies $n$ with the dimension of the subspace in which the sector lives at the light point. The derivation of this pattern from the DS dynamics — in particular why the quark sectors are associated with $n=H-1$ and $n=H$ rather than $n=1$ — is open.
+\end{conjecture}
+
 \section{Computational Supplement}\label{sec:supplement}
 
 The following results were obtained by direct numerical computation (Python/NumPy) and supplement the analytical arguments in the main text.
