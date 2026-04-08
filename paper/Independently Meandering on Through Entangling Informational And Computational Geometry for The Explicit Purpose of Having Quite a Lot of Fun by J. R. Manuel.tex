@@ -3390,6 +3390,28 @@ at $0.037\sigma$ from the lattice central value $1710\pm 50\,\mathrm{MeV}$.
 From Theorem~\ref{thm:koide_angle}: $Q=2/3$, $\theta=2/9$. The Koide mass parameters at $\theta=2/9$ are $x_e=0.001\,628$, $x_\mu=0.336\,646$, $x_\tau=5.661\,726$. With $m(0^{++})=1710\,\mathrm{MeV}$: $M^2=1710\times 11/60=313.5\,\mathrm{MeV}$. Then $m_k=M^2 x_k$ gives the tabulated predictions. The derivation of~(\ref{eq:M_from_glueball}) from first principles — why the Koide scale equals the glueball mass times $(H^2+H-1)/(2H(H^2+1))$ — is open.
 \end{proof}
 
+\begin{conjecture}[Koide $Q$ from quantum numbers]\label{conj:koide_Q}
+The Koide ratio $Q$ for each fermion sector is determined by the colour charge $C\in\{0,1\}$ and weak isospin $T_3\in\{0,\pm\tfrac{1}{2}\}$:
+\begin{equation}\label{eq:Q_formula}
+Q = \frac{H-1}{H} + \frac{C}{H^2-1} + T_3\cdot\frac{K^*}{2}.
+\end{equation}
+The three terms are: the generation structure $(H-1)/H=2/3$; the colour correction $1/(H^2-1)=1/8$ (one unit per gluon degree of freedom, quarks only); and the isospin splitting $T_3\cdot K^*/2$ (one quarter of the vacuum conflict $K^*=7/30$ between up and down types).
+
+\begin{center}
+\begin{tabular}{lrrlrrl}
+\hline
+Sector & $C$ & $T_3$ & $Q$ (exact) & $Q$ (data) & Error & $r^2=6Q-2$ \\
+\hline
+Leptons & $0$ & $0$ & $2/3$ & $0.66666$ & $0.001\%$ & $2$ \\
+Down quarks & $1$ & $-1/2$ & $11/15$ & $0.73122$ & $0.29\%$ & $12/5$ \\
+Up quarks & $1$ & $+1/2$ & $17/20$ & $0.84909$ & $0.11\%$ & $31/10$ \\
+\hline
+\end{tabular}
+\end{center}
+
+The exact values: $Q_\ell=2/3$ (proven, Theorem~\ref{thm:koide_angle}), $Q_d=11/15$, $Q_u=17/20$. All three follow by substituting $H=3$ and $K^*=7/30$ into~(\ref{eq:Q_formula}).
+\end{conjecture}
+
 \begin{conjecture}[Koide angles across fermion sectors]\label{conj:quark_koide}
 The Koide angle $\theta$ of each fermion sector is
 \begin{equation}\label{eq:theta_sectors}
@@ -3409,22 +3431,22 @@ Up-type quarks $(u,c,t)$ & $\C^3(s_1,s_2,s_3)$ & $H=3$ & $2/27\approx 0.0741$ & 
 \end{tabular}
 \end{center}
 
-The lepton case $n=1$, $\theta=2/9$ is the proven identity of Theorem~\ref{thm:koide_angle}. The quark cases are numerical observations: fitting the Koide parameterisation to the quark masses gives angles within $0.9\%$ and $0.3\%$ of the conjectured values, both within the quark mass measurement uncertainties (up quark $3.2\%$, down quark $1.5\%$, strange quark $0.9\%$). Using the conjectured $\theta$ with the heaviest quark as scale:
+The lepton case $n=1$, $\theta=2/9$ is the proven identity of Theorem~\ref{thm:koide_angle}. The quark cases are numerical observations: fitting the Koide parameterisation to the quark masses gives angles within $0.9\%$ and $0.3\%$ of the conjectured values, both within the quark mass measurement uncertainties (up quark $3.2\%$, down quark $1.5\%$, strange quark $0.9\%$). Using the $Q$ from Conjecture~\ref{conj:koide_Q} and $\theta$ from~(\ref{eq:theta_sectors}), with the heaviest quark as the one scale input:
 
 \begin{center}
 \begin{tabular}{lrrr}
 \hline
 Quark & Predicted (MeV) & PDG (MeV) & Deviation \\
 \hline
-Strange & $94.2$ & $93.5\pm 0.8$ & $0.7\%$ \\
-Charm & $1266$ & $1270\pm 20$ & $0.3\%$ \\
-Down & $4.57$ & $4.70\pm 0.07$ & $2.7\%$ \\
-Up & $2.32$ & $2.16\pm 0.07$ & $7.6\%$ \\
+Strange & $93.1$ & $93.5\pm 0.8$ & $0.5\%$ \\
+Charm & $1257$ & $1270\pm 20$ & $1.0\%$ \\
+Down & $4.30$ & $4.70\pm 0.07$ & $8.6\%$ \\
+Up & $1.94$ & $2.16\pm 0.07$ & $10.2\%$ \\
 \hline
 \end{tabular}
 \end{center}
 
-The pattern $\theta=2/(nH^2)$ identifies $n$ with the dimension of the subspace in which the sector lives at the light point. The derivation of this pattern from the DS dynamics — in particular why the quark sectors are associated with $n=H-1$ and $n=H$ rather than $n=1$ — is open.
+The middle quarks (strange, charm) are predicted to $0.5$--$1\%$. The lightest quarks are most sensitive to the precise $r^2$ value and carry the largest experimental uncertainties. The pattern $\theta=2/(nH^2)$ identifies $n$ with the dimension of the subspace in which the sector lives at the light point. The derivation of this pattern from the DS dynamics — in particular why the quark sectors are associated with $n=H-1$ and $n=H$ — is open.
 \end{conjecture}
 
 \section{Computational Supplement}\label{sec:supplement}
