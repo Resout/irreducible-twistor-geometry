@@ -3282,74 +3282,60 @@ Source code: \texttt{exotic\_analysis/clean\_chain.py}, \texttt{exotic\_analysis
 
 \subsection{Charged lepton masses: the Koide formula from $H=3$}\label{sec:koide_lepton}
 
-The three charged lepton masses $(m_e, m_\mu, m_\tau)$ are determined by two parameters: a Koide ratio $Q$ and a Koide angle $\theta$. Both are derived from $H=3$ with zero free parameters for the mass ratios.
-
-\subsubsection*{The Koide parameterisation}
-
 \begin{definition}[Koide parameterisation]\label{def:koide}
-Given $Q\in\R$ and $\theta\in\R$, the Koide parameterisation assigns masses
+Given $\theta\in\R$ and a scale $M>0$, the Koide parameterisation of three masses is
 \begin{equation}\label{eq:koide_param}
-\sqrt{m_k} = M\!\left(1+\sqrt{2}\cos\!\left(\theta+\tfrac{2\pi k}{3}\right)\right), \quad k=0,1,2,
+\sqrt{m_k} = M\!\left(1+\sqrt{2}\cos\!\left(\theta+\tfrac{2\pi k}{3}\right)\right), \quad k=0,1,2.
 \end{equation}
-for an overall scale $M>0$. This parameterisation satisfies
+This parameterisation satisfies
 \begin{equation}\label{eq:koide_Q}
 Q \;\equiv\; \frac{m_0+m_1+m_2}{\bigl(\sqrt{m_0}+\sqrt{m_1}+\sqrt{m_2}\bigr)^2} = \frac{2}{3}
 \end{equation}
 identically for all $\theta$ and $M$.
 \end{definition}
 
-\begin{remark}[$Q=2/3$ from $S_3$ generation symmetry]
-The $S_3$ symmetry of three generations (Theorem~\ref{thm:three_generations}) forces the mass matrix to decompose into the standard and trivial representations of $S_3$. The ratio of their dimensions in the joint mass space $\C^{(H+1)^2}$ is $\dim(\mathrm{std})/\dim(\mathrm{std}+\mathrm{triv})=10/15=2/3$, where $\dim(\mathrm{Sym}^2(\C^{H+1}))=(H+1)(H+2)/2=10$. This forces the mass matrix into the Koide form~(\ref{eq:koide_param}), for which $Q=2/3$ is automatic.
-\end{remark}
-
-\subsubsection*{The Koide angle from $H=3$}
-
-\begin{theorem}[Koide angle]\label{thm:koide_angle}
-The physical Koide angle is
-\begin{equation}\label{eq:koide_angle}
-\theta_{\mathrm{phys}} = \frac{2}{H^2} = \frac{2}{9},
-\end{equation}
-obtained from the crystal angle minus the $E_8$ Coxeter correction:
-\begin{equation}\label{eq:koide_decomp}
-\theta_{\mathrm{phys}} = \underbrace{\frac{1-K^*}{H}}_{\text{crystal angle}} - \underbrace{\frac{1}{h(E_8)}}_{\text{Coxeter correction}} = \frac{23}{90} - \frac{1}{30} = \frac{23}{90} - \frac{3}{90} = \frac{20}{90} = \frac{2}{9}.
-\end{equation}
+\begin{theorem}[Koide parameters from $K^*$]\label{thm:koide_angle}
+The conflict $K^*=(H^2-H+1)/(H(H^2+1))$ determines the Koide ratio and angle:
+\begin{align}
+Q &= 1-K^*-\frac{1}{H^2+1} = \frac{H-1}{H}, \label{eq:Q_from_Kstar}\\[4pt]
+\theta &= \frac{Q}{H} = \frac{H-1}{H^2}. \label{eq:theta_from_Q}
+\end{align}
+At $H=3$: $Q=2/3$ and $\theta=2/9$.
 \end{theorem}
 
 \begin{proof}
-Direct computation with $K^*=7/30$, $H=3$, $h(E_8)=H(H^2+1)=30$:
+Substituting $K^*=(H^2-H+1)/(H(H^2+1))$ into~(\ref{eq:Q_from_Kstar}):
 \[
-\frac{1-K^*}{H}-\frac{1}{h(E_8)} = \frac{1-7/30}{3}-\frac{1}{30} = \frac{23/30}{3}-\frac{1}{30} = \frac{23}{90}-\frac{3}{90} = \frac{20}{90} = \frac{2}{9} = \frac{2}{H^2}.\qed
+Q = 1 - \frac{H^2-H+1}{H(H^2+1)} - \frac{1}{H^2+1}
+= \frac{H(H^2+1)-(H^2-H+1)-H}{H(H^2+1)}
+= \frac{H^3-H^2+H-1}{H(H^2+1)}.
 \]
+The numerator factors as $H^3-H^2+H-1=(H-1)(H^2+1)$, giving $Q=(H-1)/H$.
+Then $\theta=Q/H=(H-1)/H^2$.
 \end{proof}
 
-\begin{remark}[Decomposition of the scalar fraction]\label{rem:koide_decomp}
-The Koide angle identity is equivalent to the decomposition of the scalar fraction $1-K^*=23/30$:
-\begin{equation}\label{eq:scalar_split}
-1-K^* = \frac{23}{30} = \underbrace{\frac{2}{H}}_{Q=2/3} + \underbrace{\frac{H}{h(E_8)}}_{1/10} = \frac{2}{3}+\frac{1}{10}.
-\end{equation}
-The scalar fraction (the portion of the mass budget not lost to conflict) splits into two pieces: the Koide ratio $Q=2/H$ encoding the generation structure, and $H/h(E_8)=1/(H^2+1)$ encoding the Born quantum per focal element. This identity holds by direct computation and requires no free parameters: $K^*=7/30$, $H=3$, and $h(E_8)=30$ are all algebraic invariants of the framework.
+\begin{remark}[The role of $H(H^2+1)$]\label{rem:hE8}
+The denominator $H(H^2+1)=30$ of $K^*$ appears automatically in the proof. The fact that $30=h(E_8)$ (the Coxeter number of $E_8$, derived via the McKay correspondence in \S\ref{sec:ade}) is a property of where the framework sits in the ADE classification, not an external input.
 \end{remark}
 
-\subsubsection*{Mass predictions}
-
-\begin{proposition}[Charged lepton mass ratios]\label{prop:lepton_masses}
-Substituting $\theta=2/9$ into the Koide parameterisation~(\ref{eq:koide_param}) gives mass parameters
+\begin{proposition}[Charged lepton masses]\label{prop:lepton_masses}
+Substituting $\theta=(H-1)/H^2=2/9$ into the Koide parameterisation gives mass parameters $x_k=({\sqrt{m_k}}/{M})^2$:
 \[
-x_e = 0.001\,628\,12,\quad x_\mu = 0.336\,645\,87,\quad x_\tau = 5.661\,726\,01,
+x_e = 0.001\,628\,12,\quad x_\mu = 0.336\,645\,87,\quad x_\tau = 5.661\,726\,01.
 \]
-(sorted lightest first). The predicted mass ratios are:
+The predicted mass ratios (zero free parameters):
 \begin{center}
-\begin{tabular}{lrrrr}
+\begin{tabular}{lrrr}
 \hline
 Ratio & Predicted & Measured & Deviation \\
 \hline
 $m_\tau/m_e$ & $3477.47$ & $3477.23$ & $0.007\%$ \\
-$m_\mu/m_e$ & $206.770$ & $206.768$ & $<0.01\%$ \\
+$m_\mu/m_e$ & $206.770$ & $206.768$ & ${<}0.01\%$ \\
 $m_\tau/m_\mu$ & $16.8180$ & $16.8171$ & $0.005\%$ \\
 \hline
 \end{tabular}
 \end{center}
-Zero free parameters for the ratios. Using $m_\tau=1776.86\,\mathrm{MeV}$ as input to fix the overall scale $M^2=m_\tau/x_\tau=313.84\,\mathrm{MeV}$:
+Using $m_\tau=1776.86\,\mathrm{MeV}$ as the one scale input ($M^2=m_\tau/x_\tau=313.84\,\mathrm{MeV}$):
 \begin{center}
 \begin{tabular}{lrrr}
 \hline
@@ -3361,13 +3347,13 @@ Tau & $1776.86$ & $1776.86\pm 0.12$ & (input) \\
 \hline
 \end{tabular}
 \end{center}
-The residual $0.007\%$ is consistent with the tau mass measurement uncertainty $\delta m_\tau/m_\tau=0.007\%$.
+The deviations are within the tau mass measurement uncertainty $\delta m_\tau/m_\tau=0.007\%$.
 \end{proposition}
 
-\begin{remark}[Status]\label{rem:koide_status}
-The Koide angle identity~(\ref{eq:koide_angle}) is an exact algebraic identity. The mass predictions of Proposition~\ref{prop:lepton_masses} are strongly supported numerically (all within the tau mass uncertainty) but rest on the identification of the physical Koide angle with the framework expression $(1-K^*)/H - 1/h(E_8)$. The charged lepton masses are determined to the precision of the tau mass measurement. A more precise tau mass measurement (expected from BESIII and Belle II) constitutes a definitive test of whether the identity is exact.
+\begin{remark}[Status and open questions]\label{rem:koide_status}
+Theorem~\ref{thm:koide_angle} is an exact algebraic identity: $K^*$ alone determines $Q$ and $\theta$ with no free parameters. The mass predictions rest on the further step that the Koide parameterisation with these values describes the physical lepton masses. All predictions lie within the tau mass uncertainty; a more precise tau mass measurement (expected from BESIII and Belle II, targeting $\sim0.003\%$) is a definitive test.
 
-The quark mass triplets do not satisfy $Q=2/3$: $Q(u,c,t)\approx 0.849$ and $Q(d,s,b)\approx 0.731$. The quark Koide formula requires a different treatment (different colour and electroweak quantum numbers, different $S_3$ representations).
+The quark triplets do not satisfy $Q=2/3$: $Q(u,c,t)\approx 0.849$, $Q(d,s,b)\approx 0.731$. The derivation of $Q$ from $K^*$ requires a physical identification of which combination of masses appears in the formula; for quarks the colour and electroweak quantum numbers modify this identification, and the quark Koide formula remains open.
 
 Source code: \texttt{exotic\_analysis/koide\_masses.py}.
 \end{remark}
