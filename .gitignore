@@ -36,6 +36,36 @@ Desktop.ini
 notes/
 miscellanious/
 the_expansion.md
+PERFECTION_AUDIT.md
+THE_SUMMARY.md
+**/SESSION*.md
+**/SESSION*.patch
+**/*_AUDIT*.md
+**/*_SUMMARY*.md
+**/*_REPORT*.md
+**/*_CATALOGUE*.md
+**/*_ROADMAP*.md
+**/*_RESULTS*.md
+**/dark_matter_derivation_complete.md
+
+# Exploratory session scripts (not core computations)
+computations/keep_going*.py
+computations/five_minute_sprint.py
+computations/ten_minute_blitz.py
+computations/derivation_campaign.py
+computations/remaining_roadmap.py
+computations/my_half_derivations.py
+computations/tier[234]_*.py
+
+# Separate paper drafts
+paper/AUDIT_*.md
+paper/SESSION*.patch
+paper/No_free_parameters.pdf
+paper/mixing_hierarchy_cosmology_derivations.*
+computations/dark_matter_corrected.py
+computations/dark_matter_definitive.py
+computations/dark_matter_nonlinear.py
+computations/dark_matter_s3.py
 
 # Unpublished documents
 for_penrose.*
