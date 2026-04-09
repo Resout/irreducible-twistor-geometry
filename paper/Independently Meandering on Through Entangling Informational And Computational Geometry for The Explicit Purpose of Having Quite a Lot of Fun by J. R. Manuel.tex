@@ -3930,6 +3930,45 @@ giving $x_e=0.001\,628$, $x_\mu=0.336\,646$, $x_\tau=5.661\,726$ with $\sum x_k=
 If the scale relation $M^2=m(0^{++})\times 11/60$ is exact, the entire framework becomes a dimensionless conversion system: any single measured mass determines $M^2$, hence $m(0^{++})=M^2\times 60/11$, hence every other mass via the eigenvalue spectrum, Koide sectors, and $H$-polynomial multipliers. Using the electron and muon (both known to $<0.001\%$) gives $M^2(e)=313.859\,\mathrm{MeV}$ and $M^2(\mu)=313.856\,\mathrm{MeV}$, consistent to $0.001\%$. The averaged scale gives $m(0^{++})=1712.0\pm 0.3\,\mathrm{MeV}$ (versus lattice QCD $1710\pm 50$, a $430\times$ improvement in anchor precision). The framework contains zero dimensionless free parameters; the one remaining input is a single dimensional anchor (choice of energy unit).
 \end{remark}
 
+\begin{proposition}[The quadratic identity for the Koide scale]\label{prop:quadratic_identity}
+The superstring dimension $d_\mathrm{super}=H^2+1$ and the gauge generator count $H(H+1)$ are the two roots of the quadratic
+\begin{equation}\label{eq:koide_quadratic}
+x^2-2(H^2+H-1)\,x+H(H+1)(H^2+1)=0.
+\end{equation}
+At $H=3$: $x^2-22x+120=(x-10)(x-12)=0$. The three coefficients are:
+\begin{itemize}[nosep]
+\item \emph{Sum of roots:} $d_\mathrm{super}+H(H+1)=2(H^2+H-1)=22=d_\mathrm{bos}-H-1$, the bosonic string dimension minus the mass-space dimension.
+\item \emph{Product of roots:} $d_\mathrm{super}\cdot H(H+1)=H(H+1)(H^2+1)=S+1/K^*=120=5!$, the instanton identity of~\S\ref{sec:hierarchy}.
+\item \emph{Discriminant:} $(d_\mathrm{super}-H(H+1))^2=(1-H)^2=(H-1)^2=H+1=4$: the self-consistency equation of Theorem~\ref{thm:unique_cpn}.
+\end{itemize}
+The Koide lepton scale~(\ref{eq:M_from_glueball}) is the ratio of sum to product:
+\begin{equation}\label{eq:koide_scale_quadratic}
+\frac{M^2}{m(0^{++})}=\frac{H^2+H-1}{2H(H^2+1)}=\frac{d_\mathrm{super}+H(H+1)}{d_\mathrm{super}\cdot H(H+1)}=\frac{1}{d_\mathrm{super}}+\frac{1}{H(H+1)}=\frac{11}{60}.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The sum: $(H^2+1)+H(H+1)=2H^2+H+1$. Since $H^2+H-1=(2H^2+H+1)/2$ only at $H=3$ (where $11=22/2$), write $2(H^2+H-1)=2H^2+2H-2$; this equals $2H^2+H+1$ iff $H=3$. At $H=3$: $2(9+3-1)=22$, $(9+1)+(3\cdot 4)=22$. \checkmark
+
+The product: $S+1/K^*=(H^3+1)/K^*=(H+1)(H^2-H+1)\cdot H(H^2+1)/(H^2-H+1)=H(H+1)(H^2+1)$. This is an algebraic identity for all $H$.
+
+The discriminant: $(H^2+1-H^2-H)^2=(1-H)^2=(H-1)^2$. By self-consistency, $(H-1)^2=H+1$.
+
+Equation~(\ref{eq:koide_scale_quadratic}): partial fractions of $(a+b)/(ab)=1/a+1/b$.
+\end{proof}
+
+\begin{remark}[External significance of $x^2-22x+120=0$]\label{rem:quadratic_connections}
+The polynomial~(\ref{eq:koide_quadratic}) at $H=3$ is $x^2-22x+120=(x-10)(x-12)=0$. Its roots, sum, product, and discriminant independently appear across mathematics and theoretical physics:
+\begin{itemize}[nosep]
+\item $10$: superstring critical dimension ($c_\mathrm{matter}+c_\mathrm{ghost}=0$); $\dim\mathrm{SO}(5)$; $\dim\mathrm{Sym}^2(\C^4)$; maximal cyclic torsion order of elliptic curves over $\mathbb{Q}$ (Mazur); $\mathfrak{so}(10)\subset E_6$ (maximal regular subalgebra).
+\item $12$: F-theory dimension (signature $(10,2)$; compactification on $T^2$ yields Type~IIB in $10$D); total gauge generators of $\SU(3)\times\SU(2)\times\mathrm{U}(1)$; degree of the Green--Schwarz anomaly $12$-form $I_{12}=I_4\wedge I_8$; maximal non-cyclic torsion order (Mazur); $\mathfrak{so}(12)\subset E_7$.
+\item $22=10+12=26-4$: rank of the K3 lattice $H^2(\mathrm{K3},\Z)\cong\Z^{22}$; bosonic string compactification count.
+\item $120=10\times 12=5!$: order of $S_5$ (Abel--Ruffini threshold); $\dim\mathrm{SO}(16)$; half the root count of $E_8$ ($240/2$); structural coefficient $1/120$ in Ramanujan's divisor convolution $\sum_{k=1}^{n-1}\sigma_3(k)\sigma_3(n-k)=\sigma_7(n)/120$.
+\item $\Delta=4=(H-1)^2=H+1$: the self-consistency identity, making the roots rational.
+\end{itemize}
+The framework derives~(\ref{eq:koide_quadratic}) from $H=3$ alone. Whether the external coincidences reflect deeper structural connections is an open question.
+\end{remark}
+
 \begin{remark}[The deuteron binding energy]\label{rem:deuteron}
 The deuteron binding energy satisfies
 \begin{equation}\label{eq:deuteron}
