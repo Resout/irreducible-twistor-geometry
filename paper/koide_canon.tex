@@ -1,0 +1,193 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{mathtools}
+\usepackage{booktabs}
+\usepackage{enumitem}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\CP}{\mathbb{CP}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\SU}{\mathrm{SU}}
+\newcommand{\su}{\mathfrak{su}}
+
+\title{The Koide Canon\\[6pt]\large Complete Fermion Mass Structure from $H=3$}
+\author{Extracted from the Irreducible Twistor Geometry Framework\\J.~R.~Manuel}
+\date{April 2026}
+
+\begin{document}
+\maketitle
+
+\section*{The Formula}
+
+\begin{definition}[Koide mass parameterisation]
+The charged fermion masses in each sector are
+\begin{equation}\label{eq:koide}
+\boxed{\;m_k \;=\; M^2 \left(1 + \sqrt{2}\,\cos\!\left(\theta + \frac{2\pi k}{3}\right)\right)^{\!2},\qquad k = 0,\,1,\,2\;}
+\end{equation}
+where $M^2$ is the sector mass scale, $\theta$ is the sector phase, and $k$ labels the three generations.
+\end{definition}
+
+Every parameter is determined by two numbers: $H=3$ (the unique positive root of $n(n\!-\!1)(n\!+\!2)(n\!+\!3)=0$) and $K^*=7/30$ (the equilibrium conflict from the conservation law).
+
+\bigskip
+
+\section*{The Parameters}
+
+\renewcommand{\arraystretch}{1.4}
+\begin{center}
+\begin{tabular}{@{}llll@{}}
+\toprule
+\textbf{Parameter} & \textbf{Formula} & \textbf{Value} & \textbf{Status} \\
+\midrule
+$Q$ & $(H\!-\!1)/H$ & $2/3$ & Proved \\
+$r$ & $\sqrt{6Q-2}$ & $\sqrt{2}$ & Proved (follows from $Q$) \\
+$\theta_\ell$ (leptons) & $2/(nH^2),\; n\!=\!1$ & $2/9$ & Proved \\
+$\theta_d$ (down quarks) & $2/(nH^2),\; n\!=\!H\!-\!1\!=\!2$ & $1/9$ & Proved \\
+$\theta_u$ (up quarks) & $2/(nH^2),\; n\!=\!H\!=\!3$ & $2/27$ & Proved \\
+$\theta_\nu$ (neutrinos) & $K^*/(H\!-\!1)$ & $7/60$ & Proved (dual formula) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\bigskip
+
+The Koide ratio across sectors (conjectured for quarks):
+\begin{equation}\label{eq:Q_sectors}
+Q \;=\; \frac{H\!-\!1}{H} \;+\; \frac{C}{H^2\!-\!1} \;+\; T_3\cdot\frac{K^*}{2}
+\end{equation}
+\begin{center}
+\begin{tabular}{@{}lcccl@{}}
+\toprule
+\textbf{Sector} & $C$ & $T_3$ & $Q$ & \textbf{Status} \\
+\midrule
+Leptons & $0$ & $0$ & $2/3$ & Proved \\
+Down quarks & $1$ & $-1/2$ & $11/15$ & Conjecture \\
+Up quarks & $1$ & $+1/2$ & $17/20$ & Conjecture \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section*{The Identities}
+
+For any angle $\theta$, when $r=\sqrt{2}$:
+
+\begin{align}
+\sum_{k=0}^{2} \sqrt{x_k} &= 3 = H \label{eq:sum_sqrt}\\[4pt]
+\sum_{k=0}^{2} x_k &= 6 = 2H \label{eq:sum_x}\\[4pt]
+Q \;=\; \frac{\sum x_k}{\bigl(\sum\sqrt{x_k}\bigr)^2} &= \frac{6}{9} = \frac{2}{3} = \frac{H\!-\!1}{H} \label{eq:Q}
+\end{align}
+
+\emph{Proof.} The three phases $\phi_k = \theta + 2\pi k/3$ are equally spaced on the circle. By Fourier orthogonality on $\Z_3$: $\sum\cos\phi_k = 0$ and $\sum\cos^2\!\phi_k = 3/2$. Then $\sum\sqrt{x_k} = 3 + \sqrt{2}\cdot 0 = 3$, and $\sum x_k = 3 + 2\sqrt{2}\cdot 0 + 2\cdot 3/2 = 6$. \qed
+
+\section*{The Dimensionless Mass Factors}
+
+At $\theta = 2/9$ (leptons):
+\begin{center}
+\begin{tabular}{@{}lrl@{}}
+\toprule
+& $x_k = \bigl(1+\sqrt{2}\cos(2/9+2\pi k/3)\bigr)^2$ & \\
+\midrule
+$x_e$ & $0.001\,628\,12$ & (electron) \\
+$x_\mu$ & $0.336\,645\,87$ & (muon) \\
+$x_\tau$ & $5.661\,726\,01$ & (tau) \\
+\midrule
+$\sum x_k$ & $6.000\,000\,00$ & $= 2H$ (exact) \\
+$(\sum\sqrt{x_k})^2$ & $9.000\,000\,00$ & $= H^2$ (exact) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section*{The Topological Cliff}
+
+The mass factor $x_k$ vanishes when $1 + \sqrt{2}\cos\phi_k = 0$, i.e.\ at $\phi = 3\pi/4 = 135^\circ$. The electron sits at
+\[
+\phi_e = \frac{2}{9} + \frac{2\pi}{3} \approx 132.73^\circ.
+\]
+A margin of $2.27^\circ$ from the zero-mass cliff. The entire lepton hierarchy $m_\tau/m_e = 3477$ is the ratio of a constructive peak to this near-node, with the node's position locked by $\theta = 2/9$ from $H = 3$. The electron is light because the Coxeter number places it at the edge.
+
+\section*{The Mass Scales}
+
+\begin{center}
+\begin{tabular}{@{}lccl@{}}
+\toprule
+\textbf{Sector} & $M^2/m(0^{++})$ & \textbf{Decomposition} & \textbf{Deviation} \\
+\midrule
+Leptons & $11/60$ & $\dfrac{1}{d_\mathrm{super}} + \dfrac{1}{H(H\!+\!1)} = \dfrac{1}{10}+\dfrac{1}{12}$ & $0.11\%$ \\[8pt]
+Down quarks & $3/8$ & $\dfrac{1}{\dim(\SU(3))} + \dfrac{1}{H\!+\!1} = \dfrac{1}{8}+\dfrac{1}{4}$ & $1.3\%$ \\[8pt]
+Up quarks & $40/3$ & Forced by product constraint & $0.1\%$ \\[4pt]
+\bottomrule
+\end{tabular}
+\end{center}
+
+\smallskip
+Product constraint: $\;\dfrac{11}{60}\times\dfrac{3}{8}\times\dfrac{40}{3} = \dfrac{11}{12} = \dfrac{H(H\!+\!1)-1}{H(H\!+\!1)} = \text{massive/total generators}.$
+
+\section*{The Quadratic}
+
+The lepton denominators $10$ and $12$ are the roots of
+\begin{equation}\label{eq:quadratic}
+\boxed{\;x^2 - 22x + 120 = (x-10)(x-12) = 0\;}
+\end{equation}
+\begin{center}
+\begin{tabular}{@{}ll@{}}
+\toprule
+\textbf{Coefficient} & \textbf{Meaning} \\
+\midrule
+Sum $= 22 = 2(H^2\!+\!H\!-\!1)$ & $= d_\mathrm{bos} - H - 1 = 26 - 4$ \\
+Product $= 120 = H(H\!+\!1)(H^2\!+\!1) $ & $= S + 1/K^* = 5!$ \\
+Discriminant $= 4 = (H\!-\!1)^2 = H\!+\!1$ & the self-consistency equation \\
+\bottomrule
+\end{tabular}
+\end{center}
+The Koide lepton scale is $\dfrac{11}{60} = \dfrac{\text{sum of roots}}{\text{product of roots}}$.
+
+\medskip
+
+The down quark denominators $8$ and $4$ satisfy $x^2 - 12x + 32 = 0$, nested: the down sum ($12$) is a lepton root, and the lepton discriminant ($4$) is a down root.
+
+\section*{The Glueball--Lepton Sum Rule}
+
+Since $\sum x_k = 6$ and $M^2 = m(0^{++})\times 11/60$:
+\begin{equation}\label{eq:sum_rule}
+\boxed{\;m(0^{++}) \;=\; \frac{10}{11}\bigl(m_e + m_\mu + m_\tau\bigr) \;=\; \frac{d_\mathrm{super}}{d_\mathrm{super}+1}\;\sum m_\ell\;}
+\end{equation}
+Numerically: $\frac{10}{11}\times 1883.0 = 1711.8\;\mathrm{MeV}$ (lattice QCD: $1710\pm 50$).
+
+\begin{remark}[The beta function coincidence]
+The numerator $11 = H(H\!+\!1)-1$ counts massive gauge bosons. The pure $\SU(3)$ one-loop beta coefficient is $\beta_0 = 11N_c/3 = 11$ at $N_c = H = 3$. Setting $H(H\!+\!1)-1 = 11H/3$ gives $3H^2 - 8H - 3 = 0$, with unique positive root $H = 3$. The running rate equals the particle content only at the Coxeter number.
+\end{remark}
+
+\section*{The Conversion System}
+
+\emph{One measurement determines everything.}
+
+\begin{enumerate}[nosep]
+\item Pick any precisely known mass (e.g.\ $m_e$ or $m_\mu$, both known to $<0.001\%$).
+\item Compute $M^2 = m_k/x_k$. From $m_e$: $M^2 = 313.859\;\mathrm{MeV}$. From $m_\mu$: $M^2 = 313.856\;\mathrm{MeV}$. Consistent to $0.001\%$.
+\item Compute $m(0^{++}) = M^2\times 60/11 = 1712.0\pm 0.3\;\mathrm{MeV}$.
+\item Every other mass follows: lepton masses from $x_k$, quark masses from the sector Koide formulae, hadron masses from the eigenvalue spectrum, electroweak masses from $H$-polynomial multipliers.
+\end{enumerate}
+
+\medskip
+
+Zero dimensionless free parameters. One dimensional anchor (choice of energy unit).
+
+\section*{Open Problems}
+
+\begin{enumerate}[nosep]
+\item \textbf{The $452\sigma$ residual.} The $e/\mu$ mass ratio deviates from $\theta=2/9$ by $9.83\times 10^{-6}$ ($452\sigma$ on the ratio, but only $0.97\sigma$ on $m_\tau$). Either the tau mass is ${\sim}1\sigma$ low, or the Koide formula carries a correction at $10^{-5}$. BESIII and Belle~II will decide.
+\item \textbf{Quark $Q$ values.} The formula $Q = (H\!-\!1)/H + C/(H^2\!-\!1) + T_3\cdot K^*/2$ is conjectured, not derived, for colour-charged sectors.
+\end{enumerate}
+
+\end{document}

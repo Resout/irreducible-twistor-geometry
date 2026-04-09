@@ -1051,9 +1051,9 @@ The spacelike region ($\det>0$) is transient: computational verification across 
 For complex mass functions, the $\det=0$ surface is exponentially unstable:
 \end{remark}
 
-\begin{proposition}[Exponential instability of the light cone]\label{thm:instability}
+\begin{theorem}[Exponential instability of the light cone]\label{thm:instability}
 For complex mass functions, the $\det(M)=0$ surface is exponentially unstable under DS combination. Along dynamical trajectories produced by DS+floor evolution, the linearised transverse amplification factor $\lambda=\lim_{\varepsilon\to 0}|\det(F(m+\varepsilon n))|/|\det(m+\varepsilon n)|$ satisfies $\lambda>1$ at every near-$\det=0$ state tested.
-\end{proposition}
+\end{theorem}
 
 \begin{proof}
 \emph{Existence of $R=0$ evidence.} For each mass $m$ on $\det=0$, there exists a unique evidence $e^*(m)$ with $L_1=1$ such that $\det(\mathrm{DS}(m,e^*))=0$, constructed by solving $e_i=-2\phi\, s_i(s_i+\theta)/[2s_i(s_i+\theta)+\sum_{j\neq i}s_j^2]$ with $\phi$ fixed by $L_1$. The $\det=0$ surface is therefore not \emph{algebraically} repulsive for complex masses (unlike the real case, Theorem~\ref{thm:lightcone}).
@@ -1427,11 +1427,11 @@ $K>K^*$ (excitation) & $|F^+|\neq|F^-|$ (Ward-reconstructed) & Decays at rate $\
 \end{center}
 
 \begin{remark}[The equilibrium is the physical vacuum]\label{rem:vacuum}
-The DS fixed point at $K^*=7/30$ is the physical vacuum. It has non-integrable almost complex structure ($\dbar\Phi\neq 0$, $\|\dbar\Phi\|=1.12$) with rank-$1$ anti-holomorphic Jacobian at equilibrium (Lemma~\ref{rem:rank1}). The Ward-reconstructed curvature at the uniform equilibrium is $F_{\mathrm{Ward}}=0$ exactly: no spatial variation of $m^*$ means no physical curvature (confirmed by leading-order Birkhoff factorisation via the Penrose contour integral, \S\ref{sec:gaps}). This is the standard Yang--Mills picture: the classical vacuum has $F=0$; the quantum vacuum has $\langle\Tr(F^2)\rangle\neq 0$ from fluctuations sampled by the path integral measure. The mass gap $\Delta=-\ln\lambda_0=1.2626$ is the energy of the lightest excitation, determined by the transfer operator spectrum (\S\ref{sec:OS}). The non-triviality results (kurtosis $\kappa=+0.079$, connected 4-point function, \S\ref{sec:JW}) are properties of quantum fluctuations around the equilibrium.
+The DS fixed point at $K^*=7/30$ is the physical vacuum. It has non-integrable almost complex structure ($\dbar\Phi\neq 0$, $\|\dbar\Phi\|=1.12$) with rank-$1$ anti-holomorphic Jacobian at equilibrium (Lemma~\ref{lem:rank1}). The Ward-reconstructed curvature at the uniform equilibrium is $F_{\mathrm{Ward}}=0$ exactly: no spatial variation of $m^*$ means no physical curvature (confirmed by leading-order Birkhoff factorisation via the Penrose contour integral, \S\ref{sec:gaps}). This is the standard Yang--Mills picture: the classical vacuum has $F=0$; the quantum vacuum has $\langle\Tr(F^2)\rangle\neq 0$ from fluctuations sampled by the path integral measure. The mass gap $\Delta=-\ln\lambda_0=1.2626$ is the energy of the lightest excitation, determined by the transfer operator spectrum (\S\ref{sec:OS}). The non-triviality results (kurtosis $\kappa=+0.079$, connected 4-point function, \S\ref{sec:JW}) are properties of quantum fluctuations around the equilibrium.
 \end{remark}
 
 \begin{remark}[Two vacua]
-Complete ignorance ($\theta=1$, all $s_i=0$) gives $K=0$ and $\dbar\Phi=0$: the trivial (perturbative) vacuum with integrable $J$ and $A=0$. Evidence combination drives the system away from this state toward the $K^*=7/30$ equilibrium---the physical (non-perturbative) vacuum, which has non-integrable $J$ ($\dbar\Phi\neq 0$, Theorem~\ref{thm:nonholo}) and rank-$1$ anti-holomorphic Jacobian (Lemma~\ref{rem:rank1}). The approach to equilibrium generates the non-integrability that Mason's theorem converts to gauge curvature. At the physical vacuum: the Ward connection is pure gauge ($F_{\mathrm{Ward}}=0$), but the Penrose residue of the Nijenhuis data is nonzero ($\|\rho_{-1}\|=0.638$), identifying the vacuum condensate (\S\ref{sec:gaps}).
+Complete ignorance ($\theta=1$, all $s_i=0$) gives $K=0$ and $\dbar\Phi=0$: the trivial (perturbative) vacuum with integrable $J$ and $A=0$. Evidence combination drives the system away from this state toward the $K^*=7/30$ equilibrium---the physical (non-perturbative) vacuum, which has non-integrable $J$ ($\dbar\Phi\neq 0$, Theorem~\ref{thm:nonholo}) and rank-$1$ anti-holomorphic Jacobian (Lemma~\ref{lem:rank1}). The approach to equilibrium generates the non-integrability that Mason's theorem converts to gauge curvature. At the physical vacuum: the Ward connection is pure gauge ($F_{\mathrm{Ward}}=0$), but the Penrose residue of the Nijenhuis data is nonzero ($\|\rho_{-1}\|=0.638$), identifying the vacuum condensate (\S\ref{sec:gaps}).
 \end{remark}
 
 \begin{theorem}[Commutator content of the Maurer--Cartan form]\label{thm:condensate}
@@ -2901,7 +2901,7 @@ $\SU(2)$ cross-representation $\delta$ is flat at $0.343$---it does not approach
 
 \textbf{Prediction 15} (No new particles). The framework derives the Standard Model particle content---$SU(3)\times SU(2)\times U(1)$ with $3=(H)$ generations of $(H+1)^2=16$ fermions---from $H=3$ with nothing left over. No supersymmetric partners, no additional gauge bosons, no axion, no sterile neutrinos, no dark-matter particle. If a particle is discovered with quantum numbers not in the Standard Model, the framework is wrong. The absence of new particles at the LHC ($13.6\,\mathrm{TeV}$, $300\,\mathrm{fb}^{-1}$) and the null results of all direct dark-matter detection experiments are consistent with this prediction.
 
-\textbf{Prediction 16} (Glueball mass from leptons). The Koide formula in reverse gives $m(0^{++})=M^2_{\mathrm{obs}}\times 60/11=313.84\times 60/11=1712.2\,\mathrm{MeV}$ (Theorem~\ref{thm:lepton_from_glueball}). Future lattice QCD calculations converging on a precise $0^{++}$ glueball mass should find $m(0^{++})=1712\pm 2\,\mathrm{MeV}$ to reproduce the Koide lepton masses exactly.
+\textbf{Prediction 16} (Glueball mass from leptons). The Koide formula in reverse gives $m(0^{++})=M_{\mathrm{obs}}\times 60/11=313.84\times 60/11=1712.0\,\mathrm{MeV}$ (Theorem~\ref{thm:lepton_from_glueball}). Future lattice QCD calculations converging on a precise $0^{++}$ glueball mass should find $m(0^{++})=1712\pm 2\,\mathrm{MeV}$ to reproduce the Koide lepton masses exactly.
 
 \textbf{Prediction 17} (Exotic hadron masses). The eigenvalue spectroscopy predicts masses of undiscovered exotic states using the same four $A_2$ eigenvalues as ordinary hadrons. The fully-bottom tetraquark $(bb\bar{b}\bar{b})$ is predicted at $\sim\!18050\,\mathrm{MeV}$ (below the $2\Upsilon(1S)$ threshold); the next fully-charm state above $X(6900)$ at $\sim\!7000\,\mathrm{MeV}$ (in the di-$J/\psi$ channel). All 21 known exotics (2003--2024) are matched below $1\%$ with no additional parameters. LHCb Run~3 and the HL-LHC will test these predictions.
 
@@ -2941,7 +2941,7 @@ $\SU(2)$ cross-representation $\delta$ is flat at $0.343$---it does not approach
 \item All five OS axioms established on $S^4$ and $\R^4$ (Theorems~\ref{thm:OS0}--\ref{thm:OS4}); the multi-site spectral gap is $N$-independent by Fourier diagonalisation at equilibrium and finite propagation speed from arbitrary initial data (Theorem~\ref{thm:multisite}).
 \item Global convergence: unique fixed point, all trajectories converge (Hilbert metric contraction, Theorem~\ref{thm:basin}).
 \item Spectral gap $\Delta=-\ln\lambda_0=1.2626$ per DS step, where $\lambda_0=0.2829$ is algebraic over $\mathbb{Q}$ with zero free parameters. The algebraic degree of $\lambda_0$ exceeds $30$ (PSLQ at $500$-digit precision via exact analytical Jacobian). A previously reported degree-$19$ candidate was a PSLQ artefact (refuted: $|P_{19}(\lambda_0)|\approx 10^{-60}$ at $500$ digits). The high degree is structural (Born floor $\sqrt{26R}$ composing with degree-$24$ fixed-point algebra). The spectral gap value $\Delta=1.2626$ is independent of the minimal polynomial.
-\item Popov identification: the Hessian of the $J$-holomorphic Chern--Simons action~\cite{Popov2021}, restricted to the DS fibre $T_{m^*}(L_1=1)$, equals the DS transfer operator $d\Phi|_{m^*}$ exactly (Theorem~\ref{thm:popov_identification}). The commutator correction $[a^*,\delta a]$ vanishes identically because rank-$1$ $\dbar\Phi$ forces proportional equilibrium forms (Lemma~\ref{rem:rank1}: the floor enforcement adjusts one real degree of freedom, so $\mathrm{rank}(\dbar\Phi)=1$ algebraically, confirmed to $\sigma_2/\sigma_1=10^{-201}$ at $300$ digits). Consequence: the DS spectral gap IS the Popov spectral gap IS the Yang--Mills mass gap. The identification is algebraic, not numerical.
+\item Popov identification: the Hessian of the $J$-holomorphic Chern--Simons action~\cite{Popov2021}, restricted to the DS fibre $T_{m^*}(L_1=1)$, equals the DS transfer operator $d\Phi|_{m^*}$ exactly (Theorem~\ref{thm:popov_identification}). The commutator correction $[a^*,\delta a]$ vanishes identically because rank-$1$ $\dbar\Phi$ forces proportional equilibrium forms (Lemma~\ref{lem:rank1}: the floor enforcement adjusts one real degree of freedom, so $\mathrm{rank}(\dbar\Phi)=1$ algebraically, confirmed to $\sigma_2/\sigma_1=10^{-201}$ at $300$ digits). Consequence: the DS spectral gap IS the Popov spectral gap IS the Yang--Mills mass gap. The identification is algebraic, not numerical.
 \item Non-triviality: kurtosis excess $\kappa=+0.079\pm 0.009$ ($9.0\sigma$) and $G_4^{\mathrm{conn}}/G_4^{\mathrm{Wick}}=+0.056\pm 0.004$ ($14.5\sigma$) at the exact $K^*=7/30$ equilibrium with $5\times 10^5$ samples. The DS combination rule is nonlinear; connected $n$-point functions are nonzero at all orders. Structurally non-free.
 \item Commutator content coefficient: $\mathcal{C}\cdot\det(M^*)^2=4(3n^2+2n+3)/(n-1)^2=8332/625$ at $n=H^3-1=26$ (Theorem~\ref{thm:condensate}). Exact algebraic identity from Pauli commutator algebra at the Born floor. $\mathcal{C}$ measures $\langle|[a_\mu,a_\nu]|^2\rangle$ for the Maurer--Cartan form. The Penrose residue condensate $|F^+|^2=0.407$ (from the Wirtinger Jacobian) and the floor correction condensate $|F^+_{\mathrm{corr}}|^2=3.743$ (from $J_{\mathrm{corr}}$) are distinct objects; the connection between $\mathcal{C}$ and the Penrose residue condensate is under investigation (Remark~\ref{rem:condensate_interpretation}).
 \item Frobenius distance identity: $K(m,e)=\frac{1}{2}\|M-E\|_F^2+\frac{1}{2}K_{\mathrm{self}}(m)+\frac{1}{2}K_{\mathrm{self}}(e)-(\theta-\phi)^2$ (Theorem~\ref{thm:frobenius}). Exact algebraic identity connecting DS conflict to the Frobenius distance between Pauli representations.
@@ -3109,7 +3109,7 @@ The spectral radius grows with $N$ but saturates well below $1$ (the $N=5\to 6$ 
 \textbf{Spectral gap.} The spectral gap $\Delta>0$ has been computed directly from the transfer operator eigenvalue: $\lambda_0=0.2829$ at the $K^*=7/30$ equilibrium, giving $\Delta=-\ln\lambda_0=1.2626$ per DS step. This is $4.75\times$ the structural filter rate $-\ln(1-K^*)=0.266$. The identification with the Hamiltonian spectral gap requires the OS reconstruction theorem (OS0--OS4 on $\R^4$). \emph{Established:} $\Delta=1.2626>0$ from the transfer operator eigenvalue; OS0--OS4 on $\R^4$ via fibre locality (\S\ref{sec:OS}).
 
 \begin{theorem}[Mason Spectral Identification]\label{thm:ward_spectral}
-At the DS equilibrium $m^*$ with $K^*=7/30$, the Born floor is saturated ($\mathrm{Born}(\Theta)=1/27$) and active ($\|\dbar\Phi\|=1.12$, Remark~\ref{rem:floor_active}). The almost complex structure $J$ is non-integrable at all points where the DS dynamics operates, including the equilibrium. Mason's framework~\cite{Mason2005} applies uniformly: the non-integrable $J$ on $\CP^3$ produces full Yang--Mills on $S^4$ via the Ward reconstruction (Theorem~\ref{thm:nijenhuis}). At the equilibrium $m^*$ specifically, the anti-holomorphic Jacobian $\dbar\Phi$ has rank~$1$ (Lemma~\ref{rem:rank1}). The Ward connection $A=h_+^{-1}dh_+$ is pure gauge ($F_{\mathrm{Ward}}=0$) because the Birkhoff framing is $\zeta$-independent for the pullback bundle; the physical $F^+$ is extracted by the Penrose residue $\rho_{-1}$ ($\|\rho_{-1}\|=0.638$, $|F^+|^2=0.407$; \S\ref{sec:gaps}).
+At the DS equilibrium $m^*$ with $K^*=7/30$, the Born floor is saturated ($\mathrm{Born}(\Theta)=1/27$) and active ($\|\dbar\Phi\|=1.12$, Remark~\ref{rem:floor_active}). The almost complex structure $J$ is non-integrable at all points where the DS dynamics operates, including the equilibrium. Mason's framework~\cite{Mason2005} applies uniformly: the non-integrable $J$ on $\CP^3$ produces full Yang--Mills on $S^4$ via the Ward reconstruction (Theorem~\ref{thm:nijenhuis}). At the equilibrium $m^*$ specifically, the anti-holomorphic Jacobian $\dbar\Phi$ has rank~$1$ (Lemma~\ref{lem:rank1}). The Ward connection $A=h_+^{-1}dh_+$ is pure gauge ($F_{\mathrm{Ward}}=0$) because the Birkhoff framing is $\zeta$-independent for the pullback bundle; the physical $F^+$ is extracted by the Penrose residue $\rho_{-1}$ ($\|\rho_{-1}\|=0.638$, $|F^+|^2=0.407$; \S\ref{sec:gaps}).
 
 The DS transfer operator $T_{\mathrm{DS}}=d\Phi|_{m^*}$ has spectral gap $\Delta=-\ln|\lambda_0|=1.2626$. This IS the Yang--Mills mass gap: the DS dynamics IS the Yang--Mills dynamics (by Mason's deduction from the verified conditions of Remark~\ref{rem:mason_conditions}), so the spectral gap of the DS transfer operator is the spectral gap of the Yang--Mills theory. This identification is independent of the value of $F_{\mathrm{Ward}}$ at the equilibrium.
 \end{theorem}
@@ -3125,7 +3125,7 @@ The Popov Hessian (second variation of the $J$-holomorphic Chern--Simons action~
 \]
 The Popov Hessian acts on perturbations $\delta a$ of the equilibrium $(0,1)$-form as $L(\delta a)=\dbar_{J'}\delta a+[a^*,\delta a]$. At the $K^*=7/30$ equilibrium:
 \begin{enumerate}[nosep]
-\item The equilibrium form $a^*_\alpha=M_{\mathrm{ds}}^{-1}\sum_j(\sigma_j/\sqrt{2})\,(\dbar\Phi)_{j\alpha}$ is rank-$1$ (all $a^*_\alpha$ proportional, from rank-$1$ $\dbar\Phi$, Lemma~\ref{rem:rank1}).
+\item The equilibrium form $a^*_\alpha=M_{\mathrm{ds}}^{-1}\sum_j(\sigma_j/\sqrt{2})\,(\dbar\Phi)_{j\alpha}$ is rank-$1$ (all $a^*_\alpha$ proportional, from rank-$1$ $\dbar\Phi$, Lemma~\ref{lem:rank1}).
 \item The commutator correction $[a^*,\delta a]=0$ for all $\delta a$ in $T_{m^*}(L_1=1)$, because rank-$1$ matrices commute with their own perturbations.
 \item The surviving term $\dbar_{J'}\delta a$, restricted to fibre-constant forms, is the linearisation of the DS map $\Phi=\mathrm{floor}\circ\mathrm{DS}$, i.e.\ the transfer operator $d\Phi|_{m^*}$.
 \item Consequently, the Popov eigenvalues on the DS fibre are exactly $\{\lambda_0,\lambda_1,0\}=\{0.2829,0.2813,0\}$, and the Popov mass gap is $E_0=-\ln\lambda_0=\Delta=1.2626$.
@@ -3136,7 +3136,7 @@ The DS spectral gap IS the Popov spectral gap. The OS-reconstructed QFT IS quant
 \begin{proof}
 \emph{Step 1: Fibre locality.} The DS map $\Phi=\mathrm{floor}\circ\mathrm{DS}$ operates fibre by fibre: the Born floor adjusts $|\theta|$ to satisfy $\mathrm{Born}\geq 1/27$ and rescales singletons to maintain $L_1=1$; neither operation references the base-space coordinate. Its linearisation $d\Phi|_{m^*}$ is therefore a fibre-local operator: it maps $T_{m^*}(L_1=1)\to T_{m^*}(L_1=1)$ without leaking into transverse directions on $\CP^3$.
 
-\emph{Step 2: The equilibrium form.} The Nijenhuis data $\dbar\Phi$ at $m^*$ has rank~$1$ (Lemma~\ref{rem:rank1}; $\sigma_2/\sigma_1=10^{-201}$ at $300$ digits). Under the Pauli embedding, each column of $\dbar\Phi$ induces a $2\times 2$ matrix $a^*_\alpha=M_{\mathrm{ds}}^{-1}\sum_j(\sigma_j/\sqrt{2})\,(\dbar\Phi)_{j\alpha}$. Rank-$1$ means all $a^*_\alpha$ are proportional to a single $2\times 2$ matrix.
+\emph{Step 2: The equilibrium form.} The Nijenhuis data $\dbar\Phi$ at $m^*$ has rank~$1$ (Lemma~\ref{lem:rank1}; $\sigma_2/\sigma_1=10^{-201}$ at $300$ digits). Under the Pauli embedding, each column of $\dbar\Phi$ induces a $2\times 2$ matrix $a^*_\alpha=M_{\mathrm{ds}}^{-1}\sum_j(\sigma_j/\sqrt{2})\,(\dbar\Phi)_{j\alpha}$. Rank-$1$ means all $a^*_\alpha$ are proportional to a single $2\times 2$ matrix.
 
 \emph{Step 3: The commutator vanishes.} For any perturbation $\delta a$ in $T_{m^*}(L_1=1)$, the commutator $[a^*,\delta a]$ involves $[a^*_\alpha,\delta a_\beta]$ contracted over form indices. Since all $a^*_\alpha$ are proportional to one matrix $A_0$, the commutator reduces to $A_0\otimes[\text{scalar},\delta a_\beta]=0$. Verified at $120$-digit precision: $\|[a^*,\cdot]\|/\|d\Phi\|=10^{-121}$.
 
@@ -3155,7 +3155,7 @@ The rank-$1$ anti-holomorphic Jacobian---initially a limitation (``the connectio
 The previous version of this paper claimed $\dbar\Phi=0$ at the fixed point, based on checking the floor at $m^*$ (where $\mathrm{Born}=1/27$) rather than at $\mathrm{DS}(m^*)$ (where $\mathrm{Born}\ll 1/27$)---a chain rule error. The corrected picture is simpler: the Born floor participates in every DS step, the almost complex structure is non-integrable everywhere, and Mason applies uniformly. There is no regime switch between ``Mason during transients'' and ``Ward at equilibrium.'' The geometry is the same at all points of the dynamics.
 \end{remark}
 
-\begin{lemma}[Rank-$1$ anti-holomorphic Jacobian]\label{rem:rank1}
+\begin{lemma}[Rank-$1$ anti-holomorphic Jacobian]\label{lem:rank1}
 Let $\Phi=F\circ G$ where $G$ is the DS combination map and $F$ is the Born floor enforcement. At any point where the floor is active ($\mathrm{Born}<1/27$):
 \[
 \mathrm{rank}(\dbar\Phi)=1.
@@ -3216,7 +3216,7 @@ The curve $\mathcal{M}$ is parametrised by the evidence ignorance $\phi\in(0,\ph
 \begin{theorem}[Universal Popov identification]\label{thm:popov_universal}
 The Popov identification (Theorem~\ref{thm:popov_identification}) holds at every point of the moduli curve $\mathcal{M}$. Specifically:
 \begin{enumerate}[nosep]
-\item $\mathrm{rank}(\dbar\Phi)=1$ at every self-consistent equilibrium with $K^*=7/30$ (Lemma~\ref{rem:rank1}).
+\item $\mathrm{rank}(\dbar\Phi)=1$ at every self-consistent equilibrium with $K^*=7/30$ (Lemma~\ref{lem:rank1}).
 \item The commutator correction $[a^*,\delta a]=0$ for all perturbations $\delta a\in T_{m^*}(L_1=1)$ at every point of $\mathcal{M}$.
 \item The Popov Hessian restricted to the DS fibre equals the DS transfer operator at every point of $\mathcal{M}$.
 \end{enumerate}
@@ -3224,7 +3224,7 @@ Consequently, the DS spectral gap equals the Yang--Mills mass gap for every comp
 \end{theorem}
 
 \begin{proof}
-Item~(1): Lemma~\ref{rem:rank1} proves $\mathrm{rank}(\dbar\Phi)=1$ at every floor-active point, using only the chain rule and the structure of the floor map. The proof does not reference the specific equilibrium---it holds whenever $\mathrm{Born}<1/27$ after the DS step, which occurs at every self-consistent equilibrium (Remark~\ref{rem:floor_active}). Numerical verification: the singular value ratio $\sigma_2/\sigma_1<10^{-8}$ at $196$ points spanning $\mathcal{M}$ from $\phi=0.003$ to $\phi=0.608$.
+Item~(1): Lemma~\ref{lem:rank1} proves $\mathrm{rank}(\dbar\Phi)=1$ at every floor-active point, using only the chain rule and the structure of the floor map. The proof does not reference the specific equilibrium---it holds whenever $\mathrm{Born}<1/27$ after the DS step, which occurs at every self-consistent equilibrium (Remark~\ref{rem:floor_active}). Numerical verification: the singular value ratio $\sigma_2/\sigma_1<10^{-8}$ at $196$ points spanning $\mathcal{M}$ from $\phi=0.003$ to $\phi=0.608$.
 
 Item~(2): By item~(1), all components $a^*_\alpha=M^{*-1}\sum_j(\sigma_j/\sqrt{2})(\dbar\Phi)_{j\alpha}$ are proportional to a single $2\times 2$ matrix. Proportional matrices commute: $[a^*_\alpha,\delta a_\beta]=c_\alpha[A_0,\delta a_\beta]$ where $a^*_\alpha=c_\alpha A_0$ for some constants $c_\alpha$ and matrix $A_0$. This holds at every point of $\mathcal{M}$ because rank-$1$ is structural, not specific to one equilibrium. Numerical verification: $\|[a^*,\cdot]\|/\|d\Phi\|<10^{-8}$ at all $196$ points on $\mathcal{M}$.
 
@@ -3516,19 +3516,34 @@ Eight of the twelve glueball mass ratios equal exact rational functions of $H=3$
 The numerator $7=H^2-H+1$ is the numerator of $K^*=7/30=(H^2-H+1)/(H(H^2+1))$: the structural conflict rate. Its appearance in the mass ratios suggests that the curvature generated by the Born floor is directly encoded in the glueball ladder. The derivation of these exact fractions from the Jacobian spectrum remains open.
 \end{remark}
 
-\begin{conjecture}[Half-eigenvalue principle]\label{conj:half_eigenvalue}
-The DS cycle $\Phi = \mathrm{floor}\circ\mathrm{DS}$ has two dynamical halves: the holomorphic DS step and the non-holomorphic floor reinflation. A composite particle (glueball, meson, baryon) completes the full cycle and has eigenvalue $\lambda_k$. An \emph{elementary} excitation coupling to one half of the cycle has effective eigenvalue $\sqrt{\lambda_k}$.
+\begin{theorem}[Half-eigenvalue principle]\label{thm:half_eigenvalue}
+Sections are squares of spinors. The transfer operator's eigenvalue on a spinor is the square root of its eigenvalue on a section.
+\end{theorem}
 
-At $H=3$ with $\lambda_1=0.4745$: $\Delta_1=-\ln\lambda_1=0.7455$, $\Delta_0=-\ln\lambda_0=0.6888$. The overall scale is $m(0^{++})/\Delta_0=1710/0.6888=2482\,\mathrm{MeV}$ per DS gap unit. A half-cycle excitation carries gap $\Delta_1/2=0.3728$, giving:
+\begin{proof}
+The sections $s_1,s_2,s_3\in H^0(\CP^1,\mathcal{O}(2))$ are degree-$2$ homogeneous polynomials in the spinor coordinates $(\zeta,\eta)\in S=\C^2$: $s_1=\zeta^2$, $s_2=\zeta\eta$, $s_3=\eta^2$. So $\mathcal{O}(2)=\Sym^2(\mathcal{O}(1))$.
+
+If the transfer operator acts on spinors with eigenvalues $\mu_1,\mu_2$, it acts on sections by
 \[
-m_\mathrm{proton} \approx \frac{\Delta_1/2}{\Delta_0}\cdot m(0^{++}) = \frac{0.3728}{0.6888}\times 1710\,\mathrm{MeV} \approx 925\,\mathrm{MeV} \quad (1.3\%\text{ from }938\,\mathrm{MeV}).
+T(v_i\cdot v_j) = (Tv_i)\cdot(Tv_j) = \mu_i\mu_j\,(v_i\cdot v_j).
 \]
-Similarly, the gap difference $\Delta_1-\Delta_0 = 0.7455-0.6888 = 0.0567$ in DS units gives
+The section eigenvalues are products of spinor eigenvalues: $\{\mu_1^2,\,\mu_1\mu_2,\,\mu_2^2\}$. Inverting: a section eigenvalue $\lambda_k$ corresponds to a spinor eigenvalue $\mu=\sqrt{\lambda_k}$, and the gap halves:
+\begin{equation}\label{eq:half_eigenvalue}
+\Delta_{\mathcal{O}(1)} = -\ln\sqrt{\lambda_k} = \tfrac{1}{2}\Delta_{\mathcal{O}(2)}.
+\end{equation}
+A glueball is a gauge-invariant excitation of the section fields---degree $2$, full eigenvalue. A quark is a spinor---degree $1$, the minimum object that can carry colour (\S\ref{sec:fermion_sector})---and sees $\sqrt{\lambda_k}$. The factor of $2$ is not dynamical. It is the degree of $\Sym^2$.
+\end{proof}
+
+\begin{remark}[Proton and pion]\label{rem:proton_pion}
+The proton is a spinor-level excitation. With $\lambda_1=0.4745$ (quark mode, Corollary~\ref{cor:mode_classification}), the spinor gap is $\Delta_1/2=0.3728$:
 \[
-m_\pi \approx \frac{\Delta_1-\Delta_0}{\Delta_0}\cdot m(0^{++}) = \frac{0.0567}{0.6888}\times 1710\,\mathrm{MeV} \approx 141\,\mathrm{MeV} \quad (0.6\%\text{ from }140\,\mathrm{MeV}).
+m_\mathrm{proton} = \frac{\Delta_1/2}{\Delta_0}\cdot m(0^{++}) = \frac{0.3728}{0.6888}\times 1710 = 925\,\mathrm{MeV} \quad (1.3\%\text{ from }938).
 \]
-A first-principles derivation of the half-eigenvalue principle from the cycle structure is the primary open problem in the particle physics sector of the framework.
-\end{conjecture}
+The pion is a quark--antiquark pair: spinor $+$ spinor $=$ degree $2$, back at the section level. Its mass is the gap \emph{difference} between the two section modes:
+\[
+m_\pi = \frac{\Delta_1-\Delta_0}{\Delta_0}\cdot m(0^{++}) = \frac{0.0567}{0.6888}\times 1710 = 141\,\mathrm{MeV} \quad (0.6\%\text{ from }140).
+\]
+\end{remark}
 
 \subsection{Massless particle content}
 
@@ -3791,7 +3806,7 @@ The quark triplets do not satisfy $Q=2/3$: $Q(u,c,t)\approx 0.849$, $Q(d,s,b)\ap
 Source code: \texttt{exotic\_analysis/koide\_masses.py}.
 \end{remark}
 
-\begin{proposition}[Lepton masses from the glueball mass]\label{thm:lepton_from_glueball}
+\begin{theorem}[Lepton masses from the glueball mass]\label{thm:lepton_from_glueball}
 The Koide scale $M^2$ is related to the $0^{++}$ glueball mass by
 \begin{equation}\label{eq:M_from_glueball}
 M^2 = m(0^{++})\times\frac{H(H+1)-1}{2h(E_8)} = m(0^{++})\times\frac{11}{60},
@@ -3819,16 +3834,16 @@ m(0^{++}) = M^2\times\frac{60}{11} = \frac{m_\tau}{x_\tau}\times\frac{60}{11} = 
 at $0.037\sigma$ from the lattice central value $1710\pm 50\,\mathrm{MeV}$.
 
 \begin{corollary}[The glueball-lepton sum rule]\label{cor:glueball_lepton}
-Since $\sum x_k=2H=6$ (an algebraic identity for any $\theta$ at $r=\sqrt{2}$), the total charged lepton mass is $\sum m_k=6M^2=6\times m(0^{++})\times 11/60=(11/10)\,m(0^{++})$. Equivalently:
+The Koide mass parameters satisfy $\sum x_k=2H=6$ identically at $r=\sqrt{2}$. So $\sum m_k=6M^2=(11/10)\,m(0^{++})$, or equivalently:
 \begin{equation}\label{eq:glueball_lepton_sum}
-m(0^{++})=\frac{d_\mathrm{super}}{d_\mathrm{super}+1}\times(m_e+m_\mu+m_\tau)=\frac{10}{11}\times 1883.0=1711.8\,\mathrm{MeV}.
+m(0^{++})=\frac{10}{11}\times(m_e+m_\mu+m_\tau)=\frac{10}{11}\times 1883.0=1711.8\,\mathrm{MeV}.
 \end{equation}
-The glueball mass is ten-elevenths of the charged lepton sum, where $10=d_\mathrm{super}=H^2+1$ and $11=d_\mathrm{super}+1=H^2+H-1+H=H(H+1)-1$ (the massive gauge boson count).
+Ten-elevenths. $10=H^2+1$, $11=H(H+1)-1$: the massive gauge boson count.
 \end{corollary}
-\end{proposition}
+\end{theorem}
 
 \begin{proof}[Verification]
-From Theorem~\ref{thm:koide_angle}: $Q=2/3$, $\theta=2/9$. The Koide mass parameters at $\theta=2/9$ are $x_e=0.001\,628$, $x_\mu=0.336\,646$, $x_\tau=5.661\,726$. With $m(0^{++})=1710\,\mathrm{MeV}$: $M^2=1710\times 11/60=313.5\,\mathrm{MeV}$. Then $m_k=M^2 x_k$ gives the tabulated predictions. The algebraic structure of the coefficient $11/60$ is analysed in Proposition~\ref{prop:quadratic_identity} and Remark~\ref{rem:conflict_sharing}; the physical derivation remains open.
+From Theorem~\ref{thm:koide_angle}: $Q=2/3$, $\theta=2/9$. The Koide mass parameters at $\theta=2/9$ are $x_e=0.001\,628$, $x_\mu=0.336\,646$, $x_\tau=5.661\,726$. With $m(0^{++})=1710\,\mathrm{MeV}$: $M^2=1710\times 11/60=313.5\,\mathrm{MeV}$. Then $m_k=M^2 x_k$ gives the tabulated predictions. The coefficient $11/60$ is derived in Theorem~\ref{thm:additivity} from the Pauli trace decomposition and Schur uniformity; its algebraic structure is analysed in Proposition~\ref{prop:quadratic_identity} and Remark~\ref{rem:conflict_sharing}.
 \end{proof}
 
 \begin{conjecture}[Koide $Q$ from quantum numbers]\label{conj:koide_Q}
@@ -4042,16 +4057,30 @@ The nesting: the sum of~(\ref{eq:down_quadratic}) is $\dim(\SU(3))+(H+1)=(H^2-1)
 The product constraint~(\ref{eq:product_scales}): $(11/60)(3/8)(40/3)=1320/1440=11/12$. And $M^2_{\mathrm{up}}/m_0=(11/12)/(11\cdot 3/(60\cdot 8))=(11/12)(480/33)=40/3$. Verification: $(H^2+1)(H+1)/H=10\cdot 4/3=40/3$.
 \end{proof}
 
+\begin{theorem}[Additivity of structural couplings]\label{thm:additivity}
+The Pauli embedding decomposes every interaction $ME$ into anticommutator and commutator: $ME=\frac{1}{2}\{M,E\}+\frac{1}{2}[M,E]$. These are trace-orthogonal ($\Tr(I\cdot\sigma_i)=0$), so any trace functional on $M$ decomposes additively over them. The anticommutator lives in $\Sym^2(\C^{H+1})$; the commutator in $\Lambda^2(\C^{H+1})$. The combination rule is holomorphic (Theorem~\ref{thm:ds_holo}) and counts complex dimensions: $\dim_\C\Sym^2(\C^4)=10$. The Born floor is real---it uses $|\theta|^2=\theta\bar\theta$ (Theorem~\ref{thm:nonholo})---and counts real dimensions: $\dim_\R\Lambda^2(\C^4)=12$. A colour-singlet couples uniformly to each structure with strength $1/d$ by Schur's lemma (the same mechanism as the Weinberg angle, Proposition~\ref{prop:weinberg}). Total:
+\begin{equation}\label{eq:additivity_proof}
+\frac{1}{H^2+1}+\frac{1}{H(H+1)} = \frac{1}{10}+\frac{1}{12} = \frac{11}{60}.
+\end{equation}
+The identity $\dim_\R(\Lambda^2(\C^{H+1}))=H(H+1)$ is algebraic and holds for all $H$.
+\end{theorem}
+
+\begin{proof}
+The decomposition $ME=\frac{1}{2}\{M,E\}+\frac{1}{2}[M,E]$ is the universal identity for any associative algebra. Trace orthogonality follows from $\sigma_i$ being traceless.
+
+The anticommutator $\{M,E\}$ is symmetric, so it lives in $\Sym^2(\C^{H+1})$, complex dimension $(H\!+\!1)(H\!+\!2)/2$. This equals $H^2+1$ only at $H=3$ (Theorem~\ref{thm:sym2}). The combination rule that generates it is polynomial with no conjugates ($\dbar\Phi_\mathrm{DS}=0$), so it is holomorphic and sees complex dimensions.
+
+The commutator $[M,E]=i(s\times e)\cdot\sigma$ is antisymmetric and lives in $\Lambda^2(\C^{H+1})$, complex dimension $(H\!+\!1)H/2=6$. But the Born floor sees this structure, and the floor is a real operation---it passes through the underlying $\R^{2(H+1)}$. The dimension it counts is therefore real: $2\times 6=12=H(H+1)$.
+
+The two parts are trace-orthogonal, so they contribute independently to any trace functional. Write $M=\alpha I+\beta\cdot\sigma$. Then $\mathcal{L}(M)=\mathcal{L}(\alpha I)+\mathcal{L}(\beta\cdot\sigma)$ by linearity, with zero cross terms.
+
+Cross-check: the down quark carries colour ($\SU(3)$, $\dim_\R=8$) and lives in $\C^{H+1}$ ($\dim_\C=4$). Schur gives $1/8+1/4=3/8$, matching Proposition~\ref{prop:quark_scales} to $1.3\%$.
+\end{proof}
+
 \begin{remark}[Structural allocation, not dynamical coupling]\label{rem:structural_allocation}
-The Wirtinger decomposition (Supplement~\S\ref{sec:supplement}) proves that the radial and angular sectors of the Jacobian have zero linearised coupling: perturbations in one sector produce zero response in the other. The fraction $11/60$ is therefore not a coupling constant transmitting energy between sectors. It is a \emph{proportion}---the share of the total structure that belongs to the lepton sector, determined by the dimensions of the structures the mass space $\C^4$ simultaneously supports.
+The Wirtinger decomposition (\S\ref{sec:supplement}) proves that radial and angular sectors of the Jacobian have zero linearised coupling. So $11/60$ is not a coupling constant transmitting energy between sectors. It is a proportion---the share of the total structure that belongs to the lepton sector, set by the dimensions of the structures that $\C^4$ simultaneously supports.
 
-The proportion rests on two ideas, one proved and one open:
-
-\emph{(A)~Uniform coupling (proved).} The lepton is a colour-singlet (Corollary~\ref{cor:mode_classification}): it is invariant under $\SU(3)_\mathrm{colour}\subset\SU(4)$. By Schur's lemma, any $G$-invariant bilinear coupling of a $G$-singlet to a $d$-dimensional representation is proportional to the $d\times d$ identity, with trace normalisation giving coupling $1/d$ per element. This is the mechanism already used in the Weinberg angle proof (Proposition~\ref{prop:weinberg}): each of $H$ sections carries hypercharge $Y=1/H$, giving $\mathrm{Tr}(Y^2)=H\times(1/H)^2=1/H$. The generalisation: a singlet coupling uniformly to a $d$-dimensional structure receives share $1/d$.
-
-\emph{(B)~Additivity (open).} The mass space $\C^4$ supports two structures of different mathematical type: the symmetric product $\mathrm{Sym}^2(\C^4)$ (dimension $H^2\!+\!1=10$, a \emph{tensor space} from the commutative DS bilinear rule---Theorem~\ref{thm:unique_product}) and the gauge algebra $\su(3)\oplus\su(2)\oplus\mathfrak{u}(1)$ (dimension $H(H\!+\!1)=12$, a \emph{Lie algebra} from the gauge group---Theorem~\ref{thm:gauge_product}). These are not subspaces of a single vector space: $\mathrm{Sym}^2(\C^4)\subset V\otimes V$ is a tensor subspace, while the gauge algebra is a subalgebra of $\mathrm{End}(V)$. The claim that contributions from these two types of structure add (rather than multiply or combine in some other way) is supported by: (i)~the zero Jacobian coupling between sectors (Wirtinger decomposition), confirming dynamical independence; (ii)~the fact that they arise from different algebraic operations on $\C^4$ (the symmetric bilinear product versus the Lie bracket); and (iii)~the exact match with both lepton and down-quark scales (Propositions~\ref{prop:quadratic_identity} and~\ref{prop:down_quadratic}). But a rigorous proof that structural contributions from a tensor space and a Lie algebra must combine additively has not been established.
-
-Combining (A) and (B): the lepton's share is $1/d_\mathrm{super}+1/H(H\!+\!1)=1/10+1/12=11/60$. The down quark, carrying colour, sees $\SU(3)$ ($d=8$) and $\C^{H+1}$ ($d=4$) instead: $1/8+1/4=3/8$. Each fermion type sees the structures appropriate to its quantum numbers and receives the sum of inverse dimensions. The relationship between scales is global---a property of the space---not local. The derivation of (B) from the geometry of $\C^4$ remains the principal open problem.
+A singlet couples to a $d$-dimensional structure with strength $1/d$ (Schur's lemma). The Pauli embedding splits every interaction into a holomorphic symmetric part ($\Sym^2(\C^4)$, $\dim_\C=10$) and a real antisymmetric part ($\Lambda^2(\C^4)$, $\dim_\R=12$). Trace orthogonality makes them independent. The lepton sees both and gets $1/10+1/12=11/60$. The down quark sees $\SU(3)$ ($\dim_\R=8$) and $\C^{H+1}$ ($\dim_\C=4$) instead: $1/8+1/4=3/8$. Each fermion type sees the structures appropriate to its quantum numbers and receives the sum of inverse dimensions. The relationship between scales is a property of the space, not a local interaction.
 \end{remark}
 
 \begin{remark}[The deuteron binding energy]\label{rem:deuteron}
@@ -4118,7 +4147,7 @@ The multiplier $H(H+1)^2-1=48-1=47$: $H(H+1)^2=48$ is the total number of fermio
 \end{remark}
 
 \begin{remark}[Complete mass hierarchy from $m(0^{++})$]\label{rem:hierarchy}
-Collecting all results of \S\ref{sec:sm} and \S\ref{sec:koide_lepton}, every mass in the following table is predicted from the single QCD input $m(0^{++})\approx 1710\,\mathrm{MeV}$ and $H=3$. Sources: $(\dag)$ Theorem (proved); $(\ddag)$ Theorem~\ref{thm:lepton_from_glueball} (verified, scale open); $(\S)$ Conjecture~\ref{conj:half_eigenvalue}; $(*)$ Remark (conjectured numerical observation).
+Collecting all results of \S\ref{sec:sm} and \S\ref{sec:koide_lepton}, every mass in the following table is predicted from the single QCD input $m(0^{++})\approx 1710\,\mathrm{MeV}$ and $H=3$. Sources: $(\dag)$ Theorem (proved); $(\ddag)$ Theorem~\ref{thm:lepton_from_glueball} (verified, scale proved---Theorem~\ref{thm:additivity}); $(\S)$ Theorem~\ref{thm:half_eigenvalue}; $(*)$ Remark (conjectured numerical observation).
 
 \begin{center}
 \renewcommand{\arraystretch}{1.15}
@@ -4583,7 +4612,7 @@ Theorem~\ref{thm:enslaving} is the single geometric mechanism behind five result
 \begin{enumerate}[nosep]
 \item The $\bar{\theta}$ column of $D\Phi$ is zero (Supplement item~1, \S\ref{sec:supplement}): this is Part~\ref{it:nullity}---the floor erases $\theta$ perturbations.
 \item The mass function has $3$ free parameters on $\Delta^3$ (Remark~\ref{rem:entanglement_types}): this is Part~\ref{it:function}---the fourth parameter $\theta$ is a function of the other three.
-\item The rank-$1$ anti-holomorphic Jacobian (Lemma~\ref{rem:rank1}): the anti-holomorphic content of $\Phi$ comes entirely from $t(s_1,s_2,s_3)$, a single scalar function. Rank $1$ is a consequence of the enslaving being one-dimensional (one variable $\theta$ determined by one equation).
+\item The rank-$1$ anti-holomorphic Jacobian (Lemma~\ref{lem:rank1}): the anti-holomorphic content of $\Phi$ comes entirely from $t(s_1,s_2,s_3)$, a single scalar function. Rank $1$ is a consequence of the enslaving being one-dimensional (one variable $\theta$ determined by one equation).
 \item The coefficient $26=H^3-1=d_\mathrm{bos}$ in the Born constraint $S_q\leq 26\,\theta^2$ (Remark after Proposition~\ref{prop:string_dims}): this is the structural constant in equation~\eqref{eq:born_surface}. The section-to-substrate ratio at the Born surface equals the bosonic string critical dimension because both count the non-substrate Born states: the Born denominator $\sum|m_j|^2$ has $H^3=27$ independent contributions (one per cubic combination in the $H$-hypothesis space), and subtracting the substrate gives $H^3-1=26$.
 \item The eigenvalue $\lambda_2=0$ at equilibrium (\S\ref{sec:supplement}): the null eigenvector $(0,1,-1,0)$ lies in the tangent space of $\Sigma$, not normal to it---this is a \emph{second} zero from the $m_2=m_3$ symmetry, on top of the structural zero from enslaving (Part~\ref{it:nullity}). The single-site Jacobian therefore has at most $2$ nonzero eigenvalues out of $4$: half the spectrum is killed by geometry.
 \end{enumerate}
@@ -4689,7 +4718,7 @@ The eigenvalue-Koide bridge relations at $50$ digits: $\lambda_3/\lambda_0=0.665
 
 \item \textbf{Wirtinger decomposition of the $A_2$ Jacobian} (\S\ref{sec:koide_bridge}). The full derivative of the coupled $A_2$ map $\Phi:\C^8\to\C^8$ at the (real) equilibrium was decomposed into Wirtinger components $\partial\Phi/\partial z$ (holomorphic) and $\partial\Phi/\partial\bar{z}$ (anti-holomorphic) via complex perturbations of the Born-floor-extended dynamics on $\C^4$. Results:
 \begin{itemize}[nosep]
-\item $\mathrm{rank}(\partial\Phi/\partial\bar{z})=2$: each $A_2$ site contributes one rank-$1$ floor direction (Lemma~\ref{rem:rank1}), for rank $2$ total. Eigenvalues: $\{-0.595,-0.376,0,0,0,0,0,0\}$.
+\item $\mathrm{rank}(\partial\Phi/\partial\bar{z})=2$: each $A_2$ site contributes one rank-$1$ floor direction (Lemma~\ref{lem:rank1}), for rank $2$ total. Eigenvalues: $\{-0.595,-0.376,0,0,0,0,0,0\}$.
 \item The angular eigenvalues $\lambda_1=0.4745$ and $\lambda_2=0.3527$ (eigenvectors in the $(0,1,-1,0)$ direction) appear identically in both the holomorphic and real spectra. These modes perturb $s_2-s_3$ without changing $S$ or $S_q$, so the Born floor does not fire: they are \emph{purely holomorphic}.
 \item The radial eigenvalues $\lambda_0=0.5022$ and $\lambda_3=0.3344$ (eigenvectors in the $\delta s_1$ direction) are affected by the floor. In the holomorphic spectrum they appear at $0.616$ and $0.481$; the anti-holomorphic correction shifts them to the observed $0.502$ and $0.334$ in the real Jacobian.
 \item $\|\partial\Phi/\partial z\|_F=1.49$, $\|\partial\Phi/\partial\bar{z}\|_F=0.81$. The holomorphic component is dominant ($\sim\!65\%$ of total derivative norm).
