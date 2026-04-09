@@ -283,7 +283,7 @@ The Born floor derived from measurement structure ($1/H^3$, as derived in \S\ref
 Setting $1/H^3=\eta(H)/(H+1)=(H-1)^2/(H^3(H+1))$ and simplifying: $(H-1)^2=H+1$, i.e., $H^2-3H=0$, with unique positive solution $H=3$. Verification: at $H=2$, $1/8\neq 1/24$; at $H=4$, $1/64\neq 9/320$; at $H=3$, $1/27=1/27$.
 \end{proof}
 
-The equation $(H-1)^2=H+1$ has an independent interpretation: the number of disagreement channels equals the dimension of the extended hypothesis space. The left side $(H-1)^2$ counts ordered pairs of distinct hypotheses---the channels through which evidence sources can disagree. The right side $H+1$ is the dimension of the mass space ($H$ hypotheses plus ignorance). Self-consistency demands that the disagreement structure exactly fills the representation.
+The equation $(H-1)^2=H+1$ has a geometric interpretation: the bilinear products of the parts exactly fill the whole. The left side $(H-1)^2$ counts the independent bilinear products on the section space ($H$ sections taken in ordered pairs, minus the diagonal). The right side $H+1$ is the dimension of the representation ($H$ sections plus the substrate). The products of the structure are the space the structure lives in---there is nothing left over and nothing missing.
 
 This characterisation does not depend on any specific cost model.
 
@@ -3818,7 +3818,7 @@ at $0.037\sigma$ from the lattice central value $1710\pm 50\,\mathrm{MeV}$.
 \end{proposition}
 
 \begin{proof}[Verification]
-From Theorem~\ref{thm:koide_angle}: $Q=2/3$, $\theta=2/9$. The Koide mass parameters at $\theta=2/9$ are $x_e=0.001\,628$, $x_\mu=0.336\,646$, $x_\tau=5.661\,726$. With $m(0^{++})=1710\,\mathrm{MeV}$: $M^2=1710\times 11/60=313.5\,\mathrm{MeV}$. Then $m_k=M^2 x_k$ gives the tabulated predictions. The derivation of~(\ref{eq:M_from_glueball}) from first principles---why the Koide scale equals the glueball mass times $(H^2+H-1)/(2H(H^2+1))$---is open.
+From Theorem~\ref{thm:koide_angle}: $Q=2/3$, $\theta=2/9$. The Koide mass parameters at $\theta=2/9$ are $x_e=0.001\,628$, $x_\mu=0.336\,646$, $x_\tau=5.661\,726$. With $m(0^{++})=1710\,\mathrm{MeV}$: $M^2=1710\times 11/60=313.5\,\mathrm{MeV}$. Then $m_k=M^2 x_k$ gives the tabulated predictions. The algebraic structure of the coefficient $11/60$ is analysed in Proposition~\ref{prop:quadratic_identity} and Remark~\ref{rem:conflict_sharing}; the physical derivation remains open.
 \end{proof}
 
 \begin{conjecture}[Koide $Q$ from quantum numbers]\label{conj:koide_Q}
@@ -3957,16 +3957,31 @@ The discriminant: $(H^2+1-H^2-H)^2=(1-H)^2=(H-1)^2$. By self-consistency, $(H-1)
 Equation~(\ref{eq:koide_scale_quadratic}): partial fractions of $(a+b)/(ab)=1/a+1/b$.
 \end{proof}
 
-\begin{remark}[External significance of $x^2-22x+120=0$]\label{rem:quadratic_connections}
-The polynomial~(\ref{eq:koide_quadratic}) at $H=3$ is $x^2-22x+120=(x-10)(x-12)=0$. Its roots, sum, product, and discriminant independently appear across mathematics and theoretical physics:
+\begin{remark}[Internal significance of the quadratic]\label{rem:quadratic_connections}
+Every coefficient of~(\ref{eq:koide_quadratic}) is a framework quantity already derived from $H=3$:
 \begin{itemize}[nosep]
-\item $10$: superstring critical dimension ($c_\mathrm{matter}+c_\mathrm{ghost}=0$); $\dim\mathrm{SO}(5)$; $\dim\mathrm{Sym}^2(\C^4)$; maximal cyclic torsion order of elliptic curves over $\mathbb{Q}$ (Mazur); $\mathfrak{so}(10)\subset E_6$ (maximal regular subalgebra).
-\item $12$: F-theory dimension (signature $(10,2)$; compactification on $T^2$ yields Type~IIB in $10$D); total gauge generators of $\SU(3)\times\SU(2)\times\mathrm{U}(1)$; degree of the Green--Schwarz anomaly $12$-form $I_{12}=I_4\wedge I_8$; maximal non-cyclic torsion order (Mazur); $\mathfrak{so}(12)\subset E_7$.
-\item $22=10+12=26-4$: rank of the K3 lattice $H^2(\mathrm{K3},\Z)\cong\Z^{22}$; bosonic string compactification count.
-\item $120=10\times 12=5!$: order of $S_5$ (Abel--Ruffini threshold); $\dim\mathrm{SO}(16)$; half the root count of $E_8$ ($240/2$); structural coefficient $1/120$ in Ramanujan's divisor convolution $\sum_{k=1}^{n-1}\sigma_3(k)\sigma_3(n-k)=\sigma_7(n)/120$.
-\item $\Delta=4=(H-1)^2=H+1$: the self-consistency identity, making the roots rational.
+\item $10=H^2+1=d_{\mathrm{super}}$: the effective DS channel count (Theorem~\ref{thm:sym2}), the superstring critical dimension (Proposition~\ref{prop:string_dims}).
+\item $12=H(H+1)$: the number of root vectors of $\SU(H\!+\!1)$; the denominator constraint on eigenvalue powers in the hadron spectrum; the total gauge generators of $\SU(3)\times\SU(2)\times\mathrm{U}(1)$.
+\item $120=10\times 12=S+1/K^*=5!$: the instanton identity (\S\ref{sec:hierarchy}); half the root count of $E_8$ ($240/2$).
+\item $\Delta=4=(H-1)^2=H+1$: the founding equation (Theorem~\ref{thm:selfconsist}).
 \end{itemize}
-The framework derives~(\ref{eq:koide_quadratic}) from $H=3$ alone. Whether the external coincidences reflect deeper structural connections is an open question.
+\end{remark}
+
+\begin{remark}[The conflict-sharing decomposition]\label{rem:conflict_sharing}
+The same fraction $11/60$ admits a second exact decomposition:
+\begin{equation}\label{eq:11_60_conflict}
+\frac{11}{60} \;=\; \frac{K^*}{2}+\frac{1}{\dim(\SU(H\!+\!1))} \;=\; \frac{7}{60}+\frac{1}{15}.
+\end{equation}
+The first term is half the vacuum conflict. By the Wirtinger decomposition of the coupled $A_2$ Jacobian (Supplement~\S\ref{sec:supplement}), the tangent space at the fixed point on $\Sigma$ splits into two angular modes (quark and lepton) and two radial modes (gluonic). The lepton is one of the two angular modes, each receiving half of $K^*$.
+
+The second term is the uniform weight on $\su(H\!+\!1)=\su(4)$: the lepton is a colour-singlet, invariant under $\SU(3)_{\mathrm{colour}}\subset\SU(4)$, and couples equally to all $\dim(\SU(4))=(H\!+\!1)^2\!-\!1=15$ generators. This decomposition requires $h(E_8)=2\,\dim(\SU(H\!+\!1))$, i.e.\ $H(H^2+1)=2\bigl((H\!+\!1)^2-1\bigr)$, which simplifies to $H(H\!-\!3)(H\!+\!1)=0$ and selects $H=3$ uniquely---a characterisation independent of $(H\!-\!1)^2=H\!+\!1$.
+
+The two decompositions differ by a redistribution of $\pm 1/(2h(E_8))=\pm 1/60$ between terms:
+\[
+\underbrace{K^*/2}_{7/60}=\underbrace{1/d_{\mathrm{super}}}_{6/60}+\frac{1}{60},\qquad
+\underbrace{1/\dim(\SU(4))}_{4/60}=\underbrace{1/H(H\!+\!1)}_{5/60}-\frac{1}{60}.
+\]
+The bridge $1/60=1/(2h(E_8))$ is the resolution quantum of the common denominator. Both decompositions hold only at $H=3$, both are exact, and both identify the same algebraic building blocks of $11/60$. The physical derivation---why the lepton scale is the sum of half-conflict and Haar weight, or equivalently the harmonic-mean inverse of channel count and generator count---remains the principal open problem in the lepton sector.
 \end{remark}
 
 \begin{remark}[The deuteron binding energy]\label{rem:deuteron}
