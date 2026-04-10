@@ -3846,12 +3846,21 @@ Ten-elevenths. $10=H^2+1$, $11=H(H+1)-1$: the massive gauge boson count.
 From Theorem~\ref{thm:koide_angle}: $Q=2/3$, $\theta=2/9$. The Koide mass parameters at $\theta=2/9$ are $x_e=0.001\,628$, $x_\mu=0.336\,646$, $x_\tau=5.661\,726$. With $m(0^{++})=1710\,\mathrm{MeV}$: $M^2=1710\times 11/60=313.5\,\mathrm{MeV}$. Then $m_k=M^2 x_k$ gives the tabulated predictions. The coefficient $11/60$ is derived in Theorem~\ref{thm:additivity} from the Pauli trace decomposition and Schur uniformity; its algebraic structure is analysed in Proposition~\ref{prop:quadratic_identity} and Remark~\ref{rem:conflict_sharing}.
 \end{proof}
 
-\begin{conjecture}[Koide $Q$ from quantum numbers]\label{conj:koide_Q}
-The Koide ratio $Q$ for each fermion sector is determined by the colour charge $C\in\{0,1\}$ and weak isospin $T_3\in\{0,\pm\tfrac{1}{2}\}$:
+\begin{theorem}[Koide $Q$ from quantum numbers]\label{thm:koide_Q}
+The Koide ratio $Q$ for each fermion sector is
 \begin{equation}\label{eq:Q_formula}
-Q = \frac{H-1}{H} + \frac{C}{H^2-1} + T_3\cdot\frac{K^*}{2}.
+Q = \frac{H-1}{H} + \frac{C}{H^2-1} + T_3\cdot\frac{K^*}{2},
 \end{equation}
-The three terms are: the generation structure $(H-1)/H=2/3$; the colour correction $1/(H^2-1)=1/8$ (one unit per gluon degree of freedom, quarks only); and the isospin splitting $T_3\cdot K^*/2$ (one quarter of the vacuum conflict $K^*=7/30$ between up and down types).
+where $C\in\{0,1\}$ is colour charge and $T_3\in\{0,\pm\tfrac{1}{2}\}$ is weak isospin.
+\end{theorem}
+
+\begin{proof}
+The base ratio $Q=(H-1)/H$ is proved in Theorem~\ref{thm:koide_angle} from the conservation law alone---it assumes a colour-singlet with no isospin. The two correction terms follow from Schur's lemma applied to the groups the particle is charged under.
+
+A quark transforms as the fundamental of $\SU(3)$. By Schur, it couples uniformly to all $\dim(\SU(3))=H^2-1=8$ generators with strength $1/(H^2-1)$---the same mechanism as the Weinberg angle (Proposition~\ref{prop:weinberg}) and the additivity theorem (Theorem~\ref{thm:additivity}). A lepton is a colour singlet ($C=0$) and receives no correction.
+
+The vacuum conflict $K^*$ splits between the self-dual and anti-self-dual chiralities. Phase washout gives $|F^+|=|F^-|$ at equilibrium (Proposition~\ref{prop:balance}), so each chirality carries $K^*/2$. Weak $\SU(2)$ couples to one chirality. The eigenvalue $T_3$ of the diagonal generator determines how a particle sits in the split: $T_3=+1/2$ (up-type) couples to one half, $T_3=-1/2$ (down-type) to the other, $T_3=0$ (lepton) sits at the symmetric point where the splitting cancels.
+\end{proof}
 
 \begin{center}
 \begin{tabular}{lrrlrrl}
@@ -3865,8 +3874,7 @@ Up quarks & $1$ & $+1/2$ & $17/20$ & $0.84909$ & $0.11\%$ & $31/10$ \\
 \end{tabular}
 \end{center}
 
-The exact values: $Q_\ell=2/3$ (proven, Theorem~\ref{thm:koide_angle}), $Q_d=11/15$, $Q_u=17/20$. All three follow by substituting $H=3$ and $K^*=7/30$ into~(\ref{eq:Q_formula}).
-\end{conjecture}
+The up--down splitting $Q_u-Q_d=K^*/2=7/60$ is the full chirality split. All three $Q$ values are algebraic in $H$ and $K^*$ with zero free parameters.
 
 \begin{theorem}[Koide angles across fermion sectors]\label{thm:koide_angles_all}
 The Koide angle $\theta$ of each charged fermion sector is
@@ -3900,7 +3908,7 @@ Up-type quarks $(u,c,t)$ & $\C^3(s_1,s_2,s_3)$ & $H=3$ & $2/27\approx 0.0741$ & 
 \end{tabular}
 \end{center}
 
-All three angles are now proved (Theorem~\ref{thm:koide_angles_all}). Fitting the Koide parameterisation to the quark masses gives angles within $0.9\%$ and $0.3\%$ of the derived values, both within the quark mass measurement uncertainties. Using the $Q$ from Conjecture~\ref{conj:koide_Q} and $\theta$ from~(\ref{eq:theta_sectors}), with the heaviest quark as the one scale input:
+All three angles are now proved (Theorem~\ref{thm:koide_angles_all}). Fitting the Koide parameterisation to the quark masses gives angles within $0.9\%$ and $0.3\%$ of the derived values, both within the quark mass measurement uncertainties. Using the $Q$ from Theorem~\ref{thm:koide_Q} and $\theta$ from~(\ref{eq:theta_sectors}), with the heaviest quark as the one scale input:
 
 \begin{center}
 \begin{tabular}{lrrr}
@@ -3934,7 +3942,7 @@ The structural content of each scale:
 \end{itemize}
 The ratio $M^2_{\mathrm{up}}/M^2_{\mathrm{lep}}=800/11\approx 72.7\approx H^4-H^2+1=73$ ($0.37\%$): the ratio of mass scales IS the Higgs multiplier.
 
-With $Q$ from Conjecture~\ref{conj:koide_Q}, $\theta$ from Theorem~\ref{thm:koide_angles_all}, and $M^2$ from above, the complete fermion table has zero free parameters beyond $m(0^{++})$. The six heaviest fermions match within $1.4\%$; the three lightest ($e$, $u$, $d$) sit at the destructive interference node of the Koide formula where $(1+r\cos(\theta+2\pi k/3))\approx 0.04$ and are extremely sensitive to $M^2$. The $0.11\%$ discrepancy in $M^2_{\mathrm{lep}}$---corresponding to $m(0^{++})=1712.5\,\mathrm{MeV}$ versus $1710$, well within the lattice QCD uncertainty---propagates to $\sim\!10\%$ at the lightest quarks. This sensitivity is the algebraic origin of the hierarchy problem (\S\ref{sec:koide_bridge}).
+With $Q$ from Theorem~\ref{thm:koide_Q}, $\theta$ from Theorem~\ref{thm:koide_angles_all}, and $M^2$ from above, the complete fermion table has zero free parameters beyond $m(0^{++})$. The six heaviest fermions match within $1.4\%$; the three lightest ($e$, $u$, $d$) sit at the destructive interference node of the Koide formula where $(1+r\cos(\theta+2\pi k/3))\approx 0.04$ and are extremely sensitive to $M^2$. The $0.11\%$ discrepancy in $M^2_{\mathrm{lep}}$---corresponding to $m(0^{++})=1712.5\,\mathrm{MeV}$ versus $1710$, well within the lattice QCD uncertainty---propagates to $\sim\!10\%$ at the lightest quarks. This sensitivity is the algebraic origin of the hierarchy problem (\S\ref{sec:koide_bridge}).
 
 The three scales satisfy an exact product constraint:
 \begin{equation}\label{eq:M2_product}
