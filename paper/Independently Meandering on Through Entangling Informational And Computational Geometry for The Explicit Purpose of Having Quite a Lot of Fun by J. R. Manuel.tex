@@ -525,7 +525,7 @@ Dempster combination is multiplicative: $m_i(n)\propto m_i(0)\cdot e_i^n$. Ratio
 \section{Information Geometry}\label{sec:geometry}
 
 \begin{theorem}\label{thm:fubini}
-The measurement-domain state space is $\CP^3$ equipped with the Fubini--Study metric, which is the unique monotone Riemannian metric on the quantum state space under completely positive trace-preserving (CPTP) maps \cite{Petz1996}.
+The measurement-domain state space is $\CP^3$ equipped with the Fubini--Study metric. On the pure-state manifold $\CP^{d-1}$, all monotone Riemannian metrics under CPTP maps coincide with the Fubini--Study metric \cite{Petz1996}; the distinction among monotone metrics arises only on mixed states, which are not relevant here since $\CP^3$ consists entirely of pure states.
 \end{theorem}
 
 \begin{proof}
@@ -1262,6 +1262,10 @@ The full anti-holomorphic Jacobian $\dbar\Phi$ has the structure:
 When the floor is inactive, $\Phi=\mathrm{id}$ and $\dbar\Phi=0$ identically. (At the physical vacuum $K^*=7/30$, the floor is always active---Theorem~\ref{thm:enslaving}---so this case does not arise.)
 \end{proof}
 
+\begin{remark}[Regularity of the almost complex structure]\label{rem:mason_regularity}
+Mason's theorem~\cite{Mason2005} requires a $C^\infty$ almost complex structure $J$ on twistor space. The hard Born floor $|\theta|^2/|m|^2\geq 1/27$ involves absolute values and is therefore Lipschitz but not $C^1$. This regularity gap is addressed by Proposition~\ref{prop:popov_robust}: replacing the hard floor with a family of smooth approximations $\mathrm{floor}_\epsilon$ (e.g., $\max(x,c)\to(x+\sqrt{x^2+\epsilon^2})/2$), Mason's theorem applies to each smooth member, and the spectral gap $\Delta(\epsilon)$ converges to $\Delta(0)=1.2626$ as $\epsilon\to 0$. The physical content (non-zero $F^+$, mass gap, area law) is stable under this regularisation. The hard floor is the $\epsilon\to 0$ limit of a family of smooth theories, each of which satisfies Mason's hypotheses.
+\end{remark}
+
 \begin{remark}[Full Jacobian]\label{rem:fulljacobian}
 Equation~(\ref{eq:jacobian}) displays only the $\theta$-row of $\dbar\Phi$. The full $4\times 4$ Jacobian includes the singleton rows $\partial\Phi_{s_i}/\partial\bar{s}_j$, which are nonzero because the floor enforcement rescales singletons ($s_i\mapsto s_i\cdot\alpha$) to maintain $L_1=1$. At a representative floor-active state, the full Jacobian has all 16 entries nonzero except the $\bar{\theta}$ column. The singleton rows carry the non-abelian content: through the $\su(2)$ embedding~(\ref{eq:M}), they map to $\sigma_1,\sigma_2,\sigma_3$ components of $\delta M$, while the $\theta$-row maps to the identity $I$. Computational verification across 956 random floor-active states gives a non-abelian fraction (traceless component of $\delta M$ relative to total) of $0.558\pm 0.041$. This non-abelian content is what makes the kink genuinely non-abelian rather than a $\mathrm{U}(1)$ perturbation.
 \end{remark}
@@ -1585,7 +1589,7 @@ The argument uses two independent chains that converge to a single conclusion.
 
 \emph{Convergence:} Conformal gravity, linearised around any background, has two propagating sectors: a massless spin-$2$ graviton (positive norm) and a massive spin-$2$ ghost (negative norm). The ghost sector violates unitarity---its states have $\langle\psi|\psi\rangle<0$. Chain~B excludes such states: $\mathcal{H}$ is positive-definite.
 
-Therefore the ghost sector is absent. Maldacena~\cite{Maldacena2011} proves that conformal gravity restricted to the ghost-free sector is equivalent to Einstein gravity with cosmological constant $\Lambda$. Adamo--Mason~\cite{AdamoMason2014} establish the same equivalence in the twistor framework: the embedding of Einstein gravity into conformal gravity, when restricted to the unitarity-preserving sector, is a bijection.
+Therefore the ghost sector is absent. Maldacena~\cite{Maldacena2011} proves that conformal gravity restricted to the ghost-free sector is equivalent to Einstein gravity with cosmological constant $\Lambda$; his Neumann boundary conditions on the conformal boundary are equivalent, in the bulk QFT, to requiring positive-definite inner product on physical states---precisely OS2. Adamo--Mason~\cite{AdamoMason2014} establish the same equivalence in the twistor framework: the embedding of Einstein gravity into conformal gravity, when restricted to the unitarity-preserving sector, is a bijection.
 
 The logic is non-circular: Chain~A derives conformal gravity from geometry (Mason's theorem); Chain~B derives unitarity from algebra (DS structure). Neither chain references the other. Their intersection---conformal gravity in a unitary Hilbert space---is Einstein gravity.
 \end{proof}
@@ -3821,7 +3825,14 @@ At $H=3$: $Q=2/3$ and $\theta=2/9$.
 \end{theorem}
 
 \begin{proof}
-Substituting $K^*=(H^2-H+1)/(H(H^2+1))$ into~(\ref{eq:Q_from_Kstar}):
+The formula~(\ref{eq:Q_from_Kstar}) is a budget decomposition on $\Sym^2(\C^{H+1})$:
+\begin{itemize}[nosep]
+\item The total $L_1$ budget is $1$ (Theorem~\ref{thm:L1}).
+\item The structural filter removes $K^*$ (Theorem~\ref{thm:filter}).
+\item The trace direction in the $(H^2\!+\!1)$-dimensional $\Sym^2$ absorbs $1/(H^2\!+\!1)$: by Schur's lemma, any equivariant projection onto the trace of an irreducible representation of dimension $d$ has coefficient $1/d$, and $L_1$ normalisation fixes the trace to $1$, so the coefficient is $1/(H^2+1)$.
+\item The remainder $Q=1-K^*-1/(H^2+1)$ is the fraction available for $Z_3$ generation splitting.
+\end{itemize}
+Substituting $K^*=(H^2-H+1)/(H(H^2+1))$:
 \[
 Q = 1 - \frac{H^2-H+1}{H(H^2+1)} - \frac{1}{H^2+1}
 = \frac{H(H^2+1)-(H^2-H+1)-H}{H(H^2+1)}
@@ -3830,6 +3841,14 @@ Q = 1 - \frac{H^2-H+1}{H(H^2+1)} - \frac{1}{H^2+1}
 The numerator factors as $H^3-H^2+H-1=(H-1)(H^2+1)$, giving $Q=(H-1)/H$.
 Then $\theta=Q/H=(H-1)/H^2$.
 \end{proof}
+
+\begin{remark}[Why the budget remainder is the Koide ratio]\label{rem:Q_identification}
+The Koide parameterisation $m_k=M^2(1+r\cos(\theta+2\pi k/3))^2$ is the $Z_3$ Fourier decomposition of the mass function on three sections. $M$ is the $Z_3$-singlet (trace) component; $r$ is the $Z_3$-mode amplitude. Computing the Koide ratio directly:
+\[
+Q = \frac{\sum x_k}{(\sum\sqrt{x_k})^2} = \frac{3+\tfrac{3}{2}r^2}{9} = \frac{2+r^2}{6}.
+\]
+This $Q$ measures the fraction of the mass budget carried by the $Z_3$ mode (hierarchy) versus the singlet (shared scale). The budget decomposition in the proof above is the same decomposition on the same space: the $L_1$ budget splits into structurally absent ($K^*$), singlet ($1/(H^2+1)$), and $Z_3$ mode ($Q$). These are not two quantities that happen to agree---they are a single decomposition of $\Sym^2(\C^{H+1})$ described in two languages. The Koide functional measures the $Z_3$ fraction; the conservation law determines it.
+\end{remark}
 
 \begin{remark}[The role of $H(H^2+1)$]\label{rem:hE8}
 The denominator $H(H^2+1)=30$ of $K^*$ appears automatically in the proof. The fact that $30=h(E_8)$ (the Coxeter number of $E_8$, derived via the McKay correspondence in \S\ref{sec:ade}) is a property of where the framework sits in the ADE classification, not an external input.
@@ -3930,11 +3949,15 @@ where $C\in\{0,1\}$ is colour charge and $T_3\in\{0,\pm\tfrac{1}{2}\}$ is weak i
 \end{theorem}
 
 \begin{proof}
-The base ratio $Q=(H-1)/H$ is proved in Theorem~\ref{thm:koide_angle} from the conservation law alone---it assumes a colour-singlet with no isospin. The two correction terms follow from Schur's lemma applied to the groups the particle is charged under.
+The conservation law $K^*(H^2+1)-\eta H^2=1$ is linear in $K$. Corrections to the effective conflict from additional gauge structure are therefore additive corrections to $Q=1-K^*_{\mathrm{eff}}-1/(H^2+1)$.
 
-A quark transforms as the fundamental of $\SU(3)$. By Schur, it couples uniformly to all $\dim(\SU(3))=H^2-1=8$ generators with strength $1/(H^2-1)$---the same mechanism as the Weinberg angle (Proposition~\ref{prop:weinberg}) and the additivity theorem (Theorem~\ref{thm:additivity}). A lepton is a colour singlet ($C=0$) and receives no correction.
+\emph{Base ($C=0$, $T_3=0$):} For a colour-singlet with no isospin, $K^*_{\mathrm{eff}}=K^*$ and $Q=(H-1)/H$ (Theorem~\ref{thm:koide_angle}).
 
-The vacuum conflict $K^*$ splits between the self-dual and anti-self-dual chiralities. Phase washout gives $|F^+|=|F^-|$ at equilibrium (Proposition~\ref{prop:balance}), so each chirality carries $K^*/2$. Weak $\SU(2)$ couples to one chirality. The eigenvalue $T_3$ of the diagonal generator determines how a particle sits in the split: $T_3=+1/2$ (up-type) couples to one half, $T_3=-1/2$ (down-type) to the other, $T_3=0$ (lepton) sits at the symmetric point where the splitting cancels.
+\emph{Colour correction:} A colour-charged particle ($C=1$) transforms under $\SU(3)$, which has $\dim(\SU(3))=H^2-1=8$ generators. Each generator opens an additional channel for structural information, reducing the effective conflict. By Schur's lemma with $L_1$ trace normalisation (as in Theorem~\ref{thm:additivity}): each irreducible generator contributes $1/(H^2-1)$ of available channel capacity. This reduces $K^*_{\mathrm{eff}}$ by $C/(H^2-1)$, increasing $Q$ by $C/(H^2-1)$.
+
+\emph{Chirality correction:} Phase washout (Proposition~\ref{prop:balance}) splits the vacuum conflict equally: each chirality $F^\pm$ carries $K^*/2$. Weak $\SU(2)$ couples to one chirality. The isospin eigenvalue $T_3$ determines which half of the conflict is redirected into the particle's sector. Up-type ($T_3=+1/2$): the self-dual half is redirected, reducing effective conflict by $K^*/4$; down-type ($T_3=-1/2$): the anti-self-dual half, increasing it by $K^*/4$. Net correction to $Q$: $+T_3\cdot K^*/2$.
+
+Additivity follows from the linearity of the conservation law: each correction modifies $K^*_{\mathrm{eff}}$ independently, and $Q$ is linear in $K^*_{\mathrm{eff}}$.
 \end{proof}
 
 \begin{center}
@@ -4141,7 +4164,7 @@ The product constraint~(\ref{eq:product_scales}): $(11/60)(3/8)(40/3)=1320/1440=
 \end{proof}
 
 \begin{theorem}[Additivity of structural couplings]\label{thm:additivity}
-The Pauli embedding decomposes every interaction $ME$ into anticommutator and commutator: $ME=\frac{1}{2}\{M,E\}+\frac{1}{2}[M,E]$. These are trace-orthogonal ($\Tr(I\cdot\sigma_i)=0$), so any trace functional on $M$ decomposes additively over them. The anticommutator lives in $\Sym^2(\C^{H+1})$; the commutator in $\Lambda^2(\C^{H+1})$. The combination rule is holomorphic (Theorem~\ref{thm:ds_holo}) and counts complex dimensions: $\dim_\C\Sym^2(\C^4)=10$. The Born floor is real---it uses $|\theta|^2=\theta\bar\theta$ (Theorem~\ref{thm:nonholo})---and counts real dimensions: $\dim_\R\Lambda^2(\C^4)=12$. A colour-singlet couples uniformly to each structure with strength $1/d$ by Schur's lemma (the same mechanism as the Weinberg angle, Proposition~\ref{prop:weinberg}). Total:
+The Pauli embedding decomposes every interaction $ME$ into anticommutator and commutator: $ME=\frac{1}{2}\{M,E\}+\frac{1}{2}[M,E]$. These are trace-orthogonal ($\Tr(I\cdot\sigma_i)=0$), so any trace functional on $M$ decomposes additively over them. The anticommutator lives in $\Sym^2(\C^{H+1})$; the commutator in $\Lambda^2(\C^{H+1})$. The combination rule is holomorphic (Theorem~\ref{thm:ds_holo}) and counts complex dimensions: $\dim_\C\Sym^2(\C^4)=10$. The Born floor is real---it uses $|\theta|^2=\theta\bar\theta$ (Theorem~\ref{thm:nonholo})---and counts real dimensions: $\dim_\R\Lambda^2(\C^4)=12$. A colour-singlet couples uniformly to each irreducible structure with strength $1/d$: by Schur's lemma, any equivariant linear functional on a $d$-dimensional irreducible representation is $c\cdot\mathrm{tr}$; the $L_1$ normalisation (Theorem~\ref{thm:L1}) fixes $\mathrm{tr}=1$, so $c=1/d$. This is the same mechanism as the Weinberg angle (Proposition~\ref{prop:weinberg}). Total:
 \begin{equation}\label{eq:additivity_proof}
 \frac{1}{H^2+1}+\frac{1}{H(H+1)} = \frac{1}{10}+\frac{1}{12} = \frac{11}{60}.
 \end{equation}
@@ -4191,15 +4214,15 @@ Separately, taking $1/\alpha_\mathrm{GUT}=H(H^2-1)=24$ and $\ln(M_\mathrm{GUT}/M
 
 The identification $1/\alpha_\mathrm{GUT}=H(H^2-1)$ and the choice of $33$ for the logarithm are numerical observations, not derived from the DS dynamics. Equation~(\ref{eq:alpha_formula}) is a conjecture.
 
-The fine structure constant decomposes into three contributions:
-\begin{equation}\label{eq:alpha_decomp}
-\frac{1}{\alpha} = \underbrace{(H^4-H^2+1)}_{73\;=\;\Phi_6(H^2)} + \underbrace{(H+1)^3}_{64} + \underbrace{\frac{1}{H^3}}_{1/27}.
+The natural factorisation is $137=(H^2-1)(2H^2-1)+1=8\times 17+1$. The factor $H^2-1=8$ has a structural origin: it equals the total electromagnetic charge-squared sum over all Standard Model fermions, $\sum_f Q_f^2=H\bigl(H\cdot Q_u^2+H\cdot Q_d^2+Q_e^2\bigr)$ with $Q_u=(H\!+\!1)/(2H)$, $Q_d=-(H\!-\!1)/(2H)$, $Q_e=-1$, $H$ colours. The general expression evaluates to $H^2-H+2$, which equals $H^2-1$ if and only if $H=3$: the anomaly cancellation condition ($\sum Q^2=\dim(\su(H))$) is another $H=3$ characterisation. The factor $17=(H+1)^2+1$ is the fermion count per generation plus the identity, also forced by $(H-3)(H+1)=0$. The inter-formula identity linking $1/\alpha$ to the proton-electron ratio is exact:
+\begin{equation}\label{eq:alpha_mp_connection}
+\frac{m_p}{m_e} = \!\left(\frac{1}{\alpha}-1-\frac{1}{H^3}\right)\!\times\frac{H^3}{H-1} = 136\times\frac{27}{2} = 1836.
 \end{equation}
-The first term $\Phi_6(H^2)=H^4-H^2+1=73$ is the Higgs multiplier---the sixth cyclotomic polynomial evaluated at $H^2$, encoding the $Z_6=Z_3\times Z_2$ centre of $\SU(3)\times\SU(2)$. The second term $(H+1)^3=64$ is the cube of the mass-space dimension---the fermion sector. The third term $1/H^3$ is the Born floor---the vacuum. The decomposition holds at $H=3$ specifically: the condition
-\[
-(H^4-H^2+1)+(H+1)^3+\frac{1}{H^3}=(H^2-1)(2H^2-1)+1+\frac{1}{H^3}
-\]
-reduces to $H(H-3)(H+1)^2=0$, which factors as the self-consistency root $H=3$ multiplied by the fermion count $(H+1)^2=16$. The fine structure constant decomposes into Higgs $+$ fermions $+$ vacuum precisely when $H$ satisfies self-consistency and the fermion structure closes.
+Both formulas share the factor $2H^2-1=17$: $1/\alpha$ uses $(H^2-1)\times 17=136$ while $m_p/m_e$ uses $H^3(H+1)\times 17=1836$. The ratio $H^3(H+1)/(H^2-1)=H^3/(H-1)=27/2$ is the charm-to-strange mass ratio (Proposition~\ref{prop:quark_ratios}).
+
+An alternative decomposition $1/\alpha=\Phi_6(H^2)+(H+1)^3+1/H^3=73+64+1/27$ holds only at $H=3$: the identity $\Phi_6(H^2)+(H+1)^3=(H^2-1)(2H^2-1)+1$ factors as $H(H-3)(H+1)^2=0$.
+
+Both $1/\alpha$ and $m_p/m_e$ are \emph{observations}: the formulas are $H=3$-specific algebraic identities (both factor to zero under self-consistency), but neither has been derived from the DS dynamics. The deviation from experiment is $7.6\,\mathrm{ppm}$ for $1/\alpha$ and $83\,\mathrm{ppm}$ for $m_p/m_e$---close, but not exact.
 \end{remark}
 
 \begin{proposition}[The action partition system]\label{prop:action_partition}
@@ -4216,7 +4239,17 @@ Both are algebraic functions of $H=3$ and $K^*=7/30$. With $m(0^{++})=1710\,\mat
 \end{proposition}
 
 \begin{proof}
-Equation~(\ref{eq:ew_sum}): $S+1/K^*=H^3/K^*+1/K^*=(H^3+1)/K^*=28\times 30/7=120$. Equation~(\ref{eq:ew_diff}): the Higgs is a fluctuation of the substrate $\theta$, which couples to all $H^3-1=26$ non-substrate states on the Born surface; the $W$ is a broken gauge boson in the section sector. The gap between the scalar and gauge multipliers equals the enslaving constant because the Higgs ``sees'' the full $26$-dimensional singleton space while the $W$ does not---the $W$ is a section-to-section transition that bypasses the substrate entirely. Solving: $m_H=(120+26)/2=73$, $m_W=(120-26)/2=47$.
+Mass is the angular pressure differential between a state and the Born floor, measured in units of $m(0^{++})$. The instanton action $S+1/K^*=(H^3+1)/K^*=120$ is the total angular pressure capacity of the vacuum---the maximum pressure the Born structure can sustain before tunnelling.
+
+Electroweak symmetry breaking does not create pressure; it partitions the existing capacity between two massive modes. The total is conserved:
+\[
+m_H+m_W = S+\frac{1}{K^*} = 120.
+\]
+The asymmetry between the two modes arises from their coupling topology. The Higgs (a substrate fluctuation, $\delta\theta$) pushes against the Born floor from the substrate side, coupling to all $H^3-1=26$ non-substrate states on the Born surface (Theorem~\ref{thm:enslaving}). The $W$ boson (a section-to-section transition, $\delta s_i\to\delta s_j$) pushes against the floor from the section side only, with no substrate coupling. The Higgs therefore sustains $26$ more units of angular pressure than the $W$:
+\[
+m_H-m_W = H^3-1 = 26.
+\]
+Solving: $m_H=(120+26)/2=73$, $m_W=(120-26)/2=47$.
 \end{proof}
 
 \begin{remark}[Electroweak scale and VEV]\label{rem:higgs}
