@@ -2708,6 +2708,9 @@ Vacuum energy density & $\rho_\Lambda=\mathcal{I}\times(40\,m_0/9)^4$; observed 
 String dimension factorisation & $(H^3-1)-(H^2+1)=(H+1)^2\Leftrightarrow(H-3)(H^2+H+1)=0$ & exact, unique positive root $H=3$ & A \\
 $\theta$ is $\varepsilon$-spinor & $\Lambda^2(\C^2)\cong\C$ carries $\varepsilon_{AB}$; $\mathrm{Sym}^2(\C^2)\cong\mathfrak{sl}(2,\C)$ & exact (standard algebra) & A \\
 Spinor vacuum ratio & $s_1^*/\theta^*=\sqrt{H^3-1}=\sqrt{26}$ & $10^{-5}$ & A$^*$ \\
+Colour-difference eigenvalue & $\lambda_{S_-}=\alpha_{\mathrm{floor}}\cdot(e_2^*+\phi^*)/(1-K^*)=0.28131$ & 48 sig.\ fig.\ (Prop.~\ref{prop:colour_diff}) & A$^*$ \\
+$A_2$ sector decomposition & $\lambda_0,\lambda_1\in V_-$; $\lambda_2,\lambda_3\in V_+$ (Remark~\ref{rem:A2_sectors}) & exact (80-digit verification) & A \\
+$\theta$ compression ratio & $\theta_{\mathrm{DS}}/\theta^*\approx 2/(H(H\!+\!1))=1/6$ & $0.34\%$ (Remark~\ref{rem:vacuum_depth}) & B$_1$ \\
 \midrule
 \multicolumn{4}{l}{\textit{Class B: Numerical matches (see Class column for precision tier)}} \\[3pt]
 Proton/W mass ratio & $m_p/M_W = e^{-405/91}$ & $81\,\mathrm{ppm}$ at PDG $M_W$; $M_W$-limited & B$_1$ \\
@@ -3329,7 +3332,7 @@ The automorphism $\sigma$ acts on the $r$-fold product of DS state spaces by per
 
 The coupled Jacobian $J$ commutes with the permutation representation $\pi(\sigma)$. Therefore $J$ decomposes into $\sigma$-eigenspaces: the symmetric sector $V_+$ (eigenvalue $+1$) and the antisymmetric sectors $V_-$ (eigenvalues $\neq 1$). The projection $P_+JP_+$ is exactly the Jacobian of the folded system $\Gamma$, because folding identifies the $\sigma$-orbits of nodes.
 
-It remains to show that $\rho(J)=\rho(P_+JP_+)$, i.e., the spectral radius lies in the symmetric sector. In the antisymmetric sector $V_-$, perturbations of $\sigma$-related nodes have opposite signs. At the junction node (which connects the $\sigma$-orbit to the rest of the diagram), the contributions from the orbit members cancel: if $\delta m_{\sigma(i)}=-\delta m_i$, then $\sum_{j\in\mathrm{orbit}}J_{\mathrm{cross}}\,\delta m_j=0$. The junction is therefore decoupled from the orbit in $V_-$, and the antisymmetric eigenvalues are bounded by the uncoupled single-site spectral radius $\rho_{\mathrm{single}}=0.2829$. In the symmetric sector $V_+$, the orbit contributions add constructively, giving the full coupled spectral radius $\rho_{\mathrm{coupled}}\gg\rho_{\mathrm{single}}$. Since coupling always increases $\rho$ (verified for all $36$ groups: $\rho_{\mathrm{coupled}}>\rho_{\mathrm{single}}$ whenever the coupling is nonzero), the spectral radius lies in $V_+$. Verified numerically: for all $10$ testable folding pairs (Table~\ref{tab:folding}), the symmetric projection eigenvalues match the folded algebra eigenvalues to $10^{-9}$.
+It remains to show that $\rho(J)=\rho(P_+JP_+)$, i.e., the spectral radius lies in the symmetric sector. In the antisymmetric sector $V_-$, perturbations of $\sigma$-related nodes have opposite signs. At the junction node (which connects the $\sigma$-orbit to the rest of the diagram---this argument requires at least one node fixed by $\sigma$, which holds for all ten standard Dynkin folding pairs but not for $A_2$ under its own node swap; see Remark~\ref{rem:A2_sectors}), the contributions from the orbit members cancel: if $\delta m_{\sigma(i)}=-\delta m_i$, then $\sum_{j\in\mathrm{orbit}}J_{\mathrm{cross}}\,\delta m_j=0$. The junction is therefore decoupled from the orbit in $V_-$, and the antisymmetric eigenvalues are bounded by the uncoupled single-site spectral radius $\rho_{\mathrm{single}}=0.2829$. In the symmetric sector $V_+$, the orbit contributions add constructively, giving the full coupled spectral radius $\rho_{\mathrm{coupled}}\gg\rho_{\mathrm{single}}$. Since coupling always increases $\rho$ (verified for all $36$ groups: $\rho_{\mathrm{coupled}}>\rho_{\mathrm{single}}$ whenever the coupling is nonzero), the spectral radius lies in $V_+$. Verified numerically: for all $10$ testable folding pairs (Table~\ref{tab:folding}), the symmetric projection eigenvalues match the folded algebra eigenvalues to $10^{-9}$.
 \end{proof}
 
 \begin{table}[h]
@@ -3650,6 +3653,43 @@ The Born probability is unchanged at first order under perturbation in the quark
 \begin{proof}
 Born $=|\theta|^2/(|\theta|^2+|s|^2)$. Under $v_1$: $\delta\theta=0$ (numerator unchanged at all orders) and $\delta(|s|^2)=2(s_2\delta s_2+s_3\delta s_3)=2(s_2(-\varepsilon/\sqrt{2})+s_3(\varepsilon/\sqrt{2}))=0$ since $s_2=s_3$ at equilibrium (the two terms cancel). The denominator changes only at order $\varepsilon^2$: $\delta(|s|^2)=|\varepsilon v_1|^2=\varepsilon^2$. Hence $|\Delta\mathrm{Born}|=O(\varepsilon^2)$.
 \end{proof}
+
+\begin{proposition}[Colour-difference eigenvalue]\label{prop:colour_diff}
+At the single-site equilibrium, the eigenvalue of the transfer operator $\Phi=\mathrm{floor}\circ\mathrm{DS}$ in the colour-difference direction $v_1=(0,-1,+1,0)/\sqrt{2}$ decomposes exactly as
+\begin{equation}\label{eq:colour_diff}
+\lambda_{S_-} = \underbrace{\frac{1-\theta^*}{S_{\mathrm{DS}}}}_{\text{floor compression}} \;\times\; \underbrace{\frac{e_2^*+\phi^*}{1-K^*}}_{\text{DS combination}},
+\end{equation}
+where $S_{\mathrm{DS}}=\sum_{i=1}^3 s_{i,\mathrm{DS}}$ is the singleton sum of the DS combination output (before floor enforcement). Numerically $\lambda_{S_-}=0.8679\times 0.3241=0.28131$ (verified to $48$ significant digits by comparison with finite-difference Jacobian).
+\end{proposition}
+
+\begin{proof}
+Under the perturbation $\delta s_2=+\varepsilon$, $\delta s_3=-\varepsilon$ (pure $S_-$ mode):
+
+\emph{DS combination.} The pre-normalised outputs are $\delta s_{2,\mathrm{pre}}=\varepsilon(e_2^*+\phi^*)$ and $\delta s_{3,\mathrm{pre}}=-\varepsilon(e_2^*+\phi^*)$, since $s_{2,\mathrm{pre}}=s_2 e_2+s_2\phi+\theta e_2$. The sum $\delta S_{\mathrm{pre}}=0$ and $\delta\theta_{\mathrm{pre}}=0$, so the conflict $K$ and the normalisation denominator $1-K$ are unperturbed. After normalisation: $\delta s_{2,\mathrm{DS}}=\varepsilon(e_2^*+\phi^*)/(1-K^*)$.
+
+\emph{Floor enforcement.} By Proposition~\ref{prop:quark_floor}, $\delta S=\delta S_q=0$ at first order. The Born probability is unchanged, the floor's quadratic solver returns the same $t=\theta^*$, and the rescaling factor $\alpha=(1-\theta^*)/S_{\mathrm{DS}}$ is unchanged. The floor output perturbation is $\delta s_{2,\mathrm{final}}=\alpha\cdot\delta s_{2,\mathrm{DS}}$.
+
+Combining: $\lambda_{S_-}=\delta s_{2,\mathrm{final}}/\varepsilon=\alpha\cdot(e_2^*+\phi^*)/(1-K^*)$, which is~(\ref{eq:colour_diff}).
+\end{proof}
+
+\begin{remark}[$A_2$ sector decomposition]\label{rem:A2_sectors}
+The $8\times 8$ coupled $A_2$ Jacobian decomposes under the $\Z_2$ node-swap symmetry into two $4\times 4$ blocks: the symmetric sector $V_+$ (nodes in phase) and the antisymmetric sector $V_-$ (nodes out of phase). Each block inherits the $s_2\leftrightarrow s_3$ decomposition into a $3\times 3$ radial block and a $1\times 1$ angular block (Proposition~\ref{prop:colour_diff}).
+
+The four physical eigenvalues split:
+\begin{center}
+\begin{tabular}{lll}
+\hline
+Sector & Eigenvalues & Physical content \\
+\hline
+Antisymmetric ($V_-$) & $\lambda_0=0.5022$, $\lambda_1=0.4745$ & coloured ($\mathbf{3}\oplus\bar{\mathbf{3}}$) \\
+Symmetric ($V_+$) & $\lambda_2=0.3527$, $\lambda_3=0.3344$ & colour-singlet \\
+\hline
+\end{tabular}
+\end{center}
+The spectral radius lies in $V_-$, not $V_+$. This is specific to $A_2$: the $\Z_2$ orbit exhausts the diagram (no fixed node), so the junction-node cancellation argument of Theorem~\ref{thm:folding_invariance} does not apply. Antisymmetric perturbations (nodes out of phase) enhance the evidence coupling---if $\delta m_2=-\delta m_1$, the evidence for node~$1$ is $e^*-g(\delta m_2-0)=e^*+g\,\delta m_1$, a constructive feedback---producing larger eigenvalues than the symmetric sector.
+
+The single-site Jacobian has two significant eigenvalues: $\lambda_{\mathrm{rad}}=0.2829$ (radial, from the $3\times 3$ block) and $\lambda_{S_-}=0.2813$ (angular, from Proposition~\ref{prop:colour_diff}). Under $A_2$ coupling, each splits into an enhanced antisymmetric mode and a suppressed symmetric mode, producing the four coupled eigenvalues. The splitting magnitude is controlled by $K^*=7/30$: stronger equilibrium conflict produces wider splitting.
+\end{remark}
 
 \begin{corollary}[Eigenvalue mode classification]\label{cor:mode_classification}
 The four nontrivial $A_2$ Jacobian eigenvalues split into two radial (floor-active, curvature-sourcing) modes and two angular (holomorphic, floor-invisible) modes. Combined with the node symmetry (Lie theory) and light-point spin assignment (Theorem~\ref{thm:lightpoint_decomp}), every eigenvalue carries a unique set of spatial quantum numbers:
@@ -4708,7 +4748,7 @@ The following results were obtained by direct numerical computation (Python/NumP
 
 \item \textbf{Chirality balance} (Proposition~\ref{prop:balance}). Proved analytically via the reality structure: phase washout drives $M\in\GL(2,\R)$ at equilibrium, giving $\sigma$-invariant bundle and $|F^+|=|F^-|$. A previous lattice computation using finite differences of $M^{-1}\partial_\mu M$ was measuring the Maurer--Cartan form (identically flat); the reported ratio $1.006\pm 0.082$ was numerical noise. Direct verification requires the Ward-reconstructed connection (Remark~\ref{rem:chirality_verified}).
 
-\item \textbf{Floor activity at the fixed point} (Remark~\ref{rem:floor_active}). The DS step contracts $\theta$ via $\theta_{\mathrm{new}}=\theta\phi/(1-K)$, driving $\mathrm{Born}(\Theta)$ far below $1/27$ even when the input state $m^*$ has $\mathrm{Born}=1/27$ exactly. The floor therefore fires at every step, including at equilibrium. The anti-holomorphic Jacobian $\|\dbar\Phi\|_F=1.12$ at the fixed point, with $\mathrm{SO}(4)$ decomposition $23\%$ $(1,1)$, $26\%$ $(3,1)\oplus(1,3)$, $51\%$ $(3,3)$. Mason's framework applies uniformly---at equilibrium, during transients, everywhere.
+\item \textbf{Floor activity at the fixed point} (Remark~\ref{rem:floor_active}, Remark~\ref{rem:vacuum_depth}). The DS step contracts $\theta$ via $\theta_{\mathrm{new}}=\theta\phi/(1-K)$, driving $\mathrm{Born}(\Theta)$ to $0.000809\approx 1/1236$ (the vacuum depth, Remark~\ref{rem:vacuum_depth}), far below $1/27$, even when the input state $m^*$ has $\mathrm{Born}=1/27$ exactly. The floor therefore fires at every step, including at equilibrium. The anti-holomorphic Jacobian $\|\dbar\Phi\|_F=1.12$ at the fixed point, with $\mathrm{SO}(4)$ decomposition $23\%$ $(1,1)$, $26\%$ $(3,1)\oplus(1,3)$, $51\%$ $(3,3)$. Mason's framework applies uniformly---at equilibrium, during transients, everywhere.
 
 \item \textbf{Rank-2 protection of $\det(M)\neq 0$} (Gap~4). On the $\det=0$ surface, the $\phi^2$ term in $Q(m'')$ vanishes identically, yielding a Lorentzian form in shifted evidence coordinates~\eqref{eq:detonsurface}. Rank-2 coupled dynamics ($3000$ trials $\times$ $200$ steps): evidence light cone residual exceeds $|\det|$ by factor $\geq 12$ at all near-$\det=0$ states. Rank-1 (separable) coupling: $|\det|$ reaches $10^{-152}$. Transverse instability: $\lambda\geq 3.17$ ($68{,}910$ trajectory measurements). In $10^6$ dynamic steps, $|\det(M)|_{\min}=0.00084$.
 
@@ -4738,7 +4778,7 @@ The third eigenvalue $\lambda_2=0$ exactly, a structural consequence of the $m_2
 \lambda_1 &= 0.28131300001289042102925875332808412959650\ldots\\
 \det(I-J) &= 0.51536301172157731589181566567641757224655\ldots\\
 \det(I-J)^{-1/2} &= 1.3929751768936092965\ldots\\
-\Lambda &= 7.76\times 10^{-51},\quad \log_{10}\Lambda=-50.110\ldots
+\mathcal{I} &= 7.76\times 10^{-51},\quad \log_{10}\mathcal{I}=-50.110\ldots
 \end{align*}
 \emph{PSLQ history and the degree-$19$ artefact.} An initial PSLQ search at $300$-digit precision with coefficient bound $10^{15}$ reported a degree-$19$ polynomial for $\lambda_0$, verified to $10^{-227}$ at that precision. However, an independent $500$-digit computation using the exact analytical Jacobian (Secant method, no finite differences) showed $|P_{19}(\lambda_0)|\approx 1.8\times 10^{-60}$---definitively nonzero. The polynomial was a PSLQ false positive: the largest coefficient ($\approx 1.09\times 10^{12}$) matched the Minkowski lattice bound $10^{P/N}$ for $\sim\!250$ effective digits and $20$ terms. This is the classic forensic signature of precision overfitting. At $500$ digits, PSLQ finds no minimal polynomial for $\lambda_0$, $\mathrm{Tr}(J)$, or the cofactor sum up to degree $30$. The true algebraic degree exceeds $30$ (and likely exceeds $80$, from the $\sqrt{26R}$ floor composition with degree-$24$ algebra). $\det(I-J)$ has no PSLQ relation at degree $\leq 80$. The spectral gap $\Delta=1.2626$ and all physical predictions are completely independent of the algebraic degree question.
 
