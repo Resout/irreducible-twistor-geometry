@@ -1592,12 +1592,38 @@ The logic is non-circular: Chain~A derives conformal gravity from geometry (Maso
 
 \begin{remark}[Cosmological constant]\label{rem:cc}
 The Maldacena reduction gives Einstein gravity with $\Lambda\neq 0$. In the DS framework, $\Lambda$ is computed by the standard one-loop instanton formula applied to the Born floor tunnelling amplitude. The instanton action is $S=H^3/K^*=810/7$ (Section~\ref{sec:hierarchy}). The fluctuation prefactor comes from the $3\times 3$ projected Jacobian $J$ of the transfer operator $\Phi=\mathrm{floor}\circ\mathrm{DS}$ at the $K^*=7/30$ equilibrium, restricted to the tangent space of the $L^1=1$ constraint surface. The third eigenvalue of $J$ vanishes identically ($\lambda_2=0$, a structural consequence of the conservation law), so
-\begin{equation}\label{eq:Lambda}
-\Lambda=\det(I-J)^{-1/2}\,e^{-S}=(1-\lambda_0)^{-1/2}(1-\lambda_1)^{-1/2}\,e^{-810/7},
+\begin{equation}\label{eq:instanton}
+\mathcal{I}=\det(I-J)^{-1/2}\,e^{-S}=(1-\lambda_0)^{-1/2}(1-\lambda_1)^{-1/2}\,e^{-810/7},
 \end{equation}
-where $\lambda_0=0.28291\ldots$, $\lambda_1=0.28131\ldots$ are algebraic numbers over $\mathbb{Q}$ determined by six constraint equations (L$^1$ normalisation, Born floor, $K^*=7/30$, fixed-point ratio preservation) with zero free parameters. The prefactor $\det(I-J)^{-1/2}=1.39298\ldots$ is known to $50$ significant figures via analytical Jacobian (chain rule through floor and DS maps, cross-validated against finite differences to $10^{-41}$); numerically $\Lambda\approx 7.76\times 10^{-51}$, $\log_{10}\Lambda=-50.11$. The sign is positive ($\Lambda>0$).
+where $\lambda_0=0.28291\ldots$, $\lambda_1=0.28131\ldots$ are algebraic numbers over $\mathbb{Q}$ determined by six constraint equations (L$^1$ normalisation, Born floor, $K^*=7/30$, fixed-point ratio preservation) with zero free parameters. The prefactor $\det(I-J)^{-1/2}=1.39298\ldots$ is known to $50$ significant figures via analytical Jacobian (chain rule through floor and DS maps, cross-validated against finite differences to $10^{-41}$); numerically $\mathcal{I}\approx 7.76\times 10^{-51}$, $\log_{10}\mathcal{I}=-50.11$. The sign is positive ($\Lambda>0$).
 
-The algebraic structure is fully determined: the equilibrium evidence parameter satisfies an irreducible degree-$24$ polynomial over $\mathbb{Q}$ (degree~$12$ in the squared variable, equivalently degree~$12$ over $\mathbb{Q}(\sqrt{3})$), obtained by Gr\"obner basis elimination of the five polynomial constraint equations. The eigenvalues $\lambda_0,\lambda_1$ of the projected Jacobian are algebraic over $\mathbb{Q}$ with high degree ($>30$; PSLQ at $500$-digit precision via exact analytical Jacobian finds no relation up to degree~$30$). The high degree is a structural consequence of the $\sqrt{26R}$ in the floor map composing with the degree-$24$ fixed-point algebra. A previously reported degree-$19$ candidate for $\lambda_0$'s minimal polynomial was a PSLQ artefact (refuted at $500$ digits: $|P_{19}(\lambda_0)|\approx 10^{-60}$). The eigenvalues $\lambda_0$ and $\lambda_1$ have distinct minimal polynomials (neither is a root of the other's). The prefactor $\det(I-J)=(1-\lambda_0)(1-\lambda_1)$ has algebraic degree exceeding $80$. $\Lambda$ is Class~A$^*$: determined with zero free parameters, algebraic over~$\mathbb{Q}$, computed to $50$ significant figures, but with minimal polynomial not yet exhibited.
+\emph{The physical identification.} The instanton amplitude $\mathcal{I}$ is a dimensionless tunnelling suppression factor. To obtain the vacuum energy density, it must be anchored to a physical energy scale. The spinor $S=\C^2$ underlying irreducibility has $\dim_\R(S)=H+1=4$ real dimensions and $\dim(\mathrm{Sym}^2(\C^{H+1}))=H^2+1=10$ effective DS channels ($H^2=9$ learning channels plus $1$ substrate). The vacuum scale is the glueball mass expanded by the spinor's real extent and inflated by the substrate inclusion:
+\begin{equation}\label{eq:M_vac}
+M_{\mathrm{vac}} = \frac{(H^2+1)(H+1)}{H^2}\,m(0^{++}) = \frac{40}{9}\,m(0^{++}),
+\end{equation}
+which equals the up-quark Koide scale $M^2_{\mathrm{up}}/m_0=(H^2+1)(H+1)/H=40/3$ (Proposition~\ref{prop:down_quadratic}, equation~\ref{eq:product_scales}) divided by $H$---the average over $H$ generations. The cosmological constant is
+\begin{equation}\label{eq:Lambda}
+\rho_\Lambda = \mathcal{I}\times M_{\mathrm{vac}}^4 = \det(I\!-\!J)^{-1/2}\,e^{-810/7}\times\!\left(\frac{40}{9}\,m(0^{++})\right)^{\!4}.
+\end{equation}
+Numerically, with $m(0^{++})=1712.0\pm 0.3\,\mathrm{MeV}$ (reverse Koide, Corollary~\ref{cor:glueball_lepton}):
+\[
+\rho_\Lambda = 2.59\times 10^{-47}\,\mathrm{GeV}^4.
+\]
+Planck 2018: $\rho_\Lambda^{\mathrm{obs}}=2.52\times 10^{-47}\,\mathrm{GeV}^4$ ($2.7\%$ discrepancy, within the $12\%$ band from lattice glueball uncertainty $m(0^{++})=1710\pm 50\,\mathrm{MeV}$; the $m(0^{++})$ that makes the formula exact is $1700\,\mathrm{MeV}$, comfortably within $1\sigma$). Equivalently, $\rho_\Lambda/M_{\mathrm{Pl}}^4\approx 1.17\times 10^{-123}$. The $73$-order gap between $\mathcal{I}\approx 10^{-50}$ and $\rho_\Lambda/M_{\mathrm{Pl}}^4\approx 10^{-123}$ equals $4\log_{10}(M_{\mathrm{Pl}}/M_{\mathrm{vac}})=72.8\approx\Phi_6(H)=H^4-H^2+1=73$ ($0.24\%$): the hierarchy gap IS the Higgs multiplier.
+
+\emph{Self-correction.} An earlier version of this paper identified $\mathcal{I}$ directly with $\rho_\Lambda/M_{\mathrm{Pl}}^4\approx 10^{-50}$. This was a $73$-order-of-magnitude unit error: a dimensionless tunnelling amplitude cannot equal a dimensionful density ratio without specifying the native energy anchor. The Planck mass involves Newton's constant $G$, a scale the framework does not natively access. The correct anchor is $M_{\mathrm{vac}}=(40/9)\,m(0^{++})$, derived from the spinor structure of irreducibility.
+
+The algebraic structure is fully determined: the equilibrium evidence parameter satisfies an irreducible degree-$24$ polynomial over $\mathbb{Q}$ (degree~$12$ in the squared variable, equivalently degree~$12$ over $\mathbb{Q}(\sqrt{3})$), obtained by Gr\"obner basis elimination of the five polynomial constraint equations. The eigenvalues $\lambda_0,\lambda_1$ of the projected Jacobian are algebraic over $\mathbb{Q}$ with high degree ($>30$; PSLQ at $500$-digit precision via exact analytical Jacobian finds no relation up to degree~$30$). The high degree is a structural consequence of the $\sqrt{26R}$ in the floor map composing with the degree-$24$ fixed-point algebra. A previously reported degree-$19$ candidate for $\lambda_0$'s minimal polynomial was a PSLQ artefact (refuted at $500$ digits: $|P_{19}(\lambda_0)|\approx 10^{-60}$). The eigenvalues $\lambda_0$ and $\lambda_1$ have distinct minimal polynomials (neither is a root of the other's). The prefactor $\det(I-J)=(1-\lambda_0)(1-\lambda_1)$ has algebraic degree exceeding $80$. $\mathcal{I}$ is Class~A$^*$: determined with zero free parameters, algebraic over~$\mathbb{Q}$, computed to $50$ significant figures, but with minimal polynomial not yet exhibited.
+\end{remark}
+
+\begin{remark}[The vacuum depth]\label{rem:vacuum_depth}
+At the fixed point $m^*=\Phi(m^*)$, the DS combination (before floor enforcement) produces an intermediate state $m_{\mathrm{DS}}=\mathrm{DS}(m^*,e^*)$ with Born probability
+\[
+\mathrm{Born}(m_{\mathrm{DS}})=\frac{\theta_{\mathrm{DS}}^2}{\|m_{\mathrm{DS}}\|^2}\approx 0.000809,
+\]
+where $\theta_{\mathrm{DS}}=\theta^*\phi^*/(1-K^*)$ and $\|m_{\mathrm{DS}}\|^2$ is determined by the equilibrium. The floor then restores $\mathrm{Born}=1/H^3$. This is not a transient: it is a structural property of the fixed point. The DS combination naturally drives the substrate toward annihilation ($\theta\to 0$, the system approaching pure distinction); the floor's perpetual restoration of irreducibility is the vacuum's self-consistency.
+
+The compression ratio $\theta_{\mathrm{DS}}/\theta^*=\phi^*/(1-K^*)\approx 2/(H(H\!+\!1))=1/6$ ($0.34\%$): DS combination compresses the substrate by two over the total gauge generator count per step.
 \end{remark}
 
 \begin{remark}[Weyl tensor at equilibrium]\label{rem:weyl}
@@ -2524,14 +2550,14 @@ Measured: $\alpha'=0.88\,\mathrm{GeV}^{-2}$ ($0.2\%$). The physical QCD string t
 
 The instanton action $S = H^3/K^* = 27/(7/30) = 810/7 \approx 115.7$. The sum $S + 1/K^* = 810/7 + 30/7 = 840/7 = 120 = 5!$. This is $|\mathrm{Aut}(\CP^4)| = |S_5|$, the automorphism group of the projective space one dimension above twistor space. The total action budget of the framework equals the symmetry of its one-step extension.
 
-The hierarchy tower: $\Lambda = g \cdot e^{-S/d}$ where $g = K^* \cdot (1-K^*) = 7/30 \times 23/30 = 161/900$ and $d$ is the dimension of the representation:
+The hierarchy tower: each ratio takes the form $g \cdot e^{-S/d}$ where $g = K^* \cdot (1-K^*) = 7/30 \times 23/30 = 161/900$ and $d$ is the dimension of the representation. The $d=1$ entry uses $M_{\mathrm{vac}}=(40/9)\,m(0^{++})$ as the native energy anchor (Remark~\ref{rem:cc}):
 
 \begin{center}
 \begin{tabular}{lccl}
 \toprule
 Ratio & $d$ & $e^{-S/d}$ & Physical scale \\
 \midrule
-$\Lambda_{\mathrm{CC}}/M_{\mathrm{Pl}}^4$ & 1 (trivial) & $10^{-50.3}$ & Cosmological constant \\
+$\rho_\Lambda/M_{\mathrm{vac}}^4$ & 1 (trivial) & $10^{-50.1}$ & Vacuum instanton suppression \\
 $\theta_{\mathrm{QCD}}$ & 5 (triv sector) & $10^{-10.0}$ & Strong CP ($< 10^{-10}$) \\
 $m_e/m_W$ & 10 (standard) & $10^{-5.0}$ & Electron/W mass \\
 QCD/$M_W$ & 16 (full) & $10^{-3.1}$ & QCD scale \\
@@ -2677,7 +2703,8 @@ Transfer eigenvalue $\lambda_0$ & $0.28291$ (50 sig.~fig.) & algebraic over $\ma
 Spectral gap $\Delta=-\ln\lambda_0$ & $1.2626$ (50 sig.~fig.) & transcendental if $\lambda_0$ algebraic (Lindemann--Weierstrass) & A$^*$ \\
 Frobenius distance identity & $K=\frac{1}{2}\|M-E\|_F^2+\frac{1}{2}K_{\mathrm{self}}(m)+\frac{1}{2}K_{\mathrm{self}}(e)-(\theta-\phi)^2$ & exact (algebraic identity) & A \\
 Commutator content & $\mathcal{C}\cdot\det(M^*)^2=8332/625$ & exact (Pauli commutator algebra $+$ Born floor) & A \\
-Cosmological constant & $\Lambda = \det(I-J)^{-1/2}e^{-810/7} \approx 7.76\times 10^{-51}$ & prefactor to 50 sig.\ fig.; $\det(I-J)$ alg.\ degree $>80$ over $\mathbb{Q}$ & A$^*$ \\
+Instanton amplitude & $\mathcal{I} = \det(I-J)^{-1/2}e^{-810/7} \approx 7.76\times 10^{-51}$ & prefactor to 50 sig.\ fig.; $\det(I-J)$ alg.\ degree $>80$ over $\mathbb{Q}$ & A$^*$ \\
+Vacuum energy density & $\rho_\Lambda=\mathcal{I}\times(40\,m_0/9)^4$; observed $2.52\times 10^{-47}\,\mathrm{GeV}^4$ & $2.7\%$ (within lattice $m_0$ uncertainty) & B$_1$ \\
 String dimension factorisation & $(H^3-1)-(H^2+1)=(H+1)^2\Leftrightarrow(H-3)(H^2+H+1)=0$ & exact, unique positive root $H=3$ & A \\
 $\theta$ is $\varepsilon$-spinor & $\Lambda^2(\C^2)\cong\C$ carries $\varepsilon_{AB}$; $\mathrm{Sym}^2(\C^2)\cong\mathfrak{sl}(2,\C)$ & exact (standard algebra) & A \\
 Spinor vacuum ratio & $s_1^*/\theta^*=\sqrt{H^3-1}=\sqrt{26}$ & $10^{-5}$ & A$^*$ \\
@@ -2820,7 +2847,7 @@ $m(\Sigma_c)-m(\Lambda_c)$ & $m_0/\Phi_4 = 171\,\mathrm{MeV}$ & $1.2\%$ & B$_2$ 
 $(B^*\!-\!B)/(D^*\!-\!D)$ & $m_c/m_b=H/\Phi_4=3/10$ & $3.3\%$ & B$_2$ \\
 $N_\mathrm{stable}$ & $\Phi_2^4-\Phi_1=254$ & exact? & B$_3$ \\
 \midrule
-Hierarchy: $\Lambda_{\mathrm{CC}}$ & $e^{-S}$ vs $10^{-50.3}$ & order of magnitude & B$_3$ \\
+Hierarchy: $\rho_\Lambda/M_{\mathrm{vac}}^4$ & $\mathcal{I}=\det(I\!-\!J)^{-1/2}e^{-S}$ vs observed & $2.7\%$ (lattice-limited) & B$_1$ \\
 Hierarchy: $\theta_{\mathrm{QCD}}$ & $e^{-S/5}$ vs $< 10^{-10}$ & order of magnitude & B$_3$ \\
 Hierarchy: $m_e/m_W$ & $e^{-S/10}$ vs $10^{-5.0}$ & order of magnitude & B$_3$ \\
 Hierarchy: QCD/$M_W$ & $e^{-S/16}$ vs $10^{-3.1}$ & order of magnitude & B$_3$ \\
@@ -2829,7 +2856,7 @@ Hierarchy: $\alpha_{\mathrm{EM}}$ & $e^{-S/24}$ vs $10^{-2.1}$ & order of magnit
 
 \bigskip
 
-Class~A$^*$ denotes quantities that are fully determined (zero free parameters, computed to $50$ significant figures from six constraint equations at $H=3$ with $K^*=7/30$ and Born floor $1/27$) and algebraic over $\mathbb{Q}$, but whose minimal polynomial has not been exhibited. The A$^*$ quantities are $\lambda_0$ (algebraic degree $>30$), $\Delta=-\ln\lambda_0$ (transcendental if $\lambda_0$ algebraic), and $\Lambda=\det(I-J)^{-1/2}\,e^{-810/7}$ (algebraic degree exceeding $80$). The high degrees are a structural consequence of the $\sqrt{26R}$ in the floor map composing with the degree-$24$ fixed-point algebra. A previously reported degree-$19$ PSLQ polynomial for $\lambda_0$ was refuted at $500$-digit precision ($|P_{19}(\lambda_0)|\approx 10^{-60}$; see \S\ref{sec:supplement}).
+Class~A$^*$ denotes quantities that are fully determined (zero free parameters, computed to $50$ significant figures from six constraint equations at $H=3$ with $K^*=7/30$ and Born floor $1/27$) and algebraic over $\mathbb{Q}$, but whose minimal polynomial has not been exhibited. The A$^*$ quantities are $\lambda_0$ (algebraic degree $>30$), $\Delta=-\ln\lambda_0$ (transcendental if $\lambda_0$ algebraic), and $\mathcal{I}=\det(I-J)^{-1/2}\,e^{-810/7}$ (algebraic degree exceeding $80$). The high degrees are a structural consequence of the $\sqrt{26R}$ in the floor map composing with the degree-$24$ fixed-point algebra. A previously reported degree-$19$ PSLQ polynomial for $\lambda_0$ was refuted at $500$-digit precision ($|P_{19}(\lambda_0)|\approx 10^{-60}$; see \S\ref{sec:supplement}).
 
 The division is sharp. Every Class~A result is an algebraic identity---it holds because the combination rule at $H=3$ makes it hold, with nothing to adjust. Every Class~B result is a measured quantity that agrees with a conjectured exact form to the stated precision. The claim on Class~B is not that these are proven, but that the framework's track record on Class~A---over 30 exact identities from zero free parameters---makes it unreasonable to dismiss the Class~B agreements as coincidence. The correct response is to find the relationships that promote them to Class~A, or to find the error that explains why they are not exact. Both outcomes advance the science.
 
@@ -2907,7 +2934,7 @@ $\SU(2)$ cross-representation $\delta$ is flat at $0.343$---it does not approach
 
 \textbf{Prediction 18} (Dark matter is not a particle---status update). The perturbative Born floor mechanism for galactic dark matter has been analysed in detail and \emph{ruled out}: the $\varepsilon^{3/2}$ scaling of the floor clip (parabolic geometry: depth $\propto\varepsilon$, width $\propto\sqrt{\varepsilon}$) enhances strong gravitational fields rather than weak ones, giving the opposite of the MOND interpolation. Dark matter within the framework, if it exists, requires non-perturbative physics. The most promising lead is moduli space variation: if the local vacuum conflict $K(r)$ varies logarithmically with distance from baryonic matter, $K(r)=K^*-\alpha\ln(r/r_0)$, the gradient energy density produces an isothermal ($\rho\propto r^{-2}$) profile consistent with observed rotation curves. The coupling $\alpha$ is not yet derived from the framework.
 
-\textbf{Prediction 19} (Dark energy equation of state). The framework predicts $\Lambda=\mathrm{const}$ (cosmological constant), hence $w=-1$ exactly. DESI and Euclid will measure $w$ to $\sim\!0.01$ precision by the late 2020s. Any detection of $w\neq -1$ refutes the framework's cosmological sector. Current data: $w=-1.03\pm 0.03$ ($1.0\sigma$ consistent).
+\textbf{Prediction 19} (Dark energy). The framework predicts $\Lambda=\mathrm{const}$ (cosmological constant), hence $w=-1$ exactly. The vacuum energy density is $\rho_\Lambda=\mathcal{I}\times M_{\mathrm{vac}}^4$ where $\mathcal{I}=\det(I-J)^{-1/2}e^{-810/7}\approx 7.76\times 10^{-51}$ (Remark~\ref{rem:cc}) and $M_{\mathrm{vac}}=(40/9)\,m(0^{++})$ (equation~\ref{eq:M_vac}), giving $\rho_\Lambda=2.59\times 10^{-47}\,\mathrm{GeV}^4$ (Planck 2018: $2.52\times 10^{-47}$; $2.7\%$, within lattice glueball uncertainty). DESI and Euclid will measure $w$ to $\sim\!0.01$ precision by the late 2020s. Any detection of $w\neq -1$ refutes the framework's cosmological sector. Current data: $w=-1.03\pm 0.03$ ($1.0\sigma$ consistent).
 
 \textbf{Prediction 20} (Neutrino mass splitting ratio). $\Delta m^2_{21}/\Delta m^2_{32}=1/(h(E_8)+H)=1/33=0.0303$. PDG: $7.53\times 10^{-5}/2.453\times 10^{-3}=0.0307$ ($1.3\%$). The neutrino splitting ratio equals the inverse of the GUT logarithm $\ln(M_\mathrm{GUT}/M_Z)=33$, connecting the seesaw mechanism directly to the running. JUNO will measure $\Delta m^2_{21}$ to sub-percent, testing this.
 
