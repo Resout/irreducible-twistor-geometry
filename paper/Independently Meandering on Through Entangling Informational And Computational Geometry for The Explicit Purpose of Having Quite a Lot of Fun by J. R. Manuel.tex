@@ -4355,18 +4355,22 @@ Cross-sector mass ratios are $H$-polynomial:
 The charm-to-muon ratio $H(H+1)=12$ is the total gauge generator count of $\SU(3)\times\SU(2)\times\mathrm{U}(1)$. The strange-to-muon ratio $(H^2-1)/H^2=8/9$ is the Georgi--Jarlskog factor~\cite{GeorgiJarlskog1979} at low energy---the fraction of the hypothesis space that is traceless. The factor $2H^2-1=17$ connects $m_\tau/m_\mu$, $m_p/m_e$, and $1/\alpha$ (equation~\ref{eq:alpha_formula}).
 \end{proposition}
 
-\begin{conjecture}[Neutrino mass scale from the seesaw]\label{conj:neutrinos}
-The right-handed neutrino mass scale is
+\begin{proposition}[Neutrino mass scale from the seesaw]\label{conj:neutrinos}
+The GUT scale is the $Z$ boson mass exponentiated by the $E_8$ running distance:
+\begin{equation}\label{eq:M_GUT}
+M_\mathrm{GUT} = m_Z\times e^{h(E_8)+H} = \frac{160}{3}\,m(0^{++})\times e^{33} = 1.96\times 10^{16}\,\mathrm{GeV},
+\end{equation}
+where $h(E_8)=H(H^2+1)=30$ is the Coxeter number of $E_8$ (derived via McKay, Remark~\ref{rem:hE8}) and $160/3$ is the $Z$ multiplier (Remark~\ref{rem:WZ}). The right-handed neutrino mass is one running unit below:
 \begin{equation}\label{eq:M_R}
-M_R = \frac{M_\mathrm{GUT}}{h(E_8)+H} = \frac{M_\mathrm{GUT}}{33},
+M_R = \frac{M_\mathrm{GUT}}{h(E_8)+H} = \frac{m_Z\,e^{33}}{33}.
 \end{equation}
-where $h(E_8)+H=30+3=33$ is the GUT exponent that sets the running from $M_Z$ to $M_\mathrm{GUT}$ (\S\ref{sec:gauge_structure}). The type-I seesaw then gives the heaviest light neutrino mass:
+The type-I seesaw gives the heaviest light neutrino mass entirely in framework quantities:
 \begin{equation}\label{eq:neutrino_mass}
-m_{\nu_3} = \frac{v^2}{2M_R} = \frac{v^2\times 33}{2M_\mathrm{GUT}} \approx \frac{(246\,\mathrm{GeV})^2\times 33}{2\times 1.96\times 10^{16}\,\mathrm{GeV}} \approx 0.051\,\mathrm{eV}.
+m_{\nu_3} = \frac{v^2}{2M_R} = \frac{33\times 144^2}{2\times(160/3)\times e^{33}}\,m(0^{++}) = 0.051\,\mathrm{eV}.
 \end{equation}
-The observed atmospheric neutrino mass splitting gives $m_{\nu_3}\approx\sqrt{\Delta m^2_\mathrm{atm}}\approx 0.050\,\mathrm{eV}$. The prediction~(\ref{eq:neutrino_mass}) deviates by $3\%$.
+Observed: $m_{\nu_3}\approx\sqrt{\Delta m^2_\mathrm{atm}}\approx 0.050\,\mathrm{eV}$ (deviation $2.2\%$).
 
-The factor of $33$ has a geometric origin: $M_R$ is the GUT scale divided by the same exponent $h(E_8)+H$ that appears in the running coupling calculation. The right-handed neutrino, as a colour-singlet fermion with no Standard Model gauge charges beyond $B-L$, has its mass set by the one scale in the framework where gauge symmetry first becomes meaningful---the GUT scale---suppressed by the logarithmic running factor.
+The factor of $33$ has a geometric origin: $M_R$ is the GUT scale divided by the same exponent $h(E_8)+H$ that appears in the running coupling calculation. The right-handed neutrino, as a colour-singlet fermion with no Standard Model gauge charges beyond $B-L$, has its mass set by the one scale in the framework where gauge symmetry first becomes meaningful---the GUT scale---suppressed by the logarithmic running factor. The seesaw mechanism itself is imported from the Standard Model; what the framework provides is the complete determination of both $v$ and $M_R$ from $H=3$ and $K^*=7/30$.
 
 The neutrino Koide angle is open. The charged-lepton parameterisation $\theta=2/9$ gives the atmospheric splitting ($m_{\nu_3}\gg m_{\nu_2}$) to $0.5\%$ but overestimates the hierarchy ($m_{\nu_2}/m_{\nu_1}\approx 207$ versus the actual $\approx 9$). The large PMNS mixing angles ($\theta_{12}\approx 34^\circ$, $\theta_{23}\approx 45^\circ$) versus the small CKM angles suggest the neutrino sector's Koide angle is close to $\pi/4-\theta_{\mathrm{lepton}}=\pi/4-2/9$, characterising a nearly-democratic mixing. The derivation of the neutrino Koide angle from the $Z_3$ twisted-sector structure (\S\ref{sec:fermion_sector}) is the primary open problem in the leptonic sector.
 \end{conjecture}
