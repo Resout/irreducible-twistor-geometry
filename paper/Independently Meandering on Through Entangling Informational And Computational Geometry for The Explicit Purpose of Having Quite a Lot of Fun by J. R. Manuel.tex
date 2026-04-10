@@ -4021,7 +4021,13 @@ Up & $1.94$ & $2.16\pm 0.07$ & $10.2\%$ \\
 \end{tabular}
 \end{center}
 
-The middle quarks (strange, charm) are predicted to $0.5$--$1\%$. The lightest quarks are most sensitive to the precise $r^2$ value and carry the largest experimental uncertainties. The pattern $\theta=2/(nH^2)$ identifies $n$ with the dimension of the subspace in which the sector lives at the light point. The derivation of this pattern from the DS dynamics---in particular why the quark sectors are associated with $n=H-1$ and $n=H$---is open.
+The middle quarks (strange, charm) are predicted to $0.5$--$1\%$. The lightest quarks are most sensitive to the precise $r^2$ value and carry the largest experimental uncertainties. The subspace dimensions $n\in\{1,H\!-\!1,H\}$ are determined by the equilibrium geometry. Self-sorting (Theorem~\ref{thm:selfsort}) drives $s_1\gg s_2=s_3$, breaking $S_3\to S_2$ and creating three natural subspaces:
+\begin{itemize}[nosep]
+\item The substrate $\theta\in\Lambda^2(S)$: $\dim=1$. The lepton sector ($T_3=0$, colour singlet).
+\item The $S_2$-symmetric pair $(s_2,s_3)$: $\dim=H\!-\!1=2$. The down-quark sector ($T_3=-1/2$). Down quarks couple to $F^-$ (anti-self-dual, Proposition~\ref{prop:balance}), which preserves the $S_2$ residual symmetry---so they see only the degenerate pair.
+\item The full section space $(s_1,s_2,s_3)$: $\dim=H=3$. The up-quark sector ($T_3=+1/2$). Up quarks couple to $F^+$ (self-dual), which sees the full asymmetric structure including the dominant $s_1$.
+\end{itemize}
+The Koide angle $\theta=2/(nH^2)$ then gives $2/9$, $1/9$, $2/27$ respectively.
 
 \begin{proposition}[Quark Koide mass scales]\label{prop:quark_scales}
 Using observed quark masses and the Koide parameterisation, the mass scale $M^2_{\mathrm{sector}}=(\sum\sqrt{m_k})^2/9$ for each sector is an $H$-polynomial multiple of $m(0^{++})$:
@@ -4220,7 +4226,7 @@ Separately, taking $1/\alpha_\mathrm{GUT}=H(H^2-1)=24$ and $\ln(M_\mathrm{GUT}/M
 
 The identification $1/\alpha_\mathrm{GUT}=H(H^2-1)$ and the choice of $33$ for the logarithm are numerical observations, not derived from the DS dynamics. Equation~(\ref{eq:alpha_formula}) is a conjecture.
 
-The natural factorisation is $137=(H^2-1)(2H^2-1)+1=8\times 17+1$. The factor $H^2-1=8$ has a structural origin: it equals the total electromagnetic charge-squared sum over all Standard Model fermions, $\sum_f Q_f^2=H\bigl(H\cdot Q_u^2+H\cdot Q_d^2+Q_e^2\bigr)$ with $Q_u=(H\!+\!1)/(2H)$, $Q_d=-(H\!-\!1)/(2H)$, $Q_e=-1$, $H$ colours. The general expression evaluates to $H^2-H+2$, which equals $H^2-1$ if and only if $H=3$: the anomaly cancellation condition ($\sum Q^2=\dim(\su(H))$) is another $H=3$ characterisation. The factor $17=(H+1)^2+1$ is the fermion count per generation plus the identity, also forced by $(H-3)(H+1)=0$. The inter-formula identity linking $1/\alpha$ to the proton-electron ratio is exact:
+The natural factorisation is $137=(H^2-1)(2H^2-1)+1=8\times 17+1$. The factor $8=H^2-1$ is the real dimension of one twistor: $\dim_\R(\C^4)=8$, i.e.\ a twistor $Z=(\omega^A,\pi_{A'})\in\C^4$ has $8$ real degrees of freedom. That this equals $\dim(\su(H))=H^2-1$ is itself an $H=3$ identity: $\dim_\R(\C^{H+1})=2(H+1)$ equals $H^2-1$ iff $(H-3)(H+1)=0$. The screening is not eight separate generators---it is one geometric object (the twistor) interacting with the content. The same $8$ equals the anomaly-cancelling charge-squared sum $\sum_f Q_f^2$ with $Q_u=(H\!+\!1)/(2H)$, $Q_d=-(H\!-\!1)/(2H)$, $Q_e=-1$, $H$ colours: the general expression $H^2-H+2$ equals $H^2-1$ iff $H=3$. The factor $17=(H+1)^2+1$ is the fermion count per generation plus the identity, also forced by $(H-3)(H+1)=0$. The inter-formula identity linking $1/\alpha$ to the proton-electron ratio is exact:
 \begin{equation}\label{eq:alpha_mp_connection}
 \frac{m_p}{m_e} = \!\left(\frac{1}{\alpha}-1-\frac{1}{H^3}\right)\!\times\frac{H^3}{H-1} = 136\times\frac{27}{2} = 1836.
 \end{equation}
@@ -4230,7 +4236,7 @@ An alternative decomposition $1/\alpha=\Phi_6(H^2)+(H+1)^3+1/H^3=73+64+1/27$ hol
 
 The structural interpretation of $1/\alpha$: the photon is the $\mathrm{U}(1)$ stabiliser of the equilibrium (Theorem~\ref{thm:massless_content}), hence in phase with the Born floor---zero angular pressure differential, zero mass. An in-phase state sees all out-of-phase content democratically (the stabiliser acts identically on all sectors). The total out-of-phase content is: $\sum Q_f^2=H^2-1=8$ charge-squared units of fermion misalignment (each screening $(H+1)^2+1=17$ modes), plus $1$ for the bare structure, plus $1/H^3$ for the vacuum floor. Total: $8\times 17+1+1/27=3700/27$. The coupling distributes uniformly: $\alpha=27/3700$.
 
-The derivation chain uses proved results (stabiliser property, anomaly cancellation, $H=3$-specific identities) but the identification of $1/\alpha$ with the democratic content count, while structurally motivated, has not been formalised as a theorem. The deviation from experiment is $7.6\,\mathrm{ppm}$ for $1/\alpha$ and $83\,\mathrm{ppm}$ for $m_p/m_e$---close, but not exact. Both residuals are open.
+The derivation chain uses proved results (stabiliser property, anomaly cancellation, $H=3$-specific identities) but the identification of $1/\alpha$ with the democratic content count, while structurally motivated, has not been formalised as a theorem. The deviation from experiment is $7.6\,\mathrm{ppm}$ for $1/\alpha$ and $83\,\mathrm{ppm}$ for $m_p/m_e$---close, but not exact. For $1/\alpha$: the gap $3700/27-137.036=0.001$ has the same sign and order as the Schwinger correction $\alpha/(2\pi)=0.00116$, suggesting $3700/27$ may be the bare (geometric) value while the measured $137.036$ includes QED vacuum polarisation. Whether the framework's loop corrections exactly account for the $7.6\,\mathrm{ppm}$ residual is open.
 \end{remark}
 
 \begin{proposition}[The action partition system]\label{prop:action_partition}
