@@ -3210,6 +3210,14 @@ At $m^*$, the rank-$1$ property is confirmed numerically: $\sigma_1=0.7305$, $\s
 This is compatible with the rank-$2$ kink (Theorem~\ref{thm:entangle}): the $2\times 2$ matrix $\dbar M$ has both singular values nonzero (both bundle channels are affected), but the $4\times 4$ Jacobian $\dbar\Phi$ has rank~$1$ (the kink always points in the same direction in mass-function space). One direction in $\C^4$, but that direction has both $I$ and $\sigma_i$ components under the $\su(2)$ embedding~(\ref{eq:M}).
 \end{remark}
 
+\begin{proposition}[Popov robustness under floor regularisation]\label{prop:popov_robust}
+Let $V_\varepsilon$ be any smooth regularisation of the Born floor that agrees with the hard floor enforcement for $\mathrm{Born}(m)\leq 1/27-\varepsilon$, and let $\Phi_\varepsilon=V_\varepsilon\circ\mathrm{DS}$. At the equilibrium $m^*$, $\mathrm{Born}(\mathrm{DS}(m^*))=0.000809\ll 1/27$ (Remark~\ref{rem:vacuum_depth}), so $\Phi_\varepsilon$ and $\Phi$ have identical Jacobians at $m^*$ for all $\varepsilon<1/27-0.000809\approx 0.036$. In particular: $\mathrm{rank}(\dbar\Phi_\varepsilon|_{m^*})=1$, the commutator correction vanishes, and the Popov identification (Theorem~\ref{thm:popov_identification}) holds for $\Phi_\varepsilon$.
+\end{proposition}
+
+\begin{proof}
+The floor enforcement $F$ in the active region ($\mathrm{Born}<1/27$) is smooth: $t$ is a root of the quadratic $26t^2S^2=(1-t)^2S_q$ with positive discriminant, hence an analytic function of $(S,S_q)$; the rescaling $\alpha=(1-t)/S$ is smooth wherever $S>0$. At the equilibrium, $S^*=0.845>0$ and $\mathrm{Born}(\mathrm{DS}(m^*))=0.000809$, placing $m^*$ deep in the interior of the active region. Any smooth $V_\varepsilon$ that agrees with $F$ in this interior gives $d\Phi_\varepsilon|_{m^*}=d\Phi|_{m^*}$ and $\dbar\Phi_\varepsilon|_{m^*}=\dbar\Phi|_{m^*}$. The rank-$1$ property (Lemma~\ref{lem:rank1}) is algebraic---every row of $\dbar F$ is a scalar multiple of $\partial t/\partial\bar{z}$---and holds at all interior active points.
+\end{proof}
+
 \begin{proposition}[Fibre-varying modes do not lower the mass gap]\label{prop:fibre_bound}
 The Popov Hessian acts on all $(0,1)$-forms on $\CP^3$, not only fibre-constant ones. Decompose perturbations by $\CP^1$ homogeneity $k\geq 0$: the $k$-th mode has $\zeta$-dependence $\sim\zeta^k$ along each twistor line. The DS transfer operator captures only $k=0$. The mass gap of the full theory is the infimum over all $k$. Claim: the infimum is achieved at $k=0$.
 \end{proposition}
