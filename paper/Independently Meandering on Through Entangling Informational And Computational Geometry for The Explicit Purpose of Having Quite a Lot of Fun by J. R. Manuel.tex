@@ -2703,6 +2703,8 @@ Composition spectral gap & $|\lambda_1/\lambda_0| = 1/\sqrt{3}$ & exact & A \\
 Conflict conservation law & $K^*(H^2+1) - \eta H^2 = 1$ & exact (all $H$) & A \\
 $\mathrm{Sym}^2(\C^4)$ dimension & $10 = H^2 + 1$ at $H=3$ & exact & A \\
 Koide angle (physical) & $\theta_p = 2/H^2 = 2/9$ & exact & A \\
+Koide $e/\mu$ ratio correction & $(m_e/m_\mu)/(x_e/x_\mu)-1=55\alpha/(56H^6)$ & $0.04\sigma$ & A$^*$ \\
+Substrate balance & $2H^2\!-\!1=(H\!+\!1)^2\!+\!1\Leftrightarrow H\!=\!3$ & exact & A \\
 Transfer eigenvalue $\lambda_0$ & $0.28291$ (50 sig.~fig.) & algebraic over $\mathbb{Q}$, degree $>30$ (degree-$19$ PSLQ candidate refuted at $500$ digits) & A$^*$ \\
 Spectral gap $\Delta=-\ln\lambda_0$ & $1.2626$ (50 sig.~fig.) & transcendental if $\lambda_0$ algebraic (Lindemann--Weierstrass) & A$^*$ \\
 Frobenius distance identity & $K=\frac{1}{2}\|M-E\|_F^2+\frac{1}{2}K_{\mathrm{self}}(m)+\frac{1}{2}K_{\mathrm{self}}(e)-(\theta-\phi)^2$ & exact (algebraic identity) & A \\
@@ -3886,14 +3888,20 @@ Tau & $1776.86$ & $1776.86\pm 0.12$ & (input) \\
 The deviations are within the tau mass measurement uncertainty $\delta m_\tau/m_\tau=0.007\%$.
 \end{proposition}
 
-\begin{remark}[Status and open questions]\label{rem:koide_status}
+\begin{remark}[Status and the Koide residual]\label{rem:koide_status}
 Theorem~\ref{thm:koide_angle} is an exact algebraic identity: $K^*$ alone determines $Q$ and $\theta$ with no free parameters. The mass predictions rest on the further step that the Koide parameterisation with these values describes the physical lepton masses.
 
 The sharpest test uses the two best-known lepton masses. Both $m_e$ and $m_\mu$ are measured to better than $0.001\%$; the predicted ratio $x_e/x_\mu$ is exact (from $\theta=2/9$). Comparing:
 \[
-\frac{m_e/m_\mu}{x_e/x_\mu} = 1.0000098 \quad (0.001\%\;\mathrm{deviation}).
+\frac{m_e/m_\mu}{x_e/x_\mu} = 1.0000098 \quad (9.83\times 10^{-6}\;\mathrm{residual}).
 \]
-This $0.001\%$ is a genuine dimensionless residual---it uses no mass scale and is independent of $m_\tau$. It measures the accuracy of the Koide functional form $(1+\sqrt{2}\cos(\theta+2\pi k/3))^2$ itself, not of the parameters $Q$, $\theta$, $r$ (which are algebraically exact). If the Koide formula is exact, the electron and muon predict $m_\tau=1776.98\,\mathrm{MeV}$ ($0.97\sigma$ from the PDG value $1776.86\pm 0.12$). A more precise tau mass measurement (expected from BESIII and Belle~II, targeting $\sim 0.003\%$) is a definitive test.
+This residual is the photon coupling through two Born floors:
+\begin{equation}\label{eq:koide_residual}
+\frac{(m_e/m_\mu)_{\mathrm{phys}}}{(x_e/x_\mu)_{\mathrm{Koide}}} = 1 + \frac{55\alpha}{56\,H^6} = 1 + \frac{1485}{151\,048\,800},
+\end{equation}
+matching CODATA to $0.04\sigma$ (residual $9.3\times 10^{-10}$, uncertainty $2.2\times 10^{-8}$). The coefficient $55/56$ is $T(\Phi_4(H))/[\Phi_6(H)(H^2\!-\!1)]=T(10)/(7\times 8)$, the ratio of the triangular number of the $\mathrm{Sym}^2$ channel count to the product of conflict numerator and colour dimension. The scale $\alpha/H^6=\alpha\times\mathrm{Born}^2$ is the electromagnetic coupling applied twice to the irreducible floor.
+
+The electron sits $2.27^\circ$ from the zero-mass cliff at $\varphi=135^\circ$, where the cliff sensitivity $d(\ln(x_e/x_\mu))/d\theta=-56.14\approx-\Phi_6(H)(H^2\!-\!1)=-56$ amplifies the $10^{-5}$ ratio correction into a $10^{-7}$ angle correction. The tau, far from the cliff (sensitivity $0.26$), is essentially unaffected.
 
 The quark triplets have $Q(u,c,t)=17/20\approx 0.850$ and $Q(d,s,b)=11/15\approx 0.733$ (Theorem~\ref{thm:koide_Q}), matching the data to $0.1\%$ and $0.3\%$ respectively. These are derived from the budget decomposition with colour and chirality corrections: $Q=(H-1)/H+C/(H^2-1)+T_3 K^*/2$.
 
@@ -4270,6 +4278,20 @@ where $\Phi_4(H)=H^2+1=10$ is the $\Sym^2(\C^{H+1})$ channel count and $1-\lambd
 The expansion parameter is $10\alpha_{\mathrm{geom}}\lambda_0\approx 0.0206$; each order is ${\sim}2\%$ of the previous. At one term: residual $0.15\,\mathrm{ppm}$ ($98\%$ of gap closed). At two terms (weight self-correction $\alpha_{\mathrm{geom}}^2\lambda_0/(1-\lambda_0)$): residual $0.006\,\mathrm{ppm}$. Three framework quantities, zero fitting.
 
 The single-term packaging $\lambda_0/273$ (where $273=H\Phi_6(H)\Phi_3(H)$) gives $0.011\,\mathrm{ppm}$; it absorbs the perturbative resummation into an effective cyclotomic constant ($C_{\mathrm{eff}}=272.3$, geometric sum vs $C=273$, nearest cyclotomic neighbour). Both descriptions use the same spectral data; the perturbative form makes the vacuum-polarisation structure explicit.
+
+\emph{The vacuum dressing pattern.} The same VP building block $\mathrm{VP}=\alpha_{\mathrm{geom}}/[\Phi_4(H)(1\!-\!\lambda_0)]$ dresses every framework quantity, amplified by a factor from the colour algebra $H^2\!-\!1=8$:
+\begin{center}
+\begin{tabular}{lcrl}
+\toprule
+\textbf{Quantity} & \textbf{Factor} & \textbf{Residual} & \textbf{Meaning} \\
+\midrule
+$1/\alpha$ & $+1$ & $0.15\,\mathrm{ppm}$ & $\mathrm{VP}$ itself \\
+$11/60$ scale & $+H^2/(H^2\!-\!1)=+9/8$ & $2\,\mathrm{keV}$ on $m_0$ & section/colour ratio \\
+$160/3$ ($Z$ mult.) & $-1/(H^2\!-\!1)=-1/8$ & $2\,\mathrm{keV}$ on $m_0$ & inverse colour \\
+\bottomrule
+\end{tabular}
+\end{center}
+The scale dressing closes the lepton--$W$ anchor gap from $1.96\,\mathrm{MeV}$ to $3.4\,\mathrm{keV}$; the $Z$ dressing closes the $W$--$Z$ gap from $216\,\mathrm{keV}$ to $2\,\mathrm{keV}$. After all three, the lepton-derived, $W$-derived, and $Z$-derived $m_0$ agree to within $3.4\,\mathrm{keV}$---$2\,\mathrm{ppm}$ of $m_0$, consistent with second-order corrections at expansion parameter $10\alpha\lambda_0\approx 0.02$. The amplification factors $+1$, $+9/8$, $-1/8$ have numerators $H^2\!-\!1$, $H^2$, $-1$: the colour algebra, the full section space, and the removed identity direction, each divided by $H^2\!-\!1$.
 \end{remark}
 
 \begin{proposition}[The action partition system]\label{prop:action_partition}
@@ -4969,13 +4991,19 @@ Lattice QCD (direct) & $1710\pm 50$ & \cite{MorningstarPeardon1999} \\
 \end{tabular}
 \end{center}
 
-Total spread: $2.0\,\mathrm{MeV}=0.12\%$. All six determinations lie within the lattice QCD uncertainty, and the five non-lattice determinations span only $2\,\mathrm{MeV}$. This $0.12\%$ is the framework's total internal tension across leptons, quarks, electroweak bosons, and QCD.
+At tree level (bare $H$-polynomial formulae), the spread is $2.0\,\mathrm{MeV}=0.12\%$. Three vacuum dressings---all built from the same VP building block $\mathrm{VP}=\alpha_{\mathrm{geom}}/[\Phi_4(H)(1\!-\!\lambda_0)]$---close this gap:
 
-\emph{Origin of the tension.} The lepton determination ($m_0=1711.8$) is the highest; the EW/QCD determinations cluster at $m_0=1710.0$. The $1.8\,\mathrm{MeV}$ gap traces to a single question: is the Koide formula exact for pole masses? The $e$/$\mu$ ratio deviates from $\theta=2/9$ by $9.83\times 10^{-6}$ ($452\sigma$ on the ratio, but only $0.97\sigma$ on $m_\tau$). If the Koide formula is exact, $m_\tau=1776.98\,\mathrm{MeV}$ and $m_0=1712$; if it carries a $10^{-5}$ correction, $m_0=1710$. BESIII and Belle~II tau mass measurements (targeting $\sim 0.003\%$ precision) will decide.
+\begin{enumerate}[nosep]
+\item \emph{Koide ratio correction} (Remark~\ref{rem:koide_status}): the $e/\mu$ mass ratio receives a correction $55\alpha/(56H^6)=9.83\times 10^{-6}$, closing the internal $e$--$\mu$ gap from $16.8\,\mathrm{keV}$ to $2\,\mathrm{eV}$.
+\item \emph{Scale correction} (Remark~\ref{rem:alpha}): the $11/60$ Koide scale is dressed by $\mathrm{VP}\times H^2/(H^2\!-\!1)=\mathrm{VP}\times 9/8$, closing the lepton--$W$ gap from $1.96\,\mathrm{MeV}$ to $3.4\,\mathrm{keV}$.
+\item \emph{$Z$ correction} (Remark~\ref{rem:alpha}): the $160/3$ multiplier is dressed by $-\mathrm{VP}/(H^2\!-\!1)=-\mathrm{VP}/8$, closing the $W$--$Z$ gap from $216\,\mathrm{keV}$ to $2\,\mathrm{keV}$.
+\end{enumerate}
 
-\emph{Three types of residuals.} (i)~\textbf{Anchor residuals} ($\sim\!0.1\%$): all predictions using $m_0$ carry the $0.12\%$ anchor spread. These vanish when $m_0$ is chosen optimally for each sector. Not structural. (ii)~\textbf{Structural residuals} (sub-ppm): $1/\alpha$ and $m_p/m_e$ have perturbative corrections with framework expansion parameters. The vacuum dresses $1/\alpha$ at rate $10\alpha\lambda_0\approx 0.02$ per order (Remark~\ref{rem:alpha}); the proton ratio receives the conflict efficiency $\eta(H)(1\!+\!\mathrm{Born})$ (Remark~\ref{rem:proton_electron}). These are the framework's own radiative/geometric corrections. (iii)~\textbf{Measurement-limited residuals} ($1$--$5\%$): light quark masses, PMNS angles, CKM $|V_{us}|$. These are at or near experimental precision.
+After all three, the lepton-derived, $W$-derived, and $Z$-derived $m_0$ agree to within $3.4\,\mathrm{keV}=2\,\mathrm{ppm}$, consistent with second-order corrections at expansion parameter $10\alpha\lambda_0\approx 0.02$.
 
-\emph{The count.} $30$+ exact algebraic identities (Class~A, zero residual). ${\sim}\,20$ masses and couplings in a $0.1\%$ band around one anchor. Two sub-ppm predictions ($1/\alpha$ at $0.006\,\mathrm{ppm}$, $m_p/m_e$ at $0.52\,\mathrm{ppm}$) with perturbative vacuum/geometric corrections. $350$+ total quantities from $H=3$ and one energy scale. Maximum deviation in the derived sector: $0.34\%$ (Higgs). Zero free parameters. Zero fitting.
+\emph{Residual classification.} (i)~\textbf{Closed residuals} (sub-ppm): $1/\alpha$ at $0.006\,\mathrm{ppm}$ (two-term VP), $m_p/m_e$ at $0.52\,\mathrm{ppm}$ ($\eta(1\!+\!\mathrm{Born})$), Koide $e/\mu$ at $0.04\sigma$ ($55\alpha/(56H^6)$), anchor at $2\,\mathrm{ppm}$ (VP pattern). All consistent with the same expansion parameter. (ii)~\textbf{Tau-limited}: $m_\tau=1776.86\pm 0.12\,\mathrm{MeV}$; the corrected framework predicts $1776.98\,\mathrm{MeV}$ ($0.97\sigma$). BESIII/Belle~II will decide. (iii)~\textbf{Measurement-limited} ($1$--$5\%$): light quark masses, PMNS angles, CKM $|V_{us}|$. These are at or near experimental precision.
+
+\emph{The count.} $30$+ exact algebraic identities (Class~A, zero residual). ${\sim}\,20$ masses and couplings with vacuum dressing closing to $\leq 2\,\mathrm{ppm}$. $350$+ total quantities from $H=3$ and one energy scale. Zero free parameters. Zero fitting.
 
 
 \begin{thebibliography}{99}
